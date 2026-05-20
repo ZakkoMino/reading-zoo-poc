@@ -1,9 +1,8 @@
 /* App entry: tiny router + header wiring.
  *
- * Boots after DOMContentLoaded, paints the requested screen into #screen,
- * and exposes App.nav(screen, ctx) for views to switch screens. The header
- * provides "Doma" (back to onboarding), "ZOO" and "Pokrok" — also wired
- * here so they don't have to be re-rendered with every screen.
+ * Boots after DOMContentLoaded, awaits the async data load (with inline
+ * fallback if the seed JSON can't be fetched), then paints onboarding.
+ * Exposes App.nav(screen, ctx) for views to switch screens.
  */
 (function () {
   const App = window.App || (window.App = {});
@@ -40,10 +39,28 @@
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => { wireHeader(); nav('onboarding'); });
-  } else {
+  function paintDiagnostics() {
+    const node = document.getElementById('data-status');
+    if (!node) return;
+    const stats = (App.data && App.data.getStats) ? App.data.getStats() : null;
+    if (!stats) return;
+    const sourceLabel = stats.source === 'seed' ? 'seed' : 'inline (fallback)';
+    node.textContent = `Data: ${sourceLabel} · ${stats.words} slov · ${stats.animals} zvířat`;
+    node.dataset.source = stats.source;
+  }
+
+  async function boot() {
     wireHeader();
+    if (App.data && App.data.ready && typeof App.data.ready.then === 'function') {
+      try { await App.data.ready; } catch (_) { /* fallback already applied */ }
+    }
+    paintDiagnostics();
     nav('onboarding');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
   }
 })();

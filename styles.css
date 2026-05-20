@@ -97,6 +97,20 @@ body { display: flex; flex-direction: column; }
   font-size: 13px;
   border-top: 1px solid var(--border);
 }
+.data-status {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--bg-tint);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+}
+.data-status[data-source="inline"] {
+  background: #FFE7B3;
+  color: #8a5b00;
+}
 .screen { animation: fadein .25s ease; }
 @keyframes fadein {
   from { opacity: 0; transform: translateY(6px); }
