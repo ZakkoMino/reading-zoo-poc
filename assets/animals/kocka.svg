@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Kočka">
+  <circle cx="100" cy="100" r="95" fill="#E5DEF7"/>
+  <polygon points="55,65 82,90 50,98" fill="#A0A0A8"/>
+  <polygon points="145,65 118,90 150,98" fill="#A0A0A8"/>
+  <polygon points="60,75 75,90 60,93" fill="#FFB5C0"/>
+  <polygon points="140,75 125,90 140,93" fill="#FFB5C0"/>
+  <circle cx="100" cy="110" r="55" fill="#B5B5BD"/>
+  <ellipse cx="82" cy="103" rx="8" ry="11" fill="#5DB776"/>
+  <ellipse cx="118" cy="103" rx="8" ry="11" fill="#5DB776"/>
+  <ellipse cx="82" cy="103" rx="2.2" ry="9" fill="#2C2C2C"/>
+  <ellipse cx="118" cy="103" rx="2.2" ry="9" fill="#2C2C2C"/>
+  <path d="M93,122 L100,130 L107,122 Z" fill="#FFB5C0"/>
+  <path d="M100,130 Q95,138 88,137" fill="none" stroke="#2C2C2C" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M100,130 Q105,138 112,137" fill="none" stroke="#2C2C2C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="60" y1="122" x2="78" y2="124" stroke="#2C2C2C" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="60" y1="130" x2="78" y2="129" stroke="#2C2C2C" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="122" y1="124" x2="140" y2="122" stroke="#2C2C2C" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="122" y1="129" x2="140" y2="130" stroke="#2C2C2C" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

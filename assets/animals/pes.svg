@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Pes">
+  <circle cx="100" cy="100" r="95" fill="#FFE5D9"/>
+  <ellipse cx="55" cy="80" rx="18" ry="35" fill="#A0673E" transform="rotate(-20 55 80)"/>
+  <ellipse cx="145" cy="80" rx="18" ry="35" fill="#A0673E" transform="rotate(20 145 80)"/>
+  <ellipse cx="100" cy="110" rx="55" ry="50" fill="#C68B5C"/>
+  <ellipse cx="100" cy="132" rx="32" ry="22" fill="#E8C9A7"/>
+  <circle cx="83" cy="100" r="6" fill="#2C2C2C"/>
+  <circle cx="117" cy="100" r="6" fill="#2C2C2C"/>
+  <circle cx="84.5" cy="98" r="2" fill="#FFFFFF"/>
+  <circle cx="118.5" cy="98" r="2" fill="#FFFFFF"/>
+  <ellipse cx="100" cy="121" rx="9" ry="7" fill="#2C2C2C"/>
+  <path d="M100,128 Q90,141 84,136" fill="none" stroke="#2C2C2C" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M100,128 Q110,141 116,136" fill="none" stroke="#2C2C2C" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="100" cy="143" rx="6" ry="4" fill="#FF8FA3"/>
+</svg>

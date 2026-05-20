@@ -1,0 +1,45 @@
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V8
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node / npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Build / dist
+dist/
+build/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+
+# Environment & secrets
+.env
+.env.*
+*.env
+*.key
+*.pem
+*.p12
+*.pfx
+*_secret*
+*_token*
+*credentials*
+auth.json
+secrets.json

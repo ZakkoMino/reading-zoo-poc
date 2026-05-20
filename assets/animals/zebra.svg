@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Zebra">
+  <circle cx="100" cy="100" r="95" fill="#FFF4D1"/>
+  <ellipse cx="100" cy="115" rx="52" ry="60" fill="#FFFFFF"/>
+  <path d="M53,92 Q63,87 75,93 L70,103 Q60,101 50,105 Z" fill="#2C2C2C"/>
+  <path d="M55,125 Q65,121 78,127 L74,138 Q63,135 52,140 Z" fill="#2C2C2C"/>
+  <path d="M125,93 Q137,87 147,92 L150,103 Q140,101 130,103 Z" fill="#2C2C2C"/>
+  <path d="M122,127 Q132,121 145,125 L148,138 Q137,135 126,138 Z" fill="#2C2C2C"/>
+  <path d="M90,150 Q100,148 110,150 L108,162 L92,162 Z" fill="#2C2C2C"/>
+  <ellipse cx="70" cy="60" rx="10" ry="15" fill="#FFFFFF" transform="rotate(-20 70 60)"/>
+  <ellipse cx="130" cy="60" rx="10" ry="15" fill="#FFFFFF" transform="rotate(20 130 60)"/>
+  <ellipse cx="69" cy="63" rx="5" ry="9" fill="#FFB5C0" transform="rotate(-20 69 63)"/>
+  <ellipse cx="131" cy="63" rx="5" ry="9" fill="#FFB5C0" transform="rotate(20 131 63)"/>
+  <path d="M85,58 Q90,48 95,58 Q100,48 105,58 Q110,48 115,58 L113,82 L87,82 Z" fill="#2C2C2C"/>
+  <circle cx="86" cy="108" r="5" fill="#2C2C2C"/>
+  <circle cx="114" cy="108" r="5" fill="#2C2C2C"/>
+  <circle cx="87" cy="106" r="1.5" fill="#FFFFFF"/>
+  <circle cx="115" cy="106" r="1.5" fill="#FFFFFF"/>
+  <ellipse cx="100" cy="150" rx="20" ry="14" fill="#F5DCE0"/>
+  <ellipse cx="92" cy="148" rx="2.2" ry="3" fill="#2C2C2C"/>
+  <ellipse cx="108" cy="148" rx="2.2" ry="3" fill="#2C2C2C"/>
+  <path d="M92,156 Q100,160 108,156" fill="none" stroke="#2C2C2C" stroke-width="2"/>
+</svg>

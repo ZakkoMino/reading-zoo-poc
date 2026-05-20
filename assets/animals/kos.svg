@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Kos">
+  <circle cx="100" cy="100" r="95" fill="#CFE3F0"/>
+  <ellipse cx="100" cy="120" rx="55" ry="50" fill="#262626"/>
+  <circle cx="100" cy="80" r="34" fill="#1A1A1A"/>
+  <ellipse cx="65" cy="125" rx="20" ry="35" fill="#3D3D3D" transform="rotate(-15 65 125)"/>
+  <circle cx="113" cy="75" r="6" fill="#FFE9A8"/>
+  <circle cx="114" cy="75" r="3" fill="#2C2C2C"/>
+  <polygon points="128,78 148,84 128,92" fill="#FFB840"/>
+  <line x1="90" y1="165" x2="90" y2="180" stroke="#FFB840" stroke-width="3" stroke-linecap="round"/>
+  <line x1="110" y1="165" x2="110" y2="180" stroke="#FFB840" stroke-width="3" stroke-linecap="round"/>
+  <line x1="85" y1="180" x2="80" y2="184" stroke="#FFB840" stroke-width="3" stroke-linecap="round"/>
+  <line x1="85" y1="180" x2="90" y2="184" stroke="#FFB840" stroke-width="3" stroke-linecap="round"/>
+  <line x1="115" y1="180" x2="110" y2="184" stroke="#FFB840" stroke-width="3" stroke-linecap="round"/>
+  <line x1="115" y1="180" x2="120" y2="184" stroke="#FFB840" stroke-width="3" stroke-linecap="round"/>
+</svg>

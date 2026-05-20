@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Žába">
+  <circle cx="100" cy="100" r="95" fill="#FFF4D1"/>
+  <ellipse cx="100" cy="128" rx="68" ry="50" fill="#7CC367"/>
+  <ellipse cx="100" cy="142" rx="42" ry="28" fill="#C5E8B7"/>
+  <circle cx="68" cy="72" r="24" fill="#7CC367"/>
+  <circle cx="132" cy="72" r="24" fill="#7CC367"/>
+  <circle cx="68" cy="72" r="17" fill="#FFFFFF"/>
+  <circle cx="132" cy="72" r="17" fill="#FFFFFF"/>
+  <circle cx="68" cy="76" r="9" fill="#2C2C2C"/>
+  <circle cx="132" cy="76" r="9" fill="#2C2C2C"/>
+  <circle cx="71" cy="72" r="2.8" fill="#FFFFFF"/>
+  <circle cx="135" cy="72" r="2.8" fill="#FFFFFF"/>
+  <path d="M65,125 Q100,158 135,125" fill="none" stroke="#2C2C2C" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="53" cy="130" r="5" fill="#5BA84A"/>
+  <circle cx="147" cy="130" r="5" fill="#5BA84A"/>
+  <circle cx="80" cy="155" r="4" fill="#5BA84A"/>
+  <circle cx="120" cy="155" r="4" fill="#5BA84A"/>
+</svg>

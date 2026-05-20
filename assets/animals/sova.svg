@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Sova">
+  <circle cx="100" cy="100" r="95" fill="#D4E3F7"/>
+  <ellipse cx="100" cy="112" rx="60" ry="65" fill="#9B7B5C"/>
+  <ellipse cx="100" cy="128" rx="38" ry="45" fill="#E0C8A4"/>
+  <polygon points="60,58 70,40 82,62" fill="#9B7B5C"/>
+  <polygon points="140,58 130,40 118,62" fill="#9B7B5C"/>
+  <circle cx="80" cy="95" r="22" fill="#FFFFFF"/>
+  <circle cx="120" cy="95" r="22" fill="#FFFFFF"/>
+  <circle cx="80" cy="95" r="11" fill="#2C2C2C"/>
+  <circle cx="120" cy="95" r="11" fill="#2C2C2C"/>
+  <circle cx="83" cy="91" r="3" fill="#FFFFFF"/>
+  <circle cx="123" cy="91" r="3" fill="#FFFFFF"/>
+  <polygon points="92,115 100,130 108,115" fill="#E89B3A"/>
+  <path d="M60,125 Q56,145 66,162" fill="none" stroke="#7A5E42" stroke-width="3" stroke-linecap="round"/>
+  <path d="M140,125 Q144,145 134,162" fill="none" stroke="#7A5E42" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="75" cy="150" r="3.5" fill="#7A5E42"/>
+  <circle cx="100" cy="155" r="3.5" fill="#7A5E42"/>
+  <circle cx="125" cy="150" r="3.5" fill="#7A5E42"/>
+</svg>

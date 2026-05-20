@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Medvěd">
+  <circle cx="100" cy="100" r="95" fill="#FFDED4"/>
+  <circle cx="58" cy="62" r="18" fill="#7B4F32"/>
+  <circle cx="142" cy="62" r="18" fill="#7B4F32"/>
+  <circle cx="58" cy="62" r="10" fill="#D9A983"/>
+  <circle cx="142" cy="62" r="10" fill="#D9A983"/>
+  <circle cx="100" cy="108" r="60" fill="#9C6541"/>
+  <ellipse cx="100" cy="132" rx="32" ry="25" fill="#D9A983"/>
+  <circle cx="80" cy="98" r="5" fill="#2C2C2C"/>
+  <circle cx="120" cy="98" r="5" fill="#2C2C2C"/>
+  <circle cx="81" cy="96" r="1.5" fill="#FFFFFF"/>
+  <circle cx="121" cy="96" r="1.5" fill="#FFFFFF"/>
+  <ellipse cx="100" cy="120" rx="9" ry="7" fill="#2C2C2C"/>
+  <path d="M100,127 L100,136" stroke="#2C2C2C" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M100,136 Q92,144 86,142" fill="none" stroke="#2C2C2C" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M100,136 Q108,144 114,142" fill="none" stroke="#2C2C2C" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

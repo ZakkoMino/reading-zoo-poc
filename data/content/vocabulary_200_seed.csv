@@ -1,0 +1,201 @@
+id,text,level,category,recommendedDifficulty,isAnimal,supportsZooReward,notes
+w001_oko,oko,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w002_usi,uši,L1_short,Krátká jednoduchá slova,2,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w003_nos,nos,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w004_pusa,pusa,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w005_ruka,ruka,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w006_noha,noha,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w007_zub,zub,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w008_les,les,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w009_dum,dům,L1_short,Krátká jednoduchá slova,2,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w010_den,den,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w011_noc,noc,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w012_vlak,vlak,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w013_auto,auto,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w014_kolo,kolo,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w015_mic,míč,L1_short,Krátká jednoduchá slova,2,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w016_caj,čaj,L1_short,Krátká jednoduchá slova,2,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w017_syr,sýr,L1_short,Krátká jednoduchá slova,2,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w018_sul,sůl,L1_short,Krátká jednoduchá slova,2,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w019_voda,voda,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w020_mama,máma,L1_short,Krátká jednoduchá slova,2,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w021_tata,táta,L1_short,Krátká jednoduchá slova,2,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w022_babi,babi,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w023_deda,děda,L1_short,Krátká jednoduchá slova,2,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w024_misa,mísa,L1_short,Krátká jednoduchá slova,2,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w025_lupa,lupa,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w026_lano,lano,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w027_pila,pila,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w028_pero,pero,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w029_rosa,rosa,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w030_hora,hora,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w031_bota,bota,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w032_stul,stůl,L1_short,Krátká jednoduchá slova,2,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w033_kruh,kruh,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w034_list,list,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w035_mrak,mrak,L1_short,Krátká jednoduchá slova,1,False,False,"První čtení: krátká, konkrétní a dobře představitelná slova."
+w036_slunce,slunce,L2_simple,Jednoduchá běžná slova,2,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w037_mesic,měsíc,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w038_hvezda,hvězda,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w039_nebe,nebe,L2_simple,Jednoduchá běžná slova,1,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w040_zeme,země,L2_simple,Jednoduchá běžná slova,2,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w041_kamen,kámen,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w042_pisek,písek,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w043_skola,škola,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w044_trida,třída,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w045_kniha,kniha,L2_simple,Jednoduchá běžná slova,2,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w046_sesit,sešit,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w047_tuzka,tužka,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w048_barva,barva,L2_simple,Jednoduchá běžná slova,2,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w049_hracka,hračka,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w050_pokoj,pokoj,L2_simple,Jednoduchá běžná slova,2,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w051_dvere,dveře,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w052_okno,okno,L2_simple,Jednoduchá běžná slova,1,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w053_zidle,židle,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w054_postel,postel,L2_simple,Jednoduchá běžná slova,2,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w055_deka,deka,L2_simple,Jednoduchá běžná slova,1,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w056_lampa,lampa,L2_simple,Jednoduchá běžná slova,2,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w057_talir,talíř,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w058_hrnek,hrnek,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w059_lzice,lžíce,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w060_jidlo,jídlo,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w061_polevka,polévka,L2_simple,Jednoduchá běžná slova,4,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w062_jablko,jablko,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w063_hruska,hruška,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w064_banan,banán,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w065_mrkev,mrkev,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w066_chleba,chleba,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w067_kolac,koláč,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w068_mleko,mléko,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w069_stava,šťáva,L2_simple,Jednoduchá běžná slova,3,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w070_cesta,cesta,L2_simple,Jednoduchá běžná slova,2,False,False,"Běžná slova z domova, školy, jídla a okolí dítěte."
+w071_pes,pes,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w072_kocka,kočka,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w073_lev,lev,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w074_sova,sova,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w075_liska,liška,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w076_zebra,zebra,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w077_kos,kos,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w078_krava,kráva,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w079_kun,kůň,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w080_zaba,žába,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w081_slon,slon,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w082_medved,medvěd,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w083_had,had,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w084_cap,čáp,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w085_orel,orel,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w086_vlk,vlk,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w087_rys,rys,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w088_jelen,jelen,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w089_srna,srna,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w090_prase,prase,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w091_ovce,ovce,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w092_koza,koza,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w093_kohout,kohout,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w094_slepice,slepice,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w095_kachna,kachna,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w096_husa,husa,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w097_kralik,králík,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w098_mys,myš,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w099_krysa,krysa,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w100_tygr,tygr,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w101_opice,opice,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w102_zirafa,žirafa,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w103_velbloud,velbloud,L3_animals,Zvířata,4,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w104_tucnak,tučňák,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w105_tulen,tuleň,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w106_delfin,delfín,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w107_velryba,velryba,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w108_zelva,želva,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w109_ryba,ryba,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w110_kapr,kapr,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w111_cmelak,čmelák,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w112_vcela,včela,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w113_mravenec,mravenec,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w114_motyl,motýl,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w115_moucha,moucha,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w116_pavouk,pavouk,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w117_snek,šnek,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w118_jezek,ježek,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w119_bobr,bobr,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w120_vydra,vydra,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w121_strom,strom,L4_nature,Příroda,3,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w122_kvet,květ,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w123_kytka,kytka,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w124_trava,tráva,L4_nature,Příroda,3,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w125_louka,louka,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w126_pole,pole,L4_nature,Příroda,1,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w127_reka,řeka,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w128_rybnik,rybník,L4_nature,Příroda,3,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w129_more,moře,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w130_vlna,vlna,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w131_dest,déšť,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w132_snih,sníh,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w133_vitr,vítr,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w134_duha,duha,L4_nature,Příroda,1,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w135_ohen,oheň,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w136_lesik,lesík,L4_nature,Příroda,3,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w137_kopec,kopec,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w138_skala,skála,L4_nature,Příroda,3,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w139_jeskyne,jeskyně,L4_nature,Příroda,4,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w140_ostrov,ostrov,L4_nature,Příroda,3,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w141_zahrada,zahrada,L4_nature,Příroda,3,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w142_listi,listí,L4_nature,Příroda,3,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w143_vetev,větev,L4_nature,Příroda,3,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w144_koren,kořen,L4_nature,Příroda,3,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w145_semeno,semeno,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w146_jahoda,jahoda,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w147_malina,malina,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w148_houba,houba,L4_nature,Příroda,2,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w149_mech,mech,L4_nature,Příroda,1,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w150_blato,bláto,L4_nature,Příroda,3,False,False,"Slova z přírody, vhodná pro krátké věty a tematické lekce."
+w151_rodina,rodina,L5_home_school,"Domov, rodina a škola",2,False,False,Slova z každodenního života dítěte.
+w152_maminka,maminka,L5_home_school,"Domov, rodina a škola",3,False,False,Slova z každodenního života dítěte.
+w153_tatinek,tatínek,L5_home_school,"Domov, rodina a škola",4,False,False,Slova z každodenního života dítěte.
+w154_sestra,sestra,L5_home_school,"Domov, rodina a škola",3,False,False,Slova z každodenního života dítěte.
+w155_bratr,bratr,L5_home_school,"Domov, rodina a škola",2,False,False,Slova z každodenního života dítěte.
+w156_babicka,babička,L5_home_school,"Domov, rodina a škola",4,False,False,Slova z každodenního života dítěte.
+w157_dedecek,dědeček,L5_home_school,"Domov, rodina a škola",4,False,False,Slova z každodenního života dítěte.
+w158_kamarad,kamarád,L5_home_school,"Domov, rodina a škola",4,False,False,Slova z každodenního života dítěte.
+w159_ucitel,učitel,L5_home_school,"Domov, rodina a škola",3,False,False,Slova z každodenního života dítěte.
+w160_dite,dítě,L5_home_school,"Domov, rodina a škola",2,False,False,Slova z každodenního života dítěte.
+w161_lavice,lavice,L5_home_school,"Domov, rodina a škola",2,False,False,Slova z každodenního života dítěte.
+w162_tabule,tabule,L5_home_school,"Domov, rodina a škola",2,False,False,Slova z každodenního života dítěte.
+w163_pastelka,pastelka,L5_home_school,"Domov, rodina a škola",3,False,False,Slova z každodenního života dítěte.
+w164_nuzky,nůžky,L5_home_school,"Domov, rodina a škola",3,False,False,Slova z každodenního života dítěte.
+w165_lepidlo,lepidlo,L5_home_school,"Domov, rodina a škola",3,False,False,Slova z každodenního života dítěte.
+w166_batoh,batoh,L5_home_school,"Domov, rodina a škola",2,False,False,Slova z každodenního života dítěte.
+w167_svacina,svačina,L5_home_school,"Domov, rodina a škola",4,False,False,Slova z každodenního života dítěte.
+w168_hodiny,hodiny,L5_home_school,"Domov, rodina a škola",2,False,False,Slova z každodenního života dítěte.
+w169_pocitac,počítač,L5_home_school,"Domov, rodina a škola",4,False,False,Slova z každodenního života dítěte.
+w170_telefon,telefon,L5_home_school,"Domov, rodina a škola",3,False,False,Slova z každodenního života dítěte.
+w171_skrin,skříň,L5_home_school,"Domov, rodina a škola",4,False,False,Slova z každodenního života dítěte.
+w172_policka,polička,L5_home_school,"Domov, rodina a škola",4,False,False,Slova z každodenního života dítěte.
+w173_koberec,koberec,L5_home_school,"Domov, rodina a škola",3,False,False,Slova z každodenního života dítěte.
+w174_rucnik,ručník,L5_home_school,"Domov, rodina a škola",3,False,False,Slova z každodenního života dítěte.
+w175_mydlo,mýdlo,L5_home_school,"Domov, rodina a škola",3,False,False,Slova z každodenního života dítěte.
+w176_bezi,běží,L6_actions_traits,Děje a vlastnosti,2,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w177_sedi,sedí,L6_actions_traits,Děje a vlastnosti,2,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w178_stoji,stojí,L6_actions_traits,Děje a vlastnosti,3,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w179_spi,spí,L6_actions_traits,Děje a vlastnosti,2,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w180_ji,jí,L6_actions_traits,Děje a vlastnosti,2,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w181_pije,pije,L6_actions_traits,Děje a vlastnosti,1,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w182_cte,čte,L6_actions_traits,Děje a vlastnosti,2,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w183_pise,píše,L6_actions_traits,Děje a vlastnosti,2,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w184_kresli,kreslí,L6_actions_traits,Děje a vlastnosti,3,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w185_hraje,hraje,L6_actions_traits,Děje a vlastnosti,2,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w186_skace,skáče,L6_actions_traits,Děje a vlastnosti,3,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w187_leti,letí,L6_actions_traits,Děje a vlastnosti,2,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w188_plave,plave,L6_actions_traits,Děje a vlastnosti,2,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w189_zpiva,zpívá,L6_actions_traits,Děje a vlastnosti,3,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w190_vola,volá,L6_actions_traits,Děje a vlastnosti,2,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w191_nese,nese,L6_actions_traits,Děje a vlastnosti,1,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w192_dava,dává,L6_actions_traits,Děje a vlastnosti,2,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w193_bere,bere,L6_actions_traits,Děje a vlastnosti,1,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w194_maly,malý,L6_actions_traits,Děje a vlastnosti,2,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w195_velky,velký,L6_actions_traits,Děje a vlastnosti,3,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w196_novy,nový,L6_actions_traits,Děje a vlastnosti,2,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w197_stary,starý,L6_actions_traits,Děje a vlastnosti,3,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w198_dobry,dobrý,L6_actions_traits,Děje a vlastnosti,3,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w199_krasny,krásný,L6_actions_traits,Děje a vlastnosti,3,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w200_rychly,rychlý,L6_actions_traits,Děje a vlastnosti,4,False,False,Slovesa a přídavná jména pro tvorbu vět.

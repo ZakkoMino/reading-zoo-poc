@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Slon">
+  <circle cx="100" cy="100" r="95" fill="#FFE0E5"/>
+  <ellipse cx="100" cy="110" rx="58" ry="55" fill="#A9AABE"/>
+  <ellipse cx="48" cy="105" rx="22" ry="35" fill="#8A8BA0" transform="rotate(-20 48 105)"/>
+  <ellipse cx="152" cy="105" rx="22" ry="35" fill="#8A8BA0" transform="rotate(20 152 105)"/>
+  <ellipse cx="51" cy="108" rx="13" ry="25" fill="#C8AAB5" transform="rotate(-20 51 108)"/>
+  <ellipse cx="149" cy="108" rx="13" ry="25" fill="#C8AAB5" transform="rotate(20 149 108)"/>
+  <path d="M85,138 Q73,165 92,178 Q112,176 108,150 L108,138 Z" fill="#A9AABE"/>
+  <ellipse cx="93" cy="176" rx="7" ry="4" fill="#7A7B92"/>
+  <circle cx="86" cy="100" r="5" fill="#2C2C2C"/>
+  <circle cx="114" cy="100" r="5" fill="#2C2C2C"/>
+  <circle cx="87" cy="98" r="1.5" fill="#FFFFFF"/>
+  <circle cx="115" cy="98" r="1.5" fill="#FFFFFF"/>
+  <path d="M82,142 Q78,152 80,158" fill="none" stroke="#FFFAE5" stroke-width="5" stroke-linecap="round"/>
+  <path d="M118,142 Q122,152 120,158" fill="none" stroke="#FFFAE5" stroke-width="5" stroke-linecap="round"/>
+</svg>

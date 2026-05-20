@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Kráva">
+  <circle cx="100" cy="100" r="95" fill="#D9F0D5"/>
+  <ellipse cx="100" cy="108" rx="60" ry="55" fill="#FFFFFF"/>
+  <ellipse cx="63" cy="85" rx="14" ry="11" fill="#262626" transform="rotate(-15 63 85)"/>
+  <ellipse cx="135" cy="112" rx="17" ry="13" fill="#262626" transform="rotate(20 135 112)"/>
+  <ellipse cx="80" cy="138" rx="12" ry="9" fill="#262626"/>
+  <ellipse cx="55" cy="75" rx="14" ry="10" fill="#FFFFFF" transform="rotate(-30 55 75)"/>
+  <ellipse cx="145" cy="75" rx="14" ry="10" fill="#FFFFFF" transform="rotate(30 145 75)"/>
+  <ellipse cx="55" cy="76" rx="7" ry="5" fill="#FFB5C0" transform="rotate(-30 55 76)"/>
+  <ellipse cx="145" cy="76" rx="7" ry="5" fill="#FFB5C0" transform="rotate(30 145 76)"/>
+  <path d="M76,52 Q73,38 82,38" fill="none" stroke="#D4B585" stroke-width="6" stroke-linecap="round"/>
+  <path d="M124,52 Q127,38 118,38" fill="none" stroke="#D4B585" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="100" cy="135" rx="28" ry="22" fill="#FFD9DC"/>
+  <ellipse cx="91" cy="135" rx="2.5" ry="4" fill="#2C2C2C"/>
+  <ellipse cx="109" cy="135" rx="2.5" ry="4" fill="#2C2C2C"/>
+  <circle cx="86" cy="105" r="5" fill="#2C2C2C"/>
+  <circle cx="114" cy="105" r="5" fill="#2C2C2C"/>
+  <circle cx="87" cy="103" r="1.5" fill="#FFFFFF"/>
+  <circle cx="115" cy="103" r="1.5" fill="#FFFFFF"/>
+  <path d="M90,150 Q100,156 110,150" fill="none" stroke="#2C2C2C" stroke-width="2" stroke-linecap="round"/>
+</svg>

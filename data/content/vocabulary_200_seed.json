@@ -1,0 +1,2046 @@
+{
+  "schema": "reading-zoo.vocabulary.seed.v1",
+  "language": "cs-CZ",
+  "count": 200,
+  "purpose": "Seed slovní zásoby pro MVP Čtecí ZOO; vyžaduje pedagogickou kontrolu před produkcí.",
+  "levels": [
+    {
+      "id": "L1_short",
+      "label": "Krátká jednoduchá slova",
+      "count": 35,
+      "note": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "L2_simple",
+      "label": "Jednoduchá běžná slova",
+      "count": 35,
+      "note": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "L3_animals",
+      "label": "Zvířata",
+      "count": 50,
+      "note": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "L4_nature",
+      "label": "Příroda",
+      "count": 30,
+      "note": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "L5_home_school",
+      "label": "Domov, rodina a škola",
+      "count": 25,
+      "note": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "L6_actions_traits",
+      "label": "Děje a vlastnosti",
+      "count": 25,
+      "note": "Slovesa a přídavná jména pro tvorbu vět."
+    }
+  ],
+  "entries": [
+    {
+      "id": "w001_oko",
+      "text": "oko",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w002_usi",
+      "text": "uši",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w003_nos",
+      "text": "nos",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w004_pusa",
+      "text": "pusa",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w005_ruka",
+      "text": "ruka",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w006_noha",
+      "text": "noha",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w007_zub",
+      "text": "zub",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w008_les",
+      "text": "les",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w009_dum",
+      "text": "dům",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w010_den",
+      "text": "den",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w011_noc",
+      "text": "noc",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w012_vlak",
+      "text": "vlak",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w013_auto",
+      "text": "auto",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w014_kolo",
+      "text": "kolo",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w015_mic",
+      "text": "míč",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w016_caj",
+      "text": "čaj",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w017_syr",
+      "text": "sýr",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w018_sul",
+      "text": "sůl",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w019_voda",
+      "text": "voda",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w020_mama",
+      "text": "máma",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w021_tata",
+      "text": "táta",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w022_babi",
+      "text": "babi",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w023_deda",
+      "text": "děda",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w024_misa",
+      "text": "mísa",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w025_lupa",
+      "text": "lupa",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w026_lano",
+      "text": "lano",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w027_pila",
+      "text": "pila",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w028_pero",
+      "text": "pero",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w029_rosa",
+      "text": "rosa",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w030_hora",
+      "text": "hora",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w031_bota",
+      "text": "bota",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w032_stul",
+      "text": "stůl",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w033_kruh",
+      "text": "kruh",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w034_list",
+      "text": "list",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w035_mrak",
+      "text": "mrak",
+      "level": "L1_short",
+      "category": "Krátká jednoduchá slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "První čtení: krátká, konkrétní a dobře představitelná slova."
+    },
+    {
+      "id": "w036_slunce",
+      "text": "slunce",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w037_mesic",
+      "text": "měsíc",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w038_hvezda",
+      "text": "hvězda",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w039_nebe",
+      "text": "nebe",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w040_zeme",
+      "text": "země",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w041_kamen",
+      "text": "kámen",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w042_pisek",
+      "text": "písek",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w043_skola",
+      "text": "škola",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w044_trida",
+      "text": "třída",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w045_kniha",
+      "text": "kniha",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w046_sesit",
+      "text": "sešit",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w047_tuzka",
+      "text": "tužka",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w048_barva",
+      "text": "barva",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w049_hracka",
+      "text": "hračka",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w050_pokoj",
+      "text": "pokoj",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w051_dvere",
+      "text": "dveře",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w052_okno",
+      "text": "okno",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w053_zidle",
+      "text": "židle",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w054_postel",
+      "text": "postel",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w055_deka",
+      "text": "deka",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w056_lampa",
+      "text": "lampa",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w057_talir",
+      "text": "talíř",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w058_hrnek",
+      "text": "hrnek",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w059_lzice",
+      "text": "lžíce",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w060_jidlo",
+      "text": "jídlo",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w061_polevka",
+      "text": "polévka",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 4,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w062_jablko",
+      "text": "jablko",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w063_hruska",
+      "text": "hruška",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w064_banan",
+      "text": "banán",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w065_mrkev",
+      "text": "mrkev",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w066_chleba",
+      "text": "chleba",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w067_kolac",
+      "text": "koláč",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w068_mleko",
+      "text": "mléko",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w069_stava",
+      "text": "šťáva",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w070_cesta",
+      "text": "cesta",
+      "level": "L2_simple",
+      "category": "Jednoduchá běžná slova",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Běžná slova z domova, školy, jídla a okolí dítěte."
+    },
+    {
+      "id": "w071_pes",
+      "text": "pes",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w072_kocka",
+      "text": "kočka",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w073_lev",
+      "text": "lev",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w074_sova",
+      "text": "sova",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w075_liska",
+      "text": "liška",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w076_zebra",
+      "text": "zebra",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w077_kos",
+      "text": "kos",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w078_krava",
+      "text": "kráva",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w079_kun",
+      "text": "kůň",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w080_zaba",
+      "text": "žába",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w081_slon",
+      "text": "slon",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w082_medved",
+      "text": "medvěd",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w083_had",
+      "text": "had",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w084_cap",
+      "text": "čáp",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w085_orel",
+      "text": "orel",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w086_vlk",
+      "text": "vlk",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w087_rys",
+      "text": "rys",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w088_jelen",
+      "text": "jelen",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w089_srna",
+      "text": "srna",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w090_prase",
+      "text": "prase",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w091_ovce",
+      "text": "ovce",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w092_koza",
+      "text": "koza",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w093_kohout",
+      "text": "kohout",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w094_slepice",
+      "text": "slepice",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w095_kachna",
+      "text": "kachna",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w096_husa",
+      "text": "husa",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w097_kralik",
+      "text": "králík",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w098_mys",
+      "text": "myš",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w099_krysa",
+      "text": "krysa",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w100_tygr",
+      "text": "tygr",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w101_opice",
+      "text": "opice",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w102_zirafa",
+      "text": "žirafa",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w103_velbloud",
+      "text": "velbloud",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 4,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w104_tucnak",
+      "text": "tučňák",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w105_tulen",
+      "text": "tuleň",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w106_delfin",
+      "text": "delfín",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w107_velryba",
+      "text": "velryba",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w108_zelva",
+      "text": "želva",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w109_ryba",
+      "text": "ryba",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w110_kapr",
+      "text": "kapr",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w111_cmelak",
+      "text": "čmelák",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w112_vcela",
+      "text": "včela",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w113_mravenec",
+      "text": "mravenec",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w114_motyl",
+      "text": "motýl",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w115_moucha",
+      "text": "moucha",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w116_pavouk",
+      "text": "pavouk",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w117_snek",
+      "text": "šnek",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w118_jezek",
+      "text": "ježek",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w119_bobr",
+      "text": "bobr",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w120_vydra",
+      "text": "vydra",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w121_strom",
+      "text": "strom",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w122_kvet",
+      "text": "květ",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w123_kytka",
+      "text": "kytka",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w124_trava",
+      "text": "tráva",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w125_louka",
+      "text": "louka",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w126_pole",
+      "text": "pole",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w127_reka",
+      "text": "řeka",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w128_rybnik",
+      "text": "rybník",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w129_more",
+      "text": "moře",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w130_vlna",
+      "text": "vlna",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w131_dest",
+      "text": "déšť",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w132_snih",
+      "text": "sníh",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w133_vitr",
+      "text": "vítr",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w134_duha",
+      "text": "duha",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w135_ohen",
+      "text": "oheň",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w136_lesik",
+      "text": "lesík",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w137_kopec",
+      "text": "kopec",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w138_skala",
+      "text": "skála",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w139_jeskyne",
+      "text": "jeskyně",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 4,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w140_ostrov",
+      "text": "ostrov",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w141_zahrada",
+      "text": "zahrada",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w142_listi",
+      "text": "listí",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w143_vetev",
+      "text": "větev",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w144_koren",
+      "text": "kořen",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w145_semeno",
+      "text": "semeno",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w146_jahoda",
+      "text": "jahoda",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w147_malina",
+      "text": "malina",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w148_houba",
+      "text": "houba",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w149_mech",
+      "text": "mech",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w150_blato",
+      "text": "bláto",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
+    },
+    {
+      "id": "w151_rodina",
+      "text": "rodina",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w152_maminka",
+      "text": "maminka",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w153_tatinek",
+      "text": "tatínek",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 4,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w154_sestra",
+      "text": "sestra",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w155_bratr",
+      "text": "bratr",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w156_babicka",
+      "text": "babička",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 4,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w157_dedecek",
+      "text": "dědeček",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 4,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w158_kamarad",
+      "text": "kamarád",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 4,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w159_ucitel",
+      "text": "učitel",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w160_dite",
+      "text": "dítě",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w161_lavice",
+      "text": "lavice",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w162_tabule",
+      "text": "tabule",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w163_pastelka",
+      "text": "pastelka",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w164_nuzky",
+      "text": "nůžky",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w165_lepidlo",
+      "text": "lepidlo",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w166_batoh",
+      "text": "batoh",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w167_svacina",
+      "text": "svačina",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 4,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w168_hodiny",
+      "text": "hodiny",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w169_pocitac",
+      "text": "počítač",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 4,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w170_telefon",
+      "text": "telefon",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w171_skrin",
+      "text": "skříň",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 4,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w172_policka",
+      "text": "polička",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 4,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w173_koberec",
+      "text": "koberec",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w174_rucnik",
+      "text": "ručník",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w175_mydlo",
+      "text": "mýdlo",
+      "level": "L5_home_school",
+      "category": "Domov, rodina a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slova z každodenního života dítěte."
+    },
+    {
+      "id": "w176_bezi",
+      "text": "běží",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w177_sedi",
+      "text": "sedí",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w178_stoji",
+      "text": "stojí",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w179_spi",
+      "text": "spí",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w180_ji",
+      "text": "jí",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w181_pije",
+      "text": "pije",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w182_cte",
+      "text": "čte",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w183_pise",
+      "text": "píše",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w184_kresli",
+      "text": "kreslí",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w185_hraje",
+      "text": "hraje",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w186_skace",
+      "text": "skáče",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w187_leti",
+      "text": "letí",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w188_plave",
+      "text": "plave",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w189_zpiva",
+      "text": "zpívá",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w190_vola",
+      "text": "volá",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w191_nese",
+      "text": "nese",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w192_dava",
+      "text": "dává",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w193_bere",
+      "text": "bere",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w194_maly",
+      "text": "malý",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w195_velky",
+      "text": "velký",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w196_novy",
+      "text": "nový",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w197_stary",
+      "text": "starý",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w198_dobry",
+      "text": "dobrý",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w199_krasny",
+      "text": "krásný",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w200_rychly",
+      "text": "rychlý",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 4,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    }
+  ]
+}

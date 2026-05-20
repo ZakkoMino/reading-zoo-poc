@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "reading-zoo.animals.seed.v1",
+  "title": "Čtecí ZOO – Animals seed schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "language",
+    "count",
+    "animals"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "licenseNote": {
+      "type": "string"
+    },
+    "animals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "category",
+          "biome",
+          "readingLevel",
+          "wordDifficulty",
+          "sentence",
+          "fact",
+          "imagePath",
+          "tags"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "savec",
+              "ptak",
+              "plaz",
+              "obojzivelnik",
+              "ryba",
+              "hmyz",
+              "pavoukovec",
+              "mekkys"
+            ]
+          },
+          "biome": {
+            "type": "string",
+            "enum": [
+              "domov",
+              "statek",
+              "les",
+              "louka",
+              "savana",
+              "poust",
+              "reka",
+              "rybnik",
+              "ocean",
+              "hory",
+              "zoo"
+            ]
+          },
+          "readingLevel": {
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3
+            ]
+          },
+          "wordDifficulty": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "sentence": {
+            "type": "string"
+          },
+          "fact": {
+            "type": "string"
+          },
+          "imagePath": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Čtecí ZOO — učíme se číst</title>
+  <meta name="description" content="Prototyp aplikace pro děti na učení čtení v češtině s odměnami do ZOO.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%F0%9F%A6%81%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="app-header">
+    <button class="brand" type="button" data-nav="onboarding" aria-label="Domů">
+      <span class="brand-mark" aria-hidden="true">🐾</span>
+      <span class="brand-text">Čtecí ZOO</span>
+    </button>
+    <nav class="topnav" aria-label="Hlavní navigace">
+      <button class="navbtn" type="button" data-nav="onboarding">Domů</button>
+      <button class="navbtn" type="button" data-nav="zoo">Moje ZOO</button>
+      <button class="navbtn" type="button" data-nav="progress">Pro rodiče</button>
+    </nav>
+  </header>
+
+  <main id="screen" class="app-main" aria-live="polite"></main>
+
+  <footer class="app-footer">
+    Prototyp · ilustrace jsou placeholdery · pokrok se ukládá pouze v prohlížeči
+  </footer>
+
+  <!-- Order matters: data → state → speech → lessons → tasks → views → app -->
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/lessons.js"></script>
+  <script src="js/tasks.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

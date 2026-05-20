@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Čtecí ZOO – 50 zvířat (preview)</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: #F0F8FF;
+      color: #2C2C2C;
+      padding: 24px 16px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: #2C4A8A;
+    }
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 32px;
+      font-size: 0.95rem;
+    }
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .filter-bar button {
+      padding: 6px 14px;
+      border: 2px solid #90B0E0;
+      border-radius: 20px;
+      background: #fff;
+      color: #2C4A8A;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .filter-bar button.active,
+    .filter-bar button:hover {
+      background: #2C4A8A;
+      color: #fff;
+      border-color: #2C4A8A;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 16px 12px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+    .card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+    }
+    .card .name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #2C2C2C;
+      text-align: center;
+    }
+    .card .sentence {
+      font-size: 0.85rem;
+      color: #4A6080;
+      text-align: center;
+      font-style: italic;
+    }
+    .card .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: center;
+    }
+    .badge {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: #E8F0FF;
+      color: #2C4A8A;
+      font-weight: 600;
+    }
+    .badge.lvl1 { background: #D4F0D4; color: #1A6020; }
+    .badge.lvl2 { background: #FFF4C0; color: #806020; }
+    .badge.lvl3 { background: #FFE0D0; color: #802020; }
+    .hidden { display: none; }
+    .count-label {
+      text-align: center;
+      color: #888;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+    .error-banner {
+      background: #FFE0E0;
+      color: #8B0000;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin: 16px auto;
+      max-width: 600px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>🦁 Čtecí ZOO – 50 zvířat</h1>
+  <p class="subtitle">Preview obsahu · vyžaduje lokální server (python3 -m http.server 8000)</p>
+
+  <div class="filter-bar" id="filterBar">
+    <button class="active" data-filter="all">Všechna (50)</button>
+    <button data-filter="savec">Savci</button>
+    <button data-filter="ptak">Ptáci</button>
+    <button data-filter="ryba">Ryby</button>
+    <button data-filter="hmyz">Hmyz</button>
+    <button data-filter="plaz">Plazi</button>
+    <button data-filter="obojzivelnik">Obojživ.</button>
+    <button data-filter="pavoukovec">Pavouk.</button>
+    <button data-filter="mekkys">Měkkýši</button>
+    <button data-filter="lvl1">Úroveň 1</button>
+    <button data-filter="lvl2">Úroveň 2</button>
+    <button data-filter="lvl3">Úroveň 3</button>
+  </div>
+
+  <p class="count-label" id="countLabel">Zobrazeno: 50 zvířat</p>
+  <div id="errorBanner" class="error-banner hidden">⚠️ Nelze načíst manifest. Spusť přes lokální server.</div>
+  <div class="grid" id="grid"></div>
+
+  <script>
+    async function init() {
+      let animals;
+      try {
+        const res = await fetch('data/content/animals_50_seed.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        animals = data.animals;
+      } catch (e) {
+        document.getElementById('errorBanner').classList.remove('hidden');
+        return;
+      }
+
+      const grid = document.getElementById('grid');
+      animals.forEach(a => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.category = a.category;
+        card.dataset.level = `lvl${a.readingLevel}`;
+        card.innerHTML = `
+          <img src="${a.imagePath}" alt="${a.name}" loading="lazy"
+               onerror="this.style.background='#eee'; this.alt='?'">
+          <div class="name">${a.name}</div>
+          <div class="sentence">${a.sentence}</div>
+          <div class="badges">
+            <span class="badge lvl${a.readingLevel}">Úr. ${a.readingLevel}</span>
+            <span class="badge">${a.category}</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      // Filter logic
+      const filterBar = document.getElementById('filterBar');
+      const countLabel = document.getElementById('countLabel');
+      filterBar.addEventListener('click', e => {
+        const btn = e.target.closest('button');
+        if (!btn) return;
+        filterBar.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        const cards = grid.querySelectorAll('.card');
+        let visible = 0;
+        cards.forEach(card => {
+          const show = filter === 'all' ||
+            card.dataset.category === filter ||
+            card.dataset.level === filter;
+          card.classList.toggle('hidden', !show);
+          if (show) visible++;
+        });
+        countLabel.textContent = `Zobrazeno: ${visible} zvířat`;
+      });
+    }
+
+    init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Liška">
+  <circle cx="100" cy="100" r="95" fill="#FFE5D9"/>
+  <polygon points="55,70 78,95 45,100" fill="#E55C1F"/>
+  <polygon points="145,70 122,95 155,100" fill="#E55C1F"/>
+  <polygon points="60,80 72,93 55,96" fill="#2C2C2C"/>
+  <polygon points="140,80 128,93 145,96" fill="#2C2C2C"/>
+  <ellipse cx="100" cy="115" rx="55" ry="50" fill="#F47B33"/>
+  <path d="M75,130 Q100,160 125,130 Q120,150 100,150 Q80,150 75,130 Z" fill="#FFFAF2"/>
+  <ellipse cx="100" cy="138" rx="14" ry="14" fill="#FFFAF2"/>
+  <circle cx="83" cy="110" r="5" fill="#2C2C2C"/>
+  <circle cx="117" cy="110" r="5" fill="#2C2C2C"/>
+  <circle cx="84" cy="108" r="1.5" fill="#FFFFFF"/>
+  <circle cx="118" cy="108" r="1.5" fill="#FFFFFF"/>
+  <ellipse cx="100" cy="130" rx="6" ry="5" fill="#2C2C2C"/>
+  <path d="M100,135 L100,142" stroke="#2C2C2C" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M100,142 Q94,148 90,146" fill="none" stroke="#2C2C2C" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M100,142 Q106,148 110,146" fill="none" stroke="#2C2C2C" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

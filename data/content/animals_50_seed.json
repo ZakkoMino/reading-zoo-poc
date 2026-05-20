@@ -1,0 +1,809 @@
+{
+  "schema": "reading-zoo.animals.seed.v1",
+  "version": "1.0.0",
+  "language": "cs-CZ",
+  "count": 50,
+  "licenseNote": "Illustrations are original prototype SVG assets created for this project.",
+  "animals": [
+    {
+      "id": "pes",
+      "name": "Pes",
+      "category": "savec",
+      "biome": "domov",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Pes štěká.",
+      "fact": "Pes je nejlepší přítel člověka.",
+      "tags": [
+        "domaci",
+        "srst",
+        "steka"
+      ],
+      "imagePath": "assets/animals-illustrated/pes.svg"
+    },
+    {
+      "id": "kocka",
+      "name": "Kočka",
+      "category": "savec",
+      "biome": "domov",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Kočka mňouká.",
+      "fact": "Kočka má ostré drápy a vousky.",
+      "tags": [
+        "domaci",
+        "vousky",
+        "domy"
+      ],
+      "imagePath": "assets/animals-illustrated/kocka.svg"
+    },
+    {
+      "id": "lev",
+      "name": "Lev",
+      "category": "savec",
+      "biome": "savana",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Lev řve.",
+      "fact": "Lev je největší africká kočkovitá šelma.",
+      "tags": [
+        "kral",
+        "hriva",
+        "afrika"
+      ],
+      "imagePath": "assets/animals-illustrated/lev.svg"
+    },
+    {
+      "id": "sova",
+      "name": "Sova",
+      "category": "ptak",
+      "biome": "les",
+      "readingLevel": 1,
+      "wordDifficulty": 2,
+      "sentence": "Sova houkne.",
+      "fact": "Sova vidí dokonale i ve tmě.",
+      "tags": [
+        "nocni",
+        "velke-oci",
+        "les"
+      ],
+      "imagePath": "assets/animals-illustrated/sova.svg"
+    },
+    {
+      "id": "liska",
+      "name": "Liška",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Liška běží.",
+      "fact": "Liška má hustou rezavou srst.",
+      "tags": [
+        "ruda",
+        "ocas",
+        "les"
+      ],
+      "imagePath": "assets/animals-illustrated/liska.svg"
+    },
+    {
+      "id": "zebra",
+      "name": "Zebra",
+      "category": "savec",
+      "biome": "savana",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Zebra má pruhy.",
+      "fact": "Každá zebra má jedinečný vzor pruhů.",
+      "tags": [
+        "pruhy",
+        "afrika",
+        "savana"
+      ],
+      "imagePath": "assets/animals-illustrated/zebra.svg"
+    },
+    {
+      "id": "kos",
+      "name": "Kos",
+      "category": "ptak",
+      "biome": "les",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Kos zpívá.",
+      "fact": "Kos má žlutý zobák a hezky zpívá.",
+      "tags": [
+        "cerny",
+        "zobak",
+        "zpev"
+      ],
+      "imagePath": "assets/animals-illustrated/kos.svg"
+    },
+    {
+      "id": "krava",
+      "name": "Kráva",
+      "category": "savec",
+      "biome": "statek",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Kráva bučí.",
+      "fact": "Kráva nám dává mléko a smetanu.",
+      "tags": [
+        "mleko",
+        "statek",
+        "rohy"
+      ],
+      "imagePath": "assets/animals-illustrated/krava.svg"
+    },
+    {
+      "id": "kun",
+      "name": "Kůň",
+      "category": "savec",
+      "biome": "statek",
+      "readingLevel": 1,
+      "wordDifficulty": 2,
+      "sentence": "Kůň klusá.",
+      "fact": "Kůň je velmi rychlý a silný.",
+      "tags": [
+        "hriva",
+        "rychly",
+        "statek"
+      ],
+      "imagePath": "assets/animals-illustrated/kun.svg"
+    },
+    {
+      "id": "zaba",
+      "name": "Žába",
+      "category": "obojzivelnik",
+      "biome": "rybnik",
+      "readingLevel": 1,
+      "wordDifficulty": 2,
+      "sentence": "Žába skáče.",
+      "fact": "Žába umí skákat i plavat.",
+      "tags": [
+        "zelena",
+        "skace",
+        "rybnik"
+      ],
+      "imagePath": "assets/animals-illustrated/zaba.svg"
+    },
+    {
+      "id": "slon",
+      "name": "Slon",
+      "category": "savec",
+      "biome": "savana",
+      "readingLevel": 1,
+      "wordDifficulty": 2,
+      "sentence": "Slon troubí.",
+      "fact": "Slon má nejdelší nos ze všech zvířat.",
+      "tags": [
+        "chobot",
+        "velky",
+        "afrika"
+      ],
+      "imagePath": "assets/animals-illustrated/slon.svg"
+    },
+    {
+      "id": "medved",
+      "name": "Medvěd",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 2,
+      "wordDifficulty": 4,
+      "sentence": "Medvěd spí.",
+      "fact": "Medvěd v zimě hibernuje v brlohů.",
+      "tags": [
+        "velky",
+        "hnedy",
+        "les"
+      ],
+      "imagePath": "assets/animals-illustrated/medved.svg"
+    },
+    {
+      "id": "had",
+      "name": "Had",
+      "category": "plaz",
+      "biome": "les",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Had se plazí.",
+      "fact": "Had nemá nohy a pohybuje se vlněním.",
+      "tags": [
+        "plaz",
+        "jazyk",
+        "bez-noh"
+      ],
+      "imagePath": "assets/animals-illustrated/had.svg"
+    },
+    {
+      "id": "cap",
+      "name": "Cáp",
+      "category": "savec",
+      "biome": "statek",
+      "readingLevel": 1,
+      "wordDifficulty": 2,
+      "sentence": "Cáp mečí.",
+      "fact": "Cáp má rohy a hustou bradku.",
+      "tags": [
+        "kozel",
+        "rohy",
+        "bradka"
+      ],
+      "imagePath": "assets/animals-illustrated/cap.svg"
+    },
+    {
+      "id": "orel",
+      "name": "Orel",
+      "category": "ptak",
+      "biome": "hory",
+      "readingLevel": 1,
+      "wordDifficulty": 2,
+      "sentence": "Orel letí.",
+      "fact": "Orel vidí svou kořist z velké výšky.",
+      "tags": [
+        "kridla",
+        "hory",
+        "zobak"
+      ],
+      "imagePath": "assets/animals-illustrated/orel.svg"
+    },
+    {
+      "id": "vlk",
+      "name": "Vlk",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Vlk vyje.",
+      "fact": "Vlk žije v tlupě zvané smečka.",
+      "tags": [
+        "smedka",
+        "les",
+        "sedy"
+      ],
+      "imagePath": "assets/animals-illustrated/vlk.svg"
+    },
+    {
+      "id": "rys",
+      "name": "Rys",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Rys se plíží.",
+      "fact": "Rys má charakteristické chocholy na uších.",
+      "tags": [
+        "chocholy",
+        "skvrnity",
+        "les"
+      ],
+      "imagePath": "assets/animals-illustrated/rys.svg"
+    },
+    {
+      "id": "jelen",
+      "name": "Jelen",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Jelen běží.",
+      "fact": "Jelen nosí velkolepé parohy.",
+      "tags": [
+        "parohy",
+        "les",
+        "hnedy"
+      ],
+      "imagePath": "assets/animals-illustrated/jelen.svg"
+    },
+    {
+      "id": "srna",
+      "name": "Srna",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 1,
+      "wordDifficulty": 2,
+      "sentence": "Srna skáče.",
+      "fact": "Srna je samice jelena, bez parohů.",
+      "tags": [
+        "skvrny",
+        "les",
+        "fena"
+      ],
+      "imagePath": "assets/animals-illustrated/srna.svg"
+    },
+    {
+      "id": "prase",
+      "name": "Prase",
+      "category": "savec",
+      "biome": "statek",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Prase chrochtá.",
+      "fact": "Prase se rád válí v bahně.",
+      "tags": [
+        "ruzove",
+        "statek",
+        "rypak"
+      ],
+      "imagePath": "assets/animals-illustrated/prase.svg"
+    },
+    {
+      "id": "ovce",
+      "name": "Ovce",
+      "category": "savec",
+      "biome": "louka",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Ovce bečí.",
+      "fact": "Z vlny ovce se vyrábí teplé oblečení.",
+      "tags": [
+        "vlna",
+        "bila",
+        "louka"
+      ],
+      "imagePath": "assets/animals-illustrated/ovce.svg"
+    },
+    {
+      "id": "koza",
+      "name": "Koza",
+      "category": "savec",
+      "biome": "statek",
+      "readingLevel": 2,
+      "wordDifficulty": 2,
+      "sentence": "Koza mečí.",
+      "fact": "Koza dává mléko a umí lézt do kopce.",
+      "tags": [
+        "rohy",
+        "mleko",
+        "statek"
+      ],
+      "imagePath": "assets/animals-illustrated/koza.svg"
+    },
+    {
+      "id": "kohout",
+      "name": "Kohout",
+      "category": "ptak",
+      "biome": "statek",
+      "readingLevel": 2,
+      "wordDifficulty": 4,
+      "sentence": "Kohout kokrhá.",
+      "fact": "Kohout svým kokrháním oznamuje ráno.",
+      "tags": [
+        "hrebenek",
+        "pero",
+        "rano"
+      ],
+      "imagePath": "assets/animals-illustrated/kohout.svg"
+    },
+    {
+      "id": "slepice",
+      "name": "Slepice",
+      "category": "ptak",
+      "biome": "statek",
+      "readingLevel": 2,
+      "wordDifficulty": 4,
+      "sentence": "Slepice kdáká.",
+      "fact": "Slepice snáší vajíčka.",
+      "tags": [
+        "vejce",
+        "statek",
+        "kur"
+      ],
+      "imagePath": "assets/animals-illustrated/slepice.svg"
+    },
+    {
+      "id": "kachna",
+      "name": "Kachna",
+      "category": "ptak",
+      "biome": "rybnik",
+      "readingLevel": 2,
+      "wordDifficulty": 4,
+      "sentence": "Kachna kváká.",
+      "fact": "Kachna má nepromokavé peří.",
+      "tags": [
+        "zobak",
+        "rybnik",
+        "zelena-hlava"
+      ],
+      "imagePath": "assets/animals-illustrated/kachna.svg"
+    },
+    {
+      "id": "husa",
+      "name": "Husa",
+      "category": "ptak",
+      "biome": "statek",
+      "readingLevel": 2,
+      "wordDifficulty": 2,
+      "sentence": "Husa syčí.",
+      "fact": "Husa je větší než kachna a hlasitě syčí.",
+      "tags": [
+        "bila",
+        "krik",
+        "dlahy"
+      ],
+      "imagePath": "assets/animals-illustrated/husa.svg"
+    },
+    {
+      "id": "kralik",
+      "name": "Králík",
+      "category": "savec",
+      "biome": "louka",
+      "readingLevel": 2,
+      "wordDifficulty": 4,
+      "sentence": "Králík skáče.",
+      "fact": "Králík má dlouhé uši a rád žere mrkev.",
+      "tags": [
+        "usi",
+        "bila",
+        "mrkev"
+      ],
+      "imagePath": "assets/animals-illustrated/kralik.svg"
+    },
+    {
+      "id": "mys",
+      "name": "Myš",
+      "category": "savec",
+      "biome": "domov",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Myš pípá.",
+      "fact": "Myš je malá a velmi rychlá.",
+      "tags": [
+        "mala",
+        "ocas",
+        "seda"
+      ],
+      "imagePath": "assets/animals-illustrated/mys.svg"
+    },
+    {
+      "id": "krysa",
+      "name": "Krysa",
+      "category": "savec",
+      "biome": "domov",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Krysa leze.",
+      "fact": "Krysa je chytrá a dobře se přizpůsobuje.",
+      "tags": [
+        "seda",
+        "ocas",
+        "chytra"
+      ],
+      "imagePath": "assets/animals-illustrated/krysa.svg"
+    },
+    {
+      "id": "tygr",
+      "name": "Tygr",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 1,
+      "wordDifficulty": 2,
+      "sentence": "Tygr řve.",
+      "fact": "Tygr má pruhovanou srst a je velmi rychlý.",
+      "tags": [
+        "pruhy",
+        "oranzovy",
+        "asie"
+      ],
+      "imagePath": "assets/animals-illustrated/tygr.svg"
+    },
+    {
+      "id": "opice",
+      "name": "Opice",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Opice skáče.",
+      "fact": "Opice umí používat nástroje.",
+      "tags": [
+        "stromy",
+        "ocas",
+        "chytra"
+      ],
+      "imagePath": "assets/animals-illustrated/opice.svg"
+    },
+    {
+      "id": "zirafa",
+      "name": "Žirafa",
+      "category": "savec",
+      "biome": "savana",
+      "readingLevel": 2,
+      "wordDifficulty": 4,
+      "sentence": "Žirafa žere listí.",
+      "fact": "Žirafa je nejvyšší zvíře na světě.",
+      "tags": [
+        "krk",
+        "skvrny",
+        "vysoky"
+      ],
+      "imagePath": "assets/animals-illustrated/zirafa.svg"
+    },
+    {
+      "id": "velbloud",
+      "name": "Velbloud",
+      "category": "savec",
+      "biome": "poust",
+      "readingLevel": 3,
+      "wordDifficulty": 5,
+      "sentence": "Velbloud kráčí.",
+      "fact": "Velbloud vydrží dlouho bez vody.",
+      "tags": [
+        "hrb",
+        "poust",
+        "voda"
+      ],
+      "imagePath": "assets/animals-illustrated/velbloud.svg"
+    },
+    {
+      "id": "tucnak",
+      "name": "Tučňák",
+      "category": "ptak",
+      "biome": "ocean",
+      "readingLevel": 2,
+      "wordDifficulty": 4,
+      "sentence": "Tučňák plave.",
+      "fact": "Tučňák neumí létat, ale skvěle plave.",
+      "tags": [
+        "led",
+        "smoki",
+        "plava"
+      ],
+      "imagePath": "assets/animals-illustrated/tucnak.svg"
+    },
+    {
+      "id": "tulen",
+      "name": "Tuleň",
+      "category": "savec",
+      "biome": "ocean",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Tuleň plave.",
+      "fact": "Tuleň je výborný plavec a potápěč.",
+      "tags": [
+        "ploutve",
+        "vousky",
+        "more"
+      ],
+      "imagePath": "assets/animals-illustrated/tulen.svg"
+    },
+    {
+      "id": "delfin",
+      "name": "Delfín",
+      "category": "savec",
+      "biome": "ocean",
+      "readingLevel": 2,
+      "wordDifficulty": 4,
+      "sentence": "Delfín skáče.",
+      "fact": "Delfín je velmi inteligentní mořský savec.",
+      "tags": [
+        "more",
+        "pluta",
+        "chytry"
+      ],
+      "imagePath": "assets/animals-illustrated/delfin.svg"
+    },
+    {
+      "id": "velryba",
+      "name": "Velryba",
+      "category": "savec",
+      "biome": "ocean",
+      "readingLevel": 3,
+      "wordDifficulty": 5,
+      "sentence": "Velryba plave.",
+      "fact": "Velryba je největší zvíře na Zemi.",
+      "tags": [
+        "velka",
+        "more",
+        "vodotrysk"
+      ],
+      "imagePath": "assets/animals-illustrated/velryba.svg"
+    },
+    {
+      "id": "zelva",
+      "name": "Želva",
+      "category": "plaz",
+      "biome": "rybnik",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Želva leze.",
+      "fact": "Želva může žít přes sto let.",
+      "tags": [
+        "ulita",
+        "pomala",
+        "stara"
+      ],
+      "imagePath": "assets/animals-illustrated/zelva.svg"
+    },
+    {
+      "id": "ryba",
+      "name": "Ryba",
+      "category": "ryba",
+      "biome": "reka",
+      "readingLevel": 1,
+      "wordDifficulty": 2,
+      "sentence": "Ryba plave.",
+      "fact": "Ryba dýchá žábrami pod vodou.",
+      "tags": [
+        "pluta",
+        "skrupule",
+        "voda"
+      ],
+      "imagePath": "assets/animals-illustrated/ryba.svg"
+    },
+    {
+      "id": "kapr",
+      "name": "Kapr",
+      "category": "ryba",
+      "biome": "rybnik",
+      "readingLevel": 1,
+      "wordDifficulty": 2,
+      "sentence": "Kapr plave.",
+      "fact": "Kapr žije v řekách a rybnících.",
+      "tags": [
+        "zlaty",
+        "rybnik",
+        "vousky"
+      ],
+      "imagePath": "assets/animals-illustrated/kapr.svg"
+    },
+    {
+      "id": "cmelak",
+      "name": "Čmelák",
+      "category": "hmyz",
+      "biome": "louka",
+      "readingLevel": 2,
+      "wordDifficulty": 4,
+      "sentence": "Čmelák bzučí.",
+      "fact": "Čmelák opyluje květiny a vyrábí med.",
+      "tags": [
+        "kridla",
+        "med",
+        "louka"
+      ],
+      "imagePath": "assets/animals-illustrated/cmelak.svg"
+    },
+    {
+      "id": "vcela",
+      "name": "Včela",
+      "category": "hmyz",
+      "biome": "louka",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Včela sbírá med.",
+      "fact": "Včely žijí v úlech a vyrábějí med.",
+      "tags": [
+        "med",
+        "ul",
+        "kridla"
+      ],
+      "imagePath": "assets/animals-illustrated/vcela.svg"
+    },
+    {
+      "id": "mravenec",
+      "name": "Mravenec",
+      "category": "hmyz",
+      "biome": "les",
+      "readingLevel": 3,
+      "wordDifficulty": 5,
+      "sentence": "Mravenec nese zrno.",
+      "fact": "Mravenec je jeden z nejsilnějších živočichů.",
+      "tags": [
+        "silny",
+        "tykadla",
+        "clanek"
+      ],
+      "imagePath": "assets/animals-illustrated/mravenec.svg"
+    },
+    {
+      "id": "motyl",
+      "name": "Motýl",
+      "category": "hmyz",
+      "biome": "louka",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Motýl letí.",
+      "fact": "Motýl vychází z kukly.",
+      "tags": [
+        "kridla",
+        "pestry",
+        "louka"
+      ],
+      "imagePath": "assets/animals-illustrated/motyl.svg"
+    },
+    {
+      "id": "moucha",
+      "name": "Moucha",
+      "category": "hmyz",
+      "biome": "domov",
+      "readingLevel": 2,
+      "wordDifficulty": 4,
+      "sentence": "Moucha bzučí.",
+      "fact": "Moucha mává křídly 200krát za sekundu.",
+      "tags": [
+        "kridla",
+        "oci",
+        "rychla"
+      ],
+      "imagePath": "assets/animals-illustrated/moucha.svg"
+    },
+    {
+      "id": "pavouk",
+      "name": "Pavouk",
+      "category": "pavoukovec",
+      "biome": "domov",
+      "readingLevel": 2,
+      "wordDifficulty": 4,
+      "sentence": "Pavouk tká síť.",
+      "fact": "Pavouk tká pavučinu, která je velmi pevná.",
+      "tags": [
+        "8-noh",
+        "pavucina",
+        "temny"
+      ],
+      "imagePath": "assets/animals-illustrated/pavouk.svg"
+    },
+    {
+      "id": "snek",
+      "name": "Šnek",
+      "category": "mekkys",
+      "biome": "louka",
+      "readingLevel": 1,
+      "wordDifficulty": 2,
+      "sentence": "Šnek leze.",
+      "fact": "Šnek nosí svůj dům na zádech.",
+      "tags": [
+        "ulita",
+        "pomaly",
+        "sliz"
+      ],
+      "imagePath": "assets/animals-illustrated/snek.svg"
+    },
+    {
+      "id": "jezek",
+      "name": "Ježek",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Ježek se krčí.",
+      "fact": "Ježek se brání tím, že se stočí do klubíčka.",
+      "tags": [
+        "trny",
+        "les",
+        "nocni"
+      ],
+      "imagePath": "assets/animals-illustrated/jezek.svg"
+    },
+    {
+      "id": "bobr",
+      "name": "Bobr",
+      "category": "savec",
+      "biome": "reka",
+      "readingLevel": 1,
+      "wordDifficulty": 2,
+      "sentence": "Bobr staví hráz.",
+      "fact": "Bobr staví hráze z větví a bláta.",
+      "tags": [
+        "hraz",
+        "ocas",
+        "zuby"
+      ],
+      "imagePath": "assets/animals-illustrated/bobr.svg"
+    },
+    {
+      "id": "vydra",
+      "name": "Vydra",
+      "category": "savec",
+      "biome": "reka",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Vydra loví.",
+      "fact": "Vydra je výborný plavec a loví ryby.",
+      "tags": [
+        "voda",
+        "ryby",
+        "vousky"
+      ],
+      "imagePath": "assets/animals-illustrated/vydra.svg"
+    }
+  ]
+}
