@@ -69,6 +69,7 @@
       const hasAnimal = !!item.animalId;
       const animal = hasAnimal ? getAnimal(item.animalId) : null;
 
+      let confirmed = false;
       const card = el('div', { class: 'task task-read' }, [
         el('p', { class: 'task-prompt', text: 'Přečti nahlas:' }),
         el('div', { class: 'big-word', text: item.text, lang: 'cs' }),
@@ -77,7 +78,14 @@
         el('div', { class: 'task-actions' }, [
           el('button', {
             class: 'btn btn-primary btn-large',
-            on: { click: () => resolve({ correct: true }) }
+            on: {
+              click: () => {
+                if (confirmed) return;
+                confirmed = true;
+                try { speak(item.text); } catch (e) { console.warn('speak failed', e); }
+                resolve({ correct: true });
+              }
+            }
           }, [el('span', { text: 'Přečetl/a jsem ✓' })])
         ])
       ]);
@@ -146,29 +154,24 @@
     });
   }
 
-  /* ---------- task: compose (click-to-place letters / sentence words) ---------- */
-  function compose(item, mount) {
+  /* ---------- internal: compose single word from its letters ---------- */
+  function composeWord(target, mount) {
     return new Promise((resolve) => {
       clear(mount);
-      const target = item.text;
-      const isSentence = / |\./.test(target);
-      const pieces = isSentence ? target.trim().split(/\s+/) : target.split('');
-      let scrambled = shuffle(pieces);
-      // Avoid the (small) chance of the scramble matching the original.
-      if (scrambled.join(isSentence ? ' ' : '') === target && pieces.length > 1) {
+      const pieces = target.split('');
+      let scrambled = shuffle(pieces.slice());
+      if (scrambled.join('') === target && pieces.length > 1) {
         [scrambled[0], scrambled[1]] = [scrambled[1], scrambled[0]];
       }
-      const slots = pieces.map(() => null);   // chosen piece per slot
+      const slots = pieces.map(() => null);
       const tileUsed = scrambled.map(() => false);
       let tries = 0;
 
-      const slotsRow = el('div', { class: 'slots-row' + (isSentence ? ' slots-row-words' : '') });
-      const tilesRow = el('div', { class: 'tiles-row' + (isSentence ? ' tiles-row-words' : '') });
+      const slotsRow = el('div', { class: 'slots-row' });
+      const tilesRow = el('div', { class: 'tiles-row' });
       const hint = el('p', { class: 'task-hint hidden' });
 
-      function assembledText() {
-        return slots.slice(0, pieces.length).join(isSentence ? ' ' : '');
-      }
+      function assembledText() { return slots.slice(0, pieces.length).join(''); }
 
       function clearSlots() {
         for (let i = 0; i < slots.length; i++) {
@@ -185,13 +188,12 @@
         clear(slotsRow);
         slots.forEach((piece, i) => {
           const slot = el('button', {
-            class: 'slot' + (isSentence ? ' slot-word' : '') + (piece ? ' slot-filled' : ''),
+            class: 'slot' + (piece ? ' slot-filled' : ''),
             text: piece || '',
             'aria-label': piece ? `Vybráno ${piece}` : 'Prázdné místo',
             on: {
               click: () => {
                 if (slots[i] != null) {
-                  // Return the piece to its origin tile.
                   const tileIdx = slots[i + '_tileIdx'];
                   if (tileIdx != null) tileUsed[tileIdx] = false;
                   slots[i] = null;
@@ -207,8 +209,9 @@
         clear(tilesRow);
         scrambled.forEach((piece, i) => {
           const tile = el('button', {
-            class: 'tile' + (isSentence ? ' tile-word' : '') + (tileUsed[i] ? ' tile-used' : ''),
+            class: 'tile' + (tileUsed[i] ? ' tile-used' : ''),
             text: piece,
+            'aria-label': `Písmeno ${piece}`,
             disabled: tileUsed[i],
             on: {
               click: () => {
@@ -239,7 +242,7 @@
           Array.from(slotsRow.children).forEach((c) => c.classList.add('slot-wrong'));
           hint.classList.remove('hidden');
           hint.textContent = tries >= 2
-            ? (isSentence ? `Správně je: ${target}` : `Správně se píše: ${target}.`)
+            ? `Správně se píše: ${target}.`
             : 'Zkus to ještě jednou.';
           setTimeout(() => {
             clearSlots();
@@ -250,13 +253,13 @@
       }
 
       const card = el('div', { class: 'task task-compose' }, [
-        el('p', { class: 'task-prompt', text: isSentence ? 'Nejdřív si poslechni větu. Potom ji slož ze slov:' : 'Nejdřív si poslechni slovo. Potom ho slož z písmen:' }),
+        el('p', { class: 'task-prompt', text: 'Nejdřív si poslechni slovo. Potom ho slož z písmen:' }),
         el('div', { class: 'task-actions task-actions-compact' }, [
           el('button', {
             class: 'btn btn-secondary btn-icon',
-            'aria-label': isSentence ? 'Přečíst větu' : 'Přečíst slovo',
+            'aria-label': 'Přečíst slovo',
             on: { click: () => speak(target) }
-          }, [el('span', { text: isSentence ? '🔊 Přečíst větu' : '🔊 Přečíst slovo' })])
+          }, [el('span', { text: '🔊 Přečíst slovo' })])
         ]),
         slotsRow,
         tilesRow,
@@ -267,6 +270,222 @@
       render();
       setTimeout(() => speak(target), 250);
     });
+  }
+
+  /* ---------- internal: compose sentence word-by-word, each word letter-by-letter ---------- */
+  function composeSentence(item, mount) {
+    return new Promise((resolve) => {
+      clear(mount);
+      const target = item.text;
+
+      // Extract composable words: strip punctuation, lowercase
+      const wordData = target.trim().split(/\s+/).map((raw) => ({
+        raw,
+        letters: raw.replace(/[^a-záčďéěíňóřšťúůýžA-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]/g, '').toLowerCase()
+      })).filter((w) => w.letters.length > 0);
+
+      // Only handle 2–3 word sentences; longer ones shown read-only
+      if (wordData.length < 2 || wordData.length > 3) {
+        const card = el('div', { class: 'task task-compose' }, [
+          el('p', { class: 'task-prompt', text: 'Přečti větu:' }),
+          el('div', { class: 'big-word', text: target, lang: 'cs' }),
+          el('div', { class: 'task-actions task-actions-compact' }, [
+            el('button', {
+              class: 'btn btn-secondary btn-icon',
+              'aria-label': 'Přečíst větu',
+              on: { click: () => speak(target) }
+            }, [el('span', { text: '🔊 Přečíst větu' })])
+          ]),
+          el('div', { class: 'task-actions' }, [
+            el('button', {
+              class: 'btn btn-primary',
+              on: { click: () => resolve({ correct: true }) }
+            }, [el('span', { text: 'Pokračovat ▶' })])
+          ])
+        ]);
+        mount.appendChild(card);
+        setTimeout(() => speak(target), 250);
+        return;
+      }
+
+      // Per-word state: tiles = word letters + 2 distractors (shuffled), slots = indices into tiles
+      const wordStates = wordData.map((wd) => {
+        const letterArr = wd.letters.split('');
+        const distractors = pickDistractorLetters(null, wd.letters, 2);
+        const tiles = shuffle([...letterArr, ...distractors]).map((letter) => ({ letter, used: false }));
+        return { letters: wd.letters, tiles, slots: letterArr.map(() => null), solved: false };
+      });
+
+      let currentWordIdx = 0;
+      let tries = 0;
+
+      const wordsRow = el('div', {
+        class: 'sentence-words-row',
+        role: 'group',
+        'aria-label': 'Skupiny písmen pro větu'
+      });
+      const bankRow = el('div', { class: 'sentence-letter-bank tiles-row' });
+      const hint = el('p', { class: 'task-hint hidden' });
+
+      const groupEls = wordStates.map((ws, wIdx) =>
+        el('div', {
+          class: 'word-group',
+          role: 'group',
+          'aria-label': `Slovo ${wIdx + 1} z ${wordStates.length}`
+        })
+      );
+      groupEls.forEach((g) => wordsRow.appendChild(g));
+
+      function renderGroup(wIdx) {
+        const ws = wordStates[wIdx];
+        const groupEl = groupEls[wIdx];
+        clear(groupEl);
+        const isActive = wIdx === currentWordIdx && !ws.solved;
+        const isDone = ws.solved;
+        const isPending = !isDone && wIdx > currentWordIdx;
+        groupEl.className = ['word-group',
+          isActive ? 'word-group-active' : '',
+          isDone    ? 'word-group-done'   : '',
+          isPending ? 'word-group-pending' : ''
+        ].filter(Boolean).join(' ');
+        groupEl.setAttribute('aria-label',
+          `Slovo ${wIdx + 1} z ${wordStates.length}` +
+          (isDone ? ' – hotovo' : isActive ? ' – aktivní' : '')
+        );
+
+        const slotsEl = el('div', { class: 'word-slots-row' });
+        ws.letters.split('').forEach((correctLetter, slotIdx) => {
+          const tileIdx = ws.slots[slotIdx];
+          const filled = tileIdx !== null;
+          // When solved always show correct letter; otherwise show placed letter or empty
+          const displayLetter = isDone
+            ? correctLetter
+            : (filled ? ws.tiles[tileIdx].letter : '');
+          const slotEl = el('button', {
+            class: 'slot' +
+              (filled || isDone ? ' slot-filled' : '') +
+              (isDone ? ' slot-correct' : ''),
+            text: displayLetter,
+            'aria-label': displayLetter
+              ? `Vyplněno: ${displayLetter}`
+              : `Prázdné místo ${slotIdx + 1}`,
+            disabled: !isActive || isDone
+          });
+          if (isActive && filled) {
+            slotEl.addEventListener('click', () => {
+              ws.tiles[ws.slots[slotIdx]].used = false;
+              ws.slots[slotIdx] = null;
+              renderGroup(wIdx);
+              renderBank();
+            });
+          }
+          slotsEl.appendChild(slotEl);
+        });
+        groupEl.appendChild(slotsEl);
+      }
+
+      function renderBank() {
+        clear(bankRow);
+        if (currentWordIdx >= wordStates.length) return;
+        const ws = wordStates[currentWordIdx];
+        if (ws.solved) return;
+        ws.tiles.forEach((tile, tIdx) => {
+          const tileEl = el('button', {
+            class: 'tile' + (tile.used ? ' tile-used' : ''),
+            text: tile.letter,
+            'aria-label': `Písmeno ${tile.letter}`,
+            disabled: tile.used,
+            on: {
+              click: () => {
+                if (tile.used) return;
+                const ws2 = wordStates[currentWordIdx];
+                const firstEmpty = ws2.slots.indexOf(null);
+                if (firstEmpty === -1) return;
+                ws2.slots[firstEmpty] = tIdx;
+                tile.used = true;
+                renderGroup(currentWordIdx);
+                renderBank();
+                maybeCheckWord();
+              }
+            }
+          });
+          bankRow.appendChild(tileEl);
+        });
+      }
+
+      function advanceOrFinish(correct) {
+        hint.classList.add('hidden');
+        if (currentWordIdx < wordStates.length - 1) {
+          currentWordIdx += 1;
+          renderGroup(currentWordIdx);
+          renderBank();
+        } else {
+          if (correct) {
+            speak(target);
+            setTimeout(() => resolve({ correct: tries === 0 }), 700);
+          } else {
+            setTimeout(() => resolve({ correct: false }), 900);
+          }
+        }
+      }
+
+      function maybeCheckWord() {
+        const ws = wordStates[currentWordIdx];
+        if (ws.slots.some((s) => s === null)) return;
+        const assembled = ws.slots.map((ti) => ws.tiles[ti].letter).join('');
+        if (assembled === ws.letters) {
+          ws.solved = true;
+          renderGroup(currentWordIdx);
+          setTimeout(() => advanceOrFinish(true), 400);
+        } else {
+          tries += 1;
+          Array.from(groupEls[currentWordIdx].querySelectorAll('.slot'))
+            .forEach((s) => s.classList.add('slot-wrong'));
+          hint.classList.remove('hidden');
+          hint.textContent = tries >= 2
+            ? `Toto slovo: „${ws.letters}"`
+            : 'Zkus to ještě jednou.';
+          setTimeout(() => {
+            ws.slots.forEach((_, i) => { ws.slots[i] = null; });
+            ws.tiles.forEach((t) => { t.used = false; });
+            if (tries >= 2) {
+              ws.solved = true;
+              renderGroup(currentWordIdx);
+              setTimeout(() => advanceOrFinish(false), 600);
+            } else {
+              renderGroup(currentWordIdx);
+              renderBank();
+            }
+          }, 900);
+        }
+      }
+
+      const card = el('div', { class: 'task task-compose task-compose-sentence' }, [
+        el('p', { class: 'task-prompt', text: 'Nejdřív si poslechni větu. Potom ji slož z písmen:' }),
+        el('div', { class: 'task-actions task-actions-compact' }, [
+          el('button', {
+            class: 'btn btn-secondary btn-icon',
+            'aria-label': 'Přečíst větu',
+            on: { click: () => speak(target) }
+          }, [el('span', { text: '🔊 Přečíst větu' })])
+        ]),
+        wordsRow,
+        bankRow,
+        hint
+      ]);
+
+      mount.appendChild(card);
+      for (let i = 0; i < wordStates.length; i++) renderGroup(i);
+      renderBank();
+      setTimeout(() => speak(target), 250);
+    });
+  }
+
+  /* ---------- task: compose — dispatches word vs. sentence ---------- */
+  function compose(item, mount) {
+    const isSentence = / /.test(item.text.trim());
+    if (isSentence) return composeSentence(item, mount);
+    return composeWord(item.text, mount);
   }
 
   /* ---------- task: fill (missing letter) ---------- */

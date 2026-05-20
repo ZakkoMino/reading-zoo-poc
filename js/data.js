@@ -123,12 +123,13 @@
 
   /* ---------- mapper: seed JSON → runtime model ---------- */
   const SEED_LEVEL_MAP = {
-    L1_short:         { id: 'short',          label: 'Krátká slova' },
-    L2_simple:        { id: 'simple',         label: 'Jednoduchá slova' },
-    L3_animals:       { id: 'animals',        label: 'Zvířátka' },
-    L4_nature:        { id: 'nature',         label: 'Příroda' },
-    L5_home_school:   { id: 'home_school',    label: 'Doma a ve škole' },
-    L6_actions_traits:{ id: 'actions_traits', label: 'Děje a vlastnosti' }
+    L1_short:         { id: 'short',            label: 'Krátká slova' },
+    L2_simple:        { id: 'simple',           label: 'Jednoduchá slova' },
+    L3_animals:       { id: 'animals',          label: 'Zvířátka' },
+    L4_nature:        { id: 'nature',           label: 'Příroda' },
+    L5_home_school:   { id: 'home_school',      label: 'Doma a ve škole' },
+    L6_actions_traits:{ id: 'actions_traits',   label: 'Děje a vlastnosti' },
+    L7_sentences:     { id: 'world_sentences',  label: 'Věty o světě kolem nás' }
   };
 
   function mapSeed(vocab, animalsDoc) {

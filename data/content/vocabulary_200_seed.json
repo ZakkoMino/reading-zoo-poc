@@ -1,7 +1,7 @@
 {
   "schema": "reading-zoo.vocabulary.seed.v1",
   "language": "cs-CZ",
-  "count": 200,
+  "count": 290,
   "purpose": "Seed slovní zásoby pro MVP Čtecí ZOO; vyžaduje pedagogickou kontrolu před produkcí.",
   "levels": [
     {
@@ -25,20 +25,26 @@
     {
       "id": "L4_nature",
       "label": "Příroda",
-      "count": 30,
+      "count": 56,
       "note": "Slova z přírody, vhodná pro krátké věty a tematické lekce."
     },
     {
       "id": "L5_home_school",
       "label": "Domov, rodina a škola",
-      "count": 25,
+      "count": 37,
       "note": "Slova z každodenního života dítěte."
     },
     {
       "id": "L6_actions_traits",
       "label": "Děje a vlastnosti",
-      "count": 25,
+      "count": 37,
       "note": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "L7_sentences",
+      "label": "Věty o světě kolem nás",
+      "count": 40,
+      "note": "Krátké věty 2–3 slova pro 1.–2. třídu: příroda, rodina, škola, roční období."
     }
   ],
   "entries": [
@@ -2041,6 +2047,906 @@
       "isAnimal": false,
       "supportsZooReward": false,
       "notes": "Slovesa a přídavná jména pro tvorbu vět."
+    },
+    {
+      "id": "w201_dub",
+      "text": "dub",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Listnatý strom, typický pro českou krajinu."
+    },
+    {
+      "id": "w202_lipa",
+      "text": "lípa",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Národní strom Čechů, voní."
+    },
+    {
+      "id": "w203_briza",
+      "text": "bříza",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Strom s bílou kůrou."
+    },
+    {
+      "id": "w204_borovice",
+      "text": "borovice",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Jehličnatý strom."
+    },
+    {
+      "id": "w205_jaro",
+      "text": "jaro",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Roční období po zimě."
+    },
+    {
+      "id": "w206_leto",
+      "text": "léto",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Nejteplejší roční období."
+    },
+    {
+      "id": "w207_podzim",
+      "text": "podzim",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Roční období, listí padá."
+    },
+    {
+      "id": "w208_zima",
+      "text": "zima",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Nejstudenější roční období."
+    },
+    {
+      "id": "w209_jetel",
+      "text": "jetel",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Trávinná rostlina s lístky."
+    },
+    {
+      "id": "w210_fialka",
+      "text": "fialka",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Malá fialová jarní kytička."
+    },
+    {
+      "id": "w211_sipek",
+      "text": "šípek",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Červený plod šípkové růže."
+    },
+    {
+      "id": "w212_tresen",
+      "text": "třešeň",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Strom s červenými plody."
+    },
+    {
+      "id": "w213_jablon",
+      "text": "jabloň",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Strom s jablky."
+    },
+    {
+      "id": "w214_ptacek",
+      "text": "ptáček",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Malý pták."
+    },
+    {
+      "id": "w215_potok",
+      "text": "potok",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Malá řeka v přírodě."
+    },
+    {
+      "id": "w216_led",
+      "text": "led",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Zmrzlá voda."
+    },
+    {
+      "id": "w217_slunicko",
+      "text": "sluníčko",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Zdrobnělina od slunce."
+    },
+    {
+      "id": "w218_vrba",
+      "text": "vrba",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Strom u vody s převisem."
+    },
+    {
+      "id": "w219_smrk",
+      "text": "smrk",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Jehličnatý vánoční strom."
+    },
+    {
+      "id": "w220_boruvka",
+      "text": "borůvka",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Malý modrý lesní plod."
+    },
+    {
+      "id": "w221_svestka",
+      "text": "švestka",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Tmavý ovoce ze stromu."
+    },
+    {
+      "id": "w222_kapradi",
+      "text": "kapradí",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Zelená lesní rostlina."
+    },
+    {
+      "id": "w223_louze",
+      "text": "louže",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Voda na zemi po dešti."
+    },
+    {
+      "id": "w224_bourka",
+      "text": "bouřka",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Silný déšť s blesky."
+    },
+    {
+      "id": "w225_mlha",
+      "text": "mlha",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Hustá pára u země."
+    },
+    {
+      "id": "w226_mraz",
+      "text": "mráz",
+      "level": "L4_nature",
+      "category": "Příroda",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Silný chlad pod nulou."
+    },
+    {
+      "id": "w227_kuchyne",
+      "text": "kuchyně",
+      "level": "L5_home_school",
+      "category": "Domov a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Místnost pro vaření."
+    },
+    {
+      "id": "w228_loznice",
+      "text": "ložnice",
+      "level": "L5_home_school",
+      "category": "Domov a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Místnost pro spaní."
+    },
+    {
+      "id": "w229_obyvak",
+      "text": "obývák",
+      "level": "L5_home_school",
+      "category": "Domov a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Hlavní místnost v bytě."
+    },
+    {
+      "id": "w230_koupelna",
+      "text": "koupelna",
+      "level": "L5_home_school",
+      "category": "Domov a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Místnost pro mytí."
+    },
+    {
+      "id": "w231_teta",
+      "text": "teta",
+      "level": "L5_home_school",
+      "category": "Domov a škola",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Sestra maminky nebo tatínka."
+    },
+    {
+      "id": "w232_stryjc",
+      "text": "strýc",
+      "level": "L5_home_school",
+      "category": "Domov a škola",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Bratr maminky nebo tatínka."
+    },
+    {
+      "id": "w233_guma",
+      "text": "guma",
+      "level": "L5_home_school",
+      "category": "Domov a škola",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Mazák na chyby."
+    },
+    {
+      "id": "w234_pravitko",
+      "text": "pravítko",
+      "level": "L5_home_school",
+      "category": "Domov a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Pomůcka na rovné čáry."
+    },
+    {
+      "id": "w235_krida",
+      "text": "křída",
+      "level": "L5_home_school",
+      "category": "Domov a škola",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Píše se s ní na tabuli."
+    },
+    {
+      "id": "w236_penal",
+      "text": "penál",
+      "level": "L5_home_school",
+      "category": "Domov a škola",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Pouzdro na pastelky a tužky."
+    },
+    {
+      "id": "w237_hriste",
+      "text": "hřiště",
+      "level": "L5_home_school",
+      "category": "Domov a škola",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Místo pro hru venku."
+    },
+    {
+      "id": "w238_satna",
+      "text": "šatna",
+      "level": "L5_home_school",
+      "category": "Domov a škola",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Místnost pro oblečení ve škole."
+    },
+    {
+      "id": "w239_leze",
+      "text": "leze",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Pohyb po čtyřech nebo po žebříku."
+    },
+    {
+      "id": "w240_roste",
+      "text": "roste",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Zvětšuje se, jako rostlina."
+    },
+    {
+      "id": "w241_kvete",
+      "text": "kvete",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Má květ, jako strom na jaře."
+    },
+    {
+      "id": "w242_prsi",
+      "text": "prší",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Z nebe padají kapky."
+    },
+    {
+      "id": "w243_snezi",
+      "text": "sněží",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Z nebe padají sněhové vločky."
+    },
+    {
+      "id": "w244_sviti",
+      "text": "svítí",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Vydává světlo, jako slunce."
+    },
+    {
+      "id": "w245_voni",
+      "text": "voní",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Má příjemnou vůni."
+    },
+    {
+      "id": "w246_fouka",
+      "text": "fouká",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Vítr fouká. Nebo fouká svíčku."
+    },
+    {
+      "id": "w247_teplo",
+      "text": "teplý",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Má vysokou teplotu."
+    },
+    {
+      "id": "w248_studeny",
+      "text": "studený",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Má nízkou teplotu."
+    },
+    {
+      "id": "w249_sladky",
+      "text": "sladký",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Chutná jako cukr."
+    },
+    {
+      "id": "w250_kysely",
+      "text": "kyselý",
+      "level": "L6_actions_traits",
+      "category": "Děje a vlastnosti",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Chutná jako citron."
+    },
+    {
+      "id": "s001_lipa_kvete",
+      "text": "Lípa kvete.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Přírodní věta, 2 slova."
+    },
+    {
+      "id": "s002_dub_roste",
+      "text": "Dub roste.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Přírodní věta, 2 slova."
+    },
+    {
+      "id": "s003_slunce_sviti",
+      "text": "Slunce svítí.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Počasí, 2 slova."
+    },
+    {
+      "id": "s004_venku_prsi",
+      "text": "Venku prší.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Počasí, 2 slova."
+    },
+    {
+      "id": "s005_venku_snezi",
+      "text": "Venku sněží.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Počasí, 2 slova."
+    },
+    {
+      "id": "s006_fouka_vitr",
+      "text": "Fouká vítr.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Počasí, 2 slova."
+    },
+    {
+      "id": "s007_bourka_hrmi",
+      "text": "Bouřka hřmí.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Počasí, 2 slova."
+    },
+    {
+      "id": "s008_prislo_jaro",
+      "text": "Přišlo jaro.",
+      "level": "L7_sentences",
+      "category": "Věty o ročních obdobích",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Roční období, 2 slova."
+    },
+    {
+      "id": "s009_je_leto",
+      "text": "Je léto.",
+      "level": "L7_sentences",
+      "category": "Věty o ročních obdobích",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Roční období, 2 slova."
+    },
+    {
+      "id": "s010_podzim_prisel",
+      "text": "Podzim přišel.",
+      "level": "L7_sentences",
+      "category": "Věty o ročních obdobích",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Roční období, 2 slova."
+    },
+    {
+      "id": "s011_je_zima",
+      "text": "Je zima.",
+      "level": "L7_sentences",
+      "category": "Věty o ročních obdobích",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Roční období / chladno, 2 slova."
+    },
+    {
+      "id": "s012_kvet_voni",
+      "text": "Květ voní.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Přírodní věta, 2 slova."
+    },
+    {
+      "id": "s013_houba_roste",
+      "text": "Houba roste.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Přírodní věta, 2 slova."
+    },
+    {
+      "id": "s014_jahody_rostou",
+      "text": "Jahody rostou.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Přírodní věta, 2 slova."
+    },
+    {
+      "id": "s015_sneh_pada",
+      "text": "Sníh padá.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Příroda, 2 slova."
+    },
+    {
+      "id": "s016_listi_pada",
+      "text": "Listí padá.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Podzim, 2 slova."
+    },
+    {
+      "id": "s017_briza_kvete",
+      "text": "Bříza kvete.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Příroda, 2 slova."
+    },
+    {
+      "id": "s018_slunce_hreje",
+      "text": "Slunce hřeje.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Příroda, 2 slova."
+    },
+    {
+      "id": "s019_mama_cte",
+      "text": "Máma čte.",
+      "level": "L7_sentences",
+      "category": "Věty o rodině",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Rodina, 2 slova."
+    },
+    {
+      "id": "s020_tata_vari",
+      "text": "Táta vaří.",
+      "level": "L7_sentences",
+      "category": "Věty o rodině",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Rodina, 2 slova."
+    },
+    {
+      "id": "s021_sestra_spi",
+      "text": "Sestra spí.",
+      "level": "L7_sentences",
+      "category": "Věty o rodině",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Rodina, 2 slova."
+    },
+    {
+      "id": "s022_bratr_bezi",
+      "text": "Bratr běží.",
+      "level": "L7_sentences",
+      "category": "Věty o rodině",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Rodina, 2 slova."
+    },
+    {
+      "id": "s023_babicka_plete",
+      "text": "Babička plete.",
+      "level": "L7_sentences",
+      "category": "Věty o rodině",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Rodina, 2 slova."
+    },
+    {
+      "id": "s024_deda_sazi",
+      "text": "Děda sází.",
+      "level": "L7_sentences",
+      "category": "Věty o rodině",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Rodina, 2 slova."
+    },
+    {
+      "id": "s025_mama_vari",
+      "text": "Máma vaří.",
+      "level": "L7_sentences",
+      "category": "Věty o rodině",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Rodina, 2 slova."
+    },
+    {
+      "id": "s026_tata_cte",
+      "text": "Táta čte.",
+      "level": "L7_sentences",
+      "category": "Věty o rodině",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Rodina, 2 slova."
+    },
+    {
+      "id": "s027_ctu_knizku",
+      "text": "Čtu knížku.",
+      "level": "L7_sentences",
+      "category": "Věty o škole",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Škola, 2 slova."
+    },
+    {
+      "id": "s028_pisu_ukol",
+      "text": "Píšu úkol.",
+      "level": "L7_sentences",
+      "category": "Věty o škole",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Škola, 2 slova."
+    },
+    {
+      "id": "s029_kreslim_doma",
+      "text": "Kreslím doma.",
+      "level": "L7_sentences",
+      "category": "Věty o škole",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Škola, 2 slova."
+    },
+    {
+      "id": "s030_jdeme_do_skoly",
+      "text": "Jdeme do školy.",
+      "level": "L7_sentences",
+      "category": "Věty o škole",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Škola, 3 slova."
+    },
+    {
+      "id": "s031_jdeme_domu",
+      "text": "Jdeme domů.",
+      "level": "L7_sentences",
+      "category": "Věty o škole",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Škola, 2 slova."
+    },
+    {
+      "id": "s032_piju_caj",
+      "text": "Piju čaj.",
+      "level": "L7_sentences",
+      "category": "Věty o světě kolem nás",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Každodenní, 2 slova."
+    },
+    {
+      "id": "s033_jim_svacinu",
+      "text": "Jím svačinu.",
+      "level": "L7_sentences",
+      "category": "Věty o světě kolem nás",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Každodenní, 2 slova."
+    },
+    {
+      "id": "s034_jaro_je_hezke",
+      "text": "Jaro je hezké.",
+      "level": "L7_sentences",
+      "category": "Věty o ročních obdobích",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Roční období, 3 slova."
+    },
+    {
+      "id": "s035_leto_je_teple",
+      "text": "Léto je teplé.",
+      "level": "L7_sentences",
+      "category": "Věty o ročních obdobích",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Roční období, 3 slova."
+    },
+    {
+      "id": "s036_zima_je_studena",
+      "text": "Zima je studená.",
+      "level": "L7_sentences",
+      "category": "Věty o ročních obdobích",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Roční období, 3 slova."
+    },
+    {
+      "id": "s037_mama_cte_knizku",
+      "text": "Máma čte knížku.",
+      "level": "L7_sentences",
+      "category": "Věty o rodině",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Rodina, 3 slova."
+    },
+    {
+      "id": "s038_jdeme_do_parku",
+      "text": "Jdeme do parku.",
+      "level": "L7_sentences",
+      "category": "Věty o světě kolem nás",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Každodenní, 3 slova."
+    },
+    {
+      "id": "s039_briza_ma_listy",
+      "text": "Bříza má listy.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Příroda, 3 slova."
+    },
+    {
+      "id": "s040_ptacek_zpiva",
+      "text": "Ptáček zpívá.",
+      "level": "L7_sentences",
+      "category": "Věty o přírodě",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Příroda, 2 slova."
     }
   ]
 }
