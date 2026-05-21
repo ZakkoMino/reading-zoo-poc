@@ -219,6 +219,26 @@ h2 { font-size: 22px; margin-top: 14px; }
 }
 .chip-small { padding: 12px; }
 
+/* Theme chips: compact, icon + label on one row. */
+.theme-chips { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+.chip-theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+}
+.chip-theme .chip-icon { font-size: 22px; line-height: 1; }
+.chip-theme .chip-title { margin-bottom: 0; font-size: 16px; }
+
+/* Disabled / "playing" state for primary actions while TTS plays. */
+.btn-busy,
+.btn[disabled] {
+  opacity: .65;
+  cursor: progress;
+  pointer-events: none;
+}
+
 /* ---------- Lesson ---------- */
 .lesson-header { margin-bottom: 12px; }
 .progress-counter {

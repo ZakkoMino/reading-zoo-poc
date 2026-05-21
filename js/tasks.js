@@ -16,7 +16,7 @@
 (function () {
   const App = window.App || (window.App = {});
   const { ANIMALS, animalImg, getAnimal } = App.data;
-  const { speak } = App.speech;
+  const { speak, speakAndWait } = App.speech;
 
   /* ---------- tiny DOM helpers ---------- */
   function el(tag, attrs, kids) {
@@ -70,24 +70,27 @@
       const animal = hasAnimal ? getAnimal(item.animalId) : null;
 
       let confirmed = false;
+      const btnLabel = el('span', { text: 'Přečetl/a jsem ✓' });
+      const button = el('button', {
+        class: 'btn btn-primary btn-large',
+        on: {
+          click: () => {
+            if (confirmed) return;
+            confirmed = true;
+            button.disabled = true;
+            button.classList.add('btn-busy');
+            btnLabel.textContent = 'Přehrávám větu…';
+            speakAndWait(item.text).then(() => resolve({ correct: true }));
+          }
+        }
+      }, [btnLabel]);
+
       const card = el('div', { class: 'task task-read' }, [
         el('p', { class: 'task-prompt', text: 'Přečti nahlas:' }),
         el('div', { class: 'big-word', text: item.text, lang: 'cs' }),
         hasAnimal ? el('img', { class: 'task-image', src: animalImg(animal.id), alt: animal.name }) : null,
         el('p', { class: 'task-hint task-hint-soft', text: 'Tady nepředčítám — teď čteš ty.' }),
-        el('div', { class: 'task-actions' }, [
-          el('button', {
-            class: 'btn btn-primary btn-large',
-            on: {
-              click: () => {
-                if (confirmed) return;
-                confirmed = true;
-                try { speak(item.text); } catch (e) { console.warn('speak failed', e); }
-                resolve({ correct: true });
-              }
-            }
-          }, [el('span', { text: 'Přečetl/a jsem ✓' })])
-        ])
+        el('div', { class: 'task-actions' }, [button])
       ]);
 
       mount.appendChild(card);

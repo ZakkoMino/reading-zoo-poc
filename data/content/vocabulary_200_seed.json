@@ -1,7 +1,7 @@
 {
   "schema": "reading-zoo.vocabulary.seed.v1",
   "language": "cs-CZ",
-  "count": 290,
+  "count": 310,
   "purpose": "Seed slovní zásoby pro MVP Čtecí ZOO; vyžaduje pedagogickou kontrolu před produkcí.",
   "levels": [
     {
@@ -43,8 +43,8 @@
     {
       "id": "L7_sentences",
       "label": "Věty o světě kolem nás",
-      "count": 40,
-      "note": "Krátké věty 2–3 slova pro 1.–2. třídu: příroda, rodina, škola, roční období."
+      "count": 60,
+      "note": "Krátké věty 2–4 slova pro 1.–2. třídu: příroda, rodina, škola, roční období, mazlíčci, jídlo, pohyb, pohádky."
     }
   ],
   "entries": [
@@ -2947,6 +2947,206 @@
       "isAnimal": false,
       "supportsZooReward": false,
       "notes": "Příroda, 2 slova."
+    },
+    {
+      "id": "s041_pes_steka",
+      "text": "Pes štěká.",
+      "level": "L7_sentences",
+      "category": "Věty o mazlíčcích",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Mazlíčci, 2 slova."
+    },
+    {
+      "id": "s042_kocka_spi",
+      "text": "Kočka spí.",
+      "level": "L7_sentences",
+      "category": "Věty o mazlíčcích",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Mazlíčci, 2 slova."
+    },
+    {
+      "id": "s043_pes_si_hraje",
+      "text": "Pes si hraje.",
+      "level": "L7_sentences",
+      "category": "Věty o mazlíčcích",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Mazlíčci, 3 slova."
+    },
+    {
+      "id": "s044_kocka_pije_mleko",
+      "text": "Kočka pije mléko.",
+      "level": "L7_sentences",
+      "category": "Věty o mazlíčcích",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Mazlíčci, 3 slova."
+    },
+    {
+      "id": "s045_nas_pes_skace",
+      "text": "Náš pes skáče.",
+      "level": "L7_sentences",
+      "category": "Věty o mazlíčcích",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Mazlíčci, 3 slova."
+    },
+    {
+      "id": "s046_jim_polévku",
+      "text": "Jím polévku.",
+      "level": "L7_sentences",
+      "category": "Věty o jídle",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Jídlo, 2 slova."
+    },
+    {
+      "id": "s047_piju_kakao",
+      "text": "Piju kakao.",
+      "level": "L7_sentences",
+      "category": "Věty o jídle",
+      "recommendedDifficulty": 1,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Jídlo, 2 slova."
+    },
+    {
+      "id": "s048_tata_pece_dort",
+      "text": "Táta peče dort.",
+      "level": "L7_sentences",
+      "category": "Věty o jídle",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Jídlo, 3 slova."
+    },
+    {
+      "id": "s049_jablko_je_sladke",
+      "text": "Jablko je sladké.",
+      "level": "L7_sentences",
+      "category": "Věty o jídle",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Jídlo, 3 slova."
+    },
+    {
+      "id": "s050_mama_kraji_chleba",
+      "text": "Máma krájí chleba.",
+      "level": "L7_sentences",
+      "category": "Věty o jídle",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Jídlo, 3 slova."
+    },
+    {
+      "id": "s051_jedu_na_kole",
+      "text": "Jedu na kole.",
+      "level": "L7_sentences",
+      "category": "Věty o pohybu",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Pohyb, 3 slova."
+    },
+    {
+      "id": "s052_hrajeme_si_venku",
+      "text": "Hrajeme si venku.",
+      "level": "L7_sentences",
+      "category": "Věty o pohybu",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Pohyb, 3 slova."
+    },
+    {
+      "id": "s053_bezim_po_trave",
+      "text": "Běžím po trávě.",
+      "level": "L7_sentences",
+      "category": "Věty o pohybu",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Pohyb, 3 slova."
+    },
+    {
+      "id": "s054_plaveme_v_jezere",
+      "text": "Plaveme v jezeře.",
+      "level": "L7_sentences",
+      "category": "Věty o pohybu",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Pohyb, 3 slova."
+    },
+    {
+      "id": "s055_skaceme_pres_kaluz",
+      "text": "Skáčeme přes kaluž.",
+      "level": "L7_sentences",
+      "category": "Věty o pohybu",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Pohyb, 3 slova."
+    },
+    {
+      "id": "s056_les_je_tmavy",
+      "text": "Les je tmavý.",
+      "level": "L7_sentences",
+      "category": "Věty o pohádkách",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Pohádky, 3 slova."
+    },
+    {
+      "id": "s057_vila_ma_kridla",
+      "text": "Víla má křídla.",
+      "level": "L7_sentences",
+      "category": "Věty o pohádkách",
+      "recommendedDifficulty": 2,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Pohádky, 3 slova."
+    },
+    {
+      "id": "s058_drak_spi_v_jeskyne",
+      "text": "Drak spí v jeskyni.",
+      "level": "L7_sentences",
+      "category": "Věty o pohádkách",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Pohádky, 4 slova."
+    },
+    {
+      "id": "s059_trpaslik_nosi_klobouk",
+      "text": "Trpaslík nosí klobouk.",
+      "level": "L7_sentences",
+      "category": "Věty o pohádkách",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Pohádky, 3 slova."
+    },
+    {
+      "id": "s060_princezna_zpiva_pisen",
+      "text": "Princezna zpívá píseň.",
+      "level": "L7_sentences",
+      "category": "Věty o pohádkách",
+      "recommendedDifficulty": 3,
+      "isAnimal": false,
+      "supportsZooReward": false,
+      "notes": "Pohádky, 3 slova."
     }
   ]
 }

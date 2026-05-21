@@ -16,7 +16,8 @@
   const defaultState = () => ({
     settings: {
       levelId: 'short',
-      lessonLength: 8
+      lessonLength: 8,
+      themeId: 'mix'   // only applied to sentence-style levels; 'mix' = no filter
     },
     scores: {},        // { [itemText]: 0..5 }
     zoo: [],           // animal ids in order earned

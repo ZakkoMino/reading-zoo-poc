@@ -97,6 +97,50 @@
     { id: 'long',   label: 'Delší',   tasks: 10 }
   ];
 
+  /* Themes apply only to sentence-style levels — they filter the lesson pool
+   * by the item's `category` field (preserved from the seed JSON). Mix means
+   * no filter and keeps the previous behavior. The category labels match
+   * exactly the Czech strings used in vocabulary_200_seed.json so the mapper
+   * doesn't have to translate them. Difficulty (level) is intentionally kept
+   * separate from theme. */
+  const SENTENCE_THEMES = [
+    { id: 'mix',        label: 'Mix',          icon: '🎲', categories: null },
+    { id: 'pets',       label: 'Mazlíčci',     icon: '🐶', categories: ['Věty o mazlíčcích'] },
+    { id: 'food',       label: 'Jídlo',        icon: '🍎', categories: ['Věty o jídle'] },
+    { id: 'movement',   label: 'Pohyb',        icon: '🏃', categories: ['Věty o pohybu'] },
+    { id: 'fairytales', label: 'Pohádky',      icon: '📚', categories: ['Věty o pohádkách'] },
+    { id: 'nature',     label: 'Příroda',      icon: '🌳', categories: ['Věty o přírodě'] },
+    { id: 'family',     label: 'Rodina',       icon: '👨‍👩‍👧', categories: ['Věty o rodině'] },
+    { id: 'school',     label: 'Škola',        icon: '🏫', categories: ['Věty o škole'] },
+    { id: 'seasons',    label: 'Roční období', icon: '🍂', categories: ['Věty o ročních obdobích'] }
+  ];
+
+  function getTheme(id) {
+    return SENTENCE_THEMES.find((t) => t.id === id) || SENTENCE_THEMES[0];
+  }
+
+  // A level supports themes if at least one of its items has a sentence
+  // category that we know how to filter by. Inline `sentences` (animal-only)
+  // won't qualify and gracefully shows no theme picker.
+  function levelHasThemes(level) {
+    if (!level || !level.items) return false;
+    const known = new Set();
+    for (const t of SENTENCE_THEMES) {
+      if (!t.categories) continue;
+      for (const c of t.categories) known.add(c);
+    }
+    return level.items.some((it) => it.category && known.has(it.category));
+  }
+
+  function availableThemes(level) {
+    if (!levelHasThemes(level)) return [];
+    const present = new Set();
+    level.items.forEach((it) => { if (it.category) present.add(it.category); });
+    return SENTENCE_THEMES.filter((t) =>
+      !t.categories || t.categories.some((c) => present.has(c))
+    );
+  }
+
   let dataSource = 'inline';
 
   /* ---------- helpers ---------- */
@@ -165,6 +209,7 @@
         const item = { text: e.text };
         const aid = nameToId.get(e.text.toLowerCase());
         if (aid) item.animalId = aid;
+        if (e.category) item.category = e.category;
         return item;
       });
       return { id: meta.id, label: meta.label, hint: lvl.note || lvl.label, items };
@@ -226,9 +271,13 @@
     ANIMALS,
     LEVELS,
     LESSON_LENGTHS,
+    SENTENCE_THEMES,
     animalImg,
     getLevel,
     getAnimal,
+    getTheme,
+    levelHasThemes,
+    availableThemes,
     itemKey,
     getStats,
     ready: loadFromSeed()

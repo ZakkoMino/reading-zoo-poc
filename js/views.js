@@ -13,7 +13,7 @@
  */
 (function () {
   const App = window.App || (window.App = {});
-  const { LEVELS, LESSON_LENGTHS, ANIMALS, getLevel, getAnimal, animalImg } = App.data;
+  const { LEVELS, LESSON_LENGTHS, ANIMALS, getLevel, getAnimal, animalImg, availableThemes, levelHasThemes } = App.data;
   const { get, setSettings, scoreOf, SCORE_MAX, addToZoo, bumpScore, recordLessonResult, reset } = App.state;
   const { buildLessonPlan, pickReward } = App.lessons;
   const { speak, isAvailable: speechAvailable } = App.speech;
@@ -74,6 +74,36 @@
       lengthChips.appendChild(chip);
     });
 
+    /* Theme picker — only visible when the chosen level actually carries
+     * sentence categories. Other levels skip this step entirely so the UI
+     * doesn't grow for word-level lessons. */
+    const currentLevel = getLevel(settings.levelId);
+    const showThemes = levelHasThemes(currentLevel);
+    const themes = showThemes ? availableThemes(currentLevel) : [];
+    const themeId = settings.themeId || 'mix';
+    const themeChips = el('div', {
+      class: 'chips chips-row theme-chips',
+      role: 'group',
+      'aria-label': 'Téma věty'
+    });
+    themes.forEach((t) => {
+      const selected = t.id === themeId;
+      const chip = el('button', {
+        class: 'chip chip-theme' + (selected ? ' chip-selected' : ''),
+        'aria-pressed': selected ? 'true' : 'false',
+        on: {
+          click: () => {
+            setSettings({ themeId: t.id });
+            App.nav('onboarding');
+          }
+        }
+      }, [
+        el('span', { class: 'chip-icon', 'aria-hidden': 'true', text: t.icon || '' }),
+        el('span', { class: 'chip-title', text: t.label })
+      ]);
+      themeChips.appendChild(chip);
+    });
+
     const card = el('section', { class: 'screen onboarding' }, [
       el('h1', { text: 'Vítej ve Čtecí ZOO! 🦁' }),
       el('p', { class: 'lead', text: 'Vyber si, kde chceš začít. Pak si můžeš vybírat zvířátka do své zoo.' }),
@@ -81,7 +111,10 @@
       el('h2', { text: '1. Co budeme dnes číst?' }),
       levelChips,
 
-      el('h2', { text: '2. Jak dlouho?' }),
+      showThemes ? el('h2', { text: '2. O čem dnes?' }) : null,
+      showThemes ? themeChips : null,
+
+      el('h2', { text: showThemes ? '3. Jak dlouho?' : '2. Jak dlouho?' }),
       lengthChips,
 
       el('p', { class: 'pedagogy' }, [

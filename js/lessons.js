@@ -18,7 +18,7 @@
  */
 (function () {
   const App = window.App || (window.App = {});
-  const { getLevel, getAnimal, ANIMALS } = App.data;
+  const { getLevel, getAnimal, ANIMALS, getTheme, levelHasThemes } = App.data;
   const { SCORE_MAX, scoreOf, get } = App.state;
 
   function weightedPick(items) {
@@ -62,8 +62,24 @@
     return types;
   }
 
+  /* If the level supports themes and the user picked a non-mix theme,
+   * narrow the item pool to that theme's categories. Empty result falls
+   * back to the full pool so the lesson never crashes on a stale theme. */
+  function applyTheme(level, themeId) {
+    if (!themeId || themeId === 'mix') return level;
+    if (!levelHasThemes(level)) return level;
+    const theme = getTheme(themeId);
+    if (!theme || !theme.categories) return level;
+    const allowed = new Set(theme.categories);
+    const filtered = level.items.filter((it) => it.category && allowed.has(it.category));
+    if (!filtered.length) return level;
+    return Object.assign({}, level, { items: filtered });
+  }
+
   function buildLessonPlan(levelId, count) {
-    const level = getLevel(levelId);
+    const baseLevel = getLevel(levelId);
+    const themeId = (get().settings || {}).themeId || 'mix';
+    const level = applyTheme(baseLevel, themeId);
     const items = pickItems(level, count);
     const plan = [];
     let prev = null;
