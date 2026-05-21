@@ -201,26 +201,29 @@ function draw_krava() {
 }
 
 function draw_kun() {
-  const fur = '#8B5830'; const mane = '#4A2C10';
-  return bg('#FFF4E0') +
-    // tail
-    pa('M148,155 Q178,130 170,100 Q164,114 155,128 Q148,142 148,155', mane, '#3A2000', 1.5) +
-    el(100, 150, 48, 34, fur) +                           // body
-    // neck
-    pa('M90,130 Q88,95 95,78 Q105,78 112,95 Q110,130 110,130', fur, '#6B3C18', 1.5) +
-    // mane
-    pa('M95,78 Q88,90 89,115', 'none', mane, 3) +
-    pa('M98,76 Q91,88 92,113', 'none', mane, 3) +
-    pa('M101,76 Q94,87 95,112', 'none', mane, 3) +
-    el(100, 73, 16, 22, fur, '#6B3C18', 1.5) +            // head (elongated)
-    po('84,50 90,68 78,68', fur, '#6B3C18') +             // left ear
-    po('116,50 122,68 110,68', fur, '#6B3C18') +          // right ear
-    el(100, 85, 10, 7, '#C09070', '#8B5830', 1) +         // muzzle
-    ci(97, 82, 3, '#4A2010', 'none', 0) +                 // left nostril
-    ci(103, 82, 3, '#4A2010', 'none', 0) +                // right nostril
-    eyes(90, 65, 110, 65, 6) +
-    // hooves
-    re(72, 178, 14, 8, 3, '#4A2C10') + re(114, 178, 14, 8, 3, '#4A2C10');
+  const fur = '#A06840'; const dark = '#6B3C18'; const mane = '#3A2410';
+  const muzzle = '#D9A878'; const earIn = '#FFB5C0';
+  return bg('#FFF0D9') +
+    // body + head merged (tall oval)
+    el(100, 120, 50, 58, fur, '#2C2C2C', 1.5) +
+    // mane: dark crescent across top of head, scalloped
+    pa('M58,98 Q60,68 78,60 Q92,52 100,52 Q108,52 122,60 Q140,68 142,98 Q132,86 120,90 Q116,76 100,74 Q84,76 80,90 Q68,86 58,98 Z', mane, dark, 1.5) +
+    // ears (poke through mane)
+    po('72,50 86,80 90,72', fur, dark, 1.5) +
+    po('128,50 114,80 110,72', fur, dark, 1.5) +
+    po('76,58 86,76 88,72', earIn, 'none', 0) +
+    po('124,58 114,76 112,72', earIn, 'none', 0) +
+    // forelock tuft between ears
+    pa('M88,72 Q94,90 100,88 Q106,90 112,72 Q106,80 100,80 Q94,80 88,72 Z', mane, 'none', 0) +
+    // muzzle (lighter)
+    el(100, 150, 26, 22, muzzle, dark, 1) +
+    // nostrils
+    el(93, 148, 2.5, 3.5, '#2C2C2C', 'none', 0) +
+    el(107, 148, 2.5, 3.5, '#2C2C2C', 'none', 0) +
+    // eyes
+    eyes(84, 108, 116, 108, 6) +
+    // mouth
+    smile(100, 158, 8, 4);
 }
 
 function draw_zaba() {
@@ -1069,7 +1072,7 @@ const ANIMALS = [
   { id: 'slon',     name: 'Slon',     category: 'savec',        biome: 'savana',  readingLevel: 1, wordDifficulty: 2, sentence: 'Slon troubí.',       fact: 'Slon má nejdelší nos ze všech zvířat.', tags: ['chobot', 'velky', 'afrika'] },
   { id: 'medved',   name: 'Medvěd',   category: 'savec',        biome: 'les',     readingLevel: 2, wordDifficulty: 4, sentence: 'Medvěd spí.',        fact: 'Medvěd v zimě hibernuje v brlohů.', tags: ['velky', 'hnedy', 'les'] },
   { id: 'had',      name: 'Had',      category: 'plaz',         biome: 'les',     readingLevel: 1, wordDifficulty: 1, sentence: 'Had se plazí.',      fact: 'Had nemá nohy a pohybuje se vlněním.', tags: ['plaz', 'jazyk', 'bez-noh'] },
-  { id: 'cap',      name: 'Cáp',      category: 'savec',        biome: 'statek',  readingLevel: 1, wordDifficulty: 2, sentence: 'Cáp mečí.',          fact: 'Cáp má rohy a hustou bradku.', tags: ['kozel', 'rohy', 'bradka'] },
+  { id: 'cap',      name: 'Kozel',    category: 'savec',        biome: 'statek',  readingLevel: 1, wordDifficulty: 2, sentence: 'Kozel mečí.',        fact: 'Kozel má rohy a hustou bradku.', tags: ['kozel', 'rohy', 'bradka'] },
   { id: 'orel',     name: 'Orel',     category: 'ptak',         biome: 'hory',    readingLevel: 1, wordDifficulty: 2, sentence: 'Orel letí.',         fact: 'Orel vidí svou kořist z velké výšky.', tags: ['kridla', 'hory', 'zobak'] },
   { id: 'vlk',      name: 'Vlk',      category: 'savec',        biome: 'les',     readingLevel: 1, wordDifficulty: 1, sentence: 'Vlk vyje.',          fact: 'Vlk žije v tlupě zvané smečka.', tags: ['smedka', 'les', 'sedy'] },
   { id: 'rys',      name: 'Rys',      category: 'savec',        biome: 'les',     readingLevel: 1, wordDifficulty: 1, sentence: 'Rys se plíží.',      fact: 'Rys má charakteristické chocholy na uších.', tags: ['chocholy', 'skvrnity', 'les'] },

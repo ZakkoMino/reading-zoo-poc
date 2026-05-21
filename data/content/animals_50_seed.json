@@ -215,13 +215,13 @@
     },
     {
       "id": "cap",
-      "name": "Cáp",
+      "name": "Kozel",
       "category": "savec",
       "biome": "statek",
       "readingLevel": 1,
       "wordDifficulty": 2,
-      "sentence": "Cáp mečí.",
-      "fact": "Cáp má rohy a hustou bradku.",
+      "sentence": "Kozel mečí.",
+      "fact": "Kozel má rohy a hustou bradku.",
       "tags": [
         "kozel",
         "rohy",

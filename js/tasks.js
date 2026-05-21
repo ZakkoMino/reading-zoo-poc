@@ -66,8 +66,11 @@
   function read(item, mount) {
     return new Promise((resolve) => {
       clear(mount);
+      const isSentence = / |\./.test(item.text);
       const hasAnimal = !!item.animalId;
       const animal = hasAnimal ? getAnimal(item.animalId) : null;
+
+      speak(isSentence ? 'přečti větu' : 'přečti slovo');
 
       let confirmed = false;
       const btnLabel = el('span', { text: 'Přečetl/a jsem ✓' });
@@ -79,14 +82,14 @@
             confirmed = true;
             button.disabled = true;
             button.classList.add('btn-busy');
-            btnLabel.textContent = 'Přehrávám větu…';
+            btnLabel.textContent = isSentence ? 'Přehrávám větu…' : 'Přehrávám slovo…';
             speakAndWait(item.text).then(() => resolve({ correct: true }));
           }
         }
       }, [btnLabel]);
 
       const card = el('div', { class: 'task task-read' }, [
-        el('p', { class: 'task-prompt', text: 'Přečti nahlas:' }),
+        el('p', { class: 'task-prompt', text: isSentence ? 'Přečti větu' : 'Přečti slovo' }),
         el('div', { class: 'big-word', text: item.text, lang: 'cs' }),
         hasAnimal ? el('img', { class: 'task-image', src: animalImg(animal.id), alt: animal.name }) : null,
         el('p', { class: 'task-hint task-hint-soft', text: 'Tady nepředčítám — teď čteš ty.' }),

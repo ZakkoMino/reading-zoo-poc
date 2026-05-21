@@ -12,7 +12,7 @@ zaba,Žába,obojzivelnik,rybnik,1,2,"Žába skáče.","Žába umí skákat i pla
 slon,Slon,savec,savana,1,2,"Slon troubí.","Slon má nejdelší nos ze všech zvířat.",assets/animals-illustrated/slon.svg,"chobot;velky;afrika"
 medved,Medvěd,savec,les,2,4,"Medvěd spí.","Medvěd v zimě hibernuje v brlohů.",assets/animals-illustrated/medved.svg,"velky;hnedy;les"
 had,Had,plaz,les,1,1,"Had se plazí.","Had nemá nohy a pohybuje se vlněním.",assets/animals-illustrated/had.svg,"plaz;jazyk;bez-noh"
-cap,Cáp,savec,statek,1,2,"Cáp mečí.","Cáp má rohy a hustou bradku.",assets/animals-illustrated/cap.svg,"kozel;rohy;bradka"
+cap,Kozel,savec,statek,1,2,"Kozel mečí.","Kozel má rohy a hustou bradku.",assets/animals-illustrated/cap.svg,"kozel;rohy;bradka"
 orel,Orel,ptak,hory,1,2,"Orel letí.","Orel vidí svou kořist z velké výšky.",assets/animals-illustrated/orel.svg,"kridla;hory;zobak"
 vlk,Vlk,savec,les,1,1,"Vlk vyje.","Vlk žije v tlupě zvané smečka.",assets/animals-illustrated/vlk.svg,"smedka;les;sedy"
 rys,Rys,savec,les,1,1,"Rys se plíží.","Rys má charakteristické chocholy na uších.",assets/animals-illustrated/rys.svg,"chocholy;skvrnity;les"
