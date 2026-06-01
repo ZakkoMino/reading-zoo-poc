@@ -519,6 +519,8 @@
       for (let i = 0; i < word.length; i++) {
         if (i === missingIdx) {
           wordRow.appendChild(el('span', { class: 'fill-blank', text: '_' }));
+        } else if (word[i] === ' ') {
+          wordRow.appendChild(el('span', { class: 'fill-space', text: ' ' }));
         } else {
           wordRow.appendChild(el('span', { class: 'fill-letter', text: word[i] }));
         }

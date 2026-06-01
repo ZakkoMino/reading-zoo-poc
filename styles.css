@@ -289,6 +289,7 @@ h2 { font-size: 22px; margin-top: 14px; }
   font-size: clamp(56px, 14vw, 110px);
   font-weight: 800;
   letter-spacing: 2px;
+  word-spacing: 0.35em;
   color: var(--accent);
   margin: 10px 0 14px;
   line-height: 1.05;
@@ -486,6 +487,7 @@ h2 { font-size: 22px; margin-top: 14px; }
   color: var(--primary-dk);
 }
 .fill-letter { padding: 0 2px; }
+.fill-space  { min-width: 0.5em; flex-shrink: 0; }
 .fill-blank {
   display: inline-block;
   min-width: 0.7em;
