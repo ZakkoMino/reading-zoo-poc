@@ -18,7 +18,7 @@
  */
 (function () {
   const App = window.App || (window.App = {});
-  const { getLevel, getAnimal, ANIMALS, getTheme, levelHasThemes } = App.data;
+  const { getLevel, getAnimal, ANIMALS, LEVELS, getTheme, levelHasThemes } = App.data;
   const { SCORE_MAX, scoreOf, get } = App.state;
 
   function weightedPick(items) {
@@ -133,5 +133,49 @@
     return { animal: a, isNew: false };
   }
 
-  App.lessons = { buildLessonPlan, pickReward };
+  /* Parent-panel recommendation.
+   *
+   * Looks only at the currently selected level and answers two questions:
+   * "which words still need practice?" and "is the child ready for the next
+   * level?". Built on the same 0..5 knowledge scores the planner uses — an
+   * item counts as attempted once it has a stored score, as weak while its
+   * score stays at or below WEAK_MAX_SCORE, and the level counts as mastered
+   * when most of it has been seen, nothing is weak and the average is high.
+   */
+  const READY_MIN_SEEN = 0.6;  // share of the level that must be attempted
+  const READY_MIN_AVG = 4;     // average score counted as "mastered"
+  const WEAK_MAX_SCORE = 2;    // attempted items at or below are "weak"
+  const WEAK_LIST_LIMIT = 5;
+
+  function buildRecommendation() {
+    const state = get();
+    const level = getLevel(state.settings.levelId);
+    const idx = LEVELS.findIndex((l) => l.id === level.id);
+    const nextLevel = idx >= 0 && idx + 1 < LEVELS.length ? LEVELS[idx + 1] : null;
+
+    const attempted = level.items.filter((it) => it.text in state.scores);
+    const weakItems = attempted
+      .filter((it) => scoreOf(it.text) <= WEAK_MAX_SCORE)
+      .sort((a, b) => scoreOf(a.text) - scoreOf(b.text))
+      .slice(0, WEAK_LIST_LIMIT)
+      .map((it) => it.text);
+
+    const avg = attempted.length
+      ? attempted.reduce((acc, it) => acc + scoreOf(it.text), 0) / attempted.length
+      : 0;
+    const mastered = attempted.length >= level.items.length * READY_MIN_SEEN
+      && weakItems.length === 0
+      && avg >= READY_MIN_AVG;
+
+    return {
+      level,
+      nextLevel,
+      mastered,
+      weakItems,
+      attempted: attempted.length,
+      total: level.items.length
+    };
+  }
+
+  App.lessons = { buildLessonPlan, pickReward, buildRecommendation };
 })();

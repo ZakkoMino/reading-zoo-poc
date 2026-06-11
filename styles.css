@@ -684,6 +684,23 @@ h2 { font-size: 22px; margin-top: 14px; }
   margin-top: 2px;
 }
 
+.progress-screen .recommendation {
+  background: #EEFBF8;
+  border: 2px dashed var(--secondary);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  color: #155E59;
+}
+.progress-screen .recommendation h2 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: inherit;
+}
+.progress-screen .recommendation p {
+  font-size: 15px;
+}
+
 .level-progress {
   background: var(--surface);
   border: 2px solid var(--border);

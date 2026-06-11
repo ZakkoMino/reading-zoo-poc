@@ -5,7 +5,8 @@
  *   lesson      — runs through the task plan, then shows the reward summary
  *   zoo         — grid of earned animals
  *   animal      — detail card with pronunciation + fact
- *   progress    — simple "parent" panel: stats + per-word knowledge scores
+ *   progress    — simple "parent" panel: stats, a practice recommendation
+ *                 and per-word knowledge scores
  *
  * Every screen renders into the shared #screen mount. The top header is
  * static; only the body content swaps. This keeps the DOM small and easy
@@ -15,7 +16,7 @@
   const App = window.App || (window.App = {});
   const { LEVELS, LESSON_LENGTHS, ANIMALS, getLevel, getAnimal, animalImg, availableThemes, levelHasThemes } = App.data;
   const { get, setSettings, scoreOf, SCORE_MAX, addToZoo, bumpScore, recordLessonResult, reset } = App.state;
-  const { buildLessonPlan, pickReward } = App.lessons;
+  const { buildLessonPlan, pickReward, buildRecommendation } = App.lessons;
   const { speak, isAvailable: speechAvailable } = App.speech;
 
   /* ---------- DOM helpers (same minimal kit as tasks.js) ---------- */
@@ -311,10 +312,17 @@
       statCard('Zvířátka v ZOO', `${state.zoo.length} / ${ANIMALS.length}`)
     ]);
 
+    const rec = buildRecommendation();
+    const recommendation = el('div', { class: 'recommendation' }, [
+      el('h2', { text: 'Doporučení' }),
+      el('p', { text: recommendationText(rec) })
+    ]);
+
     const screen = el('section', { class: 'screen progress-screen' }, [
       el('h1', { text: 'Pokrok' }),
       el('p', { class: 'lead', text: 'Přehled pro rodiče. Vše se ukládá pouze do prohlížeče.' }),
-      overview
+      overview,
+      recommendation
     ]);
 
     LEVELS.forEach((lvl) => {
@@ -353,6 +361,21 @@
     ]));
 
     mount.appendChild(screen);
+  }
+  function recommendationText(rec) {
+    const name = (lvl) => `„${lvl.label}“`;
+    if (!rec.attempted) {
+      return `Z úrovně ${name(rec.level)} zatím nejsou žádná data. Dokončete pár lekcí a doporučení se objeví.`;
+    }
+    if (rec.mastered) {
+      return rec.nextLevel
+        ? `Úroveň ${name(rec.level)} vypadá zvládnutá. Doporučujeme přejít na úroveň ${name(rec.nextLevel)}.`
+        : `Úroveň ${name(rec.level)} vypadá zvládnutá — a je to ta nejtěžší. Skvělá práce!`;
+    }
+    if (rec.weakItems.length) {
+      return `Doporučujeme zůstat na úrovni ${name(rec.level)} a zopakovat: ${rec.weakItems.join(', ')}.`;
+    }
+    return `Pokračujte v úrovni ${name(rec.level)} — vyzkoušeno ${rec.attempted} z ${rec.total} položek.`;
   }
   function statCard(label, value) {
     return el('div', { class: 'stat-card' }, [
