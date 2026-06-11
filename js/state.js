@@ -23,7 +23,9 @@
     scores: {},        // { [itemText]: 0..5 }
     zoo: [],           // animal ids in order earned
     zooStars: {},      // { [animalId]: 1..STAR_MAX }
-    unlockedLevels: ['letters'],  // level ids the child has earned (or started with)
+    // Levels open from the start (pilot decision: through "První slova",
+    // so tests don't have to grind the letter levels first).
+    unlockedLevels: ['letters', 'syllables', 'words1'],
     badges: [],        // level ids whose Velká výzva was won
     storiesRead: {},   // { [storyId]: true }
     stats: {
@@ -66,8 +68,10 @@
       if (merged.settings.levelId && !order.includes(merged.settings.levelId)) {
         merged.settings.levelId = LEGACY_LEVEL_MAP[merged.settings.levelId] || 'letters';
       }
-      if (!Array.isArray(merged.unlockedLevels) || !merged.unlockedLevels.length) {
-        merged.unlockedLevels = ['letters'];
+      if (!Array.isArray(merged.unlockedLevels)) merged.unlockedLevels = [];
+      // The baseline unlocks also apply to saves created before this change.
+      for (const id of defaultState().unlockedLevels) {
+        if (!merged.unlockedLevels.includes(id)) merged.unlockedLevels.push(id);
       }
       const idx = order.indexOf(merged.settings.levelId);
       if (idx > 0) {
