@@ -42,7 +42,7 @@ Dítě tak ví: **za dalšími zvířaty se musí pročíst výš.**
 2. Aplikace sleduje zvládnutí aktuální úrovně:
    *≥ 80 % procvičených položek se skóre ≥ 4* **a** *≥ 5 dokončených lekcí*.
 3. Po splnění se objeví **Velká výzva 🏆**: 8 úkolů z *následující*
-   úrovně. Úspěch = ≥ 6 správně na první pokus.
+   úrovně. Úspěch = **8 z 8** správně na první pokus.
 4. Výhra → úroveň se odemkne + odznak + bonusové zvíře.
    Prohra → „Ještě trénujeme!“ – žádný trest, výzva se nabídne znovu.
 5. Rodič může úroveň přepnout ručně v panelu Pro rodiče (pozdější
@@ -98,7 +98,15 @@ Každou dávku dodám jako přehlednou tabulku (CSV/Markdown), abys mohl
 
 ---
 
-## 6. Otevřené otázky k rozhodnutí
+## 6. Rozhodnuto (2026-06-11)
+
+1. Dětské názvy úrovní: **schváleno**.
+2. Práh Velké výzvy: **8 z 8** správně na první pokus.
+3. Úroveň 1 obsahuje i **obtahování písmen** hned od začátku.
+4. Příběhy se odemykají **vlastnictvím zvířete**.
+5. Dávky **B + C + D dohromady** → `docs/content-batches/`.
+
+### Původní otázky
 
 1. **Názvy úrovní** – vyhovují dětské názvy (Lovec písmen…)?
 2. **Práh výzvy** – 6 z 8 správně na první pokus: přísnější/mírnější?
