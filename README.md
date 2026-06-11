@@ -70,6 +70,8 @@ Pak v prohlížeči otevři <http://localhost:8000>.
 | Pestré střídání úkolů, žádný stejný dvakrát po sobě | ✅ |
 | 50 zvířat se SVG ilustracemi (assets/animals-illustrated/) | ✅ |
 | Sbírka zvířat se zámkem na neodemčená | ✅ |
+| Výběr odměny: dítě si po lekci vybere 1 ze 2 zvířat | ✅ |
+| Růst zvířat po hvězdičkách (1★ mládě → 5★ nejsilnější) | ✅ |
 | Karta zvířete s faktem a tlačítkem výslovnosti | ✅ |
 | Web Speech API (`lang="cs-CZ"`) s graceful fallbackem — jen u obrázků/ZOO, ne u úkolu „Přečti“ | ✅ |
 | Adaptivní výběr slov podle „knowledge score" 0–5 | ✅ |
@@ -123,6 +125,7 @@ Vše leží pod jediným klíčem v `localStorage`:
   "settings":  { "levelId": "short", "lessonLength": 8 },
   "scores":    { "pes": 3, "kočka": 1, ... },
   "zoo":       ["pes", "sova", ...],
+  "zooStars":  { "pes": 2, "sova": 1, ... },
   "stats":     { "lessonsCompleted": 2, "tasksCorrect": 11, "tasksTotal": 16 }
 }
 ```
@@ -154,10 +157,12 @@ předčítání, aby dítě skutečně četlo samo.
 
 ### Odměny do ZOO
 
-Po dokončení lekce planner upřednostní **zvíře, které se v lekci
-opravdu objevilo** a které dítě ještě nemá. Pokud žádné takové
-není, vybere libovolné chybějící. Když je ZOO kompletní, dítě
-dostane bonusové opakování zvířete.
+Po dokončení lekce si dítě **vybere 1 ze 2 odměn**. Nabídka
+upřednostňuje zvířata, která se v lekci opravdu objevila, a ideálně
+kombinuje **nové zvíře** s **vylepšením** už získaného zvířete
+o hvězdičku (1★ mládě → 2★ vyrůstá → 3★ dospělé → 4★ silné →
+5★ nejsilnější). Když je vše nasbírané na max, dítě dostane
+bonusovou oslavu.
 
 ---
 

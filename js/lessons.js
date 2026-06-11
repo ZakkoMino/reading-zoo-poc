@@ -19,7 +19,7 @@
 (function () {
   const App = window.App || (window.App = {});
   const { getLevel, getAnimal, ANIMALS, getTheme, levelHasThemes } = App.data;
-  const { SCORE_MAX, scoreOf, get } = App.state;
+  const { SCORE_MAX, scoreOf, get, starsOf, STAR_MAX } = App.state;
 
   function weightedPick(items) {
     const weights = items.map((it) => 1 + (SCORE_MAX - scoreOf(it.text)));
@@ -52,7 +52,11 @@
     const text = item.text;
     const isSentence = / |\./.test(text);
     if (isSentence) {
-      const types = ['read', 'compose', 'fill'];
+      // The compose UI handles at most 3 words; longer sentences would fall
+      // into a tap-through screen that isn't a real task, so they only get
+      // genuine task types.
+      const wordCount = text.trim().split(/\s+/).length;
+      const types = wordCount <= 3 ? ['read', 'compose', 'fill'] : ['read', 'fill'];
       if (item.animalId) types.push('match');
       return types;
     }
@@ -108,30 +112,57 @@
     return plan;
   }
 
-  function pickReward(plan) {
+  /* Reward = a choice of (up to) two animals the child picks from.
+   *
+   * Choice kinds:
+   *   'new'  — animal not yet in the zoo; picking it adds it with 1 star.
+   *   'star' — animal already owned below STAR_MAX; picking it grows it
+   *            by one star (1★ mládě → 5★ nejsilnější).
+   *   'bonus'— everything collected at max stars; pure celebration.
+   *
+   * Pools are tried in priority order so the pair ideally mixes one new
+   * animal with one to grow, both preferring animals that actually
+   * appeared in the lesson (thematic reward).
+   */
+  function pickRewardChoices(plan) {
     const zoo = get().zoo;
-    const inLesson = [];
-    const seen = new Set();
+    const lessonIds = new Set();
     for (const step of plan) {
-      const id = step.item.animalId;
-      if (id && !seen.has(id) && !zoo.includes(id)) {
-        seen.add(id);
-        inLesson.push(id);
+      if (step.item.animalId) lessonIds.add(step.item.animalId);
+    }
+
+    const isNew = (a) => !zoo.includes(a.id);
+    const canStar = (a) => zoo.includes(a.id) && starsOf(a.id) < STAR_MAX;
+
+    const pools = [
+      ANIMALS.filter((a) => isNew(a) && lessonIds.has(a.id)),
+      ANIMALS.filter((a) => canStar(a) && lessonIds.has(a.id)),
+      ANIMALS.filter((a) => isNew(a) && !lessonIds.has(a.id)),
+      ANIMALS.filter((a) => canStar(a) && !lessonIds.has(a.id))
+    ];
+
+    const choices = [];
+    const used = new Set();
+    // Two passes over the pools: the first takes at most one animal from
+    // each pool (mix of new + grow), the second fills a remaining slot.
+    for (let pass = 0; pass < 2 && choices.length < 2; pass++) {
+      for (const pool of pools) {
+        if (choices.length >= 2) break;
+        const open = pool.filter((a) => !used.has(a.id));
+        if (!open.length) continue;
+        const a = open[Math.floor(Math.random() * open.length)];
+        used.add(a.id);
+        choices.push({ animal: a, kind: isNew(a) ? 'new' : 'star', stars: starsOf(a.id) });
       }
     }
-    if (inLesson.length) {
-      const id = inLesson[Math.floor(Math.random() * inLesson.length)];
-      return { animal: getAnimal(id), isNew: true };
+
+    if (!choices.length) {
+      // Zoo complete and every animal at max stars — celebrate anyway.
+      const a = ANIMALS[Math.floor(Math.random() * ANIMALS.length)];
+      choices.push({ animal: a, kind: 'bonus', stars: starsOf(a.id) });
     }
-    const missing = ANIMALS.filter((a) => !zoo.includes(a.id));
-    if (missing.length) {
-      const a = missing[Math.floor(Math.random() * missing.length)];
-      return { animal: a, isNew: true };
-    }
-    // Zoo complete — return a duplicate so the child still gets a celebration.
-    const a = ANIMALS[Math.floor(Math.random() * ANIMALS.length)];
-    return { animal: a, isNew: false };
+    return choices;
   }
 
-  App.lessons = { buildLessonPlan, pickReward };
+  App.lessons = { buildLessonPlan, pickRewardChoices };
 })();

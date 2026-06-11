@@ -12,6 +12,7 @@
   const STORAGE_KEY = 'reading-zoo-state';
   const SCORE_MIN = 0;
   const SCORE_MAX = 5;
+  const STAR_MAX = 5; // 1★ mládě → 5★ nejsilnější
 
   const defaultState = () => ({
     settings: {
@@ -21,6 +22,7 @@
     },
     scores: {},        // { [itemText]: 0..5 }
     zoo: [],           // animal ids in order earned
+    zooStars: {},      // { [animalId]: 1..STAR_MAX }
     stats: {
       lessonsCompleted: 0,
       tasksCorrect: 0,
@@ -37,10 +39,15 @@
       if (!raw) return defaultState();
       const parsed = JSON.parse(raw);
       // Shallow merge so newly-added fields don't crash on old saves.
-      return Object.assign(defaultState(), parsed, {
+      const merged = Object.assign(defaultState(), parsed, {
         settings: Object.assign(defaultState().settings, parsed.settings || {}),
         stats: Object.assign(defaultState().stats, parsed.stats || {})
       });
+      // Saves from before star levels: every owned animal starts at 1 star.
+      for (const id of merged.zoo) {
+        if (!merged.zooStars[id]) merged.zooStars[id] = 1;
+      }
+      return merged;
     } catch (err) {
       console.warn('Nepodařilo se načíst stav, použiji výchozí.', err);
       return defaultState();
@@ -85,8 +92,26 @@
     if (!animalId) return false;
     if (state.zoo.includes(animalId)) return false;
     state.zoo.push(animalId);
+    state.zooStars[animalId] = state.zooStars[animalId] || 1;
     save();
     return true;
+  }
+
+  function starsOf(animalId) {
+    return state.zooStars[animalId] || 0;
+  }
+
+  /* Grow an owned animal by one star (capped at STAR_MAX). For an animal
+   * not yet owned it behaves like addToZoo. Returns the new star count. */
+  function bumpStars(animalId) {
+    if (!state.zoo.includes(animalId)) {
+      addToZoo(animalId);
+      return starsOf(animalId);
+    }
+    const next = Math.min(STAR_MAX, starsOf(animalId) + 1);
+    state.zooStars[animalId] = next;
+    save();
+    return next;
   }
 
   function recordLessonResult({ correct, total }) {
@@ -99,6 +124,7 @@
   App.state = {
     SCORE_MIN,
     SCORE_MAX,
+    STAR_MAX,
     STORAGE_KEY,
     get,
     reset,
@@ -106,6 +132,8 @@
     scoreOf,
     bumpScore,
     addToZoo,
+    starsOf,
+    bumpStars,
     recordLessonResult
   };
 })();

@@ -14,8 +14,8 @@
 (function () {
   const App = window.App || (window.App = {});
   const { LEVELS, LESSON_LENGTHS, ANIMALS, getLevel, getAnimal, animalImg, availableThemes, levelHasThemes } = App.data;
-  const { get, setSettings, scoreOf, SCORE_MAX, addToZoo, bumpScore, recordLessonResult, reset } = App.state;
-  const { buildLessonPlan, pickReward } = App.lessons;
+  const { get, setSettings, scoreOf, SCORE_MAX, addToZoo, bumpScore, starsOf, bumpStars, STAR_MAX, recordLessonResult, reset } = App.state;
+  const { buildLessonPlan, pickRewardChoices } = App.lessons;
   const { speak, isAvailable: speechAvailable } = App.speech;
 
   /* ---------- DOM helpers (same minimal kit as tasks.js) ---------- */
@@ -35,6 +35,22 @@
     return n;
   }
   function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+
+  /* ---------- star helpers ---------- */
+  // Index = star count; 0 unused (an owned animal always has ≥ 1 star).
+  const STAR_STAGES = ['', 'Mládě', 'Vyrůstá', 'Dospělé', 'Silné', 'Nejsilnější'];
+
+  function stageName(stars) {
+    return STAR_STAGES[Math.max(0, Math.min(STAR_MAX, stars))] || '';
+  }
+
+  function starRow(stars, cls) {
+    return el('span', {
+      class: cls || 'star-row',
+      'aria-label': `${stars} z ${STAR_MAX} hvězd`,
+      text: '★'.repeat(stars) + '☆'.repeat(Math.max(0, STAR_MAX - stars))
+    });
+  }
 
   /* ---------- onboarding ---------- */
   function renderOnboarding(mount) {
@@ -184,25 +200,84 @@
     setProgress(plan.length, plan.length);
 
     // Reward + summary.
-    const reward = pickReward(plan);
-    if (reward.isNew) addToZoo(reward.animal.id);
     recordLessonResult({ correct: correctCount, total: plan.length });
+    renderRewardChoice(taskMount, pickRewardChoices(plan), correctCount, plan.length);
+  }
 
-    renderLessonResult(taskMount, reward, correctCount, plan.length);
+  /* Reward screen: the child picks one of two animals — either a new one
+   * for the zoo or growing an owned one by a star. With a single candidate
+   * (almost everything collected) the reward applies immediately. */
+  function renderRewardChoice(mount, choices, correct, total) {
+    if (choices.length < 2) {
+      renderLessonResult(mount, applyReward(choices[0]), correct, total);
+      return;
+    }
+
+    clear(mount);
+    const grid = el('div', { class: 'reward-choice-grid' });
+    choices.forEach((choice) => {
+      const isNew = choice.kind === 'new';
+      const card = el('button', {
+        class: 'reward-choice-card',
+        on: {
+          click: () => {
+            speak(choice.animal.name);
+            renderLessonResult(mount, applyReward(choice), correct, total);
+          }
+        }
+      }, [
+        el('img', { src: animalImg(choice.animal.id), alt: choice.animal.name }),
+        el('span', { class: 'reward-choice-name', text: choice.animal.name }),
+        isNew
+          ? el('span', { class: 'reward-kind reward-kind-new', text: 'Nové zvíře!' })
+          : el('span', { class: 'reward-kind' }, [
+              starRow(choice.stars, 'star-row star-row-small'),
+              el('span', { text: ' → ' }),
+              starRow(choice.stars + 1, 'star-row star-row-small')
+            ])
+      ]);
+      grid.appendChild(card);
+    });
+
+    mount.appendChild(el('div', { class: 'result-card' }, [
+      el('h2', { text: 'Vyber si odměnu! 🎁' }),
+      el('p', { class: 'result-summary',
+        text: `Lekce dokončena: ${correct} z ${total} správně na první pokus.` }),
+      grid
+    ]));
+  }
+
+  function applyReward(choice) {
+    if (choice.kind === 'new') {
+      addToZoo(choice.animal.id);
+      return Object.assign({}, choice, { stars: starsOf(choice.animal.id) });
+    }
+    if (choice.kind === 'star') {
+      return Object.assign({}, choice, { stars: bumpStars(choice.animal.id) });
+    }
+    return choice; // bonus — no state change
   }
 
   function renderLessonResult(mount, reward, correct, total) {
     clear(mount);
     const animal = reward.animal;
-    const headline = reward.isNew
+    const headline = reward.kind === 'new'
       ? `Získal/a jsi nové zvíře: ${animal.name}!`
-      : `Bonus! ${animal.name} ti zamává znovu.`;
+      : reward.kind === 'star'
+        ? `${animal.name} má teď ${reward.stars} ⭐!`
+        : `Bonus! ${animal.name} ti zamává znovu.`;
 
     const card = el('div', { class: 'result-card' }, [
       el('h2', { text: headline }),
       el('div', { class: 'result-illustration' }, [
         el('img', { src: animalImg(animal.id), alt: animal.name })
       ]),
+      reward.stars
+        ? el('p', { class: 'result-stage' }, [
+            starRow(reward.stars),
+            el('span', { class: 'stage-label', text: ` ${stageName(reward.stars)}` })
+          ])
+        : null,
       el('p', { class: 'result-fact', text: animal.fact }),
       el('p', { class: 'result-summary',
         text: `Lekce dokončena: ${correct} z ${total} správně na první pokus.` }),
@@ -250,7 +325,8 @@
         el('div', { class: 'zoo-img-wrap' }, [
           el('img', { src: animalImg(animal.id), alt: animal.name })
         ]),
-        el('div', { class: 'zoo-name', text: owned ? animal.name : '?' })
+        el('div', { class: 'zoo-name', text: owned ? animal.name : '?' }),
+        owned ? el('div', { class: 'zoo-stars' }, [starRow(starsOf(animal.id), 'star-row star-row-small')]) : null
       ]);
       grid.appendChild(tile);
     });
@@ -282,6 +358,10 @@
           el('img', { src: animalImg(animal.id), alt: animal.name })
         ]),
         el('h1', { class: 'animal-name', text: animal.name }),
+        el('p', { class: 'animal-stage' }, [
+          starRow(starsOf(animal.id)),
+          el('span', { class: 'stage-label', text: ` ${stageName(starsOf(animal.id))}` })
+        ]),
         el('p', { class: 'animal-fact', text: animal.fact }),
         el('div', { class: 'cta-row' }, [
           el('button', {

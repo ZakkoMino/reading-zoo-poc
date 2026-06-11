@@ -112,6 +112,13 @@
       const grid = el('div', { class: 'option-grid' });
       const hint = el('p', { class: 'task-hint hidden' });
 
+      // Labels stay hidden while the child is choosing — otherwise the task
+      // is solvable by matching the printed word to the printed label
+      // without reading comprehension. They are revealed with the answer.
+      function revealLabels() {
+        grid.querySelectorAll('.option-label').forEach((l) => l.classList.remove('option-label-hidden'));
+      }
+
       options.forEach((animal) => {
         const card = el('button', {
           class: 'option-card',
@@ -121,6 +128,7 @@
               if (card.disabled) return;
               if (animal.id === correct.id) {
                 card.classList.add('option-correct');
+                revealLabels();
                 speak(animal.name);
                 setTimeout(() => resolve({ correct: tries === 0 }), 650);
               } else {
@@ -134,6 +142,7 @@
                   Array.from(grid.children).forEach((c) => {
                     if (c.dataset.id === correct.id) c.classList.add('option-correct');
                   });
+                  revealLabels();
                   setTimeout(() => resolve({ correct: false }), 900);
                 }
               }
@@ -141,7 +150,7 @@
           }
         }, [
           el('img', { src: animalImg(animal.id), alt: '' }),
-          el('span', { class: 'option-label', text: animal.name })
+          el('span', { class: 'option-label option-label-hidden', text: animal.name })
         ]);
         card.dataset.id = animal.id;
         grid.appendChild(card);
@@ -155,8 +164,10 @@
         hint
       ]);
 
+      // No auto-TTS here: the child should read the word/sentence and find
+      // the picture without an audio shortcut. Pronunciation plays as
+      // confirmation once the right picture is chosen.
       mount.appendChild(card);
-      setTimeout(() => speak(item.text), 200);
     });
   }
 
@@ -510,8 +521,12 @@
       const pickFrom = vowelIndices.length ? vowelIndices : allIndices;
       const missingIdx = pickFrom[Math.floor(Math.random() * pickFrom.length)];
       const correct = word[missingIdx];
-      const distractors = pickDistractorLetters(correct.toLowerCase(), word.toLowerCase(), 2);
-      const options = shuffle([correct, ...distractors]);
+      const correctLower = correct.toLowerCase();
+      const distractors = pickDistractorLetters(correctLower, word.toLowerCase(), 2);
+      // Options are always lowercase: a capital letter (e.g. a blank at the
+      // start of a sentence) among lowercase distractors would give the
+      // answer away. The blank still reveals the original casing.
+      const options = shuffle([correctLower, ...distractors]);
       let tries = 0;
       let solved = false;
 
@@ -536,7 +551,7 @@
           on: {
             click: () => {
               if (btn.disabled || solved) return;
-              if (letter === correct) {
+              if (letter === correctLower) {
                 solved = true;
                 btn.classList.add('btn-correct');
                 // Reveal the answer in the slot.
@@ -549,11 +564,11 @@
                 btn.classList.add('btn-wrong');
                 btn.disabled = true;
                 hint.classList.remove('hidden');
-                hint.textContent = tries >= 2 ? `Správné písmeno je „${correct}".` : 'Zkus jiné písmeno.';
+                hint.textContent = tries >= 2 ? `Správné písmeno je „${correctLower}".` : 'Zkus jiné písmeno.';
                 if (tries >= 2) {
                   // Reveal correct, then move on.
                   Array.from(choices.children).forEach((c) => {
-                    if (c.textContent === correct) c.classList.add('btn-correct');
+                    if (c.textContent === correctLower) c.classList.add('btn-correct');
                   });
                   wordRow.querySelector('.fill-blank').textContent = correct;
                   wordRow.querySelector('.fill-blank').classList.add('fill-blank-revealed');
