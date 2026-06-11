@@ -1,7 +1,7 @@
 {
   "schema": "reading-zoo.vocabulary.seed.v1",
   "language": "cs-CZ",
-  "count": 310,
+  "count": 342,
   "purpose": "Seed slovní zásoby pro MVP Čtecí ZOO; vyžaduje pedagogickou kontrolu před produkcí.",
   "levels": [
     {
@@ -3147,6 +3147,326 @@
       "isAnimal": false,
       "supportsZooReward": false,
       "notes": "Pohádky, 3 slova."
+    },
+    {
+      "id": "w311_klokan",
+      "text": "klokan",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w312_panda",
+      "text": "panda",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w313_koala",
+      "text": "koala",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w314_lenochod",
+      "text": "lenochod",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w315_gorila",
+      "text": "gorila",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w316_orangutan",
+      "text": "orangutan",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w317_nosorozec",
+      "text": "nosorožec",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w318_lama",
+      "text": "lama",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w319_leopard",
+      "text": "leopard",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w320_myval",
+      "text": "mýval",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w321_jezevec",
+      "text": "jezevec",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w322_netopyr",
+      "text": "netopýr",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w323_kanec",
+      "text": "kanec",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w324_osel",
+      "text": "osel",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w325_los",
+      "text": "los",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w326_krecek",
+      "text": "křeček",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w327_bizon",
+      "text": "bizon",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w328_krocan",
+      "text": "krocan",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w329_holub",
+      "text": "holub",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w330_labut",
+      "text": "labuť",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w331_plamenak",
+      "text": "plameňák",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w332_pav",
+      "text": "páv",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w333_kure",
+      "text": "kuře",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w334_zralok",
+      "text": "žralok",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w335_chobotnice",
+      "text": "chobotnice",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w336_krab",
+      "text": "krab",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w337_jesterka",
+      "text": "ještěrka",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 3,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w338_beruska",
+      "text": "beruška",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w339_brouk",
+      "text": "brouk",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w340_housenka",
+      "text": "housenka",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w341_cvrcek",
+      "text": "cvrček",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 2,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
+    },
+    {
+      "id": "w342_stir",
+      "text": "štír",
+      "level": "L3_animals",
+      "category": "Zvířata",
+      "recommendedDifficulty": 1,
+      "isAnimal": true,
+      "supportsZooReward": true,
+      "notes": "Zvířata pro hlavní motivační smyčku ZOO."
     }
   ]
 }

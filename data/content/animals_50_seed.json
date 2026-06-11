@@ -2,7 +2,7 @@
   "schema": "reading-zoo.animals.seed.v1",
   "version": "1.1.0",
   "language": "cs-CZ",
-  "count": 50,
+  "count": 82,
   "licenseNote": "Animal images are Microsoft Fluent Emoji (3D), MIT licensed — see assets/animals-3d/LICENSE.md.",
   "animals": [
     {
@@ -804,6 +804,487 @@
         "vousky"
       ],
       "imagePath": "assets/animals-3d/vydra.png"
+    },
+    {
+      "id": "klokan",
+      "name": "Klokan",
+      "category": "savec",
+      "biome": "savana",
+      "readingLevel": 2,
+      "wordDifficulty": 2,
+      "sentence": "Klokan skáče.",
+      "fact": "Klokan nosí mládě v kapse na břiše.",
+      "tags": [
+        "skoky",
+        "kapsa",
+        "mlade"
+      ],
+      "imagePath": "assets/animals-3d/klokan.png"
+    },
+    {
+      "id": "panda",
+      "name": "Panda",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 2,
+      "wordDifficulty": 2,
+      "sentence": "Panda chroupe bambus.",
+      "fact": "Panda je černobílý medvěd z Číny.",
+      "tags": [
+        "bambus",
+        "cernobila"
+      ],
+      "imagePath": "assets/animals-3d/panda.png"
+    },
+    {
+      "id": "koala",
+      "name": "Koala",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 2,
+      "wordDifficulty": 2,
+      "sentence": "Koala spí.",
+      "fact": "Koala prospí skoro celý den na stromě.",
+      "tags": [
+        "strom",
+        "spanek"
+      ],
+      "imagePath": "assets/animals-3d/koala.png"
+    },
+    {
+      "id": "lenochod",
+      "name": "Lenochod",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 3,
+      "wordDifficulty": 3,
+      "sentence": "Lenochod odpočívá.",
+      "fact": "Lenochod se pohybuje velmi pomalu.",
+      "tags": [
+        "pomaly",
+        "strom"
+      ],
+      "imagePath": "assets/animals-3d/lenochod.png"
+    },
+    {
+      "id": "gorila",
+      "name": "Gorila",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 2,
+      "wordDifficulty": 2,
+      "sentence": "Gorila je silná.",
+      "fact": "Gorila je největší opice na světě.",
+      "tags": [
+        "sila",
+        "prales"
+      ],
+      "imagePath": "assets/animals-3d/gorila.png"
+    },
+    {
+      "id": "orangutan",
+      "name": "Orangutan",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 3,
+      "wordDifficulty": 3,
+      "sentence": "Orangutan šplhá.",
+      "fact": "Orangutan si staví hnízdo na stromě.",
+      "tags": [
+        "strom",
+        "splhani"
+      ],
+      "imagePath": "assets/animals-3d/orangutan.png"
+    },
+    {
+      "id": "nosorozec",
+      "name": "Nosorožec",
+      "category": "savec",
+      "biome": "savana",
+      "readingLevel": 3,
+      "wordDifficulty": 3,
+      "sentence": "Nosorožec má roh.",
+      "fact": "Nosorožec má tlustou kůži a velký roh.",
+      "tags": [
+        "roh",
+        "kuze"
+      ],
+      "imagePath": "assets/animals-3d/nosorozec.png"
+    },
+    {
+      "id": "lama",
+      "name": "Lama",
+      "category": "savec",
+      "biome": "hory",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Lama nosí náklad.",
+      "fact": "Lama žije vysoko v horách.",
+      "tags": [
+        "hory",
+        "vlna"
+      ],
+      "imagePath": "assets/animals-3d/lama.png"
+    },
+    {
+      "id": "leopard",
+      "name": "Leopard",
+      "category": "savec",
+      "biome": "savana",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Leopard má skvrny.",
+      "fact": "Leopard umí vytáhnout kořist na strom.",
+      "tags": [
+        "skvrny",
+        "rychly"
+      ],
+      "imagePath": "assets/animals-3d/leopard.png"
+    },
+    {
+      "id": "myval",
+      "name": "Mýval",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 2,
+      "wordDifficulty": 2,
+      "sentence": "Mýval se myje.",
+      "fact": "Mýval si máchá jídlo ve vodě.",
+      "tags": [
+        "maska",
+        "voda"
+      ],
+      "imagePath": "assets/animals-3d/myval.png"
+    },
+    {
+      "id": "jezevec",
+      "name": "Jezevec",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 2,
+      "wordDifficulty": 2,
+      "sentence": "Jezevec ryje noru.",
+      "fact": "Jezevec má na hlavě černobílé pruhy.",
+      "tags": [
+        "nora",
+        "pruhy"
+      ],
+      "imagePath": "assets/animals-3d/jezevec.png"
+    },
+    {
+      "id": "netopyr",
+      "name": "Netopýr",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 3,
+      "wordDifficulty": 3,
+      "sentence": "Netopýr létá.",
+      "fact": "Netopýr spí hlavou dolů.",
+      "tags": [
+        "noc",
+        "kridla"
+      ],
+      "imagePath": "assets/animals-3d/netopyr.png"
+    },
+    {
+      "id": "kanec",
+      "name": "Kanec",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 1,
+      "wordDifficulty": 2,
+      "sentence": "Kanec ryje.",
+      "fact": "Kanec hledá v lese žaludy.",
+      "tags": [
+        "les",
+        "ryje"
+      ],
+      "imagePath": "assets/animals-3d/kanec.png"
+    },
+    {
+      "id": "osel",
+      "name": "Osel",
+      "category": "savec",
+      "biome": "statek",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Osel hýká.",
+      "fact": "Osel je trpělivý a velmi silný.",
+      "tags": [
+        "statek",
+        "usi"
+      ],
+      "imagePath": "assets/animals-3d/osel.png"
+    },
+    {
+      "id": "los",
+      "name": "Los",
+      "category": "savec",
+      "biome": "les",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Los má parohy.",
+      "fact": "Los je největší jelen na světě.",
+      "tags": [
+        "parohy",
+        "les"
+      ],
+      "imagePath": "assets/animals-3d/los.png"
+    },
+    {
+      "id": "krecek",
+      "name": "Křeček",
+      "category": "savec",
+      "biome": "domov",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Křeček chroupe.",
+      "fact": "Křeček si schovává jídlo do tváří.",
+      "tags": [
+        "tvare",
+        "zrni"
+      ],
+      "imagePath": "assets/animals-3d/krecek.png"
+    },
+    {
+      "id": "bizon",
+      "name": "Bizon",
+      "category": "savec",
+      "biome": "louka",
+      "readingLevel": 2,
+      "wordDifficulty": 2,
+      "sentence": "Bizon se pase.",
+      "fact": "Bizon má velkou chlupatou hlavu.",
+      "tags": [
+        "stado",
+        "travy"
+      ],
+      "imagePath": "assets/animals-3d/bizon.png"
+    },
+    {
+      "id": "krocan",
+      "name": "Krocan",
+      "category": "ptak",
+      "biome": "statek",
+      "readingLevel": 2,
+      "wordDifficulty": 2,
+      "sentence": "Krocan hudruje.",
+      "fact": "Krocan roztahuje ocas jako vějíř.",
+      "tags": [
+        "statek",
+        "ocas"
+      ],
+      "imagePath": "assets/animals-3d/krocan.png"
+    },
+    {
+      "id": "holub",
+      "name": "Holub",
+      "category": "ptak",
+      "biome": "domov",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Holub vrká.",
+      "fact": "Holub vždy najde cestu domů.",
+      "tags": [
+        "mesto",
+        "kridla"
+      ],
+      "imagePath": "assets/animals-3d/holub.png"
+    },
+    {
+      "id": "labut",
+      "name": "Labuť",
+      "category": "ptak",
+      "biome": "rybnik",
+      "readingLevel": 2,
+      "wordDifficulty": 2,
+      "sentence": "Labuť pluje.",
+      "fact": "Labuť má dlouhý bílý krk.",
+      "tags": [
+        "rybnik",
+        "bila"
+      ],
+      "imagePath": "assets/animals-3d/labut.png"
+    },
+    {
+      "id": "plamenak",
+      "name": "Plameňák",
+      "category": "ptak",
+      "biome": "rybnik",
+      "readingLevel": 3,
+      "wordDifficulty": 3,
+      "sentence": "Plameňák je růžový.",
+      "fact": "Plameňák rád stojí na jedné noze.",
+      "tags": [
+        "ruzovy",
+        "noha"
+      ],
+      "imagePath": "assets/animals-3d/plamenak.png"
+    },
+    {
+      "id": "pav",
+      "name": "Páv",
+      "category": "ptak",
+      "biome": "zoo",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Páv se chlubí.",
+      "fact": "Páv má ocas plný barevných ok.",
+      "tags": [
+        "ocas",
+        "barvy"
+      ],
+      "imagePath": "assets/animals-3d/pav.png"
+    },
+    {
+      "id": "kure",
+      "name": "Kuře",
+      "category": "ptak",
+      "biome": "statek",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Kuře pípá.",
+      "fact": "Kuře se vylíhlo z vejce.",
+      "tags": [
+        "vejce",
+        "statek"
+      ],
+      "imagePath": "assets/animals-3d/kure.png"
+    },
+    {
+      "id": "zralok",
+      "name": "Žralok",
+      "category": "ryba",
+      "biome": "ocean",
+      "readingLevel": 2,
+      "wordDifficulty": 2,
+      "sentence": "Žralok plave.",
+      "fact": "Žralok má několik řad zubů.",
+      "tags": [
+        "zuby",
+        "more"
+      ],
+      "imagePath": "assets/animals-3d/zralok.png"
+    },
+    {
+      "id": "chobotnice",
+      "name": "Chobotnice",
+      "category": "mekkys",
+      "biome": "ocean",
+      "readingLevel": 3,
+      "wordDifficulty": 3,
+      "sentence": "Chobotnice se schovává.",
+      "fact": "Chobotnice má osm chapadel.",
+      "tags": [
+        "chapadla",
+        "more"
+      ],
+      "imagePath": "assets/animals-3d/chobotnice.png"
+    },
+    {
+      "id": "krab",
+      "name": "Krab",
+      "category": "korys",
+      "biome": "ocean",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Krab leze bokem.",
+      "fact": "Krab má tvrdý krunýř a klepeta.",
+      "tags": [
+        "klepeta",
+        "more"
+      ],
+      "imagePath": "assets/animals-3d/krab.png"
+    },
+    {
+      "id": "jesterka",
+      "name": "Ještěrka",
+      "category": "plaz",
+      "biome": "louka",
+      "readingLevel": 3,
+      "wordDifficulty": 3,
+      "sentence": "Ještěrka se sluní.",
+      "fact": "Ještěrka umí odhodit ocásek.",
+      "tags": [
+        "slunce",
+        "ocasek"
+      ],
+      "imagePath": "assets/animals-3d/jesterka.png"
+    },
+    {
+      "id": "beruska",
+      "name": "Beruška",
+      "category": "hmyz",
+      "biome": "louka",
+      "readingLevel": 2,
+      "wordDifficulty": 2,
+      "sentence": "Beruška letí.",
+      "fact": "Beruška má červená křídla s tečkami.",
+      "tags": [
+        "tecky",
+        "cervena"
+      ],
+      "imagePath": "assets/animals-3d/beruska.png"
+    },
+    {
+      "id": "brouk",
+      "name": "Brouk",
+      "category": "hmyz",
+      "biome": "les",
+      "readingLevel": 1,
+      "wordDifficulty": 1,
+      "sentence": "Brouk leze.",
+      "fact": "Brouk schovává křídla pod krovkami.",
+      "tags": [
+        "krovky",
+        "les"
+      ],
+      "imagePath": "assets/animals-3d/brouk.png"
+    },
+    {
+      "id": "housenka",
+      "name": "Housenka",
+      "category": "hmyz",
+      "biome": "louka",
+      "readingLevel": 2,
+      "wordDifficulty": 2,
+      "sentence": "Housenka se plazí.",
+      "fact": "Z housenky se jednou stane motýl.",
+      "tags": [
+        "motyl",
+        "listy"
+      ],
+      "imagePath": "assets/animals-3d/housenka.png"
+    },
+    {
+      "id": "cvrcek",
+      "name": "Cvrček",
+      "category": "hmyz",
+      "biome": "louka",
+      "readingLevel": 2,
+      "wordDifficulty": 3,
+      "sentence": "Cvrček cvrká.",
+      "fact": "Cvrček hraje křídly jako na housle.",
+      "tags": [
+        "louka",
+        "zpev"
+      ],
+      "imagePath": "assets/animals-3d/cvrcek.png"
+    },
+    {
+      "id": "stir",
+      "name": "Štír",
+      "category": "pavoukovec",
+      "biome": "poust",
+      "readingLevel": 1,
+      "wordDifficulty": 2,
+      "sentence": "Štír se schovává.",
+      "fact": "Štír má klepeta a zahnutý ocas.",
+      "tags": [
+        "poust",
+        "klepeta"
+      ],
+      "imagePath": "assets/animals-3d/stir.png"
     }
   ]
 }

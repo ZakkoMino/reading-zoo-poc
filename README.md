@@ -16,17 +16,18 @@ a za každou dokončenou lekci si dítě odnese **zvíře do své ZOO**.
 - [Návrh dalších kroků](docs/NEXT_STEPS.md)
 - [Strategie ilustrací](docs/ILLUSTRATION_STRATEGY.md)
 
-## Asset balík – 50 ilustrovaných zvířat
+## Asset balík – 82 ilustrovaných zvířat
 
 | Soubor | Popis |
 |---|---|
 | [`data/content/animals_50_seed.json`](data/content/animals_50_seed.json) | JSON manifest – metadata, věty, fakta (cs-CZ) |
 | [`data/content/animals_50_seed.csv`](data/content/animals_50_seed.csv) | CSV export stejných dat |
 | [`data/content/animals_50.schema.json`](data/content/animals_50.schema.json) | JSON Schema (draft-07) |
-| `assets/animals-illustrated/*.svg` | 50 originálních SVG ilustrací |
+| `assets/animals-3d/*.png` | 82 ilustrací Microsoft Fluent Emoji 3D (MIT) |
+| `assets/animals-illustrated/*.svg` | 50 původních generovaných SVG (archiv) |
 | [`animals-preview.html`](animals-preview.html) | Grid preview (vyžaduje lokální server) |
 
-Vygenerovat/přegenerovat assety: `node scripts/generate-animals-50.mjs`  
+Stáhnout/aktualizovat ilustrace: `node scripts/fetch-animal-art.mjs`  
 Validovat: `node scripts/validate-animals-50.mjs`
 
 ---
@@ -68,7 +69,7 @@ Pak v prohlížeči otevři <http://localhost:8000>.
 | 3 délky lekce (5 / 8 / 10 úkolů) | ✅ |
 | 4 typy úkolů (čtení, spoj s obrázkem, slož celé slovo/větu, doplň písmeno) | ✅ |
 | Pestré střídání úkolů, žádný stejný dvakrát po sobě | ✅ |
-| 50 zvířat s ilustracemi Microsoft Fluent Emoji 3D (assets/animals-3d/, MIT) | ✅ |
+| 82 zvířat s ilustracemi Microsoft Fluent Emoji 3D (assets/animals-3d/, MIT) | ✅ |
 | Sbírka zvířat se zámkem na neodemčená | ✅ |
 | Výběr odměny: dítě si po lekci vybere 1 ze 2 zvířat | ✅ |
 | Růst zvířat po hvězdičkách (1★ mládě → 5★ nejsilnější) | ✅ |

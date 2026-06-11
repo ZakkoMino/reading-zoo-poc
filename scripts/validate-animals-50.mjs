@@ -10,7 +10,7 @@ const ROOT = join(__dirname, '..');
 const DATA_PATH = join(ROOT, 'data', 'content', 'animals_50_seed.json');
 const SVG_DIR = join(ROOT, 'assets', 'animals-illustrated');
 
-const VALID_CATEGORIES = ['savec', 'ptak', 'plaz', 'obojzivelnik', 'ryba', 'hmyz', 'pavoukovec', 'mekkys'];
+const VALID_CATEGORIES = ['savec', 'ptak', 'plaz', 'obojzivelnik', 'ryba', 'hmyz', 'pavoukovec', 'mekkys', 'korys'];
 const VALID_BIOMES = ['domov', 'statek', 'les', 'louka', 'savana', 'poust', 'reka', 'rybnik', 'ocean', 'hory', 'zoo'];
 const VALID_LEVELS = [1, 2, 3];
 
@@ -34,22 +34,15 @@ try {
   process.exit(1);
 }
 
-// 2. count field
-if (manifest.count === 50) {
-  pass(`manifest.count = ${manifest.count}`);
-} else {
-  fail(`manifest.count je ${manifest.count}, očekáváno 50`);
-}
-
-// 3. animals.length
+// 2.–3. count field must match the actual number of animals
 if (!Array.isArray(manifest.animals)) {
   fail('manifest.animals není pole');
   process.exit(1);
 }
-if (manifest.animals.length === 50) {
-  pass(`manifest.animals.length = ${manifest.animals.length}`);
+if (manifest.count === manifest.animals.length) {
+  pass(`manifest.count = ${manifest.count} (odpovídá počtu zvířat)`);
 } else {
-  fail(`manifest.animals.length je ${manifest.animals.length}, očekáváno 50`);
+  fail(`manifest.count je ${manifest.count}, ale zvířat je ${manifest.animals.length}`);
 }
 
 // 4. unique IDs
