@@ -1,9 +1,9 @@
 {
   "schema": "reading-zoo.animals.seed.v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "language": "cs-CZ",
   "count": 50,
-  "licenseNote": "Illustrations are original prototype SVG assets created for this project.",
+  "licenseNote": "Animal images are Microsoft Fluent Emoji (3D), MIT licensed — see assets/animals-3d/LICENSE.md.",
   "animals": [
     {
       "id": "pes",
@@ -19,7 +19,7 @@
         "srst",
         "steka"
       ],
-      "imagePath": "assets/animals-illustrated/pes.svg"
+      "imagePath": "assets/animals-3d/pes.png"
     },
     {
       "id": "kocka",
@@ -35,7 +35,7 @@
         "vousky",
         "domy"
       ],
-      "imagePath": "assets/animals-illustrated/kocka.svg"
+      "imagePath": "assets/animals-3d/kocka.png"
     },
     {
       "id": "lev",
@@ -51,7 +51,7 @@
         "hriva",
         "afrika"
       ],
-      "imagePath": "assets/animals-illustrated/lev.svg"
+      "imagePath": "assets/animals-3d/lev.png"
     },
     {
       "id": "sova",
@@ -67,7 +67,7 @@
         "velke-oci",
         "les"
       ],
-      "imagePath": "assets/animals-illustrated/sova.svg"
+      "imagePath": "assets/animals-3d/sova.png"
     },
     {
       "id": "liska",
@@ -83,7 +83,7 @@
         "ocas",
         "les"
       ],
-      "imagePath": "assets/animals-illustrated/liska.svg"
+      "imagePath": "assets/animals-3d/liska.png"
     },
     {
       "id": "zebra",
@@ -99,7 +99,7 @@
         "afrika",
         "savana"
       ],
-      "imagePath": "assets/animals-illustrated/zebra.svg"
+      "imagePath": "assets/animals-3d/zebra.png"
     },
     {
       "id": "kos",
@@ -115,7 +115,7 @@
         "zobak",
         "zpev"
       ],
-      "imagePath": "assets/animals-illustrated/kos.svg"
+      "imagePath": "assets/animals-3d/kos.png"
     },
     {
       "id": "krava",
@@ -131,7 +131,7 @@
         "statek",
         "rohy"
       ],
-      "imagePath": "assets/animals-illustrated/krava.svg"
+      "imagePath": "assets/animals-3d/krava.png"
     },
     {
       "id": "kun",
@@ -147,7 +147,7 @@
         "rychly",
         "statek"
       ],
-      "imagePath": "assets/animals-illustrated/kun.svg"
+      "imagePath": "assets/animals-3d/kun.png"
     },
     {
       "id": "zaba",
@@ -163,7 +163,7 @@
         "skace",
         "rybnik"
       ],
-      "imagePath": "assets/animals-illustrated/zaba.svg"
+      "imagePath": "assets/animals-3d/zaba.png"
     },
     {
       "id": "slon",
@@ -179,7 +179,7 @@
         "velky",
         "afrika"
       ],
-      "imagePath": "assets/animals-illustrated/slon.svg"
+      "imagePath": "assets/animals-3d/slon.png"
     },
     {
       "id": "medved",
@@ -195,7 +195,7 @@
         "hnedy",
         "les"
       ],
-      "imagePath": "assets/animals-illustrated/medved.svg"
+      "imagePath": "assets/animals-3d/medved.png"
     },
     {
       "id": "had",
@@ -211,23 +211,23 @@
         "jazyk",
         "bez-noh"
       ],
-      "imagePath": "assets/animals-illustrated/had.svg"
+      "imagePath": "assets/animals-3d/had.png"
     },
     {
-      "id": "cap",
-      "name": "Kozel",
+      "id": "beran",
+      "name": "Beran",
       "category": "savec",
       "biome": "statek",
       "readingLevel": 1,
       "wordDifficulty": 2,
-      "sentence": "Kozel mečí.",
-      "fact": "Kozel má rohy a hustou bradku.",
+      "sentence": "Beran trká.",
+      "fact": "Beran má velké zatočené rohy.",
       "tags": [
-        "kozel",
+        "statek",
         "rohy",
-        "bradka"
+        "vlna"
       ],
-      "imagePath": "assets/animals-illustrated/cap.svg"
+      "imagePath": "assets/animals-3d/beran.png"
     },
     {
       "id": "orel",
@@ -243,7 +243,7 @@
         "hory",
         "zobak"
       ],
-      "imagePath": "assets/animals-illustrated/orel.svg"
+      "imagePath": "assets/animals-3d/orel.png"
     },
     {
       "id": "vlk",
@@ -259,23 +259,23 @@
         "les",
         "sedy"
       ],
-      "imagePath": "assets/animals-illustrated/vlk.svg"
+      "imagePath": "assets/animals-3d/vlk.png"
     },
     {
-      "id": "rys",
-      "name": "Rys",
+      "id": "hroch",
+      "name": "Hroch",
       "category": "savec",
-      "biome": "les",
+      "biome": "reka",
       "readingLevel": 1,
-      "wordDifficulty": 1,
-      "sentence": "Rys se plíží.",
-      "fact": "Rys má charakteristické chocholy na uších.",
+      "wordDifficulty": 2,
+      "sentence": "Hroch se koupe.",
+      "fact": "Hroch tráví skoro celý den ve vodě.",
       "tags": [
-        "chocholy",
-        "skvrnity",
-        "les"
+        "voda",
+        "velky",
+        "reka"
       ],
-      "imagePath": "assets/animals-illustrated/rys.svg"
+      "imagePath": "assets/animals-3d/hroch.png"
     },
     {
       "id": "jelen",
@@ -291,23 +291,23 @@
         "les",
         "hnedy"
       ],
-      "imagePath": "assets/animals-illustrated/jelen.svg"
+      "imagePath": "assets/animals-3d/jelen.png"
     },
     {
-      "id": "srna",
-      "name": "Srna",
-      "category": "savec",
+      "id": "papousek",
+      "name": "Papoušek",
+      "category": "ptak",
       "biome": "les",
-      "readingLevel": 1,
-      "wordDifficulty": 2,
-      "sentence": "Srna skáče.",
-      "fact": "Srna je samice jelena, bez parohů.",
+      "readingLevel": 3,
+      "wordDifficulty": 3,
+      "sentence": "Papoušek mluví.",
+      "fact": "Papoušek umí opakovat slova.",
       "tags": [
-        "skvrny",
-        "les",
-        "fena"
+        "barevny",
+        "mluvi",
+        "peri"
       ],
-      "imagePath": "assets/animals-illustrated/srna.svg"
+      "imagePath": "assets/animals-3d/papousek.png"
     },
     {
       "id": "prase",
@@ -323,7 +323,7 @@
         "statek",
         "rypak"
       ],
-      "imagePath": "assets/animals-illustrated/prase.svg"
+      "imagePath": "assets/animals-3d/prase.png"
     },
     {
       "id": "ovce",
@@ -339,7 +339,7 @@
         "bila",
         "louka"
       ],
-      "imagePath": "assets/animals-illustrated/ovce.svg"
+      "imagePath": "assets/animals-3d/ovce.png"
     },
     {
       "id": "koza",
@@ -355,7 +355,7 @@
         "mleko",
         "statek"
       ],
-      "imagePath": "assets/animals-illustrated/koza.svg"
+      "imagePath": "assets/animals-3d/koza.png"
     },
     {
       "id": "kohout",
@@ -371,7 +371,7 @@
         "pero",
         "rano"
       ],
-      "imagePath": "assets/animals-illustrated/kohout.svg"
+      "imagePath": "assets/animals-3d/kohout.png"
     },
     {
       "id": "slepice",
@@ -387,7 +387,7 @@
         "statek",
         "kur"
       ],
-      "imagePath": "assets/animals-illustrated/slepice.svg"
+      "imagePath": "assets/animals-3d/slepice.png"
     },
     {
       "id": "kachna",
@@ -403,7 +403,7 @@
         "rybnik",
         "zelena-hlava"
       ],
-      "imagePath": "assets/animals-illustrated/kachna.svg"
+      "imagePath": "assets/animals-3d/kachna.png"
     },
     {
       "id": "husa",
@@ -419,7 +419,7 @@
         "krik",
         "dlahy"
       ],
-      "imagePath": "assets/animals-illustrated/husa.svg"
+      "imagePath": "assets/animals-3d/husa.png"
     },
     {
       "id": "kralik",
@@ -435,7 +435,7 @@
         "bila",
         "mrkev"
       ],
-      "imagePath": "assets/animals-illustrated/kralik.svg"
+      "imagePath": "assets/animals-3d/kralik.png"
     },
     {
       "id": "mys",
@@ -451,7 +451,7 @@
         "ocas",
         "seda"
       ],
-      "imagePath": "assets/animals-illustrated/mys.svg"
+      "imagePath": "assets/animals-3d/mys.png"
     },
     {
       "id": "krysa",
@@ -467,7 +467,7 @@
         "ocas",
         "chytra"
       ],
-      "imagePath": "assets/animals-illustrated/krysa.svg"
+      "imagePath": "assets/animals-3d/krysa.png"
     },
     {
       "id": "tygr",
@@ -483,7 +483,7 @@
         "oranzovy",
         "asie"
       ],
-      "imagePath": "assets/animals-illustrated/tygr.svg"
+      "imagePath": "assets/animals-3d/tygr.png"
     },
     {
       "id": "opice",
@@ -499,7 +499,7 @@
         "ocas",
         "chytra"
       ],
-      "imagePath": "assets/animals-illustrated/opice.svg"
+      "imagePath": "assets/animals-3d/opice.png"
     },
     {
       "id": "zirafa",
@@ -515,7 +515,7 @@
         "skvrny",
         "vysoky"
       ],
-      "imagePath": "assets/animals-illustrated/zirafa.svg"
+      "imagePath": "assets/animals-3d/zirafa.png"
     },
     {
       "id": "velbloud",
@@ -531,7 +531,7 @@
         "poust",
         "voda"
       ],
-      "imagePath": "assets/animals-illustrated/velbloud.svg"
+      "imagePath": "assets/animals-3d/velbloud.png"
     },
     {
       "id": "tucnak",
@@ -547,7 +547,7 @@
         "smoki",
         "plava"
       ],
-      "imagePath": "assets/animals-illustrated/tucnak.svg"
+      "imagePath": "assets/animals-3d/tucnak.png"
     },
     {
       "id": "tulen",
@@ -563,7 +563,7 @@
         "vousky",
         "more"
       ],
-      "imagePath": "assets/animals-illustrated/tulen.svg"
+      "imagePath": "assets/animals-3d/tulen.png"
     },
     {
       "id": "delfin",
@@ -579,7 +579,7 @@
         "pluta",
         "chytry"
       ],
-      "imagePath": "assets/animals-illustrated/delfin.svg"
+      "imagePath": "assets/animals-3d/delfin.png"
     },
     {
       "id": "velryba",
@@ -595,7 +595,7 @@
         "more",
         "vodotrysk"
       ],
-      "imagePath": "assets/animals-illustrated/velryba.svg"
+      "imagePath": "assets/animals-3d/velryba.png"
     },
     {
       "id": "zelva",
@@ -611,7 +611,7 @@
         "pomala",
         "stara"
       ],
-      "imagePath": "assets/animals-illustrated/zelva.svg"
+      "imagePath": "assets/animals-3d/zelva.png"
     },
     {
       "id": "ryba",
@@ -627,7 +627,7 @@
         "skrupule",
         "voda"
       ],
-      "imagePath": "assets/animals-illustrated/ryba.svg"
+      "imagePath": "assets/animals-3d/ryba.png"
     },
     {
       "id": "kapr",
@@ -643,23 +643,23 @@
         "rybnik",
         "vousky"
       ],
-      "imagePath": "assets/animals-illustrated/kapr.svg"
+      "imagePath": "assets/animals-3d/kapr.png"
     },
     {
-      "id": "cmelak",
-      "name": "Čmelák",
-      "category": "hmyz",
-      "biome": "louka",
-      "readingLevel": 2,
-      "wordDifficulty": 4,
-      "sentence": "Čmelák bzučí.",
-      "fact": "Čmelák opyluje květiny a vyrábí med.",
+      "id": "krokodyl",
+      "name": "Krokodýl",
+      "category": "plaz",
+      "biome": "reka",
+      "readingLevel": 3,
+      "wordDifficulty": 3,
+      "sentence": "Krokodýl plave.",
+      "fact": "Krokodýl má silný ocas a ostré zuby.",
       "tags": [
-        "kridla",
-        "med",
-        "louka"
+        "voda",
+        "zuby",
+        "plaz"
       ],
-      "imagePath": "assets/animals-illustrated/cmelak.svg"
+      "imagePath": "assets/animals-3d/krokodyl.png"
     },
     {
       "id": "vcela",
@@ -675,7 +675,7 @@
         "ul",
         "kridla"
       ],
-      "imagePath": "assets/animals-illustrated/vcela.svg"
+      "imagePath": "assets/animals-3d/vcela.png"
     },
     {
       "id": "mravenec",
@@ -691,7 +691,7 @@
         "tykadla",
         "clanek"
       ],
-      "imagePath": "assets/animals-illustrated/mravenec.svg"
+      "imagePath": "assets/animals-3d/mravenec.png"
     },
     {
       "id": "motyl",
@@ -707,7 +707,7 @@
         "pestry",
         "louka"
       ],
-      "imagePath": "assets/animals-illustrated/motyl.svg"
+      "imagePath": "assets/animals-3d/motyl.png"
     },
     {
       "id": "moucha",
@@ -723,7 +723,7 @@
         "oci",
         "rychla"
       ],
-      "imagePath": "assets/animals-illustrated/moucha.svg"
+      "imagePath": "assets/animals-3d/moucha.png"
     },
     {
       "id": "pavouk",
@@ -739,7 +739,7 @@
         "pavucina",
         "temny"
       ],
-      "imagePath": "assets/animals-illustrated/pavouk.svg"
+      "imagePath": "assets/animals-3d/pavouk.png"
     },
     {
       "id": "snek",
@@ -755,7 +755,7 @@
         "pomaly",
         "sliz"
       ],
-      "imagePath": "assets/animals-illustrated/snek.svg"
+      "imagePath": "assets/animals-3d/snek.png"
     },
     {
       "id": "jezek",
@@ -771,7 +771,7 @@
         "les",
         "nocni"
       ],
-      "imagePath": "assets/animals-illustrated/jezek.svg"
+      "imagePath": "assets/animals-3d/jezek.png"
     },
     {
       "id": "bobr",
@@ -787,7 +787,7 @@
         "ocas",
         "zuby"
       ],
-      "imagePath": "assets/animals-illustrated/bobr.svg"
+      "imagePath": "assets/animals-3d/bobr.png"
     },
     {
       "id": "vydra",
@@ -803,7 +803,7 @@
         "ryby",
         "vousky"
       ],
-      "imagePath": "assets/animals-illustrated/vydra.svg"
+      "imagePath": "assets/animals-3d/vydra.png"
     }
   ]
 }

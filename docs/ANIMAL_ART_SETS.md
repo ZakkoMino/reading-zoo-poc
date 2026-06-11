@@ -5,6 +5,12 @@ sady ilustrací zvířat, kterými lze nahradit placeholder SVG – bez nutnosti
 kreslit vlastní sadu. Ověřeno proti našim 50 zvířatům
 (`data/content/animals_50_seed.json`).
 
+> **Rozhodnutí (2026-06-11): zvolena varianta B – Microsoft Fluent Emoji 3D.**
+> Nasazeno přes `scripts/fetch-animal-art.mjs` do `assets/animals-3d/`.
+> Zvířata bez emoji podoby byla v seed datech nahrazena:
+> rys → **hroch**, srna → **papoušek**, čmelák → **krokodýl**,
+> kozel → **beran** (kozel by sdílel jediné kozí emoji s kozou).
+
 ## Shrnutí – doporučení
 
 **Použít OpenMoji** (primárně), případně **Microsoft Fluent Emoji 3D**,

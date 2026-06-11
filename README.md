@@ -68,7 +68,7 @@ Pak v prohlížeči otevři <http://localhost:8000>.
 | 3 délky lekce (5 / 8 / 10 úkolů) | ✅ |
 | 4 typy úkolů (čtení, spoj s obrázkem, slož celé slovo/větu, doplň písmeno) | ✅ |
 | Pestré střídání úkolů, žádný stejný dvakrát po sobě | ✅ |
-| 50 zvířat se SVG ilustracemi (assets/animals-illustrated/) | ✅ |
+| 50 zvířat s ilustracemi Microsoft Fluent Emoji 3D (assets/animals-3d/, MIT) | ✅ |
 | Sbírka zvířat se zámkem na neodemčená | ✅ |
 | Výběr odměny: dítě si po lekci vybere 1 ze 2 zvířat | ✅ |
 | Růst zvířat po hvězdičkách (1★ mládě → 5★ nejsilnější) | ✅ |
@@ -90,8 +90,9 @@ reading-zoo-prototype/
 ├── styles.css              # styly pro všech 5 obrazovek
 ├── animals-preview.html    # grid preview 50 ilustrovaných zvířat
 ├── assets/
-│   ├── animals/*.svg       # 12 původních SVG ilustrací (prototyp)
-│   └── animals-illustrated/*.svg  # 50 nových SVG ilustrací (seed)
+│   ├── animals/*.svg       # 12 původních SVG ilustrací (fallback pro file://)
+│   ├── animals-illustrated/*.svg  # 50 generovaných SVG (archiv, nahrazeno)
+│   └── animals-3d/*.png    # 50 ilustrací Microsoft Fluent Emoji 3D (MIT)
 ├── data/content/
 │   ├── animals_50_seed.json   # manifest 50 zvířat
 │   ├── animals_50_seed.csv    # CSV export
@@ -168,10 +169,12 @@ bonusovou oslavu.
 
 ## Vědomá omezení
 
-* **Ilustrace jsou prototypové placeholdery.** Jsou ručně psané
-  SVG ve stejném vizuálním klíči (kruhové pozadí, 200×200), ale
-  produkčně bychom chtěli **jednotnou profesionální sadu**
-  od ilustrátora (např. vektorová sada CC-BY / vlastní zakázka).
+* **Ilustrace jsou Microsoft Fluent Emoji (3D, MIT).** Jednotná,
+  dětsky přívětivá sada — viz `docs/ANIMAL_ART_SETS.md` a
+  `assets/animals-3d/LICENSE.md`. Stáhnout/aktualizovat:
+  `node scripts/fetch-animal-art.mjs`. Zvířata bez emoji podoby
+  (rys, srna, čmelák, kozel) byla nahrazena (hroch, papoušek,
+  krokodýl, beran).
 * **Web Speech API** závisí na hlasech operačního systému.
   Na macOS/Windows funguje cs-CZ hlas hned; na Linuxu může
   chybět. Pokud TTS není dostupné, tlačítko stále funguje, jen

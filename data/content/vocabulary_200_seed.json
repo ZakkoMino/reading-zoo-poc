@@ -879,8 +879,8 @@
       "notes": "Zvířata pro hlavní motivační smyčku ZOO."
     },
     {
-      "id": "w084_cap",
-      "text": "čáp",
+      "id": "w084_beran",
+      "text": "beran",
       "level": "L3_animals",
       "category": "Zvířata",
       "recommendedDifficulty": 2,
@@ -909,8 +909,8 @@
       "notes": "Zvířata pro hlavní motivační smyčku ZOO."
     },
     {
-      "id": "w087_rys",
-      "text": "rys",
+      "id": "w087_hroch",
+      "text": "hroch",
       "level": "L3_animals",
       "category": "Zvířata",
       "recommendedDifficulty": 1,
@@ -929,8 +929,8 @@
       "notes": "Zvířata pro hlavní motivační smyčku ZOO."
     },
     {
-      "id": "w089_srna",
-      "text": "srna",
+      "id": "w089_papousek",
+      "text": "papoušek",
       "level": "L3_animals",
       "category": "Zvířata",
       "recommendedDifficulty": 2,
@@ -1149,8 +1149,8 @@
       "notes": "Zvířata pro hlavní motivační smyčku ZOO."
     },
     {
-      "id": "w111_cmelak",
-      "text": "čmelák",
+      "id": "w111_krokodyl",
+      "text": "krokodýl",
       "level": "L3_animals",
       "category": "Zvířata",
       "recommendedDifficulty": 3,
