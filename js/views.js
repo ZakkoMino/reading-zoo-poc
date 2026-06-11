@@ -13,9 +13,10 @@
  */
 (function () {
   const App = window.App || (window.App = {});
-  const { LEVELS, LESSON_LENGTHS, ANIMALS, getLevel, getAnimal, animalImg, availableThemes, levelHasThemes } = App.data;
-  const { get, setSettings, scoreOf, SCORE_MAX, addToZoo, bumpScore, starsOf, bumpStars, STAR_MAX, recordLessonResult, reset } = App.state;
-  const { buildLessonPlan, pickRewardChoices } = App.lessons;
+  const { LEVELS, STORIES, LESSON_LENGTHS, ANIMALS, getLevel, getAnimal, getStory, animalImg, availableThemes, levelHasThemes, nextLevelId } = App.data;
+  const { get, setSettings, scoreOf, SCORE_MAX, addToZoo, bumpScore, starsOf, bumpStars, STAR_MAX, recordLessonResult, reset,
+          isUnlocked, unlockLevel, hasBadge, markStoryRead, isStoryRead } = App.state;
+  const { buildLessonPlan, buildChallengePlan, masteryOf, pickRewardChoices } = App.lessons;
   const { speak, isAvailable: speechAvailable } = App.speech;
 
   /* ---------- DOM helpers (same minimal kit as tasks.js) ---------- */
@@ -72,20 +73,54 @@
 
     const levelChips = el('div', { class: 'chips' });
     LEVELS.forEach((lvl) => {
+      const unlocked = isUnlocked(lvl.id);
+      const earned = hasBadge(lvl.id);
       const chip = el('button', {
-        class: 'chip' + (lvl.id === settings.levelId ? ' chip-selected' : ''),
+        class: 'chip'
+          + (lvl.id === settings.levelId ? ' chip-selected' : '')
+          + (unlocked ? '' : ' chip-locked'),
+        'aria-disabled': unlocked ? 'false' : 'true',
         on: {
           click: () => {
+            if (!unlocked) {
+              chip.classList.remove('chip-shake');
+              void chip.offsetWidth; // restart the animation
+              chip.classList.add('chip-shake');
+              speak('Tahle úroveň se teprve odemkne. Splň Velkou výzvu!');
+              return;
+            }
             setSettings({ levelId: lvl.id });
             App.nav('onboarding');
           }
         }
       }, [
-        el('div', { class: 'chip-title', text: lvl.label }),
-        el('div', { class: 'chip-hint', text: lvl.hint })
+        el('div', { class: 'chip-title' }, [
+          el('span', { text: (unlocked ? '' : '🔒 ') + lvl.label + ' ' }),
+          el('span', { class: 'chip-badge', 'aria-hidden': 'true', text: (lvl.badge || '') + (earned ? ' 🏅' : '') })
+        ]),
+        el('div', { class: 'chip-hint', text: unlocked ? lvl.hint : 'Odemkne se Velkou výzvou.' })
       ]);
       levelChips.appendChild(chip);
     });
+
+    /* Velká výzva banner: shown once the current level is mastered and a
+     * locked next level exists. Winning it (8/8) unlocks the next level. */
+    const mastery = masteryOf(settings.levelId);
+    const nextId = nextLevelId(settings.levelId);
+    const nextLevel = nextId ? getLevel(nextId) : null;
+    const showChallenge = mastery.mastered && nextId && !isUnlocked(nextId);
+    const challengeBanner = showChallenge
+      ? el('div', { class: 'challenge-banner' }, [
+          el('div', { class: 'challenge-text' }, [
+            el('strong', { text: 'Velká výzva 🏆 ' }),
+            el('span', { text: `Zvládáš úroveň ${getLevel(settings.levelId).label}! Odemkni „${nextLevel.label}".` })
+          ]),
+          el('button', {
+            class: 'btn btn-primary',
+            on: { click: () => App.nav('challenge') }
+          }, [el('span', { text: 'Jdu do toho! ▶' })])
+        ])
+      : null;
 
     const lengthChips = el('div', { class: 'chips chips-row' });
     LESSON_LENGTHS.forEach((opt) => {
@@ -138,6 +173,8 @@
       el('h1', { text: 'Vítej ve Čtecí ZOO! 🦁' }),
       el('p', { class: 'lead', text: 'Vyber si, kde chceš začít. Pak si můžeš vybírat zvířátka do své zoo.' }),
 
+      challengeBanner,
+
       el('h2', { text: '1. Co budeme dnes číst?' }),
       levelChips,
 
@@ -166,6 +203,11 @@
   /* ---------- lesson ---------- */
   async function renderLesson(mount) {
     const { levelId, lessonLength } = get().settings;
+    // The story level has no tasks — it opens the story library instead.
+    if (getLevel(levelId).kind === 'story') {
+      renderStoryLibrary(mount);
+      return;
+    }
     const plan = buildLessonPlan(levelId, lessonLength);
 
     const progress = el('div', { class: 'progress' });
@@ -214,8 +256,155 @@
     setProgress(plan.length, plan.length);
 
     // Reward + summary.
-    recordLessonResult({ correct: correctCount, total: plan.length });
+    recordLessonResult({ correct: correctCount, total: plan.length, levelId });
     renderRewardChoice(taskMount, pickRewardChoices(plan), correctCount, plan.length);
+  }
+
+  /* ---------- Velká výzva (challenge lesson, 8/8 unlocks next level) ---------- */
+  async function renderChallenge(mount) {
+    const { levelId } = get().settings;
+    const nextId = nextLevelId(levelId);
+    if (!nextId || isUnlocked(nextId)) { App.nav('onboarding'); return; }
+    const nextLevel = getLevel(nextId);
+    const plan = buildChallengePlan(nextId, 8);
+
+    const counter = el('div', { class: 'progress-counter' });
+    const progress = el('div', { class: 'progress' });
+    const progressFill = el('div', { class: 'progress-fill progress-fill-challenge' });
+    progress.appendChild(progressFill);
+    const taskMount = el('div', { class: 'task-mount' });
+    const feedback = el('div', { class: 'feedback hidden', 'aria-live': 'polite' });
+
+    mount.appendChild(el('section', { class: 'screen lesson challenge' }, [
+      el('div', { class: 'lesson-header' }, [
+        el('div', { class: 'challenge-title', text: `🏆 Velká výzva: ${nextLevel.label}` }),
+        counter, progress
+      ]),
+      taskMount,
+      feedback
+    ]));
+
+    function setProgress(i, total) {
+      progressFill.style.width = ((i / total) * 100) + '%';
+      counter.textContent = `Úkol ${Math.min(i + 1, total)} z ${total} — vše musí být napoprvé!`;
+    }
+
+    let correctCount = 0;
+    for (let i = 0; i < plan.length; i++) {
+      setProgress(i, plan.length);
+      const { item, type } = plan[i];
+      const result = await App.tasks[type](item, taskMount);
+      bumpScore(item.text, result.correct ? +1 : -1);
+      if (result.correct) correctCount += 1;
+    }
+    setProgress(plan.length, plan.length);
+
+    clear(taskMount);
+    if (correctCount === plan.length) {
+      unlockLevel(nextId, levelId);
+      setSettings({ levelId: nextId });
+      speak(`Výborně! Odemkl jsi úroveň ${nextLevel.label}.`);
+      taskMount.appendChild(el('div', { class: 'result-card challenge-won' }, [
+        el('h2', { text: `🏆 ${plan.length} z ${plan.length}! Nová úroveň odemčena!` }),
+        el('p', { class: 'challenge-unlock', text: `${nextLevel.badge || ''} ${nextLevel.label}` }),
+        el('p', { class: 'result-summary', text: `Získáváš odznak za úroveň ${getLevel(levelId).label} 🏅` }),
+        el('div', { class: 'cta-row' }, [
+          el('button', {
+            class: 'btn btn-primary btn-huge',
+            on: { click: () => App.nav('lesson') }
+          }, [el('span', { text: 'První lekce nové úrovně ▶' })])
+        ])
+      ]));
+    } else {
+      taskMount.appendChild(el('div', { class: 'result-card' }, [
+        el('h2', { text: `Ještě trénujeme! 🌱` }),
+        el('p', { class: 'result-summary',
+          text: `Měl/a jsi ${correctCount} z ${plan.length} napoprvé. Výzva potřebuje všech ${plan.length}. Zkus to zase brzy!` }),
+        el('div', { class: 'cta-row' }, [
+          el('button', {
+            class: 'btn btn-primary btn-large',
+            on: { click: () => App.nav('lesson') }
+          }, [el('span', { text: 'Trénovat dál ▶' })]),
+          el('button', {
+            class: 'btn btn-ghost btn-large',
+            on: { click: () => App.nav('challenge') }
+          }, [el('span', { text: 'Zkusit znovu 🏆' })])
+        ])
+      ]));
+    }
+  }
+
+  /* ---------- stories: library + reader ---------- */
+  function renderStoryLibrary(mount) {
+    const zoo = get().zoo;
+    const screen = el('section', { class: 'screen stories' }, [
+      el('h1', { text: 'Čtenář příběhů 👑' }),
+      el('p', { class: 'lead', text: 'Příběh se odemkne, když má zvíře ve své ZOO.' })
+    ]);
+
+    const grid = el('div', { class: 'story-grid' });
+    STORIES.forEach((story) => {
+      const animal = getAnimal(story.animalId);
+      const owned = zoo.includes(story.animalId);
+      const read = isStoryRead(story.id);
+      const tile = el('button', {
+        class: 'story-tile' + (owned ? '' : ' story-tile-locked'),
+        on: {
+          click: () => {
+            if (owned) App.nav('story', { storyId: story.id });
+            else speak(`Nejdřív získej zvíře ${animal ? animal.name : ''}.`);
+          }
+        }
+      }, [
+        animal ? el('img', { src: animalImg(animal.id), alt: '' }) : null,
+        el('span', { class: 'story-title', text: owned ? story.title : '???' }),
+        el('span', { class: 'story-state', text: owned ? (read ? 'Přečteno ✓' : 'Číst ▶') : `🔒 ${animal ? animal.name : ''}` })
+      ]);
+      grid.appendChild(tile);
+    });
+    screen.appendChild(grid);
+    mount.appendChild(screen);
+  }
+
+  function renderStory(mount, ctx) {
+    const story = getStory(ctx.storyId);
+    if (!story) { App.nav('lesson'); return; }
+    const animal = getAnimal(story.animalId);
+    let idx = 0;
+
+    const sentenceEl = el('div', { class: 'big-word story-sentence', lang: 'cs' });
+    const counter = el('p', { class: 'story-counter' });
+    const nextBtn = el('button', { class: 'btn btn-primary btn-large' }, [el('span', { text: 'Další ▶' })]);
+
+    function paint() {
+      if (idx < story.sentences.length) {
+        sentenceEl.textContent = story.sentences[idx];
+        counter.textContent = `Věta ${idx + 1} z ${story.sentences.length}`;
+      } else {
+        markStoryRead(story.id);
+        sentenceEl.textContent = 'Přečteno! 🎉';
+        counter.textContent = 'Celý příběh je tvůj.';
+        nextBtn.replaceChildren(el('span', { text: 'Další příběh 📚' }));
+        nextBtn.onclick = () => App.nav('lesson');
+        speak('Výborně! Přečetl jsi celý příběh.');
+        return;
+      }
+    }
+    nextBtn.onclick = () => { idx += 1; paint(); };
+
+    mount.appendChild(el('section', { class: 'screen story-screen' }, [
+      el('button', { class: 'btn-link', on: { click: () => App.nav('lesson') } },
+        [el('span', { text: '← zpět na příběhy' })]),
+      el('div', { class: 'story-card' }, [
+        animal ? el('img', { class: 'story-hero', src: animalImg(animal.id), alt: animal.name }) : null,
+        el('h1', { text: story.title }),
+        sentenceEl,
+        counter,
+        el('p', { class: 'task-hint task-hint-soft', text: 'Čteš ty — nahlas a sám.' }),
+        el('div', { class: 'cta-row' }, [nextBtn])
+      ])
+    ]));
+    paint();
   }
 
   /* Reward screen: the child picks one of two animals — either a new one
@@ -406,7 +595,11 @@
       statCard('Dokončené lekce', state.stats.lessonsCompleted),
       statCard('Správně na první pokus', state.stats.tasksCorrect),
       statCard('Úspěšnost', accuracy),
-      statCard('Zvířátka v ZOO', `${state.zoo.length} / ${ANIMALS.length}`)
+      statCard('Zvířátka v ZOO', `${state.zoo.length} / ${ANIMALS.length}`),
+      statCard('Odznaky', state.badges.length
+        ? state.badges.map((id) => getLevel(id).badge || '🏅').join(' ')
+        : '—'),
+      statCard('Přečtené příběhy', `${Object.keys(state.storiesRead || {}).length} / ${STORIES.length || '–'}`)
     ]);
 
     const screen = el('section', { class: 'screen progress-screen' }, [
@@ -416,8 +609,9 @@
     ]);
 
     LEVELS.forEach((lvl) => {
+      if (!lvl.items || !lvl.items.length) return; // story level has no word rows
       const section = el('div', { class: 'level-progress' }, [
-        el('h2', { text: lvl.label })
+        el('h2', { text: `${lvl.badge || ''} ${lvl.label}${hasBadge(lvl.id) ? ' 🏅' : ''}${isUnlocked(lvl.id) ? '' : ' (zamčeno)'}` })
       ]);
       const list = el('div', { class: 'word-rows' });
       lvl.items.forEach((item) => {
@@ -463,6 +657,8 @@
   App.views = {
     renderOnboarding,
     renderLesson,
+    renderChallenge,
+    renderStory,
     renderZoo,
     renderAnimal,
     renderProgress

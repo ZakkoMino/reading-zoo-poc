@@ -638,6 +638,106 @@ h2 { font-size: 22px; margin-top: 14px; }
 }
 .reward-kind-new { color: var(--accent); }
 
+/* ---------- Locked levels + challenge ---------- */
+.chip-locked {
+  opacity: .55;
+  background: repeating-linear-gradient(135deg, var(--surface), var(--surface) 12px, #F4EDE2 12px, #F4EDE2 24px);
+  cursor: not-allowed;
+}
+.chip-badge { font-size: 18px; }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+.chip-shake { animation: shake .3s ease 2; }
+.challenge-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: linear-gradient(120deg, #FFF3D6, #FFE7B0);
+  border: 3px solid #F2A33C;
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin: 14px 0;
+}
+.challenge-title {
+  font-weight: 800;
+  font-size: 20px;
+  color: #B05E0C;
+  margin-bottom: 4px;
+}
+.progress-fill-challenge { background: #F2A33C; }
+.challenge-won h2 { color: #B05E0C; }
+.challenge-unlock { font-size: 28px; font-weight: 800; margin: 8px 0; }
+
+/* ---------- Trace task ---------- */
+.trace-wrap {
+  position: relative;
+  width: min(280px, 80vw);
+  aspect-ratio: 1;
+  margin: 14px auto;
+  background: var(--bg-tint);
+  border: 3px dashed var(--border);
+  border-radius: var(--radius);
+}
+.trace-ghost {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 170px;
+  font-weight: 800;
+  color: rgba(91, 58, 30, .15);
+  user-select: none;
+  pointer-events: none;
+}
+.trace-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: crosshair;
+}
+.big-letter { font-size: 72px; }
+
+/* ---------- Stories ---------- */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.story-tile {
+  background: var(--surface);
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 10px;
+  cursor: pointer;
+  font: inherit;
+  text-align: center;
+  transition: transform .1s, border-color .15s;
+}
+.story-tile:hover { transform: translateY(-2px); border-color: var(--secondary); }
+.story-tile img { width: 90px; height: 90px; display: block; margin: 0 auto 6px; }
+.story-tile-locked img { filter: grayscale(1) opacity(.35); }
+.story-title { display: block; font-weight: 800; font-size: 17px; }
+.story-state { display: block; margin-top: 4px; color: var(--text-light); font-size: 14px; }
+.story-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px 20px;
+  text-align: center;
+}
+.story-hero { width: 140px; height: 140px; }
+.story-sentence { min-height: 90px; display: grid; place-items: center; }
+.story-counter { color: var(--text-light); margin-top: 6px; }
+
 /* ---------- Stage presentation (animal growth without per-stage art) ----------
  * The same base illustration "grows" with stars: small baby at 1★ up to
  * full size at 3★; 4★ adds a silver frame, 5★ a gold frame + crown badge. */

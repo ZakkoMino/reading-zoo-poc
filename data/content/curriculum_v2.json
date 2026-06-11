@@ -1,0 +1,2709 @@
+{
+  "schema": "reading-zoo.curriculum.v2",
+  "version": "2.0.0",
+  "language": "cs-CZ",
+  "levels": [
+    {
+      "id": "letters",
+      "label": "Lovec písmen",
+      "badge": "🔤",
+      "kind": "letter",
+      "hint": "Písmena – poznávej, čti a obtahuj.",
+      "items": [
+        {
+          "text": "A"
+        },
+        {
+          "text": "Á"
+        },
+        {
+          "text": "M",
+          "animalIds": [
+            "mys",
+            "medved",
+            "motyl"
+          ]
+        },
+        {
+          "text": "L",
+          "animalIds": [
+            "lev",
+            "liska",
+            "labut"
+          ]
+        },
+        {
+          "text": "E"
+        },
+        {
+          "text": "É"
+        },
+        {
+          "text": "S",
+          "animalIds": [
+            "sova",
+            "slepice",
+            "slon"
+          ]
+        },
+        {
+          "text": "O",
+          "animalIds": [
+            "ovce",
+            "opice",
+            "orel",
+            "osel"
+          ]
+        },
+        {
+          "text": "Ó"
+        },
+        {
+          "text": "P",
+          "animalIds": [
+            "pes",
+            "prase",
+            "pav",
+            "panda"
+          ]
+        },
+        {
+          "text": "U"
+        },
+        {
+          "text": "Ú"
+        },
+        {
+          "text": "Ů"
+        },
+        {
+          "text": "I"
+        },
+        {
+          "text": "Í"
+        },
+        {
+          "text": "T",
+          "animalIds": [
+            "tygr",
+            "tucnak",
+            "tulen"
+          ]
+        },
+        {
+          "text": "J",
+          "animalIds": [
+            "jelen",
+            "jezek",
+            "jezevec"
+          ]
+        },
+        {
+          "text": "D",
+          "animalIds": [
+            "delfin"
+          ]
+        },
+        {
+          "text": "K",
+          "animalIds": [
+            "kocka",
+            "kun",
+            "koza",
+            "kralik"
+          ]
+        },
+        {
+          "text": "N",
+          "animalIds": [
+            "nosorozec",
+            "netopyr"
+          ]
+        },
+        {
+          "text": "V",
+          "animalIds": [
+            "vlk",
+            "vcela",
+            "vydra"
+          ]
+        },
+        {
+          "text": "Z",
+          "animalIds": [
+            "zebra"
+          ]
+        },
+        {
+          "text": "H",
+          "animalIds": [
+            "had",
+            "husa",
+            "hroch",
+            "holub"
+          ]
+        },
+        {
+          "text": "C",
+          "animalIds": [
+            "cvrcek"
+          ]
+        },
+        {
+          "text": "B",
+          "animalIds": [
+            "beran",
+            "bobr",
+            "brouk",
+            "bizon"
+          ]
+        },
+        {
+          "text": "Č"
+        },
+        {
+          "text": "R",
+          "animalIds": [
+            "ryba"
+          ]
+        },
+        {
+          "text": "Š",
+          "animalIds": [
+            "snek",
+            "stir"
+          ]
+        },
+        {
+          "text": "Ž",
+          "animalIds": [
+            "zaba",
+            "zirafa",
+            "zelva",
+            "zralok"
+          ]
+        },
+        {
+          "text": "CH",
+          "animalIds": [
+            "chobotnice"
+          ]
+        },
+        {
+          "text": "F"
+        },
+        {
+          "text": "G",
+          "animalIds": [
+            "gorila"
+          ]
+        },
+        {
+          "text": "Y"
+        },
+        {
+          "text": "Ý"
+        },
+        {
+          "text": "Ř"
+        },
+        {
+          "text": "Ď"
+        },
+        {
+          "text": "Ť"
+        },
+        {
+          "text": "Ň"
+        },
+        {
+          "text": "Ě"
+        }
+      ]
+    },
+    {
+      "id": "syllables",
+      "label": "Slabikové mládě",
+      "badge": "🧩",
+      "kind": "syllable",
+      "hint": "Krátké slabiky pro první čtení.",
+      "items": [
+        {
+          "text": "ma"
+        },
+        {
+          "text": "me"
+        },
+        {
+          "text": "mi"
+        },
+        {
+          "text": "mo"
+        },
+        {
+          "text": "mu"
+        },
+        {
+          "text": "la"
+        },
+        {
+          "text": "le"
+        },
+        {
+          "text": "li"
+        },
+        {
+          "text": "lo"
+        },
+        {
+          "text": "lu"
+        },
+        {
+          "text": "sa"
+        },
+        {
+          "text": "se"
+        },
+        {
+          "text": "si"
+        },
+        {
+          "text": "so"
+        },
+        {
+          "text": "su"
+        },
+        {
+          "text": "pa"
+        },
+        {
+          "text": "pe"
+        },
+        {
+          "text": "pi"
+        },
+        {
+          "text": "po"
+        },
+        {
+          "text": "pu"
+        },
+        {
+          "text": "ta"
+        },
+        {
+          "text": "te"
+        },
+        {
+          "text": "to"
+        },
+        {
+          "text": "tu"
+        },
+        {
+          "text": "ty"
+        },
+        {
+          "text": "ja"
+        },
+        {
+          "text": "je"
+        },
+        {
+          "text": "jo"
+        },
+        {
+          "text": "ju"
+        },
+        {
+          "text": "da"
+        },
+        {
+          "text": "de"
+        },
+        {
+          "text": "do"
+        },
+        {
+          "text": "du"
+        },
+        {
+          "text": "dy"
+        },
+        {
+          "text": "ka"
+        },
+        {
+          "text": "ke"
+        },
+        {
+          "text": "ko"
+        },
+        {
+          "text": "ku"
+        },
+        {
+          "text": "ky"
+        },
+        {
+          "text": "na"
+        },
+        {
+          "text": "ne"
+        },
+        {
+          "text": "no"
+        },
+        {
+          "text": "nu"
+        },
+        {
+          "text": "ny"
+        },
+        {
+          "text": "va"
+        },
+        {
+          "text": "ve"
+        },
+        {
+          "text": "vi"
+        },
+        {
+          "text": "vo"
+        },
+        {
+          "text": "vu"
+        },
+        {
+          "text": "za"
+        },
+        {
+          "text": "ze"
+        },
+        {
+          "text": "zo"
+        },
+        {
+          "text": "zu"
+        },
+        {
+          "text": "ha"
+        },
+        {
+          "text": "he"
+        },
+        {
+          "text": "ho"
+        },
+        {
+          "text": "hu"
+        },
+        {
+          "text": "ra"
+        },
+        {
+          "text": "re"
+        },
+        {
+          "text": "ro"
+        },
+        {
+          "text": "ru"
+        }
+      ]
+    },
+    {
+      "id": "words1",
+      "label": "První slova",
+      "badge": "🐾",
+      "kind": "word",
+      "hint": "Krátká slova bez záludností.",
+      "items": [
+        {
+          "text": "máma"
+        },
+        {
+          "text": "táta"
+        },
+        {
+          "text": "děda"
+        },
+        {
+          "text": "bába"
+        },
+        {
+          "text": "teta"
+        },
+        {
+          "text": "syn"
+        },
+        {
+          "text": "žena"
+        },
+        {
+          "text": "muž"
+        },
+        {
+          "text": "já"
+        },
+        {
+          "text": "ty"
+        },
+        {
+          "text": "my"
+        },
+        {
+          "text": "oko"
+        },
+        {
+          "text": "ucho"
+        },
+        {
+          "text": "nos"
+        },
+        {
+          "text": "pusa"
+        },
+        {
+          "text": "ruka"
+        },
+        {
+          "text": "noha"
+        },
+        {
+          "text": "zub"
+        },
+        {
+          "text": "ret"
+        },
+        {
+          "text": "kost"
+        },
+        {
+          "text": "tělo"
+        },
+        {
+          "text": "pata"
+        },
+        {
+          "text": "dům"
+        },
+        {
+          "text": "byt"
+        },
+        {
+          "text": "stůl"
+        },
+        {
+          "text": "okno"
+        },
+        {
+          "text": "koš"
+        },
+        {
+          "text": "pec"
+        },
+        {
+          "text": "vana"
+        },
+        {
+          "text": "lampa"
+        },
+        {
+          "text": "deka"
+        },
+        {
+          "text": "mísa"
+        },
+        {
+          "text": "nůž"
+        },
+        {
+          "text": "klíč"
+        },
+        {
+          "text": "pokoj"
+        },
+        {
+          "text": "med"
+        },
+        {
+          "text": "sýr"
+        },
+        {
+          "text": "čaj"
+        },
+        {
+          "text": "mák"
+        },
+        {
+          "text": "maso"
+        },
+        {
+          "text": "rýže"
+        },
+        {
+          "text": "káva"
+        },
+        {
+          "text": "oběd"
+        },
+        {
+          "text": "sůl"
+        },
+        {
+          "text": "kaše"
+        },
+        {
+          "text": "les"
+        },
+        {
+          "text": "pole"
+        },
+        {
+          "text": "hora"
+        },
+        {
+          "text": "nebe"
+        },
+        {
+          "text": "voda"
+        },
+        {
+          "text": "lípa"
+        },
+        {
+          "text": "dub"
+        },
+        {
+          "text": "mech"
+        },
+        {
+          "text": "seno"
+        },
+        {
+          "text": "zem"
+        },
+        {
+          "text": "sad"
+        },
+        {
+          "text": "růže"
+        },
+        {
+          "text": "míč"
+        },
+        {
+          "text": "kolo"
+        },
+        {
+          "text": "auto"
+        },
+        {
+          "text": "pero"
+        },
+        {
+          "text": "dort"
+        },
+        {
+          "text": "mapa"
+        },
+        {
+          "text": "váza"
+        },
+        {
+          "text": "bota"
+        },
+        {
+          "text": "pes",
+          "animalId": "pes"
+        },
+        {
+          "text": "kos",
+          "animalId": "kos"
+        },
+        {
+          "text": "lev",
+          "animalId": "lev"
+        },
+        {
+          "text": "kůň",
+          "animalId": "kun"
+        },
+        {
+          "text": "los",
+          "animalId": "los"
+        },
+        {
+          "text": "páv",
+          "animalId": "pav"
+        },
+        {
+          "text": "sova",
+          "animalId": "sova"
+        },
+        {
+          "text": "žába",
+          "animalId": "zaba"
+        },
+        {
+          "text": "koza",
+          "animalId": "koza"
+        },
+        {
+          "text": "husa",
+          "animalId": "husa"
+        },
+        {
+          "text": "kuře",
+          "animalId": "kure"
+        },
+        {
+          "text": "ryba",
+          "animalId": "ryba"
+        },
+        {
+          "text": "myš",
+          "animalId": "mys"
+        },
+        {
+          "text": "osel",
+          "animalId": "osel"
+        },
+        {
+          "text": "lama",
+          "animalId": "lama"
+        },
+        {
+          "text": "had",
+          "animalId": "had"
+        },
+        {
+          "text": "orel",
+          "animalId": "orel"
+        },
+        {
+          "text": "ovce",
+          "animalId": "ovce"
+        },
+        {
+          "text": "koala",
+          "animalId": "koala"
+        },
+        {
+          "text": "vosa"
+        },
+        {
+          "text": "den"
+        },
+        {
+          "text": "noc"
+        },
+        {
+          "text": "rok"
+        },
+        {
+          "text": "léto"
+        },
+        {
+          "text": "zima"
+        },
+        {
+          "text": "jaro"
+        },
+        {
+          "text": "ráno"
+        },
+        {
+          "text": "dnes"
+        },
+        {
+          "text": "sen"
+        },
+        {
+          "text": "jih"
+        },
+        {
+          "text": "jí"
+        },
+        {
+          "text": "pije"
+        },
+        {
+          "text": "spí"
+        },
+        {
+          "text": "sedí"
+        },
+        {
+          "text": "leze"
+        },
+        {
+          "text": "nese"
+        },
+        {
+          "text": "vidí"
+        },
+        {
+          "text": "dává"
+        },
+        {
+          "text": "volá"
+        },
+        {
+          "text": "mává"
+        },
+        {
+          "text": "malý"
+        },
+        {
+          "text": "bílý"
+        },
+        {
+          "text": "sám"
+        },
+        {
+          "text": "rád"
+        }
+      ]
+    },
+    {
+      "id": "words2",
+      "label": "Velká slova",
+      "badge": "📖",
+      "kind": "word",
+      "hint": "Delší slova o dvou a třech slabikách.",
+      "items": [
+        {
+          "text": "maminka"
+        },
+        {
+          "text": "tatínek"
+        },
+        {
+          "text": "babička"
+        },
+        {
+          "text": "dědeček"
+        },
+        {
+          "text": "sestra"
+        },
+        {
+          "text": "kamarád"
+        },
+        {
+          "text": "kamarádka"
+        },
+        {
+          "text": "holka"
+        },
+        {
+          "text": "kluci"
+        },
+        {
+          "text": "miminko"
+        },
+        {
+          "text": "soused"
+        },
+        {
+          "text": "rodina"
+        },
+        {
+          "text": "škola"
+        },
+        {
+          "text": "aktovka"
+        },
+        {
+          "text": "penál"
+        },
+        {
+          "text": "tužka"
+        },
+        {
+          "text": "guma"
+        },
+        {
+          "text": "kniha"
+        },
+        {
+          "text": "sešit"
+        },
+        {
+          "text": "tabule"
+        },
+        {
+          "text": "učitel"
+        },
+        {
+          "text": "lavice"
+        },
+        {
+          "text": "papír"
+        },
+        {
+          "text": "barva"
+        },
+        {
+          "text": "nůžky"
+        },
+        {
+          "text": "pastelka"
+        },
+        {
+          "text": "postel"
+        },
+        {
+          "text": "polička"
+        },
+        {
+          "text": "koberec"
+        },
+        {
+          "text": "kuchyně"
+        },
+        {
+          "text": "ručník"
+        },
+        {
+          "text": "hrnek"
+        },
+        {
+          "text": "lžíce"
+        },
+        {
+          "text": "vidlička"
+        },
+        {
+          "text": "pohovka"
+        },
+        {
+          "text": "záclona"
+        },
+        {
+          "text": "budík"
+        },
+        {
+          "text": "zvonek"
+        },
+        {
+          "text": "mýdlo"
+        },
+        {
+          "text": "taška"
+        },
+        {
+          "text": "rohlík"
+        },
+        {
+          "text": "houska"
+        },
+        {
+          "text": "banán"
+        },
+        {
+          "text": "hruška"
+        },
+        {
+          "text": "mrkev"
+        },
+        {
+          "text": "salám"
+        },
+        {
+          "text": "polévka"
+        },
+        {
+          "text": "koláč"
+        },
+        {
+          "text": "buchta"
+        },
+        {
+          "text": "čokoláda"
+        },
+        {
+          "text": "bonbón"
+        },
+        {
+          "text": "jogurt"
+        },
+        {
+          "text": "palačinka"
+        },
+        {
+          "text": "okurka"
+        },
+        {
+          "text": "rajče"
+        },
+        {
+          "text": "cibule"
+        },
+        {
+          "text": "louka"
+        },
+        {
+          "text": "kytka"
+        },
+        {
+          "text": "kopec"
+        },
+        {
+          "text": "potok"
+        },
+        {
+          "text": "rybník"
+        },
+        {
+          "text": "jezero"
+        },
+        {
+          "text": "zahrada"
+        },
+        {
+          "text": "ovoce"
+        },
+        {
+          "text": "šiška"
+        },
+        {
+          "text": "kaštan"
+        },
+        {
+          "text": "malina"
+        },
+        {
+          "text": "borůvka"
+        },
+        {
+          "text": "houba"
+        },
+        {
+          "text": "koruna"
+        },
+        {
+          "text": "podzim"
+        },
+        {
+          "text": "duha"
+        },
+        {
+          "text": "písek"
+        },
+        {
+          "text": "kámen"
+        },
+        {
+          "text": "autobus"
+        },
+        {
+          "text": "tramvaj"
+        },
+        {
+          "text": "letadlo"
+        },
+        {
+          "text": "lodička"
+        },
+        {
+          "text": "kolečko"
+        },
+        {
+          "text": "silnice"
+        },
+        {
+          "text": "garáž"
+        },
+        {
+          "text": "motorka"
+        },
+        {
+          "text": "liška",
+          "animalId": "liska"
+        },
+        {
+          "text": "zebra",
+          "animalId": "zebra"
+        },
+        {
+          "text": "kočka",
+          "animalId": "kocka"
+        },
+        {
+          "text": "kráva",
+          "animalId": "krava"
+        },
+        {
+          "text": "králík",
+          "animalId": "kralik"
+        },
+        {
+          "text": "kachna",
+          "animalId": "kachna"
+        },
+        {
+          "text": "slepice",
+          "animalId": "slepice"
+        },
+        {
+          "text": "opice",
+          "animalId": "opice"
+        },
+        {
+          "text": "delfín",
+          "animalId": "delfin"
+        },
+        {
+          "text": "želva",
+          "animalId": "zelva"
+        },
+        {
+          "text": "žirafa",
+          "animalId": "zirafa"
+        },
+        {
+          "text": "gorila",
+          "animalId": "gorila"
+        },
+        {
+          "text": "panda",
+          "animalId": "panda"
+        },
+        {
+          "text": "bizon",
+          "animalId": "bizon"
+        },
+        {
+          "text": "holub",
+          "animalId": "holub"
+        },
+        {
+          "text": "jelen",
+          "animalId": "jelen"
+        },
+        {
+          "text": "jezevec",
+          "animalId": "jezevec"
+        },
+        {
+          "text": "mýval",
+          "animalId": "myval"
+        },
+        {
+          "text": "klokan",
+          "animalId": "klokan"
+        },
+        {
+          "text": "krocan",
+          "animalId": "krocan"
+        },
+        {
+          "text": "kanec",
+          "animalId": "kanec"
+        },
+        {
+          "text": "beruška",
+          "animalId": "beruska"
+        },
+        {
+          "text": "housenka",
+          "animalId": "housenka"
+        },
+        {
+          "text": "moucha",
+          "animalId": "moucha"
+        },
+        {
+          "text": "pavouk",
+          "animalId": "pavouk"
+        },
+        {
+          "text": "bobr",
+          "animalId": "bobr"
+        },
+        {
+          "text": "vydra",
+          "animalId": "vydra"
+        },
+        {
+          "text": "tygr",
+          "animalId": "tygr"
+        },
+        {
+          "text": "šnek",
+          "animalId": "snek"
+        },
+        {
+          "text": "kohout",
+          "animalId": "kohout"
+        },
+        {
+          "text": "hroch",
+          "animalId": "hroch"
+        },
+        {
+          "text": "motýl",
+          "animalId": "motyl"
+        },
+        {
+          "text": "modrá"
+        },
+        {
+          "text": "žlutá"
+        },
+        {
+          "text": "zelená"
+        },
+        {
+          "text": "růžová"
+        },
+        {
+          "text": "hodný"
+        },
+        {
+          "text": "veselý"
+        },
+        {
+          "text": "smutný"
+        },
+        {
+          "text": "rychlý"
+        },
+        {
+          "text": "pomalý"
+        },
+        {
+          "text": "vysoký"
+        },
+        {
+          "text": "malinký"
+        },
+        {
+          "text": "čistý"
+        },
+        {
+          "text": "skáče"
+        },
+        {
+          "text": "plave"
+        },
+        {
+          "text": "zpívá"
+        },
+        {
+          "text": "maluje"
+        },
+        {
+          "text": "počítá"
+        },
+        {
+          "text": "pomáhá"
+        },
+        {
+          "text": "uklízí"
+        },
+        {
+          "text": "nakupuje"
+        },
+        {
+          "text": "jezdí"
+        },
+        {
+          "text": "létá"
+        },
+        {
+          "text": "houpá"
+        },
+        {
+          "text": "staví"
+        },
+        {
+          "text": "pohádka"
+        },
+        {
+          "text": "písnička"
+        },
+        {
+          "text": "narozeniny"
+        },
+        {
+          "text": "dáreček"
+        },
+        {
+          "text": "koloběžka"
+        },
+        {
+          "text": "houpačka"
+        },
+        {
+          "text": "pískoviště"
+        },
+        {
+          "text": "kamínek"
+        },
+        {
+          "text": "sluníčko"
+        },
+        {
+          "text": "panenka"
+        },
+        {
+          "text": "kostka"
+        },
+        {
+          "text": "balon"
+        },
+        {
+          "text": "čepice"
+        },
+        {
+          "text": "deštník"
+        }
+      ]
+    },
+    {
+      "id": "words3",
+      "label": "Záludná slova",
+      "badge": "🧗",
+      "kind": "word",
+      "hint": "Shluky souhlásek a háčky: ř, ě, ď, ť, ň.",
+      "items": [
+        {
+          "text": "řeka"
+        },
+        {
+          "text": "řepa"
+        },
+        {
+          "text": "řízek"
+        },
+        {
+          "text": "peří"
+        },
+        {
+          "text": "moře"
+        },
+        {
+          "text": "talíř"
+        },
+        {
+          "text": "polštář"
+        },
+        {
+          "text": "dveře"
+        },
+        {
+          "text": "tři"
+        },
+        {
+          "text": "čtyři"
+        },
+        {
+          "text": "hřib"
+        },
+        {
+          "text": "hřeben"
+        },
+        {
+          "text": "hřiště"
+        },
+        {
+          "text": "pepř"
+        },
+        {
+          "text": "kouř"
+        },
+        {
+          "text": "medvěd",
+          "animalId": "medved"
+        },
+        {
+          "text": "město"
+        },
+        {
+          "text": "měsíc"
+        },
+        {
+          "text": "těsto"
+        },
+        {
+          "text": "dítě"
+        },
+        {
+          "text": "pěna"
+        },
+        {
+          "text": "věž"
+        },
+        {
+          "text": "pět"
+        },
+        {
+          "text": "devět"
+        },
+        {
+          "text": "květ"
+        },
+        {
+          "text": "hvězda"
+        },
+        {
+          "text": "sněhulák"
+        },
+        {
+          "text": "běhá"
+        },
+        {
+          "text": "věta"
+        },
+        {
+          "text": "loď"
+        },
+        {
+          "text": "labuť",
+          "animalId": "labut"
+        },
+        {
+          "text": "tuleň",
+          "animalId": "tulen"
+        },
+        {
+          "text": "kuchyň"
+        },
+        {
+          "text": "síť"
+        },
+        {
+          "text": "chuť"
+        },
+        {
+          "text": "píseň"
+        },
+        {
+          "text": "báseň"
+        },
+        {
+          "text": "koně"
+        },
+        {
+          "text": "štěně"
+        },
+        {
+          "text": "káně"
+        },
+        {
+          "text": "strom"
+        },
+        {
+          "text": "vlak"
+        },
+        {
+          "text": "sklo"
+        },
+        {
+          "text": "mrak"
+        },
+        {
+          "text": "sníh"
+        },
+        {
+          "text": "vítr"
+        },
+        {
+          "text": "kluk"
+        },
+        {
+          "text": "krk"
+        },
+        {
+          "text": "prst"
+        },
+        {
+          "text": "srdce"
+        },
+        {
+          "text": "slunce"
+        },
+        {
+          "text": "zmrzlina"
+        },
+        {
+          "text": "knedlík"
+        },
+        {
+          "text": "drak"
+        },
+        {
+          "text": "brána"
+        },
+        {
+          "text": "vrána"
+        },
+        {
+          "text": "tráva"
+        },
+        {
+          "text": "dvůr"
+        },
+        {
+          "text": "štika"
+        },
+        {
+          "text": "skála"
+        },
+        {
+          "text": "smrk"
+        },
+        {
+          "text": "vrabec"
+        },
+        {
+          "text": "krab",
+          "animalId": "krab"
+        },
+        {
+          "text": "kapr",
+          "animalId": "kapr"
+        },
+        {
+          "text": "hrad"
+        },
+        {
+          "text": "zvon"
+        },
+        {
+          "text": "vlajka"
+        },
+        {
+          "text": "švestka"
+        },
+        {
+          "text": "broskev"
+        },
+        {
+          "text": "mléko"
+        },
+        {
+          "text": "chléb"
+        },
+        {
+          "text": "vrata"
+        },
+        {
+          "text": "nosorožec",
+          "animalId": "nosorozec"
+        },
+        {
+          "text": "chobotnice",
+          "animalId": "chobotnice"
+        },
+        {
+          "text": "ještěrka",
+          "animalId": "jesterka"
+        },
+        {
+          "text": "plameňák",
+          "animalId": "plamenak"
+        },
+        {
+          "text": "lenochod",
+          "animalId": "lenochod"
+        },
+        {
+          "text": "orangutan",
+          "animalId": "orangutan"
+        },
+        {
+          "text": "velbloud",
+          "animalId": "velbloud"
+        },
+        {
+          "text": "krokodýl",
+          "animalId": "krokodyl"
+        },
+        {
+          "text": "netopýr",
+          "animalId": "netopyr"
+        },
+        {
+          "text": "mravenec",
+          "animalId": "mravenec"
+        },
+        {
+          "text": "velryba",
+          "animalId": "velryba"
+        },
+        {
+          "text": "tučňák",
+          "animalId": "tucnak"
+        },
+        {
+          "text": "papoušek",
+          "animalId": "papousek"
+        },
+        {
+          "text": "křeček",
+          "animalId": "krecek"
+        },
+        {
+          "text": "leopard",
+          "animalId": "leopard"
+        },
+        {
+          "text": "žralok",
+          "animalId": "zralok"
+        },
+        {
+          "text": "cvrček",
+          "animalId": "cvrcek"
+        },
+        {
+          "text": "štír",
+          "animalId": "stir"
+        },
+        {
+          "text": "včela",
+          "animalId": "vcela"
+        },
+        {
+          "text": "čmelák"
+        },
+        {
+          "text": "veverka"
+        },
+        {
+          "text": "sýkorka"
+        },
+        {
+          "text": "datel"
+        },
+        {
+          "text": "jedna"
+        },
+        {
+          "text": "dvě"
+        },
+        {
+          "text": "šest"
+        },
+        {
+          "text": "sedm"
+        },
+        {
+          "text": "osm"
+        },
+        {
+          "text": "deset"
+        },
+        {
+          "text": "sto"
+        },
+        {
+          "text": "středa"
+        },
+        {
+          "text": "čtvrtek"
+        },
+        {
+          "text": "pátek"
+        },
+        {
+          "text": "neděle"
+        },
+        {
+          "text": "týden"
+        }
+      ]
+    },
+    {
+      "id": "sentences1",
+      "label": "Krátké věty",
+      "badge": "✏️",
+      "kind": "sentence",
+      "hint": "Věty o dvou a třech slovech.",
+      "items": [
+        {
+          "text": "Pes štěká.",
+          "matchText": "Na dvoře štěká pes.",
+          "animalId": "pes"
+        },
+        {
+          "text": "Kočka mňouká.",
+          "matchText": "Na okně přede kočka.",
+          "animalId": "kocka"
+        },
+        {
+          "text": "Lev řve.",
+          "matchText": "V savaně řve lev.",
+          "animalId": "lev"
+        },
+        {
+          "text": "Sova houkne.",
+          "matchText": "V noci houká sova.",
+          "animalId": "sova"
+        },
+        {
+          "text": "Liška běží.",
+          "matchText": "Lesem běží chytrá liška.",
+          "animalId": "liska"
+        },
+        {
+          "text": "Zebra má pruhy.",
+          "matchText": "V savaně běhá zebra.",
+          "animalId": "zebra"
+        },
+        {
+          "text": "Kos zpívá.",
+          "matchText": "Na stromě zpívá kos.",
+          "animalId": "kos"
+        },
+        {
+          "text": "Kráva bučí.",
+          "matchText": "Na louce se pase kráva.",
+          "animalId": "krava"
+        },
+        {
+          "text": "Kůň klusá.",
+          "matchText": "Po poli cválá kůň.",
+          "animalId": "kun"
+        },
+        {
+          "text": "Žába skáče.",
+          "matchText": "U rybníka skáče žába.",
+          "animalId": "zaba"
+        },
+        {
+          "text": "Slon troubí.",
+          "matchText": "V zoo troubí slon.",
+          "animalId": "slon"
+        },
+        {
+          "text": "Medvěd spí.",
+          "matchText": "V lese bručí medvěd.",
+          "animalId": "medved"
+        },
+        {
+          "text": "Had se plazí.",
+          "matchText": "V trávě syčí had.",
+          "animalId": "had"
+        },
+        {
+          "text": "Beran trká.",
+          "matchText": "Na pastvě trká beran.",
+          "animalId": "beran"
+        },
+        {
+          "text": "Orel letí.",
+          "matchText": "Vysoko na nebi krouží orel.",
+          "animalId": "orel"
+        },
+        {
+          "text": "Vlk vyje.",
+          "matchText": "V noci vyje vlk.",
+          "animalId": "vlk"
+        },
+        {
+          "text": "Hroch se koupe.",
+          "matchText": "V řece se koupe hroch.",
+          "animalId": "hroch"
+        },
+        {
+          "text": "Jelen běží.",
+          "matchText": "Na pasece stojí jelen.",
+          "animalId": "jelen"
+        },
+        {
+          "text": "Papoušek mluví.",
+          "matchText": "Na větvi mluví papoušek.",
+          "animalId": "papousek"
+        },
+        {
+          "text": "Prase chrochtá.",
+          "matchText": "V blátě se válí prase.",
+          "animalId": "prase"
+        },
+        {
+          "text": "Ovce bečí.",
+          "matchText": "Na louce bečí ovce.",
+          "animalId": "ovce"
+        },
+        {
+          "text": "Koza mečí.",
+          "matchText": "Na dvorku mečí koza.",
+          "animalId": "koza"
+        },
+        {
+          "text": "Kohout kokrhá.",
+          "matchText": "Na plotě kokrhá kohout.",
+          "animalId": "kohout"
+        },
+        {
+          "text": "Slepice kdáká.",
+          "matchText": "Na dvoře zobe slepice.",
+          "animalId": "slepice"
+        },
+        {
+          "text": "Kachna kváká.",
+          "matchText": "Na rybníku káchá kachna.",
+          "animalId": "kachna"
+        },
+        {
+          "text": "Husa syčí.",
+          "matchText": "U potoka kejhá husa.",
+          "animalId": "husa"
+        },
+        {
+          "text": "Králík skáče.",
+          "matchText": "Mrkev chroupe malý králík.",
+          "animalId": "kralik"
+        },
+        {
+          "text": "Myš pípá.",
+          "matchText": "Ve spíži piští myš.",
+          "animalId": "mys"
+        },
+        {
+          "text": "Krysa leze.",
+          "matchText": "Ve sklepě běhá krysa.",
+          "animalId": "krysa"
+        },
+        {
+          "text": "Tygr řve.",
+          "matchText": "Džunglí se plíží tygr.",
+          "animalId": "tygr"
+        },
+        {
+          "text": "Opice skáče.",
+          "matchText": "Na stromě dovádí opice.",
+          "animalId": "opice"
+        },
+        {
+          "text": "Žirafa žere listí.",
+          "matchText": "Nad stromy kouká žirafa.",
+          "animalId": "zirafa"
+        },
+        {
+          "text": "Velbloud kráčí.",
+          "matchText": "Pouští kráčí velbloud.",
+          "animalId": "velbloud"
+        },
+        {
+          "text": "Tučňák plave.",
+          "matchText": "Na ledu stojí tučňák.",
+          "animalId": "tucnak"
+        },
+        {
+          "text": "Tuleň plave.",
+          "matchText": "Na skále leží tuleň.",
+          "animalId": "tulen"
+        },
+        {
+          "text": "Delfín skáče.",
+          "matchText": "Nad vlnami skáče delfín.",
+          "animalId": "delfin"
+        },
+        {
+          "text": "Velryba plave.",
+          "matchText": "V oceánu zpívá velryba.",
+          "animalId": "velryba"
+        },
+        {
+          "text": "Želva leze.",
+          "matchText": "Po písku leze želva.",
+          "animalId": "zelva"
+        },
+        {
+          "text": "Ryba plave.",
+          "matchText": "V potoce plave ryba.",
+          "animalId": "ryba"
+        },
+        {
+          "text": "Kapr plave.",
+          "matchText": "V rybníku žije kapr.",
+          "animalId": "kapr"
+        },
+        {
+          "text": "Krokodýl plave.",
+          "matchText": "V řece číhá krokodýl.",
+          "animalId": "krokodyl"
+        },
+        {
+          "text": "Včela sbírá med.",
+          "matchText": "Na květu bzučí včela.",
+          "animalId": "vcela"
+        },
+        {
+          "text": "Mravenec nese zrno.",
+          "matchText": "Po cestě spěchá mravenec.",
+          "animalId": "mravenec"
+        },
+        {
+          "text": "Motýl letí.",
+          "matchText": "Nad loukou poletuje motýl.",
+          "animalId": "motyl"
+        },
+        {
+          "text": "Moucha bzučí.",
+          "matchText": "Po stole leze moucha.",
+          "animalId": "moucha"
+        },
+        {
+          "text": "Pavouk tká síť.",
+          "matchText": "V koutě tká pavouk.",
+          "animalId": "pavouk"
+        },
+        {
+          "text": "Šnek leze.",
+          "matchText": "Po listu leze šnek.",
+          "animalId": "snek"
+        },
+        {
+          "text": "Ježek se krčí.",
+          "matchText": "V listí funí ježek.",
+          "animalId": "jezek"
+        },
+        {
+          "text": "Bobr staví hráz.",
+          "matchText": "U řeky staví bobr.",
+          "animalId": "bobr"
+        },
+        {
+          "text": "Vydra loví.",
+          "matchText": "V potoce loví vydra.",
+          "animalId": "vydra"
+        },
+        {
+          "text": "Klokan skáče.",
+          "matchText": "Travou skáče velký klokan.",
+          "animalId": "klokan"
+        },
+        {
+          "text": "Panda chroupe bambus.",
+          "matchText": "V bambusu sedí panda.",
+          "animalId": "panda"
+        },
+        {
+          "text": "Koala spí.",
+          "matchText": "Na stromě dřímá koala.",
+          "animalId": "koala"
+        },
+        {
+          "text": "Lenochod odpočívá.",
+          "matchText": "Na větvi visí lenochod.",
+          "animalId": "lenochod"
+        },
+        {
+          "text": "Gorila je silná.",
+          "matchText": "Pralesem kráčí gorila.",
+          "animalId": "gorila"
+        },
+        {
+          "text": "Orangutan šplhá.",
+          "matchText": "Po liánách šplhá orangutan.",
+          "animalId": "orangutan"
+        },
+        {
+          "text": "Nosorožec má roh.",
+          "matchText": "Savanou duní nosorožec.",
+          "animalId": "nosorozec"
+        },
+        {
+          "text": "Lama nosí náklad.",
+          "matchText": "Horskou stezkou jde lama.",
+          "animalId": "lama"
+        },
+        {
+          "text": "Leopard má skvrny.",
+          "matchText": "Na stromě odpočívá leopard.",
+          "animalId": "leopard"
+        },
+        {
+          "text": "Mýval se myje.",
+          "matchText": "U vody se myje mýval.",
+          "animalId": "myval"
+        },
+        {
+          "text": "Jezevec ryje noru.",
+          "matchText": "Do nory leze jezevec.",
+          "animalId": "jezevec"
+        },
+        {
+          "text": "Netopýr létá.",
+          "matchText": "Nocí poletuje netopýr.",
+          "animalId": "netopyr"
+        },
+        {
+          "text": "Kanec ryje.",
+          "matchText": "V lese ryje divoký kanec.",
+          "animalId": "kanec"
+        },
+        {
+          "text": "Osel hýká.",
+          "matchText": "Na statku hýká osel.",
+          "animalId": "osel"
+        },
+        {
+          "text": "Los má parohy.",
+          "matchText": "Bažinou kráčí velký los.",
+          "animalId": "los"
+        },
+        {
+          "text": "Křeček chroupe.",
+          "matchText": "V kolečku běhá křeček.",
+          "animalId": "krecek"
+        },
+        {
+          "text": "Bizon se pase.",
+          "matchText": "Na pláni se pase bizon.",
+          "animalId": "bizon"
+        },
+        {
+          "text": "Krocan hudruje.",
+          "matchText": "Po dvoře hudruje krocan.",
+          "animalId": "krocan"
+        },
+        {
+          "text": "Holub vrká.",
+          "matchText": "Na střeše vrká holub.",
+          "animalId": "holub"
+        },
+        {
+          "text": "Labuť pluje.",
+          "matchText": "Po hladině pluje labuť.",
+          "animalId": "labut"
+        },
+        {
+          "text": "Plameňák je růžový.",
+          "matchText": "Na jedné noze stojí plameňák.",
+          "animalId": "plamenak"
+        },
+        {
+          "text": "Páv se chlubí.",
+          "matchText": "Na zámku se chlubí páv.",
+          "animalId": "pav"
+        },
+        {
+          "text": "Kuře pípá.",
+          "matchText": "Za slepicí běží kuře.",
+          "animalId": "kure"
+        },
+        {
+          "text": "Žralok plave.",
+          "matchText": "Hlubinou pluje žralok.",
+          "animalId": "zralok"
+        },
+        {
+          "text": "Chobotnice se schovává.",
+          "matchText": "Mezi korály se skrývá chobotnice.",
+          "animalId": "chobotnice"
+        },
+        {
+          "text": "Krab leze bokem.",
+          "matchText": "Po pláži cupitá krab.",
+          "animalId": "krab"
+        },
+        {
+          "text": "Ještěrka se sluní.",
+          "matchText": "Na kameni se sluní ještěrka.",
+          "animalId": "jesterka"
+        },
+        {
+          "text": "Beruška letí.",
+          "matchText": "Na dlani sedí beruška.",
+          "animalId": "beruska"
+        },
+        {
+          "text": "Brouk leze.",
+          "matchText": "Pod kůrou bydlí brouk.",
+          "animalId": "brouk"
+        },
+        {
+          "text": "Housenka se plazí.",
+          "matchText": "Po listu se plazí housenka.",
+          "animalId": "housenka"
+        },
+        {
+          "text": "Cvrček cvrká.",
+          "matchText": "Na louce cvrká cvrček.",
+          "animalId": "cvrcek"
+        },
+        {
+          "text": "Štír se schovává.",
+          "matchText": "Pod kamenem číhá štír.",
+          "animalId": "stir"
+        },
+        {
+          "text": "Lípa kvete.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Dub roste.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Slunce svítí.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Venku prší.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Venku sněží.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Fouká vítr.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Bouřka hřmí.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Přišlo jaro.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Je léto.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Podzim přišel.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Je zima.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Květ voní.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Houba roste.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Jahody rostou.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Sníh padá.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Listí padá.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Bříza kvete.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Slunce hřeje.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Máma čte.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Táta vaří.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Sestra spí.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Bratr běží.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Babička plete.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Děda sází.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Máma vaří.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Táta čte.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Čtu knížku.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Píšu úkol.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Kreslím doma.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Jdeme do školy.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Jdeme domů.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Piju čaj.",
+          "category": "Věty o světě kolem nás"
+        },
+        {
+          "text": "Jím svačinu.",
+          "category": "Věty o světě kolem nás"
+        },
+        {
+          "text": "Jaro je hezké.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Léto je teplé.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Zima je studená.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Máma čte knížku.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Jdeme do parku.",
+          "category": "Věty o světě kolem nás"
+        },
+        {
+          "text": "Bříza má listy.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Ptáček zpívá.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Pes štěká.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Kočka spí.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Pes si hraje.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Kočka pije mléko.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Náš pes skáče.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Jím polévku.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Piju kakao.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Táta peče dort.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Jablko je sladké.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Máma krájí chleba.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Jedu na kole.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Hrajeme si venku.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Běžím po trávě.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Plaveme v jezeře.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Skáčeme přes kaluž.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Les je tmavý.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Víla má křídla.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Trpaslík nosí klobouk.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Princezna zpívá píseň.",
+          "category": "Věty o pohádkách"
+        }
+      ]
+    },
+    {
+      "id": "sentences2",
+      "label": "Dlouhé věty",
+      "badge": "📜",
+      "kind": "sentence",
+      "hint": "Věty o čtyřech až šesti slovech.",
+      "items": [
+        {
+          "text": "Pes hlídá dům a vrtí ocasem.",
+          "matchText": "Na dvoře štěká pes.",
+          "animalId": "pes"
+        },
+        {
+          "text": "Kočka pije mléko z misky.",
+          "matchText": "Na okně přede kočka.",
+          "animalId": "kocka"
+        },
+        {
+          "text": "Lev má velkou chlupatou hřívu.",
+          "matchText": "V savaně řve lev.",
+          "animalId": "lev"
+        },
+        {
+          "text": "Sova vidí ve tmě každou myš.",
+          "matchText": "V noci houká sova.",
+          "animalId": "sova"
+        },
+        {
+          "text": "Liška má rezavý huňatý ocas.",
+          "matchText": "Lesem běží chytrá liška.",
+          "animalId": "liska"
+        },
+        {
+          "text": "Zebra má černé a bílé pruhy.",
+          "matchText": "V savaně běhá zebra.",
+          "animalId": "zebra"
+        },
+        {
+          "text": "Kos hledá v trávě žížaly.",
+          "matchText": "Na stromě zpívá kos.",
+          "animalId": "kos"
+        },
+        {
+          "text": "Kráva nám dává čerstvé mléko.",
+          "matchText": "Na louce se pase kráva.",
+          "animalId": "krava"
+        },
+        {
+          "text": "Kůň skáče přes vysokou ohradu.",
+          "matchText": "Po poli cválá kůň.",
+          "animalId": "kun"
+        },
+        {
+          "text": "Žába chytá mouchy dlouhým jazykem.",
+          "matchText": "U rybníka skáče žába.",
+          "animalId": "zaba"
+        },
+        {
+          "text": "Slon nabírá vodu dlouhým chobotem.",
+          "matchText": "V zoo troubí slon.",
+          "animalId": "slon"
+        },
+        {
+          "text": "Medvěd si pochutnává na sladkém medu.",
+          "matchText": "V lese bručí medvěd.",
+          "animalId": "medved"
+        },
+        {
+          "text": "Had se plazí tiše mezi kameny.",
+          "matchText": "V trávě syčí had.",
+          "animalId": "had"
+        },
+        {
+          "text": "Beran má velké zatočené rohy.",
+          "matchText": "Na pastvě trká beran.",
+          "animalId": "beran"
+        },
+        {
+          "text": "Orel vidí kořist z velké výšky.",
+          "matchText": "Vysoko na nebi krouží orel.",
+          "animalId": "orel"
+        },
+        {
+          "text": "Vlk žije v lese se smečkou.",
+          "matchText": "V noci vyje vlk.",
+          "animalId": "vlk"
+        },
+        {
+          "text": "Hroch vydrží dlouho pod vodou.",
+          "matchText": "V řece se koupe hroch.",
+          "animalId": "hroch"
+        },
+        {
+          "text": "Jelen nosí na hlavě velké parohy.",
+          "matchText": "Na pasece stojí jelen.",
+          "animalId": "jelen"
+        },
+        {
+          "text": "Papoušek opakuje slova po lidech.",
+          "matchText": "Na větvi mluví papoušek.",
+          "animalId": "papousek"
+        },
+        {
+          "text": "Prase rádo ryje rypákem v zemi.",
+          "matchText": "V blátě se válí prase.",
+          "animalId": "prase"
+        },
+        {
+          "text": "Ovce nám dává teplou vlnu.",
+          "matchText": "Na louce bečí ovce.",
+          "animalId": "ovce"
+        },
+        {
+          "text": "Koza okusuje listí z keře.",
+          "matchText": "Na dvorku mečí koza.",
+          "animalId": "koza"
+        },
+        {
+          "text": "Kohout ráno budí celý dvůr.",
+          "matchText": "Na plotě kokrhá kohout.",
+          "animalId": "kohout"
+        },
+        {
+          "text": "Slepice snáší každý den vejce.",
+          "matchText": "Na dvoře zobe slepice.",
+          "animalId": "slepice"
+        },
+        {
+          "text": "Kachna plave a potápí se.",
+          "matchText": "Na rybníku káchá kachna.",
+          "animalId": "kachna"
+        },
+        {
+          "text": "Husa natahuje dlouhý bílý krk.",
+          "matchText": "U potoka kejhá husa.",
+          "animalId": "husa"
+        },
+        {
+          "text": "Králík má dlouhé uši a hopká.",
+          "matchText": "Mrkev chroupe malý králík.",
+          "animalId": "kralik"
+        },
+        {
+          "text": "Myš si hledá kousek sýra.",
+          "matchText": "Ve spíži piští myš.",
+          "animalId": "mys"
+        },
+        {
+          "text": "Krysa má dlouhý holý ocásek.",
+          "matchText": "Ve sklepě běhá krysa.",
+          "animalId": "krysa"
+        },
+        {
+          "text": "Tygr má kožich plný pruhů.",
+          "matchText": "Džunglí se plíží tygr.",
+          "animalId": "tygr"
+        },
+        {
+          "text": "Opice se houpe na větvi.",
+          "matchText": "Na stromě dovádí opice.",
+          "animalId": "opice"
+        },
+        {
+          "text": "Žirafa dosáhne na nejvyšší listy.",
+          "matchText": "Nad stromy kouká žirafa.",
+          "animalId": "zirafa"
+        },
+        {
+          "text": "Velbloud vydrží dlouho bez vody.",
+          "matchText": "Pouští kráčí velbloud.",
+          "animalId": "velbloud"
+        },
+        {
+          "text": "Tučňák plave rychle jako ryba.",
+          "matchText": "Na ledu stojí tučňák.",
+          "animalId": "tucnak"
+        },
+        {
+          "text": "Tuleň loví ryby ve studeném moři.",
+          "matchText": "Na skále leží tuleň.",
+          "animalId": "tulen"
+        },
+        {
+          "text": "Delfín si rád hraje s lidmi.",
+          "matchText": "Nad vlnami skáče delfín.",
+          "animalId": "delfin"
+        },
+        {
+          "text": "Velryba je největší zvíře světa.",
+          "matchText": "V oceánu zpívá velryba.",
+          "animalId": "velryba"
+        },
+        {
+          "text": "Želva nosí domeček na zádech.",
+          "matchText": "Po písku leze želva.",
+          "animalId": "zelva"
+        },
+        {
+          "text": "Ryba dýchá pod vodou žábrami.",
+          "matchText": "V potoce plave ryba.",
+          "animalId": "ryba"
+        },
+        {
+          "text": "Kapr má velké lesklé šupiny.",
+          "matchText": "V rybníku žije kapr.",
+          "animalId": "kapr"
+        },
+        {
+          "text": "Krokodýl má silný dlouhý ocas.",
+          "matchText": "V řece číhá krokodýl.",
+          "animalId": "krokodyl"
+        },
+        {
+          "text": "Včela nosí sladký med do úlu.",
+          "matchText": "Na květu bzučí včela.",
+          "animalId": "vcela"
+        },
+        {
+          "text": "Mravenec staví velké mraveniště.",
+          "matchText": "Po cestě spěchá mravenec.",
+          "animalId": "mravenec"
+        },
+        {
+          "text": "Motýl má křídla plná barev.",
+          "matchText": "Nad loukou poletuje motýl.",
+          "animalId": "motyl"
+        },
+        {
+          "text": "Moucha bzučí kolem našich uší.",
+          "matchText": "Po stole leze moucha.",
+          "animalId": "moucha"
+        },
+        {
+          "text": "Pavouk plete jemnou pavučinu.",
+          "matchText": "V koutě tká pavouk.",
+          "animalId": "pavouk"
+        },
+        {
+          "text": "Šnek nosí ulitu na zádech.",
+          "matchText": "Po listu leze šnek.",
+          "animalId": "snek"
+        },
+        {
+          "text": "Ježek se stočí do klubíčka.",
+          "matchText": "V listí funí ježek.",
+          "animalId": "jezek"
+        },
+        {
+          "text": "Bobr kácí stromy ostrými zuby.",
+          "matchText": "U řeky staví bobr.",
+          "animalId": "bobr"
+        },
+        {
+          "text": "Vydra plave hbitě pod vodou.",
+          "matchText": "V potoce loví vydra.",
+          "animalId": "vydra"
+        },
+        {
+          "text": "Klokan nosí mládě v kapse.",
+          "matchText": "Travou skáče velký klokan.",
+          "animalId": "klokan"
+        },
+        {
+          "text": "Panda jí bambus celý den.",
+          "matchText": "V bambusu sedí panda.",
+          "animalId": "panda"
+        },
+        {
+          "text": "Koala spí skoro celý den.",
+          "matchText": "Na stromě dřímá koala.",
+          "animalId": "koala"
+        },
+        {
+          "text": "Lenochod dělá všechno hodně pomalu.",
+          "matchText": "Na větvi visí lenochod.",
+          "animalId": "lenochod"
+        },
+        {
+          "text": "Gorila si staví hnízdo z listí.",
+          "matchText": "Pralesem kráčí gorila.",
+          "animalId": "gorila"
+        },
+        {
+          "text": "Orangutan má dlouhé silné ruce.",
+          "matchText": "Po liánách šplhá orangutan.",
+          "animalId": "orangutan"
+        },
+        {
+          "text": "Nosorožec nosí na nose roh.",
+          "matchText": "Savanou duní nosorožec.",
+          "animalId": "nosorozec"
+        },
+        {
+          "text": "Lama nosí náklad přes hory.",
+          "matchText": "Horskou stezkou jde lama.",
+          "animalId": "lama"
+        },
+        {
+          "text": "Leopard ukrývá kořist na stromě.",
+          "matchText": "Na stromě odpočívá leopard.",
+          "animalId": "leopard"
+        },
+        {
+          "text": "Mýval vypadá jako malý loupežník.",
+          "matchText": "U vody se myje mýval.",
+          "animalId": "myval"
+        },
+        {
+          "text": "Jezevec spí celý den v noře.",
+          "matchText": "Do nory leze jezevec.",
+          "animalId": "jezevec"
+        },
+        {
+          "text": "Netopýr spí hlavou dolů v jeskyni.",
+          "matchText": "Nocí poletuje netopýr.",
+          "animalId": "netopyr"
+        },
+        {
+          "text": "Kanec hledá žaludy pod dubem.",
+          "matchText": "V lese ryje divoký kanec.",
+          "animalId": "kanec"
+        },
+        {
+          "text": "Osel nese pytle na zádech.",
+          "matchText": "Na statku hýká osel.",
+          "animalId": "osel"
+        },
+        {
+          "text": "Los má parohy jako lopaty.",
+          "matchText": "Bažinou kráčí velký los.",
+          "animalId": "los"
+        },
+        {
+          "text": "Křeček si plní tváře zrním.",
+          "matchText": "V kolečku běhá křeček.",
+          "animalId": "krecek"
+        },
+        {
+          "text": "Bizon má hustou hnědou srst.",
+          "matchText": "Na pláni se pase bizon.",
+          "animalId": "bizon"
+        },
+        {
+          "text": "Krocan roztahuje ocas jako vějíř.",
+          "matchText": "Po dvoře hudruje krocan.",
+          "animalId": "krocan"
+        },
+        {
+          "text": "Holub vždy najde cestu domů.",
+          "matchText": "Na střeše vrká holub.",
+          "animalId": "holub"
+        },
+        {
+          "text": "Labuť ohýbá dlouhý bílý krk.",
+          "matchText": "Po hladině pluje labuť.",
+          "animalId": "labut"
+        },
+        {
+          "text": "Plameňák stojí rád na jedné noze.",
+          "matchText": "Na jedné noze stojí plameňák.",
+          "animalId": "plamenak"
+        },
+        {
+          "text": "Páv roztahuje ocas plný ok.",
+          "matchText": "Na zámku se chlubí páv.",
+          "animalId": "pav"
+        },
+        {
+          "text": "Kuře se vyklubalo z vejce.",
+          "matchText": "Za slepicí běží kuře.",
+          "animalId": "kure"
+        },
+        {
+          "text": "Žralok má tři řady zubů.",
+          "matchText": "Hlubinou pluje žralok.",
+          "animalId": "zralok"
+        },
+        {
+          "text": "Chobotnice má osm dlouhých chapadel.",
+          "matchText": "Mezi korály se skrývá chobotnice.",
+          "animalId": "chobotnice"
+        },
+        {
+          "text": "Krab se brání velkými klepety.",
+          "matchText": "Po pláži cupitá krab.",
+          "animalId": "krab"
+        },
+        {
+          "text": "Ještěrka umí odhodit svůj ocásek.",
+          "matchText": "Na kameni se sluní ještěrka.",
+          "animalId": "jesterka"
+        },
+        {
+          "text": "Beruška má sedm černých teček.",
+          "matchText": "Na dlani sedí beruška.",
+          "animalId": "beruska"
+        },
+        {
+          "text": "Brouk schovává křídla pod krovky.",
+          "matchText": "Pod kůrou bydlí brouk.",
+          "animalId": "brouk"
+        },
+        {
+          "text": "Z housenky bude krásný motýl.",
+          "matchText": "Po listu se plazí housenka.",
+          "animalId": "housenka"
+        },
+        {
+          "text": "Cvrček cvrká celé léto.",
+          "matchText": "Na louce cvrká cvrček.",
+          "animalId": "cvrcek"
+        },
+        {
+          "text": "Štír zvedá ocas se žihadlem.",
+          "matchText": "Pod kamenem číhá štír.",
+          "animalId": "stir"
+        },
+        {
+          "text": "Drak spí v jeskyni.",
+          "category": "Věty o pohádkách"
+        }
+      ]
+    },
+    {
+      "id": "stories",
+      "label": "Čtenář příběhů",
+      "badge": "👑",
+      "kind": "story",
+      "hint": "Mini příběhy se zvířaty z tvé ZOO.",
+      "items": []
+    }
+  ]
+}

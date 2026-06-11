@@ -24,6 +24,8 @@
     switch (screen) {
       case 'onboarding': return App.views.renderOnboarding(mount);
       case 'lesson':     return App.views.renderLesson(mount);
+      case 'challenge':  return App.views.renderChallenge(mount);
+      case 'story':      return App.views.renderStory(mount, ctx || {});
       case 'zoo':        return App.views.renderZoo(mount);
       case 'animal':     return App.views.renderAnimal(mount, ctx || {});
       case 'progress':   return App.views.renderProgress(mount);

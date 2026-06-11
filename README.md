@@ -65,9 +65,12 @@ Pak v prohlížeči otevři <http://localhost:8000>.
 | Funkce | Stav |
 |---|---|
 | Onboarding s výběrem úrovně a délky lekce | ✅ |
-| 4 úrovně (písmena/slabiky, krátká slova, delší slova, věty) | ✅ |
+| 8 úrovní (písmena → slabiky → slova → věty → příběhy), 692 položek | ✅ |
+| Zamčené úrovně + zasloužený postup přes Velkou výzvu (8 z 8) + odznaky | ✅ |
 | 3 délky lekce (5 / 8 / 10 úkolů) | ✅ |
-| 4 typy úkolů (čtení, spoj s obrázkem, slož celé slovo/větu, doplň písmeno) | ✅ |
+| 6 typů úkolů (čtení, spoj s obrázkem, slož slovo/větu, doplň písmeno, obtahování, najdi zvíře od písmene) | ✅ |
+| Věty „zvíře na konci“ pro úkol spoj s obrázkem (nutí číst celou větu) | ✅ |
+| 25 mini příběhů odemykaných vlastnictvím zvířete | ✅ |
 | Pestré střídání úkolů, žádný stejný dvakrát po sobě | ✅ |
 | 82 zvířat s ilustracemi Microsoft Fluent Emoji 3D (assets/animals-3d/, MIT) | ✅ |
 | Sbírka zvířat se zámkem na neodemčená | ✅ |

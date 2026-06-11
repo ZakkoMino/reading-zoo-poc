@@ -16,20 +16,33 @@
 
   const defaultState = () => ({
     settings: {
-      levelId: 'short',
+      levelId: 'letters',
       lessonLength: 8,
       themeId: 'mix'   // only applied to sentence-style levels; 'mix' = no filter
     },
     scores: {},        // { [itemText]: 0..5 }
     zoo: [],           // animal ids in order earned
     zooStars: {},      // { [animalId]: 1..STAR_MAX }
+    unlockedLevels: ['letters'],  // level ids the child has earned (or started with)
+    badges: [],        // level ids whose Velká výzva was won
+    storiesRead: {},   // { [storyId]: true }
     stats: {
       lessonsCompleted: 0,
       tasksCorrect: 0,
-      tasksTotal: 0
+      tasksTotal: 0,
+      lessonsByLevel: {}   // { [levelId]: lessons completed on that level }
     },
     lastSeen: 0        // millisecond timestamp; used for trivial freshness
   });
+
+  /* Saves from before curriculum v2 used different level ids. Map them to
+   * the closest new level and unlock everything up to it, so nobody loses
+   * access to content they were already practicing. */
+  const LEGACY_LEVEL_MAP = {
+    short: 'words1', simple: 'words1', longer: 'words2', animals: 'words2',
+    nature: 'words2', home_school: 'words2', actions_traits: 'words2',
+    sentences: 'sentences1', world_sentences: 'sentences1'
+  };
 
   let state = load();
 
@@ -43,9 +56,24 @@
         settings: Object.assign(defaultState().settings, parsed.settings || {}),
         stats: Object.assign(defaultState().stats, parsed.stats || {})
       });
+      if (!merged.stats.lessonsByLevel) merged.stats.lessonsByLevel = {};
       // Saves from before star levels: every owned animal starts at 1 star.
       for (const id of merged.zoo) {
         if (!merged.zooStars[id]) merged.zooStars[id] = 1;
+      }
+      // Legacy level id → new curriculum id, unlocking everything up to it.
+      const order = (App.data && App.data.LEVEL_ORDER) || [];
+      if (merged.settings.levelId && !order.includes(merged.settings.levelId)) {
+        merged.settings.levelId = LEGACY_LEVEL_MAP[merged.settings.levelId] || 'letters';
+      }
+      if (!Array.isArray(merged.unlockedLevels) || !merged.unlockedLevels.length) {
+        merged.unlockedLevels = ['letters'];
+      }
+      const idx = order.indexOf(merged.settings.levelId);
+      if (idx > 0) {
+        for (let i = 0; i <= idx; i++) {
+          if (!merged.unlockedLevels.includes(order[i])) merged.unlockedLevels.push(order[i]);
+        }
       }
       return merged;
     } catch (err) {
@@ -114,11 +142,42 @@
     return next;
   }
 
-  function recordLessonResult({ correct, total }) {
+  function recordLessonResult({ correct, total, levelId }) {
     state.stats.lessonsCompleted += 1;
     state.stats.tasksCorrect += correct;
     state.stats.tasksTotal += total;
+    if (levelId) {
+      state.stats.lessonsByLevel[levelId] = (state.stats.lessonsByLevel[levelId] || 0) + 1;
+    }
     save();
+  }
+
+  function isUnlocked(levelId) {
+    return state.unlockedLevels.includes(levelId);
+  }
+
+  /* Unlock a level won through the Velká výzva; the badge belongs to the
+   * level that was MASTERED (the one before the newly unlocked one). */
+  function unlockLevel(levelId, masteredLevelId) {
+    if (!state.unlockedLevels.includes(levelId)) state.unlockedLevels.push(levelId);
+    if (masteredLevelId && !state.badges.includes(masteredLevelId)) {
+      state.badges.push(masteredLevelId);
+    }
+    save();
+  }
+
+  function hasBadge(levelId) {
+    return state.badges.includes(levelId);
+  }
+
+  function markStoryRead(storyId) {
+    if (!storyId) return;
+    state.storiesRead[storyId] = true;
+    save();
+  }
+
+  function isStoryRead(storyId) {
+    return !!state.storiesRead[storyId];
   }
 
   App.state = {
@@ -134,6 +193,11 @@
     addToZoo,
     starsOf,
     bumpStars,
-    recordLessonResult
+    recordLessonResult,
+    isUnlocked,
+    unlockLevel,
+    hasBadge,
+    markStoryRead,
+    isStoryRead
   };
 })();

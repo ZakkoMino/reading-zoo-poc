@@ -7,7 +7,7 @@ Pravidla zařazení:
 - **Úroveň 4** = delší slova (2–3 slabiky), mírné shluky (kočka, škola, plave).
 - **Úroveň 5** = ř, ě, ď, ť, ň a těžké shluky (strom, čtyři, zmrzlina).
 - Slova se zvířetem ze ZOO jsou **tučně** (propojí se s obrázkem a odměnou).
-- Otazník = nejsem si jistý zařazením – rozhodni.
+- Revize 2026-06-11: písek/kámen přesunuty do úrovně 4; sporná slova úrovně 4 schválena.
 
 ---
 
@@ -71,7 +71,7 @@ Otevřené slabiky z prvních souhlásek. Záměrně bez „ti, di, ni“
 | H | ha, he, ho, hu |
 | R | ra, re, ro, ru |
 
-## Úroveň 3 – První slova (111 slov)
+## Úroveň 3 – První slova (109 slov)
 
 | Kategorie | Slova |
 |---|---|
@@ -79,13 +79,13 @@ Otevřené slabiky z prvních souhlásek. Záměrně bez „ti, di, ni“
 | Tělo (11) | oko, ucho, nos, pusa, ruka, noha, zub, ret, kost, tělo, pata |
 | Domov (13) | dům, byt, stůl, okno, koš, pec, vana, lampa, deka, mísa, nůž, klíč, pokoj |
 | Jídlo (10) | med, sýr, čaj, mák, maso, rýže, káva, oběd, sůl, kaše |
-| Příroda (14) | les, pole, hora, nebe, voda, lípa, dub, mech, seno, zem, sad, růže, písek?, kámen? |
+| Příroda (12) | les, pole, hora, nebe, voda, lípa, dub, mech, seno, zem, sad, růže |
 | Věci a hračky (8) | míč, kolo, auto, pero, dort, mapa, váza, bota |
 | Zvířata (20) | **pes**, **kos**, **lev**, **kůň**, **los**, **páv**, **sova**, **žába**, **koza**, **husa**, **kuře**, **ryba**, **myš**, **osel**, **lama**, **had**, **orel**, **ovce**, **koala**, vosa |
 | Čas a svět (10) | den, noc, rok, léto, zima, jaro, ráno, dnes, sen, jih |
 | Slovesa a vlastnosti (14) | jí, pije, spí, sedí, leze, nese, vidí, dává, volá, mává, malý, bílý, sám, rád |
 
-## Úroveň 4 – Velká slova (150 slov)
+## Úroveň 4 – Velká slova (152 slov)
 
 | Kategorie | Slova |
 |---|---|
@@ -93,12 +93,12 @@ Otevřené slabiky z prvních souhlásek. Záměrně bez „ti, di, ni“
 | Škola (14) | škola, aktovka, penál, tužka, guma, kniha, sešit, tabule, učitel, lavice, papír, barva, nůžky, pastelka |
 | Domov (14) | postel, polička, koberec, kuchyně, ručník, hrnek, lžíce, vidlička, pohovka, záclona, budík, zvonek, mýdlo, taška |
 | Jídlo (16) | rohlík, houska, banán, hruška, mrkev, salám, polévka, koláč, buchta, čokoláda, bonbón, jogurt, palačinka, okurka, rajče, cibule |
-| Příroda (16) | louka, kytka, kopec, potok, rybník, jezero, zahrada, ovoce, šiška, kaštan, malina, borůvka, houba, koruna, podzim, duha |
+| Příroda (18) | louka, kytka, kopec, potok, rybník, jezero, zahrada, ovoce, šiška, kaštan, malina, borůvka, houba, koruna, podzim, duha, písek, kámen |
 | Doprava (8) | autobus, tramvaj, letadlo, lodička, kolečko, silnice, garáž, motorka |
-| Zvířata (32) | **liška**, **zebra**, **kočka**, **kráva**?, **králík**, **kachna**, **slepice**, **opice**, **delfín**, **želva**, **žirafa**, **gorila**, **panda**, **bizon**, **holub**, **jelen**, **jezevec**, **mýval**, **klokan**, **krocan**, **kanec**, **beruška**, **housenka**, **moucha**, **pavouk**, **bobr**?, **vydra**, **tygr**, **šnek**?, **kohout**, **hroch**, **motýl** |
-| Barvy a vlastnosti (12) | modrá, žlutá?, zelená, růžová, hodný, veselý, smutný, rychlý, pomalý, vysoký, malinký, čistý |
+| Zvířata (32) | **liška**, **zebra**, **kočka**, **kráva**, **králík**, **kachna**, **slepice**, **opice**, **delfín**, **želva**, **žirafa**, **gorila**, **panda**, **bizon**, **holub**, **jelen**, **jezevec**, **mýval**, **klokan**, **krocan**, **kanec**, **beruška**, **housenka**, **moucha**, **pavouk**, **bobr**, **vydra**, **tygr**, **šnek**, **kohout**, **hroch**, **motýl** |
+| Barvy a vlastnosti (12) | modrá, žlutá, zelená, růžová, hodný, veselý, smutný, rychlý, pomalý, vysoký, malinký, čistý |
 | Slovesa (12) | skáče, plave, zpívá, maluje, počítá, pomáhá, uklízí, nakupuje, jezdí, létá, houpá, staví |
-| Ostatní (14) | pohádka, písnička, narozeniny?, dáreček, koloběžka, houpačka, pískoviště?, kamínek, sluníčko?, panenka, kostka, balon, čepice, deštník? |
+| Ostatní (14) | pohádka, písnička, narozeniny, dáreček, koloběžka, houpačka, pískoviště, kamínek, sluníčko, panenka, kostka, balon, čepice, deštník |
 
 ## Úroveň 5 – Záludná slova (107 slov)
 
@@ -116,5 +116,5 @@ Otevřené slabiky z prvních souhlásek. Záměrně bez „ti, di, ni“
 
 ---
 
-**Součet:** 37 + 52 + 111 + 150 + 107 = **457 položek**. Spolu
+**Součet:** 37 + 52 + 109 + 152 + 107 = **457 položek**. Spolu
 s větami (dávka C, ~310 vět) a příběhy (dávka D) je celkem ~790.
