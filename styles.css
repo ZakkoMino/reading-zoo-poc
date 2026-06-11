@@ -638,6 +638,35 @@ h2 { font-size: 22px; margin-top: 14px; }
 }
 .reward-kind-new { color: var(--accent); }
 
+/* ---------- Stage presentation (animal growth without per-stage art) ----------
+ * The same base illustration "grows" with stars: small baby at 1★ up to
+ * full size at 3★; 4★ adds a silver frame, 5★ a gold frame + crown badge. */
+.zoo-img-wrap { position: relative; }
+.zoo-tile img, .animal-illustration img {
+  transition: transform .25s ease;
+  transform-origin: bottom center;
+}
+.stage-1 .zoo-img-wrap img, .stage-1 .animal-illustration img { transform: scale(.62); }
+.stage-2 .zoo-img-wrap img, .stage-2 .animal-illustration img { transform: scale(.8); }
+/* stage 3+ = full size (no transform needed) */
+.zoo-tile.stage-4, .animal-card.stage-4 {
+  border-color: #9FB3C8;
+  box-shadow: 0 0 0 3px #E3EAF2, var(--shadow);
+}
+.zoo-tile.stage-5, .animal-card.stage-5 {
+  border-color: #F2A33C;
+  box-shadow: 0 0 0 3px #FBE3B8, var(--shadow);
+}
+.stage-badge {
+  position: absolute;
+  top: -6px;
+  right: -2px;
+  font-size: 26px;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.25));
+}
+.animal-illustration { position: relative; }
+.animal-illustration .stage-badge { font-size: 40px; top: -4px; right: 6px; }
+
 /* ---------- ZOO ---------- */
 .zoo-grid {
   display: grid;

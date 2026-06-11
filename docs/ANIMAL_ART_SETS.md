@@ -81,6 +81,38 @@ pokud chceme modernější 3D vzhled a smíříme se s PNG.
 4. Dokreslit rysa, čmeláka (a případně upravit doe) podle style-guide.
 5. Rozhodnout přejmenování `cap` Kozel → Beran v seed datech.
 
+## Evoluční fáze zvířat (mládě → nejsilnější)
+
+Otázka: existuje veřejná sada, kde má každé zvíře **více vývojových
+podob** pro hvězdičkovou evoluci?
+
+**Krátká odpověď: ne.** Žádná volně licencovaná sada skutečných zvířat
+s konzistentními růstovými fázemi v potřebném rozsahu neexistuje:
+
+- **Emoji sady**: jediná „evoluční řada“ je kuře (vejce → kuřátko →
+  slepice/kohout). Ostatní zvířata mají jednu podobu.
+- **Tuxemon** (open-source hra à la Pokémon, CC BY-SA): má skutečné
+  evoluční řady, ale jde o **fantasy příšerky** v pixel-artu 64×64 –
+  rozbilo by to edukační vazbu na skutečná česká slova.
+- **Herní packy (OpenGameArt, itch.io, Kenney)**: ojediněle mládě+dospělec
+  u farmových zvířat, nikdy 3–5 fází v jednotném stylu pro 50 druhů.
+
+### Doporučená strategie
+
+1. **Teď (zdarma, funguje s libovolnou sadou): prezentační evoluce.**
+   Stejný obrázek „roste“ s hvězdami – 1★ malé mládě, 2★ větší, 3★ plná
+   velikost, 4★ stříbrný rám 🥈, 5★ zlatý rám + koruna 👑.
+   *Implementováno v prototypu (`stage-1…5` v `styles.css`).*
+2. **Pilot s odlišnými kresbami: rozšířit vlastní generátor.**
+   `scripts/generate-animals-assets.mjs` zná části těla, takže umí
+   parametrizovat fáze programově (mládě = větší hlava a oči, menší
+   tělo; silák = mohutnější postava, doplňky). 50 × 5 = 250 obrázků,
+   100 % vlastní, právně čisté – přesně dle `ILLUSTRATION_STRATEGY.md`.
+3. **Produkce: odstupňovaná investice.** Ne každé zvíře potřebuje 5
+   kreseb (ani Pokémoni se nevyvíjejí všichni). Např. 10 oblíbených
+   „hrdinských“ zvířat dostane plné fáze (mládě/dospělec/šampion =
+   30 zakázkových ilustrací), zbytek používá prezentační evoluci.
+
 ## Zdroje
 
 - OpenMoji: <https://openmoji.org/> · GitHub `hfg-gmuend/openmoji` · FAQ k licenci: <https://openmoji.org/faq/>

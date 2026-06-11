@@ -52,6 +52,20 @@
     });
   }
 
+  /* Stage presentation: the same base illustration "grows" with stars —
+   * scaled-down baby at 1★ up to full size at 3★, then a silver (4★) and
+   * gold + crown (5★) frame. Works with any art set, no per-stage drawings
+   * needed; if per-stage artwork is added later, only animalImg changes. */
+  function stageClass(stars) {
+    return ' stage-' + Math.max(1, Math.min(STAR_MAX, stars));
+  }
+
+  function stageBadge(stars) {
+    if (stars >= 5) return el('span', { class: 'stage-badge', 'aria-hidden': 'true', text: '👑' });
+    if (stars === 4) return el('span', { class: 'stage-badge', 'aria-hidden': 'true', text: '🥈' });
+    return null;
+  }
+
   /* ---------- onboarding ---------- */
   function renderOnboarding(mount) {
     const settings = get().settings;
@@ -313,8 +327,9 @@
     const grid = el('div', { class: 'zoo-grid' });
     ANIMALS.forEach((animal) => {
       const owned = zoo.includes(animal.id);
+      const stars = starsOf(animal.id);
       const tile = el('button', {
-        class: 'zoo-tile' + (owned ? '' : ' zoo-tile-locked'),
+        class: 'zoo-tile' + (owned ? stageClass(stars) : ' zoo-tile-locked'),
         on: {
           click: () => {
             if (owned) App.nav('animal', { animalId: animal.id });
@@ -323,7 +338,8 @@
         }
       }, [
         el('div', { class: 'zoo-img-wrap' }, [
-          el('img', { src: animalImg(animal.id), alt: animal.name })
+          el('img', { src: animalImg(animal.id), alt: animal.name }),
+          owned ? stageBadge(stars) : null
         ]),
         el('div', { class: 'zoo-name', text: owned ? animal.name : '?' }),
         owned ? el('div', { class: 'zoo-stars' }, [starRow(starsOf(animal.id), 'star-row star-row-small')]) : null
@@ -347,15 +363,17 @@
     const animal = getAnimal(ctx.animalId);
     if (!animal) { App.nav('zoo'); return; }
 
+    const stars = starsOf(animal.id);
     const card = el('section', { class: 'screen animal-screen' }, [
       el('button', {
         class: 'btn-link',
         on: { click: () => App.nav('zoo') }
       }, [el('span', { text: '← zpět do ZOO' })]),
 
-      el('div', { class: 'animal-card' }, [
+      el('div', { class: 'animal-card' + stageClass(stars) }, [
         el('div', { class: 'animal-illustration' }, [
-          el('img', { src: animalImg(animal.id), alt: animal.name })
+          el('img', { src: animalImg(animal.id), alt: animal.name }),
+          stageBadge(stars)
         ]),
         el('h1', { class: 'animal-name', text: animal.name }),
         el('p', { class: 'animal-stage' }, [
