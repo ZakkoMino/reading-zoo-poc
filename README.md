@@ -65,7 +65,7 @@ Pak v prohlížeči otevři <http://localhost:8000>.
 | Funkce | Stav |
 |---|---|
 | Onboarding s výběrem úrovně a délky lekce | ✅ |
-| 8 úrovní (písmena → slabiky → slova → věty → příběhy), 692 položek | ✅ |
+| 8 úrovní (písmena → slabiky → slova → věty → příběhy), 677 položek | ✅ |
 | Zamčené úrovně + zasloužený postup přes Velkou výzvu (8 z 8) + odznaky | ✅ |
 | 3 délky lekce (5 / 8 / 10 úkolů) | ✅ |
 | 6 typů úkolů (čtení, spoj s obrázkem, slož slovo/větu, doplň písmeno, obtahování, najdi zvíře od písmene) | ✅ |

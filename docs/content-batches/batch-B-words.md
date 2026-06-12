@@ -11,23 +11,25 @@ Pravidla zařazení:
 
 ---
 
-## Úroveň 1 – Lovec písmen (37 písmen)
+## Úroveň 1 – Lovec písmen (24 písmen)
 
-Pořadí podle výuky v 1. třídě (ne abecedně). U písmene je zvíře pro
-úkol „Najdi zvíře od písmene…“; pomlčka = bez zvířete (úkol se nahradí
-čtením, doplněním nebo obtahováním).
+Pořadí podle výuky v 1. třídě (ne abecedně). **Bez diakritiky**
+(rozhodnutí 2026-06-12): dlouhé samohlásky a písmena s háčky se na
+úrovni 1 neučí – dítě je potká později ve slovech (úrovně 3–5).
+U písmene je zvíře pro úkol „Najdi zvíře od písmene…“; pomlčka =
+bez zvířete (úkol se nahradí čtením, doplněním nebo obtahováním).
 
 | Písmena (v pořadí výuky) | Zvíře pro úkol „najdi“ |
 |---|---|
-| A, Á | — |
+| A | — |
 | M | myš, medvěd, motýl |
 | L | lev, liška, labuť |
-| E, É | — |
+| E | — |
 | S | sova, slepice, slon |
-| O, Ó | ovce, opice, orel, osel |
+| O | ovce, opice, orel, osel |
 | P | pes, prase, páv, panda |
-| U, Ú, Ů | — |
-| I, Í | — |
+| U | — |
+| I | — |
 | T | tygr, tučňák, tuleň |
 | J | jelen, ježek, jezevec |
 | D | delfín |
@@ -38,22 +40,17 @@ Pořadí podle výuky v 1. třídě (ne abecedně). U písmene je zvíře pro
 | H | had, husa, hroch, holub |
 | C | cvrček |
 | B | beran, bobr, brouk, bizon |
-| Č | — |
 | R | ryba |
-| Š | šnek, štír |
-| Ž | žába, žirafa, želva, žralok |
 | CH | chobotnice |
 | F | — |
 | G | gorila |
-| Y, Ý | — |
-| Ř | — |
-| Ď, Ť, Ň | — |
-| Ě | — |
+| Y | — |
 
-## Úroveň 2 – Slabikové mládě (52 slabik)
+## Úroveň 2 – Slabikové mládě (61 slabik)
 
 Otevřené slabiky z prvních souhlásek. Záměrně bez „ti, di, ni“
-(měkčení patří do úrovně 5).
+(měkčení patří do úrovně 5). **Předčítání slabik** (2026-06-12):
+slabika se čte nejdřív po písmenech a pak dohromady – „L, A → la“.
 
 | Souhláska | Slabiky |
 |---|---|
@@ -116,5 +113,5 @@ Otevřené slabiky z prvních souhlásek. Záměrně bez „ti, di, ni“
 
 ---
 
-**Součet:** 37 + 52 + 109 + 152 + 107 = **457 položek**. Spolu
+**Součet:** 24 + 61 + 109 + 152 + 107 = **453 položek**. Spolu
 s větami (dávka C, ~310 vět) a příběhy (dávka D) je celkem ~790.
