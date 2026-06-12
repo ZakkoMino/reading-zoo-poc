@@ -97,7 +97,9 @@
       const filtered = prev ? allowed.filter((t) => t !== prev) : allowed;
       const choices = filtered.length ? filtered : allowed;
       const type = choices[Math.floor(Math.random() * choices.length)];
-      plan.push({ item, type });
+      // Copy with the level kind so task renderers can adapt (e.g. syllables
+      // are spoken letter-by-letter first, then blended).
+      plan.push({ item: Object.assign({ kind }, item), type });
       prev = type;
     }
 

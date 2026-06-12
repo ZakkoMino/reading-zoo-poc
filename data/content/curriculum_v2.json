@@ -14,9 +14,6 @@
           "text": "A"
         },
         {
-          "text": "Á"
-        },
-        {
           "text": "M",
           "animalIds": [
             "mys",
@@ -36,9 +33,6 @@
           "text": "E"
         },
         {
-          "text": "É"
-        },
-        {
           "text": "S",
           "animalIds": [
             "sova",
@@ -56,9 +50,6 @@
           ]
         },
         {
-          "text": "Ó"
-        },
-        {
           "text": "P",
           "animalIds": [
             "pes",
@@ -71,16 +62,7 @@
           "text": "U"
         },
         {
-          "text": "Ú"
-        },
-        {
-          "text": "Ů"
-        },
-        {
           "text": "I"
-        },
-        {
-          "text": "Í"
         },
         {
           "text": "T",
@@ -159,28 +141,9 @@
           ]
         },
         {
-          "text": "Č"
-        },
-        {
           "text": "R",
           "animalIds": [
             "ryba"
-          ]
-        },
-        {
-          "text": "Š",
-          "animalIds": [
-            "snek",
-            "stir"
-          ]
-        },
-        {
-          "text": "Ž",
-          "animalIds": [
-            "zaba",
-            "zirafa",
-            "zelva",
-            "zralok"
           ]
         },
         {
@@ -200,24 +163,6 @@
         },
         {
           "text": "Y"
-        },
-        {
-          "text": "Ý"
-        },
-        {
-          "text": "Ř"
-        },
-        {
-          "text": "Ď"
-        },
-        {
-          "text": "Ť"
-        },
-        {
-          "text": "Ň"
-        },
-        {
-          "text": "Ě"
         }
       ]
     },

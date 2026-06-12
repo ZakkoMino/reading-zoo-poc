@@ -62,6 +62,16 @@
     return shuffle(pool).slice(0, n);
   }
 
+  /* Syllables are read aloud letter-by-letter first, then blended:
+   * "la" → "L, A, la". The commas make the TTS pause between parts.
+   * Only syllable-level items get this treatment. */
+  function syllableSpeech(text) {
+    return text.toUpperCase().split('').join(', ') + ', ' + text;
+  }
+  function speechTextFor(item) {
+    return item.kind === 'syllable' ? syllableSpeech(item.text) : item.text;
+  }
+
   /* Letters are 1–2 uppercase chars ("M", "CH"); syllables 2 lowercase. */
   function unitLabel(text) {
     if (text.length <= 2 && text === text.toUpperCase() && /[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]/.test(text)) return 'písmeno';
@@ -75,7 +85,10 @@
     return new Promise((resolve) => {
       clear(mount);
       const isSentence = / |\./.test(item.text);
-      const unit = unitLabel(item.text);
+      const unit = item.kind === 'syllable' ? 'slabiku'
+        : item.kind === 'letter' ? 'písmeno'
+        : item.kind === 'word' ? 'slovo'
+        : unitLabel(item.text);
       const hasAnimal = !!item.animalId;
       const animal = hasAnimal ? getAnimal(item.animalId) : null;
 
@@ -91,8 +104,8 @@
             confirmed = true;
             button.disabled = true;
             button.classList.add('btn-busy');
-            btnLabel.textContent = isSentence ? 'Přehrávám větu…' : 'Přehrávám slovo…';
-            speakAndWait(item.text).then(() => resolve({ correct: true }));
+            btnLabel.textContent = isSentence ? 'Přehrávám větu…' : 'Přehrávám…';
+            speakAndWait(speechTextFor(item)).then(() => resolve({ correct: true }));
           }
         }
       }, [btnLabel]);
@@ -184,7 +197,9 @@
   }
 
   /* ---------- internal: compose single word from its letters ---------- */
-  function composeWord(target, mount) {
+  function composeWord(target, mount, isSyllable) {
+    // Syllables are pre-read letter-by-letter, then blended.
+    const speakTarget = () => speak(isSyllable ? syllableSpeech(target) : target);
     return new Promise((resolve) => {
       clear(mount);
       const pieces = target.split('');
@@ -287,7 +302,7 @@
           el('button', {
             class: 'btn btn-secondary btn-icon',
             'aria-label': 'Přečíst slovo',
-            on: { click: () => speak(target) }
+            on: { click: speakTarget }
           }, [el('span', { text: '🔊 Přečíst slovo' })])
         ]),
         slotsRow,
@@ -297,7 +312,7 @@
 
       mount.appendChild(card);
       render();
-      setTimeout(() => speak(target), 250);
+      setTimeout(speakTarget, 250);
     });
   }
 
@@ -514,7 +529,7 @@
   function compose(item, mount) {
     const isSentence = / /.test(item.text.trim());
     if (isSentence) return composeSentence(item, mount);
-    return composeWord(item.text, mount);
+    return composeWord(item.text, mount, item.kind === 'syllable');
   }
 
   /* ---------- task: fill (missing letter) ---------- */
@@ -719,7 +734,7 @@
         disabled: true,
         on: {
           click: () => {
-            speak(text);
+            speak(speechTextFor(item));
             setTimeout(() => resolve({ correct: true }), 500);
           }
         }

@@ -22,11 +22,14 @@ import { fileURLToPath } from 'url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (p) => JSON.parse(readFileSync(join(ROOT, p), 'utf8'));
 
-/* ---------- level 1: letters (teaching order) + animals for "find" ---------- */
+/* ---------- level 1: letters (teaching order) + animals for "find" ----------
+ * Decision 2026-06-12: no diacritics on level 1 — long vowels (Á, É…) and
+ * háček letters (Č, Š, Ž, Ř, Ď, Ť, Ň, Ě) are NOT introduced here; children
+ * meet them later inside words (levels 3–5). CH stays (digraph, no mark). */
 const LETTERS = [
-  'A', 'Á', 'M', 'L', 'E', 'É', 'S', 'O', 'Ó', 'P', 'U', 'Ú', 'Ů', 'I', 'Í',
-  'T', 'J', 'D', 'K', 'N', 'V', 'Z', 'H', 'C', 'B', 'Č', 'R', 'Š', 'Ž', 'CH',
-  'F', 'G', 'Y', 'Ý', 'Ř', 'Ď', 'Ť', 'Ň', 'Ě'
+  'A', 'M', 'L', 'E', 'S', 'O', 'P', 'U', 'I',
+  'T', 'J', 'D', 'K', 'N', 'V', 'Z', 'H', 'C', 'B',
+  'R', 'CH', 'F', 'G', 'Y'
 ];
 const LETTER_ANIMALS = {
   M: ['mys', 'medved', 'motyl'],
@@ -45,8 +48,6 @@ const LETTER_ANIMALS = {
   C: ['cvrcek'],
   B: ['beran', 'bobr', 'brouk', 'bizon'],
   R: ['ryba'],
-  'Š': ['snek', 'stir'],
-  'Ž': ['zaba', 'zirafa', 'zelva', 'zralok'],
   CH: ['chobotnice'],
   G: ['gorila']
 };
