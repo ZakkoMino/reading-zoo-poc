@@ -43,6 +43,14 @@ Otevři soubor `index.html` přímo v moderním prohlížeči
 HTML + CSS + ES5 JavaScript bez modulů, takže funguje
 i přes `file://`.
 
+### Instalace jako aplikace (Android tablet/mobil)
+
+Otevři <https://zakkomino.github.io/reading-zoo-poc/> v Chrome,
+potvrď nabídku **„Instalovat aplikaci“** (nebo menu ⋮ → *Přidat na
+plochu*). Aplikace se nainstaluje s ikonou lva, běží celoobrazovkově
+a po prvním načtení funguje **offline** (service worker si uloží
+celý obsah, ~3,5 MB).
+
 ### Varianta B – přes lokální server (čistší)
 
 Pokud chceš mít rozumný origin (např. pro Web Speech),
@@ -83,6 +91,7 @@ Pak v prohlížeči otevři <http://localhost:8000>.
 | Rodičovský panel se statistikami a resetem | ✅ |
 | Pozitivní zpětná vazba, žádné negativní hlášky | ✅ |
 | Velká písmena, vysoký kontrast, `html lang="cs"` | ✅ |
+| PWA: instalace na plochu (Android/desktop) + plný offline režim | ✅ |
 
 ---
 
