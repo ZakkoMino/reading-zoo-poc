@@ -1,11 +1,12 @@
 name: Deploy to GitHub Pages
 
 # Static site — no build step. Deploys the repo root as-is.
+# Only main: the github-pages environment rejects other branches, so a
+# branch trigger would just produce failed-run notifications.
 on:
   push:
     branches:
       - main
-      - claude/pilot-app-analysis-growth-gedgrc
   workflow_dispatch:
 
 permissions:
