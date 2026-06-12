@@ -69,14 +69,29 @@
         merged.settings.levelId = LEGACY_LEVEL_MAP[merged.settings.levelId] || 'letters';
       }
       if (!Array.isArray(merged.unlockedLevels)) merged.unlockedLevels = [];
+      if (!Array.isArray(merged.badges)) merged.badges = [];
       // The baseline unlocks also apply to saves created before this change.
-      for (const id of defaultState().unlockedLevels) {
+      const baseline = defaultState().unlockedLevels;
+      for (const id of baseline) {
         if (!merged.unlockedLevels.includes(id)) merged.unlockedLevels.push(id);
       }
-      const idx = order.indexOf(merged.settings.levelId);
-      if (idx > 0) {
-        for (let i = 0; i <= idx; i++) {
-          if (!merged.unlockedLevels.includes(order[i])) merged.unlockedLevels.push(order[i]);
+      // An unlock beyond the baseline is legitimate only when the previous
+      // level's badge was earned (Velká výzva won). This also strips the
+      // over-generous unlocks that an earlier migration granted to old saves.
+      if (order.length) {
+        merged.unlockedLevels = merged.unlockedLevels.filter((id) => {
+          if (baseline.includes(id)) return true;
+          const i = order.indexOf(id);
+          return i > 0 && merged.badges.includes(order[i - 1]);
+        });
+        // The selected level must be unlocked; fall back to the highest one.
+        if (!merged.unlockedLevels.includes(merged.settings.levelId)) {
+          for (let i = order.length - 1; i >= 0; i--) {
+            if (merged.unlockedLevels.includes(order[i])) {
+              merged.settings.levelId = order[i];
+              break;
+            }
+          }
         }
       }
       return merged;
