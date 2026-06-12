@@ -627,6 +627,7 @@
       const pool = (item.animalIds || []).map(getAnimal).filter(Boolean);
       if (!pool.length) { resolve({ correct: true }); return; }
       const correct = pool[Math.floor(Math.random() * pool.length)];
+      const instruction = `Najdi zvíře, které začíná na písmeno ${letter}.`;
       const distractors = shuffle(
         ANIMALS.filter((a) => a.id !== correct.id && !a.name.toUpperCase().startsWith(letter))
       ).slice(0, 3);
@@ -657,7 +658,9 @@
                   Array.from(grid.children).forEach((c) => {
                     if (c.dataset.id === correct.id) c.classList.add('option-correct');
                   });
-                  setTimeout(() => resolve({ correct: false }), 900);
+                  // Say the revealed answer so the child links letter ↔ name.
+                  speak(correct.name);
+                  setTimeout(() => resolve({ correct: false }), 1100);
                 }
               }
             }
@@ -675,11 +678,20 @@
       const card = el('div', { class: 'task task-match task-match-letter' }, [
         el('p', { class: 'task-prompt', text: `Najdi zvíře od písmene ${letter}:` }),
         el('div', { class: 'big-word big-letter', text: letter, lang: 'cs' }),
+        el('div', { class: 'task-actions task-actions-compact' }, [
+          el('button', {
+            class: 'btn btn-secondary btn-icon',
+            'aria-label': 'Přečíst zadání',
+            on: { click: () => speak(instruction) }
+          }, [el('span', { text: '🔊 Přečíst zadání' })])
+        ]),
         grid,
         hint
       ]);
 
       mount.appendChild(card);
+      // Non-readers need to HEAR what to do — speak the instruction up front.
+      setTimeout(() => speak(instruction), 250);
     });
   }
 
