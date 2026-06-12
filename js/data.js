@@ -4,17 +4,27 @@
  *   1. An inline minimal dataset (12 animals + 4 small levels). This keeps
  *      the app usable when opened via file:// or when the seed JSON cannot
  *      be fetched for any reason.
- *   2. The seed JSON in data/content/{vocabulary_200_seed,animals_50_seed}.json.
- *      When the app runs on a local HTTP server, these are fetched at boot
- *      and replace the inline dataset (in place — see note below).
+ *   2. The curriculum/seed JSONs in data/content/ (curriculum_v2, animals,
+ *      stories). When the app runs on a local HTTP server, these are
+ *      fetched at boot and replace the inline dataset in place.
  *
  * Why in-place mutation: lessons.js, tasks.js and views.js destructure
  * `App.data.ANIMALS`/`LEVELS` at script-load time. Reassigning the property
  * would orphan those bindings. Mutating the same array (`.length = 0` then
  * push) keeps every consumer pointing at the live data.
+ *
+ * Level model (curriculum v2): 8 levels in a fixed unlock order, each with
+ * a `kind` that drives which task types apply:
+ *   letter | syllable | word | sentence | story
  */
 (function () {
   const App = window.App || (window.App = {});
+
+  /* Fixed progression order — also used by state.js for locking. */
+  const LEVEL_ORDER = [
+    'letters', 'syllables', 'words1', 'words2',
+    'words3', 'sentences1', 'sentences2', 'stories'
+  ];
 
   /* ---------- inline fallback ---------- */
   const INLINE_ANIMALS = [
@@ -32,48 +42,38 @@
     { id: 'medved',  name: 'Medvěd',  fact: 'Medvěd má rád med a v zimě spí.' }
   ];
 
-  const INLINE_SYLLABLES = [
-    'ma','pa','ta','sa','la',
-    'mo','po','to','so','lo',
-    'mi','pi','ti'
-  ].map((t) => ({ text: t }));
-
   const INLINE_LEVELS = [
     {
-      id: 'syllables', label: 'Písmena a slabiky',
-      hint: 'Krátké slabiky pro úplný začátek.',
-      items: INLINE_SYLLABLES
+      id: 'letters', label: 'Lovec písmen', badge: '🔤', kind: 'letter',
+      hint: 'Písmena – poznávej, čti a obtahuj.',
+      items: ['A', 'M', 'L', 'S', 'P', 'K', 'Z'].map((t) => {
+        const map = { M: ['mys', 'medved'], L: ['lev', 'liska'], S: ['sova', 'slon'], P: ['pes'], K: ['kocka', 'kun'], Z: ['zebra', 'zaba'] };
+        const item = { text: t };
+        if (map[t]) item.animalIds = map[t];
+        return item;
+      })
     },
     {
-      id: 'short', label: 'Krátká slova',
-      hint: 'Krátká slova, většinou tři až čtyři písmena.',
+      id: 'syllables', label: 'Slabikové mládě', badge: '🧩', kind: 'syllable',
+      hint: 'Krátké slabiky pro první čtení.',
+      items: ['ma', 'pa', 'ta', 'sa', 'la', 'mo', 'po', 'to', 'so', 'lo', 'mi', 'pi', 'ti'].map((t) => ({ text: t }))
+    },
+    {
+      id: 'words1', label: 'První slova', badge: '🐾', kind: 'word',
+      hint: 'Krátká slova bez záludností.',
       items: [
         { text: 'pes',  animalId: 'pes'  },
         { text: 'kos',  animalId: 'kos'  },
         { text: 'lev',  animalId: 'lev'  },
         { text: 'kůň',  animalId: 'kun'  },
-        { text: 'slon', animalId: 'slon' },
         { text: 'sova', animalId: 'sova' },
         { text: 'žába', animalId: 'zaba' },
-        { text: 'oko' }, { text: 'ucho' }, { text: 'ruka' }
+        { text: 'oko' }, { text: 'ucho' }, { text: 'ruka' }, { text: 'les' }
       ]
     },
     {
-      id: 'longer', label: 'Delší slova',
-      hint: 'Delší slova, pět a více písmen.',
-      items: [
-        { text: 'kočka',  animalId: 'kocka'  },
-        { text: 'liška',  animalId: 'liska'  },
-        { text: 'zebra',  animalId: 'zebra'  },
-        { text: 'kráva',  animalId: 'krava'  },
-        { text: 'medvěd', animalId: 'medved' },
-        { text: 'motýl' }, { text: 'slunce' },
-        { text: 'kytka' }, { text: 'voda' }, { text: 'domek' }
-      ]
-    },
-    {
-      id: 'sentences', label: 'Krátké věty',
-      hint: 'Krátké jednoduché věty se zvířátky.',
+      id: 'sentences1', label: 'Krátké věty', badge: '✏️', kind: 'sentence',
+      hint: 'Věty o dvou a třech slovech.',
       items: [
         { text: 'Pes štěká.',  animalId: 'pes'    },
         { text: 'Kočka spí.',  animalId: 'kocka'  },
@@ -81,8 +81,7 @@
         { text: 'Sova houká.', animalId: 'sova'   },
         { text: 'Lev řve.',    animalId: 'lev'    },
         { text: 'Kráva bučí.', animalId: 'krava'  },
-        { text: 'Žába skáče.', animalId: 'zaba'   },
-        { text: 'Kůň cválá.',  animalId: 'kun'    }
+        { text: 'Žába skáče.', animalId: 'zaba'   }
       ]
     }
   ];
@@ -91,18 +90,16 @@
    * resolves (and as a permanent fallback when fetch fails). */
   const ANIMALS = INLINE_ANIMALS.slice();
   const LEVELS = INLINE_LEVELS.map((l) => ({ ...l, items: l.items.slice() }));
+  const STORIES = [];
   const LESSON_LENGTHS = [
     { id: 'short',  label: 'Krátká',  tasks: 5  },
     { id: 'medium', label: 'Střední', tasks: 8  },
     { id: 'long',   label: 'Delší',   tasks: 10 }
   ];
 
-  /* Themes apply only to sentence-style levels — they filter the lesson pool
-   * by the item's `category` field (preserved from the seed JSON). Mix means
-   * no filter and keeps the previous behavior. The category labels match
-   * exactly the Czech strings used in vocabulary_200_seed.json so the mapper
-   * doesn't have to translate them. Difficulty (level) is intentionally kept
-   * separate from theme. */
+  /* Themes apply only to sentence levels — they filter the lesson pool by
+   * the item's `category` field (preserved from the thematic seed
+   * sentences). Mix means no filter. */
   const SENTENCE_THEMES = [
     { id: 'mix',        label: 'Mix',          icon: '🎲', categories: null },
     { id: 'pets',       label: 'Mazlíčci',     icon: '🐶', categories: ['Věty o mazlíčcích'] },
@@ -119,9 +116,6 @@
     return SENTENCE_THEMES.find((t) => t.id === id) || SENTENCE_THEMES[0];
   }
 
-  // A level supports themes if at least one of its items has a sentence
-  // category that we know how to filter by. Inline `sentences` (animal-only)
-  // won't qualify and gracefully shows no theme picker.
   function levelHasThemes(level) {
     if (!level || !level.items) return false;
     const known = new Set();
@@ -151,6 +145,19 @@
   }
   function getLevel(id) { return LEVELS.find((l) => l.id === id) || LEVELS[0]; }
   function getAnimal(id) { return ANIMALS.find((a) => a.id === id) || null; }
+  function getStory(id) { return STORIES.find((s) => s.id === id) || null; }
+  function levelIndex(id) { return LEVEL_ORDER.indexOf(id); }
+  function nextLevelId(id) {
+    // Walk the order but only return levels that exist in the loaded data
+    // (the inline fallback ships a subset of the full curriculum).
+    const i = levelIndex(id);
+    if (i === -1) return null;
+    for (let j = i + 1; j < LEVEL_ORDER.length; j++) {
+      const candidate = LEVEL_ORDER[j];
+      if (LEVELS.some((l) => l.id === candidate)) return candidate;
+    }
+    return null;
+  }
   function itemKey(item) { return item.text; }
 
   function countWords() {
@@ -161,71 +168,9 @@
       source: dataSource,
       animals: ANIMALS.length,
       words: countWords(),
-      levels: LEVELS.length
+      levels: LEVELS.length,
+      stories: STORIES.length
     };
-  }
-
-  /* ---------- mapper: seed JSON → runtime model ---------- */
-  const SEED_LEVEL_MAP = {
-    L1_short:         { id: 'short',            label: 'Krátká slova' },
-    L2_simple:        { id: 'simple',           label: 'Jednoduchá slova' },
-    L3_animals:       { id: 'animals',          label: 'Zvířátka' },
-    L4_nature:        { id: 'nature',           label: 'Příroda' },
-    L5_home_school:   { id: 'home_school',      label: 'Doma a ve škole' },
-    L6_actions_traits:{ id: 'actions_traits',   label: 'Děje a vlastnosti' },
-    L7_sentences:     { id: 'world_sentences',  label: 'Věty o světě kolem nás' }
-  };
-
-  function mapSeed(vocab, animalsDoc) {
-    const animals = (animalsDoc && animalsDoc.animals) || [];
-    const entries = (vocab && vocab.entries) || [];
-    const vocabLevels = (vocab && vocab.levels) || [];
-
-    const mappedAnimals = animals.map((a) => ({
-      id: a.id,
-      name: a.name,
-      fact: a.fact,
-      imagePath: a.imagePath
-    }));
-
-    const nameToId = new Map();
-    for (const a of animals) nameToId.set(a.name.toLowerCase(), a.id);
-
-    const byLevel = new Map();
-    for (const e of entries) {
-      if (!byLevel.has(e.level)) byLevel.set(e.level, []);
-      byLevel.get(e.level).push(e);
-    }
-
-    const syllables = {
-      id: 'syllables', label: 'Písmena a slabiky',
-      hint: 'Krátké slabiky pro úplný začátek.',
-      items: INLINE_SYLLABLES.slice()
-    };
-
-    const seedLevels = vocabLevels.map((lvl) => {
-      const meta = SEED_LEVEL_MAP[lvl.id] || { id: lvl.id, label: lvl.label };
-      const items = (byLevel.get(lvl.id) || []).map((e) => {
-        const item = { text: e.text };
-        const aid = nameToId.get(e.text.toLowerCase());
-        if (aid) item.animalId = aid;
-        if (e.category) item.category = e.category;
-        return item;
-      });
-      return { id: meta.id, label: meta.label, hint: lvl.note || lvl.label, items };
-    });
-
-    const sentences = {
-      id: 'sentences', label: 'Krátké věty',
-      hint: 'Jednoduché věty se zvířátky.',
-      items: animals
-        .filter((a) => a.sentence)
-        .map((a) => ({ text: a.sentence, animalId: a.id }))
-    };
-
-    const levels = [syllables, ...seedLevels];
-    if (sentences.items.length) levels.push(sentences);
-    return { animals: mappedAnimals, levels };
   }
 
   /* ---------- async loader ---------- */
@@ -241,22 +186,26 @@
   }
 
   async function loadFromSeed() {
-    // fetch() is unavailable on file://; bail fast with a clear message.
     if (typeof fetch !== 'function') {
       console.info('[ReadingZOO] fetch unavailable, using inline data', getStats());
       return getStats();
     }
     try {
-      const [vocab, animalsDoc] = await Promise.all([
-        fetchJSON('data/content/vocabulary_200_seed.json'),
-        fetchJSON('data/content/animals_50_seed.json')
+      const [curriculum, animalsDoc, storiesDoc] = await Promise.all([
+        fetchJSON('data/content/curriculum_v2.json'),
+        fetchJSON('data/content/animals_50_seed.json'),
+        fetchJSON('data/content/stories_25.json')
       ]);
-      const mapped = mapSeed(vocab, animalsDoc);
-      if (!mapped.animals.length || !mapped.levels.length) {
-        throw new Error('mapper produced empty dataset');
+      const animals = (animalsDoc.animals || []).map((a) => ({
+        id: a.id, name: a.name, fact: a.fact, imagePath: a.imagePath
+      }));
+      const levels = curriculum.levels || [];
+      if (!animals.length || !levels.length) {
+        throw new Error('seed produced empty dataset');
       }
-      replaceInPlace(ANIMALS, mapped.animals);
-      replaceInPlace(LEVELS, mapped.levels);
+      replaceInPlace(ANIMALS, animals);
+      replaceInPlace(LEVELS, levels);
+      replaceInPlace(STORIES, storiesDoc.stories || []);
       dataSource = 'seed';
       const stats = getStats();
       console.info('[ReadingZOO] data loaded from seed', stats);
@@ -270,12 +219,17 @@
   App.data = {
     ANIMALS,
     LEVELS,
+    STORIES,
+    LEVEL_ORDER,
     LESSON_LENGTHS,
     SENTENCE_THEMES,
     animalImg,
     getLevel,
     getAnimal,
+    getStory,
     getTheme,
+    levelIndex,
+    nextLevelId,
     levelHasThemes,
     availableThemes,
     itemKey,

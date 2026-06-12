@@ -355,6 +355,9 @@ h2 { font-size: 22px; margin-top: 14px; }
   font-weight: 700;
   color: var(--text);
 }
+/* Hidden while the child is choosing (visibility keeps the layout stable);
+ * revealed together with the answer. */
+.option-label-hidden { visibility: hidden; }
 .option-card.option-correct {
   border-color: var(--success);
   background: #E8F8E9;
@@ -571,6 +574,198 @@ h2 { font-size: 22px; margin-top: 14px; }
   max-width: 480px;
 }
 .result-summary { color: var(--text-light); margin-top: 12px; }
+.result-stage { margin-top: 4px; }
+
+/* ---------- Stars (animal growth 1★–5★) ---------- */
+.star-row {
+  color: #F2A33C;
+  font-size: 26px;
+  letter-spacing: 3px;
+}
+.star-row-small {
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+.stage-label {
+  color: var(--text-light);
+  font-weight: 700;
+  font-size: 17px;
+}
+.zoo-stars { margin-top: 2px; }
+.animal-stage { margin: 4px 0 10px; }
+
+/* ---------- Reward choice ---------- */
+.reward-choice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+@media (min-width: 560px) {
+  .reward-choice-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.reward-choice-card {
+  background: var(--surface);
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 12px;
+  cursor: pointer;
+  font: inherit;
+  text-align: center;
+  transition: transform .1s, border-color .15s;
+}
+.reward-choice-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--secondary);
+}
+.reward-choice-card img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 8px;
+}
+.reward-choice-name {
+  display: block;
+  font-weight: 800;
+  font-size: 22px;
+}
+.reward-kind {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-light);
+  font-weight: 700;
+}
+.reward-kind-new { color: var(--accent); }
+
+/* ---------- Locked levels + challenge ---------- */
+.chip-locked {
+  opacity: .55;
+  background: repeating-linear-gradient(135deg, var(--surface), var(--surface) 12px, #F4EDE2 12px, #F4EDE2 24px);
+  cursor: not-allowed;
+}
+.chip-badge { font-size: 18px; }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+.chip-shake { animation: shake .3s ease 2; }
+.challenge-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: linear-gradient(120deg, #FFF3D6, #FFE7B0);
+  border: 3px solid #F2A33C;
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin: 14px 0;
+}
+.challenge-title {
+  font-weight: 800;
+  font-size: 20px;
+  color: #B05E0C;
+  margin-bottom: 4px;
+}
+.progress-fill-challenge { background: #F2A33C; }
+.challenge-won h2 { color: #B05E0C; }
+.challenge-unlock { font-size: 28px; font-weight: 800; margin: 8px 0; }
+
+/* ---------- Trace task ---------- */
+.trace-wrap {
+  position: relative;
+  width: min(280px, 80vw);
+  aspect-ratio: 1;
+  margin: 14px auto;
+  background: var(--bg-tint);
+  border: 3px dashed var(--border);
+  border-radius: var(--radius);
+}
+.trace-ghost {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 170px;
+  font-weight: 800;
+  color: rgba(91, 58, 30, .15);
+  user-select: none;
+  pointer-events: none;
+}
+.trace-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: crosshair;
+}
+.big-letter { font-size: 72px; }
+
+/* ---------- Stories ---------- */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.story-tile {
+  background: var(--surface);
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 10px;
+  cursor: pointer;
+  font: inherit;
+  text-align: center;
+  transition: transform .1s, border-color .15s;
+}
+.story-tile:hover { transform: translateY(-2px); border-color: var(--secondary); }
+.story-tile img { width: 90px; height: 90px; display: block; margin: 0 auto 6px; }
+.story-tile-locked img { filter: grayscale(1) opacity(.35); }
+.story-title { display: block; font-weight: 800; font-size: 17px; }
+.story-state { display: block; margin-top: 4px; color: var(--text-light); font-size: 14px; }
+.story-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px 20px;
+  text-align: center;
+}
+.story-hero { width: 140px; height: 140px; }
+.story-sentence { min-height: 90px; display: grid; place-items: center; }
+.story-counter { color: var(--text-light); margin-top: 6px; }
+
+/* ---------- Stage presentation (animal growth without per-stage art) ----------
+ * The same base illustration "grows" with stars: small baby at 1★ up to
+ * full size at 3★; 4★ adds a silver frame, 5★ a gold frame + crown badge. */
+.zoo-img-wrap { position: relative; }
+.zoo-tile img, .animal-illustration img {
+  transition: transform .25s ease;
+  transform-origin: bottom center;
+}
+.stage-1 .zoo-img-wrap img, .stage-1 .animal-illustration img { transform: scale(.62); }
+.stage-2 .zoo-img-wrap img, .stage-2 .animal-illustration img { transform: scale(.8); }
+/* stage 3+ = full size (no transform needed) */
+.zoo-tile.stage-4, .animal-card.stage-4 {
+  border-color: #9FB3C8;
+  box-shadow: 0 0 0 3px #E3EAF2, var(--shadow);
+}
+.zoo-tile.stage-5, .animal-card.stage-5 {
+  border-color: #F2A33C;
+  box-shadow: 0 0 0 3px #FBE3B8, var(--shadow);
+}
+.stage-badge {
+  position: absolute;
+  top: -6px;
+  right: -2px;
+  font-size: 26px;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.25));
+}
+.animal-illustration { position: relative; }
+.animal-illustration .stage-badge { font-size: 40px; top: -4px; right: 6px; }
 
 /* ---------- ZOO ---------- */
 .zoo-grid {

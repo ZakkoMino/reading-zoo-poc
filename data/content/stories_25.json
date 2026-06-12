@@ -1,0 +1,283 @@
+{
+  "schema": "reading-zoo.stories.v1",
+  "version": "1.0.0",
+  "language": "cs-CZ",
+  "count": 25,
+  "stories": [
+    {
+      "id": "story-pes",
+      "animalId": "pes",
+      "title": "Pes hlídá",
+      "sentences": [
+        "Pes hlídá celý dům.",
+        "V noci slyší šramot.",
+        "Hlasitě zaštěká.",
+        "A zloděj rychle uteče."
+      ]
+    },
+    {
+      "id": "story-kocka",
+      "animalId": "kocka",
+      "title": "Kočka a klubíčko",
+      "sentences": [
+        "Kočka našla klubíčko vlny.",
+        "Hrála si s ním celé ráno.",
+        "Vlna se celá zamotala.",
+        "Kočka usnula v klubíčku."
+      ]
+    },
+    {
+      "id": "story-liska",
+      "animalId": "liska",
+      "title": "Liška a kos",
+      "sentences": [
+        "Liška měla velký hlad.",
+        "Šla tiše tmavým lesem.",
+        "Kos ji uviděl a zapískal.",
+        "Všechna zvířata se schovala."
+      ]
+    },
+    {
+      "id": "story-jezek",
+      "animalId": "jezek",
+      "title": "Ježek a jablko",
+      "sentences": [
+        "Ježek našel velké jablko.",
+        "Chtěl ho donést domů.",
+        "Jablko mu spadlo na bodliny.",
+        "A tak ho odnesl celé."
+      ]
+    },
+    {
+      "id": "story-sova",
+      "animalId": "sova",
+      "title": "Moudrá sova",
+      "sentences": [
+        "Zvířata se v noci bála.",
+        "Sova houkala ze stromu.",
+        "Já všechno vidím, řekla.",
+        "A zvířata klidně spala."
+      ]
+    },
+    {
+      "id": "story-zaba",
+      "animalId": "zaba",
+      "title": "Žába a moucha",
+      "sentences": [
+        "Žába seděla u rybníka.",
+        "Kolem letěla velká moucha.",
+        "Žába vymrštila dlouhý jazyk.",
+        "A moucha byla pryč."
+      ]
+    },
+    {
+      "id": "story-medved",
+      "animalId": "medved",
+      "title": "Medvěd a med",
+      "sentences": [
+        "Medvěd hledal sladký med.",
+        "Vylezl na vysoký strom.",
+        "Včely se moc zlobily.",
+        "Medvěd utekl až k řece."
+      ]
+    },
+    {
+      "id": "story-mys",
+      "animalId": "mys",
+      "title": "Myš a sýr",
+      "sentences": [
+        "Myš ucítila voňavý sýr.",
+        "Tiše běžela přes kuchyň.",
+        "Kousek sýra si odnesla.",
+        "Doma se rozdělila s mláďaty."
+      ]
+    },
+    {
+      "id": "story-slon",
+      "animalId": "slon",
+      "title": "Slon se koupe",
+      "sentences": [
+        "Slonovi bylo velké horko.",
+        "Šel k široké řece.",
+        "Chobotem se celý postříkal.",
+        "A pak vesele troubil."
+      ]
+    },
+    {
+      "id": "story-zirafa",
+      "animalId": "zirafa",
+      "title": "Žirafa pomáhá",
+      "sentences": [
+        "Opice nedosáhla na banán.",
+        "Žirafa natáhla dlouhý krk.",
+        "Banán utrhla a podala.",
+        "Opice se radostí roztančila."
+      ]
+    },
+    {
+      "id": "story-opice",
+      "animalId": "opice",
+      "title": "Opice a zrcadlo",
+      "sentences": [
+        "Opice našla malé zrcadlo.",
+        "Uviděla v něm jinou opici.",
+        "Dělala na ni grimasy.",
+        "Pak se tomu sama smála."
+      ]
+    },
+    {
+      "id": "story-tucnak",
+      "animalId": "tucnak",
+      "title": "Tučňák a led",
+      "sentences": [
+        "Tučňák stál na ledu.",
+        "Led mu klouzal pod nohama.",
+        "Spadl na bříško a jel.",
+        "Klouzání ho moc bavilo."
+      ]
+    },
+    {
+      "id": "story-delfin",
+      "animalId": "delfin",
+      "title": "Delfín a loď",
+      "sentences": [
+        "Delfín plaval u lodi.",
+        "Děti na něj mávaly.",
+        "Vyskočil vysoko nad vlny.",
+        "Děti křičely radostí."
+      ]
+    },
+    {
+      "id": "story-zelva",
+      "animalId": "zelva",
+      "title": "Pomalá želva",
+      "sentences": [
+        "Želva šla na louku.",
+        "Cesta trvala celý den.",
+        "Nikam nespěchám, řekla si.",
+        "Domeček nese pořád s sebou."
+      ]
+    },
+    {
+      "id": "story-krokodyl",
+      "animalId": "krokodyl",
+      "title": "Krokodýl a zuby",
+      "sentences": [
+        "Krokodýl má mnoho zubů.",
+        "Ráno si je čistí.",
+        "Pomáhá mu malý ptáček.",
+        "Krokodýl mu nikdy neublíží."
+      ]
+    },
+    {
+      "id": "story-panda",
+      "animalId": "panda",
+      "title": "Panda a bambus",
+      "sentences": [
+        "Panda snědla celý bambus.",
+        "Bříško měla úplně kulaté.",
+        "Lehla si do trávy.",
+        "A spokojeně usnula."
+      ]
+    },
+    {
+      "id": "story-klokan",
+      "animalId": "klokan",
+      "title": "Klokan závodí",
+      "sentences": [
+        "Klokan skákal přes louku.",
+        "Závodil se svým stínem.",
+        "Skočil daleko přes potok.",
+        "Vyhrál a zamával ocasem."
+      ]
+    },
+    {
+      "id": "story-koala",
+      "animalId": "koala",
+      "title": "Ospalá koala",
+      "sentences": [
+        "Koala spala na stromě.",
+        "Probudila ji malá moucha.",
+        "Snědla pár lístků.",
+        "A zase klidně usnula."
+      ]
+    },
+    {
+      "id": "story-beruska",
+      "animalId": "beruska",
+      "title": "Beruška a tečky",
+      "sentences": [
+        "Beruška počítala své tečky.",
+        "Jedna, dvě, tři, čtyři.",
+        "Sedm teček, radovala se.",
+        "Pak odletěla na květinu."
+      ]
+    },
+    {
+      "id": "story-snek",
+      "animalId": "snek",
+      "title": "Šnek na výletě",
+      "sentences": [
+        "Šnek se vydal na výlet.",
+        "Lezl pomalu po listu.",
+        "Večer dolezl na konec.",
+        "Domeček měl pořád s sebou."
+      ]
+    },
+    {
+      "id": "story-kun",
+      "animalId": "kun",
+      "title": "Kůň a ohrada",
+      "sentences": [
+        "Kůň cválal po louce.",
+        "Před ním stála ohrada.",
+        "Rozběhl se a skočil.",
+        "Letěl vzduchem jako pták."
+      ]
+    },
+    {
+      "id": "story-kure",
+      "animalId": "kure",
+      "title": "Ztracené kuře",
+      "sentences": [
+        "Kuře se ztratilo mámě.",
+        "Pípalo na celý dvůr.",
+        "Slepice ho rychle našla.",
+        "Schovala ho pod křídlo."
+      ]
+    },
+    {
+      "id": "story-vlk",
+      "animalId": "vlk",
+      "title": "Vlk a měsíc",
+      "sentences": [
+        "Vlk seděl na kopci.",
+        "Na nebi svítil měsíc.",
+        "Vlk dlouze zavyl.",
+        "Z lesa mu odpověděla smečka."
+      ]
+    },
+    {
+      "id": "story-kralik",
+      "animalId": "kralik",
+      "title": "Králík a mrkev",
+      "sentences": [
+        "Králík našel velkou mrkev.",
+        "Byla větší než on.",
+        "Tahal ji celé odpoledne.",
+        "Večer ji snědli všichni společně."
+      ]
+    },
+    {
+      "id": "story-lev",
+      "animalId": "lev",
+      "title": "Lev má svátek",
+      "sentences": [
+        "Lev měl velký svátek.",
+        "Přišla zvířata z celé savany.",
+        "Zpívala mu a tančila.",
+        "Lev spokojeně předl jako kočka."
+      ]
+    }
+  ]
+}

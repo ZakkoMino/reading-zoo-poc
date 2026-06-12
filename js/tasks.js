@@ -62,15 +62,24 @@
     return shuffle(pool).slice(0, n);
   }
 
+  /* Letters are 1–2 uppercase chars ("M", "CH"); syllables 2 lowercase. */
+  function unitLabel(text) {
+    if (text.length <= 2 && text === text.toUpperCase() && /[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]/.test(text)) return 'písmeno';
+    if (text.length <= 2) return 'slabiku';
+    if (/ |\./.test(text)) return 'větu';
+    return 'slovo';
+  }
+
   /* ---------- task: read ---------- */
   function read(item, mount) {
     return new Promise((resolve) => {
       clear(mount);
       const isSentence = / |\./.test(item.text);
+      const unit = unitLabel(item.text);
       const hasAnimal = !!item.animalId;
       const animal = hasAnimal ? getAnimal(item.animalId) : null;
 
-      speak(isSentence ? 'přečti větu' : 'přečti slovo');
+      speak('přečti ' + unit);
 
       let confirmed = false;
       const btnLabel = el('span', { text: 'Přečetl/a jsem ✓' });
@@ -89,7 +98,7 @@
       }, [btnLabel]);
 
       const card = el('div', { class: 'task task-read' }, [
-        el('p', { class: 'task-prompt', text: isSentence ? 'Přečti větu' : 'Přečti slovo' }),
+        el('p', { class: 'task-prompt', text: 'Přečti ' + unit }),
         el('div', { class: 'big-word', text: item.text, lang: 'cs' }),
         hasAnimal ? el('img', { class: 'task-image', src: animalImg(animal.id), alt: animal.name }) : null,
         el('p', { class: 'task-hint task-hint-soft', text: 'Tady nepředčítám — teď čteš ty.' }),
@@ -104,6 +113,9 @@
   function match(item, mount) {
     return new Promise((resolve) => {
       clear(mount);
+      // Sentence items may carry a match-only variant with the animal at
+      // the END ("Na dvoře štěká pes.") so the whole sentence must be read.
+      const displayText = item.matchText || item.text;
       const correct = getAnimal(item.animalId);
       const distractors = pickOtherAnimals(correct.id, 3);
       const options = shuffle([correct, ...distractors]);
@@ -111,6 +123,13 @@
 
       const grid = el('div', { class: 'option-grid' });
       const hint = el('p', { class: 'task-hint hidden' });
+
+      // Labels stay hidden while the child is choosing — otherwise the task
+      // is solvable by matching the printed word to the printed label
+      // without reading comprehension. They are revealed with the answer.
+      function revealLabels() {
+        grid.querySelectorAll('.option-label').forEach((l) => l.classList.remove('option-label-hidden'));
+      }
 
       options.forEach((animal) => {
         const card = el('button', {
@@ -121,6 +140,7 @@
               if (card.disabled) return;
               if (animal.id === correct.id) {
                 card.classList.add('option-correct');
+                revealLabels();
                 speak(animal.name);
                 setTimeout(() => resolve({ correct: tries === 0 }), 650);
               } else {
@@ -134,6 +154,7 @@
                   Array.from(grid.children).forEach((c) => {
                     if (c.dataset.id === correct.id) c.classList.add('option-correct');
                   });
+                  revealLabels();
                   setTimeout(() => resolve({ correct: false }), 900);
                 }
               }
@@ -141,22 +162,24 @@
           }
         }, [
           el('img', { src: animalImg(animal.id), alt: '' }),
-          el('span', { class: 'option-label', text: animal.name })
+          el('span', { class: 'option-label option-label-hidden', text: animal.name })
         ]);
         card.dataset.id = animal.id;
         grid.appendChild(card);
       });
 
-      const isSentence = / |\./.test(item.text);
+      const isSentence = / |\./.test(displayText);
       const card = el('div', { class: 'task task-match' }, [
         el('p', { class: 'task-prompt', text: isSentence ? 'Najdi obrázek k větě:' : 'Najdi obrázek pro slovo:' }),
-        el('div', { class: 'big-word', text: item.text, lang: 'cs' }),
+        el('div', { class: 'big-word', text: displayText, lang: 'cs' }),
         grid,
         hint
       ]);
 
+      // No auto-TTS here: the child should read the word/sentence and find
+      // the picture without an audio shortcut. Pronunciation plays as
+      // confirmation once the right picture is chosen.
       mount.appendChild(card);
-      setTimeout(() => speak(item.text), 200);
     });
   }
 
@@ -510,8 +533,12 @@
       const pickFrom = vowelIndices.length ? vowelIndices : allIndices;
       const missingIdx = pickFrom[Math.floor(Math.random() * pickFrom.length)];
       const correct = word[missingIdx];
-      const distractors = pickDistractorLetters(correct.toLowerCase(), word.toLowerCase(), 2);
-      const options = shuffle([correct, ...distractors]);
+      const correctLower = correct.toLowerCase();
+      const distractors = pickDistractorLetters(correctLower, word.toLowerCase(), 2);
+      // Options are always lowercase: a capital letter (e.g. a blank at the
+      // start of a sentence) among lowercase distractors would give the
+      // answer away. The blank still reveals the original casing.
+      const options = shuffle([correctLower, ...distractors]);
       let tries = 0;
       let solved = false;
 
@@ -536,7 +563,7 @@
           on: {
             click: () => {
               if (btn.disabled || solved) return;
-              if (letter === correct) {
+              if (letter === correctLower) {
                 solved = true;
                 btn.classList.add('btn-correct');
                 // Reveal the answer in the slot.
@@ -549,11 +576,11 @@
                 btn.classList.add('btn-wrong');
                 btn.disabled = true;
                 hint.classList.remove('hidden');
-                hint.textContent = tries >= 2 ? `Správné písmeno je „${correct}".` : 'Zkus jiné písmeno.';
+                hint.textContent = tries >= 2 ? `Správné písmeno je „${correctLower}".` : 'Zkus jiné písmeno.';
                 if (tries >= 2) {
                   // Reveal correct, then move on.
                   Array.from(choices.children).forEach((c) => {
-                    if (c.textContent === correct) c.classList.add('btn-correct');
+                    if (c.textContent === correctLower) c.classList.add('btn-correct');
                   });
                   wordRow.querySelector('.fill-blank').textContent = correct;
                   wordRow.querySelector('.fill-blank').classList.add('fill-blank-revealed');
@@ -577,5 +604,148 @@
     });
   }
 
-  App.tasks = { read, match, compose, fill };
+  /* ---------- task: matchLetter (letter → animal starting with it) ---------- */
+  function matchLetter(item, mount) {
+    return new Promise((resolve) => {
+      clear(mount);
+      const letter = item.text;
+      const pool = (item.animalIds || []).map(getAnimal).filter(Boolean);
+      if (!pool.length) { resolve({ correct: true }); return; }
+      const correct = pool[Math.floor(Math.random() * pool.length)];
+      const distractors = shuffle(
+        ANIMALS.filter((a) => a.id !== correct.id && !a.name.toUpperCase().startsWith(letter))
+      ).slice(0, 3);
+      const options = shuffle([correct, ...distractors]);
+      let tries = 0;
+
+      const grid = el('div', { class: 'option-grid' });
+      const hint = el('p', { class: 'task-hint hidden' });
+
+      options.forEach((animal) => {
+        const card = el('button', {
+          class: 'option-card',
+          'aria-label': animal.name,
+          on: {
+            click: () => {
+              if (card.disabled) return;
+              if (animal.id === correct.id) {
+                card.classList.add('option-correct');
+                speak(animal.name);
+                setTimeout(() => resolve({ correct: tries === 0 }), 650);
+              } else {
+                tries += 1;
+                card.classList.add('option-wrong');
+                card.disabled = true;
+                hint.classList.remove('hidden');
+                hint.textContent = 'Zkus jiné zvíře.';
+                if (tries >= 2) {
+                  Array.from(grid.children).forEach((c) => {
+                    if (c.dataset.id === correct.id) c.classList.add('option-correct');
+                  });
+                  setTimeout(() => resolve({ correct: false }), 900);
+                }
+              }
+            }
+          }
+        }, [
+          el('img', { src: animalImg(animal.id), alt: '' }),
+          // Labels stay visible here on purpose: the child should compare
+          // the first letter of the written names with the target letter.
+          el('span', { class: 'option-label', text: animal.name })
+        ]);
+        card.dataset.id = animal.id;
+        grid.appendChild(card);
+      });
+
+      const card = el('div', { class: 'task task-match task-match-letter' }, [
+        el('p', { class: 'task-prompt', text: `Najdi zvíře od písmene ${letter}:` }),
+        el('div', { class: 'big-word big-letter', text: letter, lang: 'cs' }),
+        grid,
+        hint
+      ]);
+
+      mount.appendChild(card);
+    });
+  }
+
+  /* ---------- task: trace (draw the letter/syllable with a finger) ---------- */
+  function trace(item, mount) {
+    return new Promise((resolve) => {
+      clear(mount);
+      const text = item.text;
+      const SIZE = 280;
+      let strokes = 0;
+      let drawing = false;
+
+      const canvas = el('canvas', { class: 'trace-canvas', width: SIZE, height: SIZE });
+      const ghost = el('div', { class: 'trace-ghost', text: text, 'aria-hidden': 'true' });
+      const wrap = el('div', { class: 'trace-wrap' }, [ghost, canvas]);
+      const ctx = canvas.getContext('2d');
+      ctx.lineWidth = 14;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.strokeStyle = '#E8743B';
+
+      function pos(e) {
+        const r = canvas.getBoundingClientRect();
+        return {
+          x: (e.clientX - r.left) * (SIZE / r.width),
+          y: (e.clientY - r.top) * (SIZE / r.height)
+        };
+      }
+      canvas.addEventListener('pointerdown', (e) => {
+        drawing = true;
+        canvas.setPointerCapture(e.pointerId);
+        const p = pos(e);
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        e.preventDefault();
+      });
+      canvas.addEventListener('pointermove', (e) => {
+        if (!drawing) return;
+        const p = pos(e);
+        ctx.lineTo(p.x, p.y);
+        ctx.stroke();
+        strokes += 1;
+        if (strokes >= 25) doneBtn.disabled = false;
+        e.preventDefault();
+      });
+      const stop = () => { drawing = false; };
+      canvas.addEventListener('pointerup', stop);
+      canvas.addEventListener('pointercancel', stop);
+
+      const doneBtn = el('button', {
+        class: 'btn btn-primary btn-large',
+        disabled: true,
+        on: {
+          click: () => {
+            speak(text);
+            setTimeout(() => resolve({ correct: true }), 500);
+          }
+        }
+      }, [el('span', { text: 'Hotovo ✓' })]);
+
+      const clearBtn = el('button', {
+        class: 'btn btn-ghost',
+        on: {
+          click: () => {
+            ctx.clearRect(0, 0, SIZE, SIZE);
+            strokes = 0;
+            doneBtn.disabled = true;
+          }
+        }
+      }, [el('span', { text: 'Smazat ↺' })]);
+
+      const card = el('div', { class: 'task task-trace' }, [
+        el('p', { class: 'task-prompt', text: `Obtáhni prstem: ${text}` }),
+        wrap,
+        el('div', { class: 'task-actions' }, [clearBtn, doneBtn])
+      ]);
+
+      mount.appendChild(card);
+      speak(`Obtáhni ${unitLabel(text)} ${text}`);
+    });
+  }
+
+  App.tasks = { read, match, matchLetter, compose, fill, trace };
 })();

@@ -82,12 +82,12 @@ w080_zaba,žába,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivač
 w081_slon,slon,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
 w082_medved,medvěd,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
 w083_had,had,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
-w084_cap,čáp,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w084_beran,beran,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
 w085_orel,orel,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
 w086_vlk,vlk,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
-w087_rys,rys,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w087_hroch,hroch,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
 w088_jelen,jelen,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
-w089_srna,srna,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w089_papousek,papoušek,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
 w090_prase,prase,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
 w091_ovce,ovce,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
 w092_koza,koza,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
@@ -109,7 +109,7 @@ w107_velryba,velryba,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní moti
 w108_zelva,želva,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
 w109_ryba,ryba,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
 w110_kapr,kapr,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
-w111_cmelak,čmelák,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w111_krokodyl,krokodýl,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
 w112_vcela,včela,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
 w113_mravenec,mravenec,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
 w114_motyl,motýl,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
@@ -199,3 +199,35 @@ w197_stary,starý,L6_actions_traits,Děje a vlastnosti,3,False,False,Slovesa a p
 w198_dobry,dobrý,L6_actions_traits,Děje a vlastnosti,3,False,False,Slovesa a přídavná jména pro tvorbu vět.
 w199_krasny,krásný,L6_actions_traits,Děje a vlastnosti,3,False,False,Slovesa a přídavná jména pro tvorbu vět.
 w200_rychly,rychlý,L6_actions_traits,Děje a vlastnosti,4,False,False,Slovesa a přídavná jména pro tvorbu vět.
+w311_klokan,klokan,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w312_panda,panda,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w313_koala,koala,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w314_lenochod,lenochod,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w315_gorila,gorila,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w316_orangutan,orangutan,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w317_nosorozec,nosorožec,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w318_lama,lama,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w319_leopard,leopard,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w320_myval,mýval,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w321_jezevec,jezevec,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w322_netopyr,netopýr,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w323_kanec,kanec,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w324_osel,osel,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w325_los,los,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w326_krecek,křeček,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w327_bizon,bizon,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w328_krocan,krocan,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w329_holub,holub,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w330_labut,labuť,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w331_plamenak,plameňák,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w332_pav,páv,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w333_kure,kuře,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w334_zralok,žralok,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w335_chobotnice,chobotnice,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w336_krab,krab,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w337_jesterka,ještěrka,L3_animals,Zvířata,3,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w338_beruska,beruška,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w339_brouk,brouk,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w340_housenka,housenka,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w341_cvrcek,cvrček,L3_animals,Zvířata,2,True,True,Zvířata pro hlavní motivační smyčku ZOO.
+w342_stir,štír,L3_animals,Zvířata,1,True,True,Zvířata pro hlavní motivační smyčku ZOO.

@@ -16,17 +16,18 @@ a za každou dokončenou lekci si dítě odnese **zvíře do své ZOO**.
 - [Návrh dalších kroků](docs/NEXT_STEPS.md)
 - [Strategie ilustrací](docs/ILLUSTRATION_STRATEGY.md)
 
-## Asset balík – 50 ilustrovaných zvířat
+## Asset balík – 82 ilustrovaných zvířat
 
 | Soubor | Popis |
 |---|---|
 | [`data/content/animals_50_seed.json`](data/content/animals_50_seed.json) | JSON manifest – metadata, věty, fakta (cs-CZ) |
 | [`data/content/animals_50_seed.csv`](data/content/animals_50_seed.csv) | CSV export stejných dat |
 | [`data/content/animals_50.schema.json`](data/content/animals_50.schema.json) | JSON Schema (draft-07) |
-| `assets/animals-illustrated/*.svg` | 50 originálních SVG ilustrací |
+| `assets/animals-3d/*.png` | 82 ilustrací Microsoft Fluent Emoji 3D (MIT) |
+| `assets/animals-illustrated/*.svg` | 50 původních generovaných SVG (archiv) |
 | [`animals-preview.html`](animals-preview.html) | Grid preview (vyžaduje lokální server) |
 
-Vygenerovat/přegenerovat assety: `node scripts/generate-animals-50.mjs`  
+Stáhnout/aktualizovat ilustrace: `node scripts/fetch-animal-art.mjs`  
 Validovat: `node scripts/validate-animals-50.mjs`
 
 ---
@@ -64,12 +65,17 @@ Pak v prohlížeči otevři <http://localhost:8000>.
 | Funkce | Stav |
 |---|---|
 | Onboarding s výběrem úrovně a délky lekce | ✅ |
-| 4 úrovně (písmena/slabiky, krátká slova, delší slova, věty) | ✅ |
+| 8 úrovní (písmena → slabiky → slova → věty → příběhy), 692 položek | ✅ |
+| Zamčené úrovně + zasloužený postup přes Velkou výzvu (8 z 8) + odznaky | ✅ |
 | 3 délky lekce (5 / 8 / 10 úkolů) | ✅ |
-| 4 typy úkolů (čtení, spoj s obrázkem, slož celé slovo/větu, doplň písmeno) | ✅ |
+| 6 typů úkolů (čtení, spoj s obrázkem, slož slovo/větu, doplň písmeno, obtahování, najdi zvíře od písmene) | ✅ |
+| Věty „zvíře na konci“ pro úkol spoj s obrázkem (nutí číst celou větu) | ✅ |
+| 25 mini příběhů odemykaných vlastnictvím zvířete | ✅ |
 | Pestré střídání úkolů, žádný stejný dvakrát po sobě | ✅ |
-| 50 zvířat se SVG ilustracemi (assets/animals-illustrated/) | ✅ |
+| 82 zvířat s ilustracemi Microsoft Fluent Emoji 3D (assets/animals-3d/, MIT) | ✅ |
 | Sbírka zvířat se zámkem na neodemčená | ✅ |
+| Výběr odměny: dítě si po lekci vybere 1 ze 2 zvířat | ✅ |
+| Růst zvířat po hvězdičkách (1★ mládě → 5★ nejsilnější) | ✅ |
 | Karta zvířete s faktem a tlačítkem výslovnosti | ✅ |
 | Web Speech API (`lang="cs-CZ"`) s graceful fallbackem — jen u obrázků/ZOO, ne u úkolu „Přečti“ | ✅ |
 | Adaptivní výběr slov podle „knowledge score" 0–5 | ✅ |
@@ -88,8 +94,9 @@ reading-zoo-prototype/
 ├── styles.css              # styly pro všech 5 obrazovek
 ├── animals-preview.html    # grid preview 50 ilustrovaných zvířat
 ├── assets/
-│   ├── animals/*.svg       # 12 původních SVG ilustrací (prototyp)
-│   └── animals-illustrated/*.svg  # 50 nových SVG ilustrací (seed)
+│   ├── animals/*.svg       # 12 původních SVG ilustrací (fallback pro file://)
+│   ├── animals-illustrated/*.svg  # 50 generovaných SVG (archiv, nahrazeno)
+│   └── animals-3d/*.png    # 50 ilustrací Microsoft Fluent Emoji 3D (MIT)
 ├── data/content/
 │   ├── animals_50_seed.json   # manifest 50 zvířat
 │   ├── animals_50_seed.csv    # CSV export
@@ -123,6 +130,7 @@ Vše leží pod jediným klíčem v `localStorage`:
   "settings":  { "levelId": "short", "lessonLength": 8 },
   "scores":    { "pes": 3, "kočka": 1, ... },
   "zoo":       ["pes", "sova", ...],
+  "zooStars":  { "pes": 2, "sova": 1, ... },
   "stats":     { "lessonsCompleted": 2, "tasksCorrect": 11, "tasksTotal": 16 }
 }
 ```
@@ -154,19 +162,23 @@ předčítání, aby dítě skutečně četlo samo.
 
 ### Odměny do ZOO
 
-Po dokončení lekce planner upřednostní **zvíře, které se v lekci
-opravdu objevilo** a které dítě ještě nemá. Pokud žádné takové
-není, vybere libovolné chybějící. Když je ZOO kompletní, dítě
-dostane bonusové opakování zvířete.
+Po dokončení lekce si dítě **vybere 1 ze 2 odměn**. Nabídka
+upřednostňuje zvířata, která se v lekci opravdu objevila, a ideálně
+kombinuje **nové zvíře** s **vylepšením** už získaného zvířete
+o hvězdičku (1★ mládě → 2★ vyrůstá → 3★ dospělé → 4★ silné →
+5★ nejsilnější). Když je vše nasbírané na max, dítě dostane
+bonusovou oslavu.
 
 ---
 
 ## Vědomá omezení
 
-* **Ilustrace jsou prototypové placeholdery.** Jsou ručně psané
-  SVG ve stejném vizuálním klíči (kruhové pozadí, 200×200), ale
-  produkčně bychom chtěli **jednotnou profesionální sadu**
-  od ilustrátora (např. vektorová sada CC-BY / vlastní zakázka).
+* **Ilustrace jsou Microsoft Fluent Emoji (3D, MIT).** Jednotná,
+  dětsky přívětivá sada — viz `docs/ANIMAL_ART_SETS.md` a
+  `assets/animals-3d/LICENSE.md`. Stáhnout/aktualizovat:
+  `node scripts/fetch-animal-art.mjs`. Zvířata bez emoji podoby
+  (rys, srna, čmelák, kozel) byla nahrazena (hroch, papoušek,
+  krokodýl, beran).
 * **Web Speech API** závisí na hlasech operačního systému.
   Na macOS/Windows funguje cs-CZ hlas hned; na Linuxu může
   chybět. Pokud TTS není dostupné, tlačítko stále funguje, jen
