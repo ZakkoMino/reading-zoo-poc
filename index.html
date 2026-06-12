@@ -4,9 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Čtecí ZOO — učíme se číst</title>
-  <meta name="description" content="Prototyp aplikace pro děti na učení čtení v češtině s odměnami do ZOO.">
+  <meta name="description" content="Aplikace pro děti na učení čtení v češtině s odměnami do ZOO.">
+  <meta name="theme-color" content="#FF8E3C">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%F0%9F%A6%81%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="assets/icons/icon-192.png" type="image/png">
 </head>
 <body>
   <header class="app-header">
@@ -36,5 +39,14 @@
   <script src="js/tasks.js"></script>
   <script src="js/views.js"></script>
   <script src="js/app.js"></script>
+  <script>
+    // PWA: service worker needs a secure origin; file:// double-click mode
+    // simply skips it and the app keeps working as before.
+    if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+      navigator.serviceWorker.register('./sw.js').catch(function (err) {
+        console.warn('Service worker se nepodařilo zaregistrovat.', err);
+      });
+    }
+  </script>
 </body>
 </html>
