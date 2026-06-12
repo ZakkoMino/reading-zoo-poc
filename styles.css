@@ -889,8 +889,58 @@ h2 { font-size: 22px; margin-top: 14px; }
 }
 .level-progress h2 {
   color: var(--accent);
-  margin-bottom: 8px;
-  font-size: 20px;
+  margin: 0;
+  font-size: 18px;
+}
+.level-summary {
+  display: grid;
+  grid-template-columns: 1fr minmax(70px, 160px) 56px 18px;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.level-summary::-webkit-details-marker { display: none; }
+.level-bar {
+  display: block;
+  height: 10px;
+  border-radius: 6px;
+  background: var(--bg-tint);
+  overflow: hidden;
+}
+.level-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: 6px;
+  background: var(--success);
+  transition: width .3s ease;
+}
+.level-pct {
+  font-weight: 800;
+  color: var(--primary-dk);
+  text-align: right;
+  white-space: nowrap;
+}
+.level-chevron {
+  color: var(--text-light);
+  text-align: center;
+  transition: transform .15s ease;
+}
+.level-progress[open] .level-chevron { transform: rotate(180deg); }
+.level-detail {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+}
+.level-detail-meta {
+  font-size: 13px;
+  color: var(--text-light);
+  margin: 0 0 8px;
+}
+@media (max-width: 540px) {
+  .level-summary { grid-template-columns: 1fr 56px 18px; }
+  .level-summary .level-bar { display: none; }
 }
 .word-rows {
   display: grid;

@@ -608,11 +608,15 @@
       overview
     ]);
 
+    /* Per-level sections are collapsed by default: the summary row shows
+     * only the mastery percentage (average knowledge score across the
+     * level's items). Expanding reveals the per-word detail rows. */
     LEVELS.forEach((lvl) => {
       if (!lvl.items || !lvl.items.length) return; // story level has no word rows
-      const section = el('div', { class: 'level-progress' }, [
-        el('h2', { text: `${lvl.badge || ''} ${lvl.label}${hasBadge(lvl.id) ? ' 🏅' : ''}${isUnlocked(lvl.id) ? '' : ' (zamčeno)'}` })
-      ]);
+      const scores = lvl.items.map((item) => scoreOf(item.text));
+      const pct = Math.round(100 * scores.reduce((a, b) => a + b, 0) / (lvl.items.length * SCORE_MAX));
+      const mastered = scores.filter((s) => s >= SCORE_MAX).length;
+
       const list = el('div', { class: 'word-rows' });
       lvl.items.forEach((item) => {
         const score = scoreOf(item.text);
@@ -626,7 +630,22 @@
         ]);
         list.appendChild(row);
       });
-      section.appendChild(list);
+
+      const barFill = el('div', { class: 'level-bar-fill' });
+      barFill.style.width = pct + '%';
+
+      const section = el('details', { class: 'level-progress' }, [
+        el('summary', { class: 'level-summary' }, [
+          el('h2', { text: `${lvl.badge || ''} ${lvl.label}${hasBadge(lvl.id) ? ' 🏅' : ''}${isUnlocked(lvl.id) ? '' : ' (zamčeno)'}` }),
+          el('span', { class: 'level-bar', 'aria-hidden': 'true' }, [barFill]),
+          el('span', { class: 'level-pct', text: pct + ' %' }),
+          el('span', { class: 'level-chevron', 'aria-hidden': 'true', text: '▾' })
+        ]),
+        el('div', { class: 'level-detail' }, [
+          el('p', { class: 'level-detail-meta', text: `Plně zvládnuto ${mastered} z ${lvl.items.length}.` }),
+          list
+        ])
+      ]);
       screen.appendChild(section);
     });
 
