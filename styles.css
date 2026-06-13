@@ -673,6 +673,50 @@ h2 { font-size: 22px; margin-top: 14px; }
 .challenge-won h2 { color: #B05E0C; }
 .challenge-unlock { font-size: 28px; font-weight: 800; margin: 8px 0; }
 
+/* Status bar: progress toward the Velká výzva offer (onboarding screen). */
+.challenge-progress {
+  background: linear-gradient(120deg, #FFF8EC, #FFF1D8);
+  border: 2px solid #F2A33C;
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin: 14px 0;
+}
+.cp-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.cp-title { font-weight: 800; color: #B05E0C; }
+.cp-pct { font-weight: 800; font-size: 20px; color: #B05E0C; }
+.cp-bar {
+  height: 14px;
+  border-radius: 8px;
+  background: #FBE4BE;
+  overflow: hidden;
+  margin: 8px 0;
+}
+.cp-bar-fill {
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #F2A33C, #E8821C);
+  transition: width .4s ease;
+}
+.cp-hint { font-size: 14px; color: var(--text-light); margin: 0 0 8px; }
+.cp-goals { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.cp-goal {
+  display: grid;
+  grid-template-columns: 22px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-light);
+}
+.cp-goal-icon { text-align: center; color: var(--border); font-weight: 800; }
+.cp-goal-val { font-weight: 700; color: var(--text); }
+.cp-goal-done { color: var(--text); }
+.cp-goal-done .cp-goal-icon { color: var(--success); }
+
 /* ---------- Trace task ---------- */
 .trace-wrap {
   position: relative;

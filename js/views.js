@@ -16,7 +16,7 @@
   const { LEVELS, STORIES, LESSON_LENGTHS, ANIMALS, getLevel, getAnimal, getStory, animalImg, availableThemes, levelHasThemes, nextLevelId } = App.data;
   const { get, setSettings, scoreOf, SCORE_MAX, addToZoo, bumpScore, starsOf, bumpStars, STAR_MAX, recordLessonResult, reset,
           isUnlocked, unlockLevel, hasBadge, markStoryRead, isStoryRead } = App.state;
-  const { buildLessonPlan, buildChallengePlan, masteryOf, pickRewardChoices } = App.lessons;
+  const { buildLessonPlan, buildChallengePlan, masteryOf, challengeProgress, pickRewardChoices } = App.lessons;
   const { speak, isAvailable: speechAvailable } = App.speech;
 
   /* ---------- DOM helpers (same minimal kit as tasks.js) ---------- */
@@ -122,6 +122,34 @@
         ])
       : null;
 
+    /* Status bar: how close the current level is to triggering the Velká
+     * výzva offer. Shown only while a next level is still locked and the
+     * challenge isn't offered yet — at 100 % the banner above takes over. */
+    const showChallengeProgress = nextId && !isUnlocked(nextId) && !showChallenge;
+    let challengeProgressBar = null;
+    if (showChallengeProgress) {
+      const cp = challengeProgress(settings.levelId);
+      const fill = el('div', { class: 'cp-bar-fill' });
+      fill.style.width = cp.percent + '%';
+      challengeProgressBar = el('div', { class: 'challenge-progress' }, [
+        el('div', { class: 'cp-head' }, [
+          el('span', { class: 'cp-title', text: '🏆 Cesta k Velké výzvě' }),
+          el('span', { class: 'cp-pct', text: cp.percent + ' %' })
+        ]),
+        el('div', { class: 'cp-bar', role: 'progressbar',
+          'aria-valuenow': String(cp.percent), 'aria-valuemin': '0', 'aria-valuemax': '100',
+          'aria-label': 'Pokrok k Velké výzvě' }, [fill]),
+        el('p', { class: 'cp-hint',
+          text: `Při 100 % se otevře Velká výzva — odemkne úroveň „${nextLevel.label}".` }),
+        el('ul', { class: 'cp-goals' }, cp.goals.map((g) =>
+          el('li', { class: 'cp-goal' + (g.done ? ' cp-goal-done' : '') }, [
+            el('span', { class: 'cp-goal-icon', 'aria-hidden': 'true', text: g.done ? '✓' : '○' }),
+            el('span', { class: 'cp-goal-label', text: g.label }),
+            el('span', { class: 'cp-goal-val', text: `${g.have}${g.suffix} / ${g.need}${g.suffix}` })
+          ])))
+      ]);
+    }
+
     const lengthChips = el('div', { class: 'chips chips-row' });
     LESSON_LENGTHS.forEach((opt) => {
       const chip = el('button', {
@@ -174,6 +202,7 @@
       el('p', { class: 'lead', text: 'Vyber si, kde chceš začít. Pak si můžeš vybírat zvířátka do své zoo.' }),
 
       challengeBanner,
+      challengeProgressBar,
 
       el('h2', { text: '1. Co budeme dnes číst?' }),
       levelChips,
