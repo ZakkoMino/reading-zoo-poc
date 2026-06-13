@@ -159,6 +159,28 @@
     };
   }
 
+  /* Progress toward the Velká výzva offer, expressed for the UI as a single
+   * 0..100 % bar plus the three sub-goals behind it. The bar hits 100 %
+   * exactly when masteryOf().mastered flips true, so the same rule drives
+   * both — no thresholds are duplicated in the views. */
+  function challengeProgress(levelId) {
+    const m = masteryOf(levelId);
+    const needPracticed = Math.min(MASTERY.MIN_PRACTICED, m.total);
+    const strongRatio = m.practiced ? m.strong / m.practiced : 0;
+    const goals = [
+      { key: 'lessons', label: 'Dokončené lekce', have: m.lessons, need: MASTERY.MIN_LESSONS, suffix: '',
+        ratio: Math.min(1, m.lessons / MASTERY.MIN_LESSONS) },
+      { key: 'practiced', label: 'Procvičená slova', have: m.practiced, need: needPracticed, suffix: '',
+        ratio: needPracticed ? Math.min(1, m.practiced / needPracticed) : 1 },
+      { key: 'strong', label: 'Silná slova', have: Math.round(strongRatio * 100),
+        need: Math.round(MASTERY.RATIO * 100), suffix: ' %',
+        ratio: Math.min(1, strongRatio / MASTERY.RATIO) }
+    ];
+    goals.forEach((g) => { g.done = g.have >= g.need; });
+    const overall = goals.reduce((sum, g) => sum + g.ratio, 0) / goals.length;
+    return { mastered: m.mastered, percent: Math.round(overall * 100), goals };
+  }
+
   /* Reward = a choice of (up to) two animals the child picks from.
    *
    * Choice kinds:
@@ -213,5 +235,5 @@
     return choices;
   }
 
-  App.lessons = { buildLessonPlan, buildChallengePlan, masteryOf, pickRewardChoices };
+  App.lessons = { buildLessonPlan, buildChallengePlan, masteryOf, challengeProgress, pickRewardChoices };
 })();
