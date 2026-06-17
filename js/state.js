@@ -23,9 +23,14 @@
     scores: {},        // { [itemText]: 0..5 }
     zoo: [],           // animal ids in order earned
     zooStars: {},      // { [animalId]: 1..STAR_MAX }
-    // Levels open from the start (pilot decision: through "První slova",
-    // so tests don't have to grind the letter levels first).
-    unlockedLevels: ['letters', 'syllables', 'words1'],
+    // TESTING BUILD: every level is unlocked from the start so a teacher can
+    // jump straight to any phase. (In the normal build only the first three
+    // are open and the rest unlock by winning the Velká výzva. Because all
+    // levels are open here, the challenge offer + its progress bar stay
+    // dormant.)
+    unlockedLevels: (App.data && App.data.LEVEL_ORDER)
+      ? App.data.LEVEL_ORDER.slice()
+      : ['letters', 'syllables', 'words1', 'words2', 'words3', 'sentences1', 'sentences2', 'stories'],
     badges: [],        // level ids whose Velká výzva was won
     storiesRead: {},   // { [storyId]: true }
     stats: {
