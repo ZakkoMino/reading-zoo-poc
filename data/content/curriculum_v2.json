@@ -1574,7 +1574,8 @@
         {
           "text": "Pes štěká.",
           "matchText": "Na dvoře štěká pes.",
-          "animalId": "pes"
+          "animalId": "pes",
+          "category": "Věty o mazlíčcích"
         },
         {
           "text": "Kočka mňouká.",
@@ -2140,10 +2141,6 @@
         {
           "text": "Ptáček zpívá.",
           "category": "Věty o přírodě"
-        },
-        {
-          "text": "Pes štěká.",
-          "category": "Věty o mazlíčcích"
         },
         {
           "text": "Kočka spí.",

@@ -251,6 +251,19 @@ function main() {
     text: SENTENCES[a.id][1], matchText: SENTENCES[a.id][0], animalId: a.id
   }));
 
+  // A thematic sentence can duplicate an animal sentence (e.g. "Pes štěká.").
+  // Keep one item per text: the animal variant wins (it carries animalId +
+  // matchText) and inherits the thematic category so theme filters still see it.
+  const dedupeByText = (items) => {
+    const byText = new Map();
+    for (const item of items) {
+      const existing = byText.get(item.text);
+      if (!existing) { byText.set(item.text, item); continue; }
+      if (!existing.category && item.category) existing.category = item.category;
+    }
+    return [...byText.values()];
+  };
+
   const curriculum = {
     schema: 'reading-zoo.curriculum.v2',
     version: '2.0.0',
@@ -289,12 +302,12 @@ function main() {
       {
         id: 'sentences1', label: 'Krátké věty', badge: '✏️', kind: 'sentence',
         hint: 'Věty o dvou a třech slovech.',
-        items: [...sentencesShort, ...themShort]
+        items: dedupeByText([...sentencesShort, ...themShort])
       },
       {
         id: 'sentences2', label: 'Dlouhé věty', badge: '📜', kind: 'sentence',
         hint: 'Věty o čtyřech až šesti slovech.',
-        items: [...sentencesLong, ...themLong]
+        items: dedupeByText([...sentencesLong, ...themLong])
       },
       {
         id: 'stories', label: 'Čtenář příběhů', badge: '👑', kind: 'story',
