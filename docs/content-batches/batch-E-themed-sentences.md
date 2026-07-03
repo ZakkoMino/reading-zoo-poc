@@ -1,0 +1,28 @@
+# Dávka E – doplnění tematických vět
+
+**K revizi.** Tematické sady ze slovníkového seedu byly na lekci moc
+malé (Škola 5 vět, Pohádky 4, Mazlíčci/Jídlo/Pohyb po 5) a úroveň 7
+(dlouhé věty) měla jedinou tematickou větu, takže se výběr tématu
+u dlouhých vět vůbec nenabízel. Tato dávka doplňuje každé téma na
+**≥15 krátkých vět** (úroveň 6, 2–3 slova) a **15 dlouhých vět**
+(úroveň 7, 4–6 slov).
+
+Strojově čitelný zdroj: `THEMED_EXTRA` v `scripts/build-curriculum.mjs`
+(věty se dělí podle počtu slov stejně jako slovníkové: ≤3 slova →
+úroveň 6, jinak úroveň 7).
+
+| Téma | Krátké věty (nové) | Dlouhé věty (nové) |
+|---|---|---|
+| Mazlíčci | Kočka přede. · Pes hlídá dům. · Papoušek mluví. · Králík hopká. · Křeček běhá. · Rybička plave. · Kočka se myje. · Pes dostal kost. · Morče píská. · Želva leze. | Náš pes hlídá celý dům. · Kočka spí na teplé peci. · Křeček si schovává zrní do tváří. · Králík chroupe čerstvou mrkev. · Rybičky plavou v kulatém akváriu. · Pes aportuje hozený míček. · Kočka si hraje s klubíčkem. · Morče píská na celý pokoj. · Pes vrtí ocasem radostí. · Želva se schovává do krunýře. · Štěně kouše starou botu. · Papoušek zdraví celou rodinu. · Pes běhá po zahradě. · Kočka sedí na okně. · Andulka létá po pokoji. |
+| Jídlo | Jím rohlík. · Piju mléko. · Sýr je dobrý. · Jím jahody. · Máma vaří oběd. · Peču buchtu. · Hruška je zralá. · Jím banán. · Polévka voní. · Med je sladký. | Máma vaří voňavou polévku. · Táta peče nedělní koláč. · K svačině mám jablko a rohlík. · Babička smaží voňavé bramboráky. · Pijeme čaj s medem a citronem. · Zmrzlina se rychle rozpouští. · Na oběd máme knedlíky. · Jahody jíme se šlehačkou. · Čerstvý chléb krásně voní. · Sýr dáme na čerstvý rohlík. · Polévku jíme velkou lžící. · K večeři máme palačinky. · Ráno snídáme chléb s máslem. · V košíku máme zralé hrušky. · Bábovka voní celým domem. |
+| Pohyb | Běžím rychle. · Skáču vysoko. · Jdeme na výlet. · Lezu na strom. · Házím míč. · Chytám míč. · Tančím doma. · Jedu z kopce. · Cvičíme ráno. · Plavu v bazénu. | Jezdíme na kole kolem rybníka. · Běháme závody na hřišti. · Skáčeme panáka na chodníku. · V zimě bruslíme na ledu. · Plaveme v bazénu jako ryby. · Házíme si míčem na zahradě. · Lezeme na vysokou prolézačku. · Tančíme doma na veselou písničku. · Jdeme na dlouhý výlet lesem. · Koulujeme se za domem. · Ráno cvičíme u okna. · Kopeme míč na branku. · Skáčeme přes švihadlo na dvoře. · Na koloběžce jezdím rychle. · Hrajeme fotbal na velkém hřišti. |
+| Pohádky | Drak spí. · Král má korunu. · Čert se mračí. · Vodník sedí. · Ježibaba vaří. · Rytíř jede. · Princ jede lesem. · Obr je velký. · Kouzelník čaruje. · Hrad je starý. · Pohádka končí dobře. | Princezna bydlí na vysokém zámku. · Drak hlídá tři zlaté poklady. · Král sedí na zlatém trůnu. · Víla tančí na měsíční louce. · Čert nosí pytel uhlí. · Vodník sedí u tiché tůně. · Ježibaba bydlí v perníkové chaloupce. · Rytíř jede na bílém koni. · Kouzelník vytáhl králíka z klobouku. · Obr překročí řeku jedním krokem. · Princ hledá cestu z temného lesa. · Zlatá rybka plní tři přání. · Popelka ztratila na plese střevíček. · Honza jde do světa. |
+| Škola | Počítám do deseti. · Píšu písmena. · Čteme nahlas. · Maluji obrázek. · Zpíváme písničku. · Učím se číst. · Mám novou aktovku. · Paní učitelka čte. · Zvoní zvonek. · O přestávce svačíme. | Ve škole se učíme číst. · Píšeme písmena do sešitu. · Paní učitelka čte pohádku. · O přestávce jíme svačinu. · Kreslíme pastelkami barevný obrázek. · Počítáme příklady do deseti. · Zpíváme písničku o zvířatech. · V aktovce nosím penál. · Na tabuli píšeme křídou. · Po škole jdeme na oběd. · Stavíme věž z barevných kostek. · V družině hrajeme hry. · Do školy jdeme pěšky. · Ve třídě máme akvárium. · Učíme se novou básničku. |
+| Rodina | Děda spravuje kolo. · Babička peče koláč. · Bratr si hraje. · Sestra zpívá. · Táta řídí auto. · Máma se směje. | Máma čte večer pohádku. · Táta opravuje staré kolo. · Babička plete teplý svetr. · Děda pracuje na zahradě. · Sestra si češe dlouhé vlasy. · Bratr staví hrad z kostek. · V neděli jedeme k babičce. · Celá rodina sedí u stolu. · Máma zpívá miminku ukolébavku. · Táta griluje na zahradě maso. · S dědou krmíme králíky. · Večer si povídáme u čaje. · Táta čte noviny u snídaně. · Máma sází kytky na zahradě. · O víkendu jedeme na výlet. |
+| Roční období | Podzim je barevný. · Na jaře prší. · V létě plaveme. · V zimě sněží. · Kvetou sněženky. · Venku mrzne. · Stavíme sněhuláka. · Sbíráme kaštany. | Na jaře kvetou první sněženky. · Ptáci si staví nová hnízda. · V létě se koupeme v rybníku. · Sluníčko hřeje celý den. · Na podzim pouštíme draka. · Listí padá ze starých stromů. · Sbíráme kaštany pod stromem. · V zimě stavíme velkého sněhuláka. · Sníh pokryl celou zahradu. · Jezdíme na saních z kopce. · Na jaře se rodí mláďata. · V létě zrají sladké jahody. · Na podzim fouká silný vítr. · V zimě krmíme ptáčky. · Na jaře zpívají ptáci. |
+| Příroda | *(beze změny – 16 vět stačilo)* | V lese rostou vysoké stromy. · Na louce kvetou barevné květiny. · Potok teče přes kulaté kameny. · Slunce svítí na modrém nebi. · Po dešti voní celý les. · Na obloze září duha. · Včely létají z květu na květ. · V trávě cvrká malý cvrček. · Houby rostou pod smrkem. · Ráno se třpytí rosa. · Vítr honí po nebi mraky. · U rybníka kvákají žáby. · V noci svítí měsíc a hvězdy. · Veverka skáče ze stromu na strom. · Les je ráno plný mlhy. |
+
+Výsledné počty po buildu (`node scripts/build-curriculum.mjs`):
+úroveň 6 – všechna témata 15–16 vět; úroveň 7 – všechna témata 15 vět.
+Kategorie „Věty o světě kolem nás“ nemá v aplikaci vlastní téma
+(chybí chip v `js/data.js`) a zůstává jen v Mixu.
