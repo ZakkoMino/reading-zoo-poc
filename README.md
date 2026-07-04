@@ -73,13 +73,15 @@ Pak v prohlížeči otevři <http://localhost:8000>.
 | Funkce | Stav |
 |---|---|
 | Onboarding s výběrem úrovně a délky lekce | ✅ |
-| 8 úrovní (písmena → slabiky → slova → věty → příběhy), 677 položek | ✅ |
+| 8 úrovní (písmena → slabiky → slova → věty → příběhy), 858 položek | ✅ |
+| Témata vět (Mazlíčci, Jídlo, Pohádky…) s ≥15 větami na obou větných úrovních | ✅ |
 | Zamčené úrovně + zasloužený postup přes Velkou výzvu (8 z 8) + odznaky | ✅ |
 | 3 délky lekce (5 / 8 / 10 úkolů) | ✅ |
 | 6 typů úkolů (čtení, spoj s obrázkem, slož slovo/větu, doplň písmeno, obtahování, najdi zvíře od písmene) | ✅ |
 | Věty „zvíře na konci“ pro úkol spoj s obrázkem (nutí číst celou větu) | ✅ |
 | 25 mini příběhů odemykaných vlastnictvím zvířete | ✅ |
 | Pestré střídání úkolů, žádný stejný dvakrát po sobě | ✅ |
+| Bez opakování slov/vět v rámci sezení (dokud úroveň nabízí nová) | ✅ |
 | 82 zvířat s ilustracemi Microsoft Fluent Emoji 3D (assets/animals-3d/, MIT) | ✅ |
 | Sbírka zvířat se zámkem na neodemčená | ✅ |
 | Výběr odměny: dítě si po lekci vybere 1 ze 2 zvířat | ✅ |
@@ -157,6 +159,13 @@ Pravidla:
 * pravděpodobnost zařazení do lekce = `1 + (5 − score)`,
   tj. nikdy neviděné slovo má cca **6× vyšší šanci** než
   zvládnuté slovo s max skóre.
+
+Navíc platí **pravidlo bez opakování v sezení**: slova a věty použité
+v předchozích lekcích od načtení stránky se znovu nenabízejí, dokud
+úroveň nabízí dost nových položek. Teprve po vyčerpání zásoby se vrací
+ty nejdéle neviděné. Uvnitř jedné lekce se text nikdy neopakuje; jen
+u malých tematických sad (méně vět než úkolů) se sada projede dokola
+tak, aby stejná věta nikdy nešla dvakrát po sobě.
 
 Po chybě úkol nešidíme – ukážeme správnou odpověď a měkce
 hlásíme „Zkus to ještě jednou.“; dítě může pokračovat.

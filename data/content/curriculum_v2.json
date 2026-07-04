@@ -1574,7 +1574,8 @@
         {
           "text": "Pes štěká.",
           "matchText": "Na dvoře štěká pes.",
-          "animalId": "pes"
+          "animalId": "pes",
+          "category": "Věty o mazlíčcích"
         },
         {
           "text": "Kočka mňouká.",
@@ -1664,7 +1665,8 @@
         {
           "text": "Papoušek mluví.",
           "matchText": "Na větvi mluví papoušek.",
-          "animalId": "papousek"
+          "animalId": "papousek",
+          "category": "Věty o mazlíčcích"
         },
         {
           "text": "Prase chrochtá.",
@@ -1759,7 +1761,8 @@
         {
           "text": "Želva leze.",
           "matchText": "Po písku leze želva.",
-          "animalId": "zelva"
+          "animalId": "zelva",
+          "category": "Věty o mazlíčcích"
         },
         {
           "text": "Ryba plave.",
@@ -2142,10 +2145,6 @@
           "category": "Věty o přírodě"
         },
         {
-          "text": "Pes štěká.",
-          "category": "Věty o mazlíčcích"
-        },
-        {
           "text": "Kočka spí.",
           "category": "Věty o mazlíčcích"
         },
@@ -2216,6 +2215,258 @@
         {
           "text": "Princezna zpívá píseň.",
           "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Kočka přede.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Pes hlídá dům.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Králík hopká.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Křeček běhá.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Rybička plave.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Kočka se myje.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Pes dostal kost.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Morče píská.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Jím rohlík.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Piju mléko.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Sýr je dobrý.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Jím jahody.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Máma vaří oběd.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Peču buchtu.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Hruška je zralá.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Jím banán.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Polévka voní.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Med je sladký.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Běžím rychle.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Skáču vysoko.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Jdeme na výlet.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Lezu na strom.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Házím míč.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Chytám míč.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Tančím doma.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Jedu z kopce.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Cvičíme ráno.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Plavu v bazénu.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Drak spí.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Král má korunu.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Čert se mračí.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Vodník sedí.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Ježibaba vaří.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Rytíř jede.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Princ jede lesem.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Obr je velký.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Kouzelník čaruje.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Hrad je starý.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Pohádka končí dobře.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Počítám do deseti.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Píšu písmena.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Čteme nahlas.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Maluji obrázek.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Zpíváme písničku.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Učím se číst.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Mám novou aktovku.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Paní učitelka čte.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Zvoní zvonek.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "O přestávce svačíme.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Děda spravuje kolo.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Babička peče koláč.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Bratr si hraje.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Sestra zpívá.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Táta řídí auto.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Máma se směje.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Podzim je barevný.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Na jaře prší.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "V létě plaveme.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "V zimě sněží.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Kvetou sněženky.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Venku mrzne.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Stavíme sněhuláka.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Sbíráme kaštany.",
+          "category": "Věty o ročních obdobích"
         }
       ]
     },
@@ -2639,6 +2890,482 @@
         {
           "text": "Drak spí v jeskyni.",
           "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Náš pes hlídá celý dům.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Kočka spí na teplé peci.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Křeček si schovává zrní do tváří.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Králík chroupe čerstvou mrkev.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Rybičky plavou v kulatém akváriu.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Pes aportuje hozený míček.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Kočka si hraje s klubíčkem.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Morče píská na celý pokoj.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Pes vrtí ocasem radostí.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Želva se schovává do krunýře.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Štěně kouše starou botu.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Papoušek zdraví celou rodinu.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Pes běhá po zahradě.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Kočka sedí na okně.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Andulka létá po pokoji.",
+          "category": "Věty o mazlíčcích"
+        },
+        {
+          "text": "Máma vaří voňavou polévku.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Táta peče nedělní koláč.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "K svačině mám jablko a rohlík.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Babička smaží voňavé bramboráky.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Pijeme čaj s medem a citronem.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Zmrzlina se rychle rozpouští.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Na oběd máme knedlíky.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Jahody jíme se šlehačkou.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Čerstvý chléb krásně voní.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Sýr dáme na čerstvý rohlík.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Polévku jíme velkou lžící.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "K večeři máme palačinky.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Ráno snídáme chléb s máslem.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "V košíku máme zralé hrušky.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Bábovka voní celým domem.",
+          "category": "Věty o jídle"
+        },
+        {
+          "text": "Jezdíme na kole kolem rybníka.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Běháme závody na hřišti.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Skáčeme panáka na chodníku.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "V zimě bruslíme na ledu.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Plaveme v bazénu jako ryby.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Házíme si míčem na zahradě.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Lezeme na vysokou prolézačku.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Tančíme doma na veselou písničku.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Jdeme na dlouhý výlet lesem.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Koulujeme se za domem.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Ráno cvičíme u okna.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Kopeme míč na branku.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Skáčeme přes švihadlo na dvoře.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Na koloběžce jezdím rychle.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Hrajeme fotbal na velkém hřišti.",
+          "category": "Věty o pohybu"
+        },
+        {
+          "text": "Princezna bydlí na vysokém zámku.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Drak hlídá tři zlaté poklady.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Král sedí na zlatém trůnu.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Víla tančí na měsíční louce.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Čert nosí pytel uhlí.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Vodník sedí u tiché tůně.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Ježibaba bydlí v perníkové chaloupce.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Rytíř jede na bílém koni.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Kouzelník vytáhl králíka z klobouku.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Obr překročí řeku jedním krokem.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Princ hledá cestu z temného lesa.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Zlatá rybka plní tři přání.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Popelka ztratila na plese střevíček.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Honza jde do světa.",
+          "category": "Věty o pohádkách"
+        },
+        {
+          "text": "Ve škole se učíme číst.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Píšeme písmena do sešitu.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Paní učitelka čte pohádku.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "O přestávce jíme svačinu.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Kreslíme pastelkami barevný obrázek.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Počítáme příklady do deseti.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Zpíváme písničku o zvířatech.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "V aktovce nosím penál.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Na tabuli píšeme křídou.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Po škole jdeme na oběd.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Stavíme věž z barevných kostek.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "V družině hrajeme hry.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Do školy jdeme pěšky.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Ve třídě máme akvárium.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Učíme se novou básničku.",
+          "category": "Věty o škole"
+        },
+        {
+          "text": "Máma čte večer pohádku.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Táta opravuje staré kolo.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Babička plete teplý svetr.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Děda pracuje na zahradě.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Sestra si češe dlouhé vlasy.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Bratr staví hrad z kostek.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "V neděli jedeme k babičce.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Celá rodina sedí u stolu.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Máma zpívá miminku ukolébavku.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Táta griluje na zahradě maso.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "S dědou krmíme králíky.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Večer si povídáme u čaje.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Táta čte noviny u snídaně.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Máma sází kytky na zahradě.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "O víkendu jedeme na výlet.",
+          "category": "Věty o rodině"
+        },
+        {
+          "text": "Na jaře kvetou první sněženky.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Ptáci si staví nová hnízda.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "V létě se koupeme v rybníku.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Sluníčko hřeje celý den.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Na podzim pouštíme draka.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Listí padá ze starých stromů.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Sbíráme kaštany pod stromem.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "V zimě stavíme velkého sněhuláka.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Sníh pokryl celou zahradu.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Jezdíme na saních z kopce.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Na jaře se rodí mláďata.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "V létě zrají sladké jahody.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Na podzim fouká silný vítr.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "V zimě krmíme ptáčky.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "Na jaře zpívají ptáci.",
+          "category": "Věty o ročních obdobích"
+        },
+        {
+          "text": "V lese rostou vysoké stromy.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Na louce kvetou barevné květiny.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Potok teče přes kulaté kameny.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Slunce svítí na modrém nebi.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Po dešti voní celý les.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Na obloze září duha.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Včely létají z květu na květ.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "V trávě cvrká malý cvrček.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Houby rostou pod smrkem.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Ráno se třpytí rosa.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Vítr honí po nebi mraky.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "U rybníka kvákají žáby.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "V noci svítí měsíc a hvězdy.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Veverka skáče ze stromu na strom.",
+          "category": "Věty o přírodě"
+        },
+        {
+          "text": "Les je ráno plný mlhy.",
+          "category": "Věty o přírodě"
         }
       ]
     },

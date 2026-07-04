@@ -3,12 +3,15 @@
  * Inputs : a level id + how many tasks to run.
  * Output : an ordered list of { item, type } steps for views.js to execute.
  *
- * Two small rules drive the planner:
+ * Three small rules drive the planner:
  *   1. Pick items weighted toward those with a low knowledge score. The
  *      mapping is `weight = 1 + (SCORE_MAX - score)`, so a never-seen item
  *      with score 0 is six times more likely than a mastered item with score
  *      5. No ML, intentionally inspectable.
- *   2. Never use the same task type twice in a row, so the lesson feels
+ *   2. Never repeat a word/sentence within a session: texts used by earlier
+ *      lessons since the page loaded are excluded until the level's fresh
+ *      items run out (see pickItems for the exact fallback order).
+ *   3. Never use the same task type twice in a row, so the lesson feels
  *      varied. If the only allowed type for an item matches the previous
  *      one we let it through rather than skipping the item.
  *
@@ -32,19 +35,63 @@
     return weights.length - 1;
   }
 
+  /* Session no-repeat memory: texts already planned since the page loaded,
+   * mapped to the sequence number of their last use. Deliberately NOT
+   * persisted — closing/reloading the app starts a fresh session, and the
+   * long-term adaptivity still lives in the knowledge scores. */
+  const sessionHistory = new Map();
+  let sessionSeq = 0;
+
+  function markPlanned(texts) {
+    for (const t of texts) sessionHistory.set(t, ++sessionSeq);
+  }
+
+  /* Pick `count` items with three guarantees:
+   *   1. Within one lesson a text never repeats while the pool has enough
+   *      distinct items; with a pool smaller than the lesson, repeats are
+   *      cycled so every text appears once before any second showing and
+   *      the same text never lands twice in a row.
+   *   2. Across lessons in the same session, texts the child already saw
+   *      are excluded until the level's fresh items run out; only then do
+   *      the least-recently-used ones return (oldest first).
+   *   3. The knowledge-score weighting still applies inside each of those
+   *      candidate groups.
+   */
   function pickItems(level, count) {
-    const pool = level.items.slice();
+    // Duplicate texts in the source data would defeat the no-repeat rule.
+    const seenTexts = new Set();
+    const all = level.items.filter((it) => !seenTexts.has(it.text) && seenTexts.add(it.text));
+    if (!all.length) return [];
+
     const out = [];
-    while (out.length < count && pool.length) {
-      const idx = weightedPick(pool);
-      out.push(pool[idx]);
-      pool.splice(idx, 1);
+
+    // 1) weighted draw from items not seen this session
+    const fresh = all.filter((it) => !sessionHistory.has(it.text));
+    while (out.length < count && fresh.length) {
+      const idx = weightedPick(fresh);
+      out.push(fresh.splice(idx, 1)[0]);
     }
-    // If the level is small, allow repeats by drawing from a fresh pool.
-    while (out.length < count) {
-      const idx = weightedPick(level.items);
-      out.push(level.items[idx]);
+
+    // 2) top up from already-seen items, least recently used first, with a
+    //    small weighted window so adaptivity survives pool exhaustion
+    if (out.length < count) {
+      const usedByAge = all
+        .filter((it) => sessionHistory.has(it.text) && !out.includes(it))
+        .sort((a, b) => sessionHistory.get(a.text) - sessionHistory.get(b.text));
+      while (out.length < count && usedByAge.length) {
+        const windowSize = Math.min(usedByAge.length, Math.max(4, count - out.length));
+        const idx = weightedPick(usedByAge.slice(0, windowSize));
+        out.push(usedByAge.splice(idx, 1)[0]);
+      }
     }
+
+    // 3) pool genuinely smaller than the lesson: cycle the picked sequence
+    //    (max spacing between repeats, never the same text back to back)
+    const base = out.slice();
+    for (let i = 0; out.length < count; i++) {
+      out.push(base[i % base.length]);
+    }
+
     return out;
   }
 
@@ -115,6 +162,10 @@
       });
       if (idx !== -1) plan[idx].type = 'compose';
     }
+
+    // Remember what this lesson used so the next one avoids it (see
+    // pickItems). Challenge plans go through here too, on purpose.
+    markPlanned(plan.map((step) => step.item.text));
 
     return plan;
   }
