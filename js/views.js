@@ -13,7 +13,7 @@
  */
 (function () {
   const App = window.App || (window.App = {});
-  const { LEVELS, STORIES, LESSON_LENGTHS, ANIMALS, getLevel, getAnimal, getStory, animalImg, availableThemes, levelHasThemes, nextLevelId } = App.data;
+  const { LEVELS, STORIES, LESSON_LENGTH, ANIMALS, getLevel, getAnimal, getStory, animalImg, availableThemes, levelHasThemes, nextLevelId } = App.data;
   const { get, setSettings, scoreOf, SCORE_MAX, addToZoo, bumpScore, starsOf, bumpStars, STAR_MAX, recordLessonResult, reset,
           isUnlocked, unlockLevel, hasBadge, markStoryRead, isStoryRead } = App.state;
   const { buildLessonPlan, buildChallengePlan, masteryOf, challengeProgress, pickRewardChoices } = App.lessons;
@@ -150,23 +150,6 @@
       ]);
     }
 
-    const lengthChips = el('div', { class: 'chips chips-row' });
-    LESSON_LENGTHS.forEach((opt) => {
-      const chip = el('button', {
-        class: 'chip chip-small' + (opt.tasks === settings.lessonLength ? ' chip-selected' : ''),
-        on: {
-          click: () => {
-            setSettings({ lessonLength: opt.tasks });
-            App.nav('onboarding');
-          }
-        }
-      }, [
-        el('div', { class: 'chip-title', text: opt.label }),
-        el('div', { class: 'chip-hint', text: `${opt.tasks} úkolů` })
-      ]);
-      lengthChips.appendChild(chip);
-    });
-
     /* Theme picker — only visible when the chosen level actually carries
      * sentence categories. Other levels skip this step entirely so the UI
      * doesn't grow for word-level lessons. */
@@ -210,9 +193,6 @@
       showThemes ? el('h2', { text: '2. O čem dnes?' }) : null,
       showThemes ? themeChips : null,
 
-      el('h2', { text: showThemes ? '3. Jak dlouho?' : '2. Jak dlouho?' }),
-      lengthChips,
-
       el('p', { class: 'pedagogy' }, [
         el('strong', { text: 'Tip pro rodiče: ' }),
         document.createTextNode('Klidně začni jednodušší úrovní. Aplikace si pamatuje, co už dítě umí, a postupně přidává obtížnost.')
@@ -231,13 +211,13 @@
 
   /* ---------- lesson ---------- */
   async function renderLesson(mount) {
-    const { levelId, lessonLength } = get().settings;
+    const { levelId } = get().settings;
     // The story level has no tasks — it opens the story library instead.
     if (getLevel(levelId).kind === 'story') {
       renderStoryLibrary(mount);
       return;
     }
-    const plan = buildLessonPlan(levelId, lessonLength);
+    const plan = buildLessonPlan(levelId, LESSON_LENGTH);
 
     const progress = el('div', { class: 'progress' });
     const progressFill = el('div', { class: 'progress-fill' });

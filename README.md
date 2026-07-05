@@ -1,7 +1,7 @@
 # Čtecí ZOO – prototyp
 
 Prototyp webové aplikace pro **děti učící se číst v češtině**. Dítě
-si vybere úroveň a délku lekce, krátké pestré úkoly se střídají
+si vybere úroveň, krátké pestré úkoly se střídají
 a za každou dokončenou lekci si dítě odnese **zvíře do své ZOO**.
 
 > Cílem prototypu je rychle ukázat koncept (UI, herní smyčka,
@@ -72,11 +72,11 @@ Pak v prohlížeči otevři <http://localhost:8000>.
 
 | Funkce | Stav |
 |---|---|
-| Onboarding s výběrem úrovně a délky lekce | ✅ |
+| Onboarding s výběrem úrovně (a tématu u vět) | ✅ |
 | 8 úrovní (písmena → slabiky → slova → věty → příběhy), 858 položek | ✅ |
 | Témata vět (Mazlíčci, Jídlo, Pohádky…) s ≥15 větami na obou větných úrovních | ✅ |
 | Zamčené úrovně + zasloužený postup přes Velkou výzvu (8 z 8) + odznaky | ✅ |
-| 3 délky lekce (5 / 8 / 10 úkolů) | ✅ |
+| Pevná délka lekce 8 úkolů (bez výběru — stejně jako Velká výzva) | ✅ |
 | 6 typů úkolů (čtení, spoj s obrázkem, slož slovo/větu, doplň písmeno, obtahování, najdi zvíře od písmene) | ✅ |
 | Věty „zvíře na konci“ pro úkol spoj s obrázkem (nutí číst celou větu) | ✅ |
 | 25 mini příběhů odemykaných vlastnictvím zvířete | ✅ |
@@ -117,7 +117,7 @@ reading-zoo-prototype/
 │   ├── generate-animals-assets.mjs  # implementace generátoru
 │   └── validate-animals-50.mjs      # validátor
 ├── js/
-│   ├── data.js             # ANIMALS, LEVELS, LESSON_LENGTHS
+│   ├── data.js             # ANIMALS, LEVELS, LESSON_LENGTH
 │   ├── state.js            # localStorage + knowledge score
 │   ├── speech.js           # cs-CZ TTS (fail-soft)
 │   ├── lessons.js          # planner: výběr úkolů + odměny
@@ -138,7 +138,7 @@ Vše leží pod jediným klíčem v `localStorage`:
 
 ```json
 {
-  "settings":  { "levelId": "short", "lessonLength": 8 },
+  "settings":  { "levelId": "words1", "themeId": "mix" },
   "scores":    { "pes": 3, "kočka": 1, ... },
   "zoo":       ["pes", "sova", ...],
   "zooStars":  { "pes": 2, "sova": 1, ... },
