@@ -91,11 +91,11 @@
   const ANIMALS = INLINE_ANIMALS.slice();
   const LEVELS = INLINE_LEVELS.map((l) => ({ ...l, items: l.items.slice() }));
   const STORIES = [];
-  const LESSON_LENGTHS = [
-    { id: 'short',  label: 'Krátká',  tasks: 5  },
-    { id: 'medium', label: 'Střední', tasks: 8  },
-    { id: 'long',   label: 'Delší',   tasks: 10 }
-  ];
+  /* One fixed lesson length, no picker. Decision 2026-07-05: kids offered
+   * a shorter option always took it (less reading for the same reward),
+   * and a full lesson still runs only a minute or two. 8 matches the
+   * Velká výzva, so the challenge feels like a normal lesson. */
+  const LESSON_LENGTH = 8;
 
   /* Themes apply only to sentence levels — they filter the lesson pool by
    * the item's `category` field (preserved from the thematic seed
@@ -221,7 +221,7 @@
     LEVELS,
     STORIES,
     LEVEL_ORDER,
-    LESSON_LENGTHS,
+    LESSON_LENGTH,
     SENTENCE_THEMES,
     animalImg,
     getLevel,

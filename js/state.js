@@ -17,7 +17,6 @@
   const defaultState = () => ({
     settings: {
       levelId: 'letters',
-      lessonLength: 8,
       themeId: 'mix'   // only applied to sentence-style levels; 'mix' = no filter
     },
     scores: {},        // { [itemText]: 0..5 }
