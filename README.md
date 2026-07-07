@@ -88,6 +88,7 @@ Pak v prohlížeči otevři <http://localhost:8000>.
 | Růst zvířat po hvězdičkách (1★ mládě → 5★ nejsilnější) | ✅ |
 | Karta zvířete s faktem a tlačítkem výslovnosti | ✅ |
 | Web Speech API (`lang="cs-CZ"`) s graceful fallbackem — jen u obrázků/ZOO, ne u úkolu „Přečti“ | ✅ |
+| Vlastní hlasové klipy v aplikaci (Piper TTS, offline, bez závislosti na hlasech OS) | 🔧 pipeline hotová, klipy se generují přes `scripts/generate-voice.mjs` |
 | Adaptivní výběr slov podle „knowledge score" 0–5 | ✅ |
 | Skóre + ZOO se ukládají do `localStorage` | ✅ |
 | Rodičovský panel se statistikami a resetem | ✅ |
@@ -177,6 +178,29 @@ aby se nepletlo se samotným doplňováním jednoho písmene.
 Úkol skládání nyní nejdřív cílové slovo/větu přečte nahlas přes Web Speech API
 a až potom dítě skládá. Samostatný úkol **„Přečti“** naopak zůstává bez
 předčítání, aby dítě skutečně četlo samo.
+
+### Hlasy v aplikaci (bez závislosti na OS)
+
+Výslovnost jede dvouvrstvě: **1)** předgenerované audio klipy
+z `assets/voice/` (stejný hlas všude, funguje offline), **2)** Web
+Speech API jako fallback pro texty mimo manifest nebo když klipy
+nejsou vygenerované. Aplikace funguje i úplně bez klipů — jen pak
+potřebuje systémový cs-CZ hlas jako dřív.
+
+Vygenerování klipů (~1 200 souborů, ~10 MB v MP3) na počítači
+s internetem:
+
+```bash
+pip install piper-tts
+python3 -m piper.download_voices cs_CZ-jirka-medium --data-dir voices
+node scripts/generate-voice.mjs     # + ffmpeg na PATH pro MP3 (jinak WAV)
+```
+
+Výstup `assets/voice/*.mp3` + `manifest.json` se commitne do repa;
+service worker je pak předcachuje pro offline režim. Skript je
+inkrementální — při dalším spuštění generuje jen nové texty. Po
+přidání nové mluvené šablony do `js/tasks.js`/`js/views.js` ji přidej
+i do `collectTexts()` ve skriptu.
 
 ### Odměny do ZOO
 
