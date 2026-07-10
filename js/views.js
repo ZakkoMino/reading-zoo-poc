@@ -344,34 +344,65 @@
   }
 
   /* ---------- stories: library + reader ---------- */
+  /* Tier 1 (short) unlocks by owning the animal; tier 2 (long) by growing
+   * it to TIER2_STARS — so the star system gates real content, not just
+   * cosmetics. Answering the comprehension question adds a star (once per
+   * story), which in turn opens the longer story: read → grow → read more. */
+  const TIER2_STARS = 3;
+
+  function storyUnlocked(story) {
+    const owned = get().zoo.includes(story.animalId);
+    if (story.tier === 2) return starsOf(story.animalId) >= TIER2_STARS;
+    return owned;
+  }
+
   function renderStoryLibrary(mount) {
     const zoo = get().zoo;
     const screen = el('section', { class: 'screen stories' }, [
       el('h1', { text: 'Čtenář příběhů 👑' }),
-      el('p', { class: 'lead', text: 'Příběh se odemkne, když má zvíře ve své ZOO.' })
+      el('p', { class: 'lead',
+        text: 'Krátký příběh se odemkne, když máš zvíře ve své ZOO. Delší příběh, když má zvíře alespoň 3 hvězdy. Na konci každého příběhu čeká otázka — správná odpověď přidá zvířeti hvězdu!' })
     ]);
 
-    const grid = el('div', { class: 'story-grid' });
-    STORIES.forEach((story) => {
+    function tile(story) {
       const animal = getAnimal(story.animalId);
       const owned = zoo.includes(story.animalId);
+      const unlocked = storyUnlocked(story);
       const read = isStoryRead(story.id);
-      const tile = el('button', {
-        class: 'story-tile' + (owned ? '' : ' story-tile-locked'),
+      const lockText = story.tier === 2 && owned
+        ? `🔒 ${animal ? animal.name : ''} · ${TIER2_STARS}★`
+        : `🔒 ${animal ? animal.name : ''}`;
+      return el('button', {
+        class: 'story-tile' + (unlocked ? '' : ' story-tile-locked'),
         on: {
           click: () => {
-            if (owned) App.nav('story', { storyId: story.id });
+            if (unlocked) App.nav('story', { storyId: story.id });
+            else if (story.tier === 2 && owned) speak('Tenhle příběh se odemkne za tři hvězdy.');
             else speak(`Nejdřív získej zvíře ${animal ? animal.name : ''}.`);
           }
         }
       }, [
         animal ? el('img', { src: animalImg(animal.id), alt: '' }) : null,
-        el('span', { class: 'story-title', text: owned ? story.title : '???' }),
-        el('span', { class: 'story-state', text: owned ? (read ? 'Přečteno ✓' : 'Číst ▶') : `🔒 ${animal ? animal.name : ''}` })
+        el('span', { class: 'story-title', text: unlocked ? story.title : '???' }),
+        el('span', { class: 'story-state', text: unlocked ? (read ? 'Přečteno ✓' : 'Číst ▶') : lockText })
       ]);
-      grid.appendChild(tile);
-    });
-    screen.appendChild(grid);
+    }
+
+    const tier1 = STORIES.filter((s) => (s.tier || 1) === 1);
+    const tier2 = STORIES.filter((s) => s.tier === 2);
+
+    screen.appendChild(el('h2', { class: 'story-section-title', text: `Krátké příběhy (${tier1.length})` }));
+    const grid1 = el('div', { class: 'story-grid' });
+    tier1.forEach((s) => grid1.appendChild(tile(s)));
+    screen.appendChild(grid1);
+
+    if (tier2.length) {
+      screen.appendChild(el('h2', { class: 'story-section-title', text: `Delší příběhy (${tier2.length}) · za ${TIER2_STARS} ★` }));
+      const grid2 = el('div', { class: 'story-grid' });
+      tier2.forEach((s) => grid2.appendChild(tile(s)));
+      screen.appendChild(grid2);
+    }
+
     mount.appendChild(screen);
   }
 
@@ -380,26 +411,107 @@
     if (!story) { App.nav('lesson'); return; }
     const animal = getAnimal(story.animalId);
     let idx = 0;
+    let tries = 0;
 
     const sentenceEl = el('div', { class: 'big-word story-sentence', lang: 'cs' });
     const counter = el('p', { class: 'story-counter' });
     const nextBtn = el('button', { class: 'btn btn-primary btn-large' }, [el('span', { text: 'Další ▶' })]);
+    const readHint = el('p', { class: 'task-hint task-hint-soft', text: 'Čteš ty — nahlas a sám.' });
+    const hint = el('p', { class: 'task-hint hidden' });
+    const optionsGrid = el('div', { class: 'story-options hidden' });
+
+    function shuffle(arr) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
 
     function paint() {
       if (idx < story.sentences.length) {
         sentenceEl.textContent = story.sentences[idx];
         counter.textContent = `Věta ${idx + 1} z ${story.sentences.length}`;
+      } else if (story.question) {
+        showQuestion();
       } else {
-        markStoryRead(story.id);
-        sentenceEl.textContent = 'Přečteno! 🎉';
-        counter.textContent = 'Celý příběh je tvůj.';
-        nextBtn.replaceChildren(el('span', { text: 'Další příběh 📚' }));
-        nextBtn.onclick = () => App.nav('lesson');
-        speak('Výborně! Přečetl jsi celý příběh.');
-        return;
+        finish(false);
       }
     }
     nextBtn.onclick = () => { idx += 1; paint(); };
+
+    /* Comprehension check: one question, three picture answers. Same gentle
+     * rules as tasks — wrong pick dims, second miss reveals the answer and
+     * the child moves on either way. */
+    function showQuestion() {
+      counter.textContent = 'Otázka na závěr';
+      sentenceEl.textContent = story.question.text;
+      sentenceEl.classList.add('story-question-text');
+      nextBtn.classList.add('hidden');
+      readHint.classList.add('hidden');
+      optionsGrid.classList.remove('hidden');
+
+      const options = shuffle(story.question.options.map((o, i) => ({
+        emoji: o.emoji, text: o.text, correct: i === story.question.correct
+      })));
+      options.forEach((opt) => {
+        const btn = el('button', {
+          class: 'story-option',
+          on: {
+            click: () => {
+              if (btn.disabled) return;
+              if (opt.correct) {
+                btn.classList.add('option-correct');
+                Array.from(optionsGrid.children).forEach((c) => { c.disabled = true; });
+                setTimeout(() => finish(true), 700);
+              } else {
+                tries += 1;
+                btn.classList.add('option-wrong');
+                btn.disabled = true;
+                hint.classList.remove('hidden');
+                hint.textContent = 'Zkus jinou.';
+                if (tries >= 2) {
+                  Array.from(optionsGrid.children).forEach((c) => {
+                    c.disabled = true;
+                    if (c.dataset.correct === '1') c.classList.add('option-correct');
+                  });
+                  setTimeout(() => finish(false), 1100);
+                }
+              }
+            }
+          }
+        }, [
+          el('span', { class: 'story-option-emoji', 'aria-hidden': 'true', text: opt.emoji }),
+          el('span', { class: 'story-option-label', text: opt.text })
+        ]);
+        btn.dataset.correct = opt.correct ? '1' : '0';
+        optionsGrid.appendChild(btn);
+      });
+    }
+
+    /* Star reward: a correctly answered question grows the animal by one
+     * star — but only on the first completion of that story, so it can't
+     * be farmed by rereading. */
+    function finish(solved) {
+      const firstTime = !isStoryRead(story.id);
+      markStoryRead(story.id);
+      optionsGrid.classList.add('hidden');
+      hint.classList.add('hidden');
+      sentenceEl.classList.remove('story-question-text');
+
+      let starLine = null;
+      if (solved && firstTime && animal && starsOf(animal.id) < STAR_MAX) {
+        const stars = bumpStars(animal.id);
+        starLine = `⭐ ${animal.name} má teď ${stars} ${stars >= 5 ? 'hvězd' : 'hvězdy'}!`;
+      }
+      sentenceEl.textContent = solved ? 'Správně! 🎉' : 'Přečteno! 🎉';
+      counter.textContent = starLine || 'Celý příběh je tvůj.';
+      speak('Výborně! Přečetl jsi celý příběh.');
+      nextBtn.classList.remove('hidden');
+      nextBtn.replaceChildren(el('span', { text: 'Další příběh 📚' }));
+      nextBtn.onclick = () => App.nav('lesson');
+    }
 
     mount.appendChild(el('section', { class: 'screen story-screen' }, [
       el('button', { class: 'btn-link', on: { click: () => App.nav('lesson') } },
@@ -409,7 +521,9 @@
         el('h1', { text: story.title }),
         sentenceEl,
         counter,
-        el('p', { class: 'task-hint task-hint-soft', text: 'Čteš ty — nahlas a sám.' }),
+        optionsGrid,
+        hint,
+        readHint,
         el('div', { class: 'cta-row' }, [nextBtn])
       ])
     ]));

@@ -1,0 +1,3318 @@
+{
+  "schema": "reading-zoo.stories.v2",
+  "version": "2.0.0",
+  "language": "cs-CZ",
+  "count": 107,
+  "stories": [
+    {
+      "id": "story-pes",
+      "animalId": "pes",
+      "title": "Pes hlídá",
+      "tier": 1,
+      "sentences": [
+        "Pes hlídá celý dům.",
+        "V noci slyší šramot.",
+        "Hlasitě zaštěká.",
+        "A zloděj rychle uteče."
+      ],
+      "question": {
+        "text": "Kdo v noci utekl?",
+        "options": [
+          {
+            "emoji": "🦹",
+            "text": "zloděj"
+          },
+          {
+            "emoji": "🐱",
+            "text": "kočka"
+          },
+          {
+            "emoji": "🐭",
+            "text": "myš"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-kocka",
+      "animalId": "kocka",
+      "title": "Kočka a klubíčko",
+      "tier": 1,
+      "sentences": [
+        "Kočka našla klubíčko vlny.",
+        "Hrála si s ním celé ráno.",
+        "Vlna se celá zamotala.",
+        "Kočka usnula v klubíčku."
+      ],
+      "question": {
+        "text": "S čím si kočka hrála?",
+        "options": [
+          {
+            "emoji": "🧶",
+            "text": "s klubíčkem"
+          },
+          {
+            "emoji": "🎈",
+            "text": "s balónkem"
+          },
+          {
+            "emoji": "⚽",
+            "text": "s míčem"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-liska",
+      "animalId": "liska",
+      "title": "Liška a kos",
+      "tier": 1,
+      "sentences": [
+        "Liška měla velký hlad.",
+        "Šla tiše tmavým lesem.",
+        "Kos ji uviděl a zapískal.",
+        "Všechna zvířata se schovala."
+      ],
+      "question": {
+        "text": "Kdo lišku prozradil?",
+        "options": [
+          {
+            "emoji": "🐦",
+            "text": "kos"
+          },
+          {
+            "emoji": "🦉",
+            "text": "sova"
+          },
+          {
+            "emoji": "🐿️",
+            "text": "veverka"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-jezek",
+      "animalId": "jezek",
+      "title": "Ježek a jablko",
+      "tier": 1,
+      "sentences": [
+        "Ježek našel velké jablko.",
+        "Chtěl ho donést domů.",
+        "Jablko mu spadlo na bodliny.",
+        "A tak ho odnesl celé."
+      ],
+      "question": {
+        "text": "Co ježek našel?",
+        "options": [
+          {
+            "emoji": "🍎",
+            "text": "jablko"
+          },
+          {
+            "emoji": "🌰",
+            "text": "kaštan"
+          },
+          {
+            "emoji": "🍄",
+            "text": "houbu"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-sova",
+      "animalId": "sova",
+      "title": "Moudrá sova",
+      "tier": 1,
+      "sentences": [
+        "Zvířata se v noci bála.",
+        "Sova houkala ze stromu.",
+        "Já všechno vidím, řekla.",
+        "A zvířata klidně spala."
+      ],
+      "question": {
+        "text": "Kdy sova houkala?",
+        "options": [
+          {
+            "emoji": "🌙",
+            "text": "v noci"
+          },
+          {
+            "emoji": "🌅",
+            "text": "ráno"
+          },
+          {
+            "emoji": "☀️",
+            "text": "v poledne"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-zaba",
+      "animalId": "zaba",
+      "title": "Žába a moucha",
+      "tier": 1,
+      "sentences": [
+        "Žába seděla u rybníka.",
+        "Kolem letěla velká moucha.",
+        "Žába vymrštila dlouhý jazyk.",
+        "A moucha byla pryč."
+      ],
+      "question": {
+        "text": "Koho žába chytila?",
+        "options": [
+          {
+            "emoji": "🪰",
+            "text": "mouchu"
+          },
+          {
+            "emoji": "🐝",
+            "text": "včelu"
+          },
+          {
+            "emoji": "🦋",
+            "text": "motýla"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-medved",
+      "animalId": "medved",
+      "title": "Medvěd a med",
+      "tier": 1,
+      "sentences": [
+        "Medvěd hledal sladký med.",
+        "Vylezl na vysoký strom.",
+        "Včely se moc zlobily.",
+        "Medvěd utekl až k řece."
+      ],
+      "question": {
+        "text": "Co medvěd hledal?",
+        "options": [
+          {
+            "emoji": "🍯",
+            "text": "med"
+          },
+          {
+            "emoji": "🍎",
+            "text": "jablko"
+          },
+          {
+            "emoji": "🐟",
+            "text": "rybu"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-mys",
+      "animalId": "mys",
+      "title": "Myš a sýr",
+      "tier": 1,
+      "sentences": [
+        "Myš ucítila voňavý sýr.",
+        "Tiše běžela přes kuchyň.",
+        "Kousek sýra si odnesla.",
+        "Doma se rozdělila s mláďaty."
+      ],
+      "question": {
+        "text": "Co myš ucítila?",
+        "options": [
+          {
+            "emoji": "🧀",
+            "text": "sýr"
+          },
+          {
+            "emoji": "🍞",
+            "text": "chleba"
+          },
+          {
+            "emoji": "🍰",
+            "text": "dort"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-slon",
+      "animalId": "slon",
+      "title": "Slon se koupe",
+      "tier": 1,
+      "sentences": [
+        "Slonovi bylo velké horko.",
+        "Šel k široké řece.",
+        "Chobotem se celý postříkal.",
+        "A pak vesele troubil."
+      ],
+      "question": {
+        "text": "Kam šel slon?",
+        "options": [
+          {
+            "emoji": "🏞️",
+            "text": "k řece"
+          },
+          {
+            "emoji": "🏠",
+            "text": "domů"
+          },
+          {
+            "emoji": "⛰️",
+            "text": "na horu"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-zirafa",
+      "animalId": "zirafa",
+      "title": "Žirafa pomáhá",
+      "tier": 1,
+      "sentences": [
+        "Opice nedosáhla na banán.",
+        "Žirafa natáhla dlouhý krk.",
+        "Banán utrhla a podala.",
+        "Opice se radostí roztančila."
+      ],
+      "question": {
+        "text": "Co žirafa utrhla?",
+        "options": [
+          {
+            "emoji": "🍌",
+            "text": "banán"
+          },
+          {
+            "emoji": "🍎",
+            "text": "jablko"
+          },
+          {
+            "emoji": "🍐",
+            "text": "hrušku"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-opice",
+      "animalId": "opice",
+      "title": "Opice a zrcadlo",
+      "tier": 1,
+      "sentences": [
+        "Opice našla malé zrcadlo.",
+        "Uviděla v něm jinou opici.",
+        "Dělala na ni grimasy.",
+        "Pak se tomu sama smála."
+      ],
+      "question": {
+        "text": "Co opice našla?",
+        "options": [
+          {
+            "emoji": "🪞",
+            "text": "zrcadlo"
+          },
+          {
+            "emoji": "📕",
+            "text": "knihu"
+          },
+          {
+            "emoji": "🔑",
+            "text": "klíč"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-tucnak",
+      "animalId": "tucnak",
+      "title": "Tučňák a led",
+      "tier": 1,
+      "sentences": [
+        "Tučňák stál na ledu.",
+        "Led mu klouzal pod nohama.",
+        "Spadl na bříško a jel.",
+        "Klouzání ho moc bavilo."
+      ],
+      "question": {
+        "text": "Po čem tučňák klouzal?",
+        "options": [
+          {
+            "emoji": "🧊",
+            "text": "po ledu"
+          },
+          {
+            "emoji": "🛝",
+            "text": "po skluzavce"
+          },
+          {
+            "emoji": "🌾",
+            "text": "po trávě"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-delfin",
+      "animalId": "delfin",
+      "title": "Delfín a loď",
+      "tier": 1,
+      "sentences": [
+        "Delfín plaval u lodi.",
+        "Děti na něj mávaly.",
+        "Vyskočil vysoko nad vlny.",
+        "Děti křičely radostí."
+      ],
+      "question": {
+        "text": "Kdo mával na delfína?",
+        "options": [
+          {
+            "emoji": "🧒",
+            "text": "děti"
+          },
+          {
+            "emoji": "👴",
+            "text": "děda"
+          },
+          {
+            "emoji": "🐕",
+            "text": "pes"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-zelva",
+      "animalId": "zelva",
+      "title": "Pomalá želva",
+      "tier": 1,
+      "sentences": [
+        "Želva šla na louku.",
+        "Cesta trvala celý den.",
+        "Nikam nespěchám, řekla si.",
+        "Domeček nese pořád s sebou."
+      ],
+      "question": {
+        "text": "Co nese želva s sebou?",
+        "options": [
+          {
+            "emoji": "🏠",
+            "text": "domeček"
+          },
+          {
+            "emoji": "🎒",
+            "text": "batoh"
+          },
+          {
+            "emoji": "☂️",
+            "text": "deštník"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-krokodyl",
+      "animalId": "krokodyl",
+      "title": "Krokodýl a zuby",
+      "tier": 1,
+      "sentences": [
+        "Krokodýl má mnoho zubů.",
+        "Ráno si je čistí.",
+        "Pomáhá mu malý ptáček.",
+        "Krokodýl mu nikdy neublíží."
+      ],
+      "question": {
+        "text": "Kdo krokodýlovi čistí zuby?",
+        "options": [
+          {
+            "emoji": "🐦",
+            "text": "ptáček"
+          },
+          {
+            "emoji": "🐒",
+            "text": "opice"
+          },
+          {
+            "emoji": "🐟",
+            "text": "ryba"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-panda",
+      "animalId": "panda",
+      "title": "Panda a bambus",
+      "tier": 1,
+      "sentences": [
+        "Panda snědla celý bambus.",
+        "Bříško měla úplně kulaté.",
+        "Lehla si do trávy.",
+        "A spokojeně usnula."
+      ],
+      "question": {
+        "text": "Co panda snědla?",
+        "options": [
+          {
+            "emoji": "🎋",
+            "text": "bambus"
+          },
+          {
+            "emoji": "🥕",
+            "text": "mrkev"
+          },
+          {
+            "emoji": "🍎",
+            "text": "jablko"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-klokan",
+      "animalId": "klokan",
+      "title": "Klokan závodí",
+      "tier": 1,
+      "sentences": [
+        "Klokan skákal přes louku.",
+        "Závodil se svým stínem.",
+        "Skočil daleko přes potok.",
+        "Vyhrál a zamával ocasem."
+      ],
+      "question": {
+        "text": "Přes co klokan skočil?",
+        "options": [
+          {
+            "emoji": "🏞️",
+            "text": "přes potok"
+          },
+          {
+            "emoji": "🧱",
+            "text": "přes zeď"
+          },
+          {
+            "emoji": "🌳",
+            "text": "přes strom"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-koala",
+      "animalId": "koala",
+      "title": "Ospalá koala",
+      "tier": 1,
+      "sentences": [
+        "Koala spala na stromě.",
+        "Probudila ji malá moucha.",
+        "Snědla pár lístků.",
+        "A zase klidně usnula."
+      ],
+      "question": {
+        "text": "Kdo koalu probudil?",
+        "options": [
+          {
+            "emoji": "🪰",
+            "text": "moucha"
+          },
+          {
+            "emoji": "🐦",
+            "text": "pták"
+          },
+          {
+            "emoji": "⏰",
+            "text": "budík"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-beruska",
+      "animalId": "beruska",
+      "title": "Beruška a tečky",
+      "tier": 1,
+      "sentences": [
+        "Beruška počítala své tečky.",
+        "Jedna, dvě, tři, čtyři.",
+        "Sedm teček, radovala se.",
+        "Pak odletěla na květinu."
+      ],
+      "question": {
+        "text": "Kolik má beruška teček?",
+        "options": [
+          {
+            "emoji": "7️⃣",
+            "text": "sedm"
+          },
+          {
+            "emoji": "3️⃣",
+            "text": "tři"
+          },
+          {
+            "emoji": "9️⃣",
+            "text": "devět"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-snek",
+      "animalId": "snek",
+      "title": "Šnek na výletě",
+      "tier": 1,
+      "sentences": [
+        "Šnek se vydal na výlet.",
+        "Lezl pomalu po listu.",
+        "Večer dolezl na konec.",
+        "Domeček měl pořád s sebou."
+      ],
+      "question": {
+        "text": "Po čem šnek lezl?",
+        "options": [
+          {
+            "emoji": "🍃",
+            "text": "po listu"
+          },
+          {
+            "emoji": "🪨",
+            "text": "po kameni"
+          },
+          {
+            "emoji": "🌉",
+            "text": "po mostě"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-kun",
+      "animalId": "kun",
+      "title": "Kůň a ohrada",
+      "tier": 1,
+      "sentences": [
+        "Kůň cválal po louce.",
+        "Před ním stála ohrada.",
+        "Rozběhl se a skočil.",
+        "Letěl vzduchem jako pták."
+      ],
+      "question": {
+        "text": "Přes co kůň skočil?",
+        "options": [
+          {
+            "emoji": "🚧",
+            "text": "přes ohradu"
+          },
+          {
+            "emoji": "🏞️",
+            "text": "přes potok"
+          },
+          {
+            "emoji": "🪨",
+            "text": "přes kámen"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-kure",
+      "animalId": "kure",
+      "title": "Ztracené kuře",
+      "tier": 1,
+      "sentences": [
+        "Kuře se ztratilo mámě.",
+        "Pípalo na celý dvůr.",
+        "Slepice ho rychle našla.",
+        "Schovala ho pod křídlo."
+      ],
+      "question": {
+        "text": "Kdo kuře našel?",
+        "options": [
+          {
+            "emoji": "🐔",
+            "text": "slepice"
+          },
+          {
+            "emoji": "🐕",
+            "text": "pes"
+          },
+          {
+            "emoji": "🐄",
+            "text": "kráva"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-vlk",
+      "animalId": "vlk",
+      "title": "Vlk a měsíc",
+      "tier": 1,
+      "sentences": [
+        "Vlk seděl na kopci.",
+        "Na nebi svítil měsíc.",
+        "Vlk dlouze zavyl.",
+        "Z lesa mu odpověděla smečka."
+      ],
+      "question": {
+        "text": "Co svítilo na nebi?",
+        "options": [
+          {
+            "emoji": "🌕",
+            "text": "měsíc"
+          },
+          {
+            "emoji": "☀️",
+            "text": "slunce"
+          },
+          {
+            "emoji": "🌈",
+            "text": "duha"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-kralik",
+      "animalId": "kralik",
+      "title": "Králík a mrkev",
+      "tier": 1,
+      "sentences": [
+        "Králík našel velkou mrkev.",
+        "Byla větší než on.",
+        "Tahal ji celé odpoledne.",
+        "Večer ji snědli všichni společně."
+      ],
+      "question": {
+        "text": "Co králík našel?",
+        "options": [
+          {
+            "emoji": "🥕",
+            "text": "mrkev"
+          },
+          {
+            "emoji": "🥔",
+            "text": "brambor"
+          },
+          {
+            "emoji": "🍎",
+            "text": "jablko"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-lev",
+      "animalId": "lev",
+      "title": "Lev má svátek",
+      "tier": 1,
+      "sentences": [
+        "Lev měl velký svátek.",
+        "Přišla zvířata z celé savany.",
+        "Zpívala mu a tančila.",
+        "Lev spokojeně předl jako kočka."
+      ],
+      "question": {
+        "text": "Co dělala zvířata na svátku?",
+        "options": [
+          {
+            "emoji": "💃",
+            "text": "zpívala a tančila"
+          },
+          {
+            "emoji": "😴",
+            "text": "spala"
+          },
+          {
+            "emoji": "🏊",
+            "text": "plavala"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-zebra",
+      "animalId": "zebra",
+      "title": "Zebra a koupel",
+      "tier": 1,
+      "sentences": [
+        "Zebra běhala po savaně.",
+        "Prach jí zašpinil pruhy.",
+        "Skočila do vody a plavala.",
+        "Pruhy zase krásně zářily."
+      ],
+      "question": {
+        "text": "Kam zebra skočila?",
+        "options": [
+          {
+            "emoji": "💧",
+            "text": "do vody"
+          },
+          {
+            "emoji": "🕳️",
+            "text": "do jámy"
+          },
+          {
+            "emoji": "🌾",
+            "text": "do trávy"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-kos",
+      "animalId": "kos",
+      "title": "Kos zpívá",
+      "tier": 1,
+      "sentences": [
+        "Kos seděl na střeše.",
+        "Zpíval veselou písničku.",
+        "Lidé se zastavili a poslouchali.",
+        "Kos zpíval až do večera."
+      ],
+      "question": {
+        "text": "Co kos dělal na střeše?",
+        "options": [
+          {
+            "emoji": "🎵",
+            "text": "zpíval"
+          },
+          {
+            "emoji": "😴",
+            "text": "spal"
+          },
+          {
+            "emoji": "🍽️",
+            "text": "jedl"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-krava",
+      "animalId": "krava",
+      "title": "Kráva na louce",
+      "tier": 1,
+      "sentences": [
+        "Kráva se pásla na louce.",
+        "Snědla hodně čerstvé trávy.",
+        "Večer dala plný džbán mléka.",
+        "Dětem moc chutnalo."
+      ],
+      "question": {
+        "text": "Co dala kráva večer?",
+        "options": [
+          {
+            "emoji": "🥛",
+            "text": "mléko"
+          },
+          {
+            "emoji": "🥚",
+            "text": "vejce"
+          },
+          {
+            "emoji": "🍯",
+            "text": "med"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-had",
+      "animalId": "had",
+      "title": "Had na slunci",
+      "tier": 1,
+      "sentences": [
+        "Had se vyhříval na kameni.",
+        "Pak se tiše plazil trávou.",
+        "Našel svou starou kůži.",
+        "Novou měl krásně lesklou."
+      ],
+      "question": {
+        "text": "Co had našel v trávě?",
+        "options": [
+          {
+            "emoji": "🐍",
+            "text": "starou kůži"
+          },
+          {
+            "emoji": "🥚",
+            "text": "vejce"
+          },
+          {
+            "emoji": "🪨",
+            "text": "kámen"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-beran",
+      "animalId": "beran",
+      "title": "Beran a vrata",
+      "tier": 1,
+      "sentences": [
+        "Beran chtěl na louku.",
+        "Vrata byla zavřená.",
+        "Trkl do nich rohy.",
+        "Vrata povolila a beran se pásl."
+      ],
+      "question": {
+        "text": "Čím beran trkl do vrat?",
+        "options": [
+          {
+            "emoji": "🐏",
+            "text": "rohy"
+          },
+          {
+            "emoji": "🦵",
+            "text": "nohou"
+          },
+          {
+            "emoji": "🪶",
+            "text": "ocasem"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-orel",
+      "animalId": "orel",
+      "title": "Orel letí vysoko",
+      "tier": 1,
+      "sentences": [
+        "Orel kroužil nad horami.",
+        "Viděl celé údolí.",
+        "Dole běžel malý zajíc.",
+        "Orel dnes jen létal a koukal."
+      ],
+      "question": {
+        "text": "Koho orel viděl dole?",
+        "options": [
+          {
+            "emoji": "🐇",
+            "text": "zajíce"
+          },
+          {
+            "emoji": "🐭",
+            "text": "myš"
+          },
+          {
+            "emoji": "🦊",
+            "text": "lišku"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-hroch",
+      "animalId": "hroch",
+      "title": "Hroch v řece",
+      "tier": 1,
+      "sentences": [
+        "Hrochovi bylo velké horko.",
+        "Ponořil se do řeky.",
+        "Koukala mu jen očka.",
+        "Ve vodě zůstal celý den."
+      ],
+      "question": {
+        "text": "Kde se hroch schoval před horkem?",
+        "options": [
+          {
+            "emoji": "🏞️",
+            "text": "v řece"
+          },
+          {
+            "emoji": "🌳",
+            "text": "pod stromem"
+          },
+          {
+            "emoji": "🏠",
+            "text": "v domě"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-jelen",
+      "animalId": "jelen",
+      "title": "Jelen v lese",
+      "tier": 1,
+      "sentences": [
+        "Jelen stál na pasece.",
+        "Na hlavě měl velké parohy.",
+        "Zatroubil na celý les.",
+        "Les mu odpověděl ozvěnou."
+      ],
+      "question": {
+        "text": "Co má jelen na hlavě?",
+        "options": [
+          {
+            "emoji": "🦌",
+            "text": "parohy"
+          },
+          {
+            "emoji": "🎩",
+            "text": "klobouk"
+          },
+          {
+            "emoji": "👑",
+            "text": "korunu"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-papousek",
+      "animalId": "papousek",
+      "title": "Papoušek mluví",
+      "tier": 1,
+      "sentences": [
+        "Papoušek se učil slova.",
+        "Řekl „ahoj\" celé rodině.",
+        "Všichni se smáli.",
+        "Papoušek to opakoval celý den."
+      ],
+      "question": {
+        "text": "Co papoušek říkal?",
+        "options": [
+          {
+            "emoji": "👋",
+            "text": "ahoj"
+          },
+          {
+            "emoji": "🌙",
+            "text": "dobrou noc"
+          },
+          {
+            "emoji": "🙏",
+            "text": "děkuji"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-prase",
+      "animalId": "prase",
+      "title": "Prase a bláto",
+      "tier": 1,
+      "sentences": [
+        "Prase našlo velkou louži.",
+        "S radostí do ní skočilo.",
+        "Válelo se v blátě.",
+        "Večer ho máma umyla."
+      ],
+      "question": {
+        "text": "Do čeho prase skočilo?",
+        "options": [
+          {
+            "emoji": "💦",
+            "text": "do louže"
+          },
+          {
+            "emoji": "🛁",
+            "text": "do vany"
+          },
+          {
+            "emoji": "🛏️",
+            "text": "do postele"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-ovce",
+      "animalId": "ovce",
+      "title": "Ovce a vlna",
+      "tier": 1,
+      "sentences": [
+        "Ovce měla hustou vlnu.",
+        "V létě jí bylo horko.",
+        "Hospodář ji ostříhal.",
+        "Z vlny bude teplý svetr."
+      ],
+      "question": {
+        "text": "Co bude z ovčí vlny?",
+        "options": [
+          {
+            "emoji": "🧶",
+            "text": "svetr"
+          },
+          {
+            "emoji": "👟",
+            "text": "boty"
+          },
+          {
+            "emoji": "🎩",
+            "text": "klobouk"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-koza",
+      "animalId": "koza",
+      "title": "Koza na dvorku",
+      "tier": 1,
+      "sentences": [
+        "Koza mečela na dvorku.",
+        "Chtěla čerstvé listí.",
+        "Natáhla se přes plot.",
+        "Okusala celý keř."
+      ],
+      "question": {
+        "text": "Co koza okusala?",
+        "options": [
+          {
+            "emoji": "🌿",
+            "text": "keř"
+          },
+          {
+            "emoji": "🌷",
+            "text": "kytku"
+          },
+          {
+            "emoji": "🥕",
+            "text": "mrkev"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-kohout",
+      "animalId": "kohout",
+      "title": "Kohout budí dvůr",
+      "tier": 1,
+      "sentences": [
+        "Ráno vyšlo sluníčko.",
+        "Kohout vyletěl na plot.",
+        "Hlasitě zakokrhal.",
+        "Celý dvůr se probudil."
+      ],
+      "question": {
+        "text": "Kdy kohout kokrhá?",
+        "options": [
+          {
+            "emoji": "🌅",
+            "text": "ráno"
+          },
+          {
+            "emoji": "🌙",
+            "text": "v noci"
+          },
+          {
+            "emoji": "🌆",
+            "text": "večer"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-slepice",
+      "animalId": "slepice",
+      "title": "Slepice a vejce",
+      "tier": 1,
+      "sentences": [
+        "Slepice seděla v kurníku.",
+        "Snesla krásné vejce.",
+        "Pyšně kdákala na celý dvůr.",
+        "Z vejce se vyklube kuře."
+      ],
+      "question": {
+        "text": "Co slepice snesla?",
+        "options": [
+          {
+            "emoji": "🥚",
+            "text": "vejce"
+          },
+          {
+            "emoji": "🪶",
+            "text": "pírko"
+          },
+          {
+            "emoji": "🌰",
+            "text": "ořech"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-kachna",
+      "animalId": "kachna",
+      "title": "Kachna plave",
+      "tier": 1,
+      "sentences": [
+        "Kachna plavala po rybníku.",
+        "Za ní plula malá káčátka.",
+        "Jedno se schovalo v rákosí.",
+        "Kachna ho rychle našla."
+      ],
+      "question": {
+        "text": "Kdo plaval za kachnou?",
+        "options": [
+          {
+            "emoji": "🐥",
+            "text": "káčátka"
+          },
+          {
+            "emoji": "🐟",
+            "text": "ryby"
+          },
+          {
+            "emoji": "🐸",
+            "text": "žáby"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-husa",
+      "animalId": "husa",
+      "title": "Husa hlídá",
+      "tier": 1,
+      "sentences": [
+        "Husa hlídala dvorek.",
+        "Na dvorek přišel pošťák.",
+        "Husa hlasitě kejhala.",
+        "Pošťák rychle utekl."
+      ],
+      "question": {
+        "text": "Kdo utekl před husou?",
+        "options": [
+          {
+            "emoji": "📬",
+            "text": "pošťák"
+          },
+          {
+            "emoji": "🦊",
+            "text": "liška"
+          },
+          {
+            "emoji": "🐈",
+            "text": "kočka"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-krysa",
+      "animalId": "krysa",
+      "title": "Chytrá krysa",
+      "tier": 1,
+      "sentences": [
+        "Krysa bydlela ve sklepě.",
+        "Našla kousek tvrdého chleba.",
+        "Odnesla ho do pelíšku.",
+        "Rozdělila se s mláďaty."
+      ],
+      "question": {
+        "text": "Co krysa našla?",
+        "options": [
+          {
+            "emoji": "🍞",
+            "text": "chleba"
+          },
+          {
+            "emoji": "🧀",
+            "text": "sýr"
+          },
+          {
+            "emoji": "🍎",
+            "text": "jablko"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-tygr",
+      "animalId": "tygr",
+      "title": "Tygr se plíží",
+      "tier": 1,
+      "sentences": [
+        "Tygr se plížil trávou.",
+        "Byl tichý jako stín.",
+        "Chtěl překvapit kamaráda.",
+        "Pak si spolu hráli."
+      ],
+      "question": {
+        "text": "Jaký byl tygr v trávě?",
+        "options": [
+          {
+            "emoji": "🤫",
+            "text": "tichý"
+          },
+          {
+            "emoji": "📢",
+            "text": "hlučný"
+          },
+          {
+            "emoji": "😴",
+            "text": "ospalý"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-velbloud",
+      "animalId": "velbloud",
+      "title": "Velbloud na poušti",
+      "tier": 1,
+      "sentences": [
+        "Velbloud šel přes poušť.",
+        "Nesl těžký náklad.",
+        "Dlouho nepil vodu.",
+        "Večer došel k oáze a napil se."
+      ],
+      "question": {
+        "text": "Kam velbloud večer došel?",
+        "options": [
+          {
+            "emoji": "🌴",
+            "text": "k oáze"
+          },
+          {
+            "emoji": "🏔️",
+            "text": "na horu"
+          },
+          {
+            "emoji": "🏖️",
+            "text": "k moři"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-tulen",
+      "animalId": "tulen",
+      "title": "Tuleň a míč",
+      "tier": 1,
+      "sentences": [
+        "Tuleň si hrál u moře.",
+        "Děti mu hodily míč.",
+        "Chytil ho na nos.",
+        "Všichni mu tleskali."
+      ],
+      "question": {
+        "text": "Na co tuleň chytil míč?",
+        "options": [
+          {
+            "emoji": "👃",
+            "text": "na nos"
+          },
+          {
+            "emoji": "🦶",
+            "text": "na nohu"
+          },
+          {
+            "emoji": "👂",
+            "text": "na ucho"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-velryba",
+      "animalId": "velryba",
+      "title": "Velryba zpívá",
+      "tier": 1,
+      "sentences": [
+        "Velryba plavala oceánem.",
+        "Zpívala dlouhou píseň.",
+        "Slyšely ji ryby i delfíni.",
+        "Píseň zněla celou noc."
+      ],
+      "question": {
+        "text": "Co velryba dělala?",
+        "options": [
+          {
+            "emoji": "🎵",
+            "text": "zpívala"
+          },
+          {
+            "emoji": "💤",
+            "text": "spala"
+          },
+          {
+            "emoji": "🍽️",
+            "text": "jedla"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-ryba",
+      "animalId": "ryba",
+      "title": "Ryba v potoce",
+      "tier": 1,
+      "sentences": [
+        "Ryba plavala v potoce.",
+        "Šupiny se jí blýskaly.",
+        "Schovala se pod kámen.",
+        "Tam si spokojeně odpočívala."
+      ],
+      "question": {
+        "text": "Kam se ryba schovala?",
+        "options": [
+          {
+            "emoji": "🪨",
+            "text": "pod kámen"
+          },
+          {
+            "emoji": "🍃",
+            "text": "pod list"
+          },
+          {
+            "emoji": "🌉",
+            "text": "pod most"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-kapr",
+      "animalId": "kapr",
+      "title": "Kapr v rybníce",
+      "tier": 1,
+      "sentences": [
+        "Kapr bydlel v rybníce.",
+        "Měl velké lesklé šupiny.",
+        "Děti mu hodily kousek rohlíku.",
+        "Kapr mlaskal u hladiny."
+      ],
+      "question": {
+        "text": "Co děti hodily kaprovi?",
+        "options": [
+          {
+            "emoji": "🥖",
+            "text": "rohlík"
+          },
+          {
+            "emoji": "🍎",
+            "text": "jablko"
+          },
+          {
+            "emoji": "🧀",
+            "text": "sýr"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-vcela",
+      "animalId": "vcela",
+      "title": "Včela a med",
+      "tier": 1,
+      "sentences": [
+        "Včela létala po louce.",
+        "Sbírala sladký nektar.",
+        "Odnesla ho do úlu.",
+        "Bude z něj voňavý med."
+      ],
+      "question": {
+        "text": "Co včela sbírala?",
+        "options": [
+          {
+            "emoji": "🌸",
+            "text": "nektar"
+          },
+          {
+            "emoji": "💧",
+            "text": "vodu"
+          },
+          {
+            "emoji": "🍂",
+            "text": "listí"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-mravenec",
+      "animalId": "mravenec",
+      "title": "Pilný mravenec",
+      "tier": 1,
+      "sentences": [
+        "Mravenec nesl velkou jehličku.",
+        "Byla větší než on.",
+        "Kamarádi mu přišli pomoct.",
+        "Donesli ji společně do mraveniště."
+      ],
+      "question": {
+        "text": "Kdo mravenci pomohl?",
+        "options": [
+          {
+            "emoji": "🐜",
+            "text": "kamarádi"
+          },
+          {
+            "emoji": "🐦",
+            "text": "pták"
+          },
+          {
+            "emoji": "🐘",
+            "text": "slon"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-motyl",
+      "animalId": "motyl",
+      "title": "Motýl a květina",
+      "tier": 1,
+      "sentences": [
+        "Motýl létal nad zahradou.",
+        "Uviděl krásnou květinu.",
+        "Sedl si na ni.",
+        "Napil se sladké šťávy."
+      ],
+      "question": {
+        "text": "Na co si motýl sedl?",
+        "options": [
+          {
+            "emoji": "🌸",
+            "text": "na květinu"
+          },
+          {
+            "emoji": "🪨",
+            "text": "na kámen"
+          },
+          {
+            "emoji": "🏠",
+            "text": "na střechu"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-moucha",
+      "animalId": "moucha",
+      "title": "Moucha a okno",
+      "tier": 1,
+      "sentences": [
+        "Moucha bzučela u okna.",
+        "Chtěla ven na sluníčko.",
+        "Maminka otevřela okno.",
+        "Moucha vyletěla ven."
+      ],
+      "question": {
+        "text": "Kam chtěla moucha letět?",
+        "options": [
+          {
+            "emoji": "☀️",
+            "text": "ven na sluníčko"
+          },
+          {
+            "emoji": "🛏️",
+            "text": "do postele"
+          },
+          {
+            "emoji": "🧊",
+            "text": "do lednice"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-pavouk",
+      "animalId": "pavouk",
+      "title": "Pavouk staví síť",
+      "tier": 1,
+      "sentences": [
+        "Pavouk pletl pavučinu.",
+        "Vlákna se třpytila rosou.",
+        "Do sítě foukl vítr.",
+        "Pavučina byla pevná a vydržela."
+      ],
+      "question": {
+        "text": "Co pavouk pletl?",
+        "options": [
+          {
+            "emoji": "🕸️",
+            "text": "pavučinu"
+          },
+          {
+            "emoji": "🧶",
+            "text": "svetr"
+          },
+          {
+            "emoji": "🧺",
+            "text": "košík"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-bobr",
+      "animalId": "bobr",
+      "title": "Bobr staví hráz",
+      "tier": 1,
+      "sentences": [
+        "Bobr kácel malý strom.",
+        "Odnesl ho k řece.",
+        "Stavěl pevnou hráz.",
+        "Večer byla hráz hotová."
+      ],
+      "question": {
+        "text": "Co bobr stavěl?",
+        "options": [
+          {
+            "emoji": "🌊",
+            "text": "hráz"
+          },
+          {
+            "emoji": "🏠",
+            "text": "dům"
+          },
+          {
+            "emoji": "🌉",
+            "text": "most"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-vydra",
+      "animalId": "vydra",
+      "title": "Vydra si hraje",
+      "tier": 1,
+      "sentences": [
+        "Vydra plavala na zádech.",
+        "Na bříšku měla kamínek.",
+        "Rozlouskla s ním mušli.",
+        "Pochutnala si na dobrotě."
+      ],
+      "question": {
+        "text": "Co měla vydra na bříšku?",
+        "options": [
+          {
+            "emoji": "🪨",
+            "text": "kamínek"
+          },
+          {
+            "emoji": "⚽",
+            "text": "míček"
+          },
+          {
+            "emoji": "🍎",
+            "text": "jablko"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-lenochod",
+      "animalId": "lenochod",
+      "title": "Lenochod na výletě",
+      "tier": 1,
+      "sentences": [
+        "Lenochod visel na větvi.",
+        "Rozhodl se pro výlet.",
+        "Lezl celé odpoledne.",
+        "Dolezl na vedlejší strom."
+      ],
+      "question": {
+        "text": "Kam lenochod dolezl?",
+        "options": [
+          {
+            "emoji": "🌳",
+            "text": "na vedlejší strom"
+          },
+          {
+            "emoji": "⛰️",
+            "text": "na horu"
+          },
+          {
+            "emoji": "🏠",
+            "text": "domů"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-gorila",
+      "animalId": "gorila",
+      "title": "Gorila a hnízdo",
+      "tier": 1,
+      "sentences": [
+        "Gorila sbírala větve a listí.",
+        "Stavěla si měkké hnízdo.",
+        "Vyzkoušela ho tlapou.",
+        "Spokojeně v něm usnula."
+      ],
+      "question": {
+        "text": "Z čeho gorila stavěla hnízdo?",
+        "options": [
+          {
+            "emoji": "🍃",
+            "text": "z větví a listí"
+          },
+          {
+            "emoji": "🪨",
+            "text": "z kamenů"
+          },
+          {
+            "emoji": "🧱",
+            "text": "z cihel"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-orangutan",
+      "animalId": "orangutan",
+      "title": "Orangutan a liány",
+      "tier": 1,
+      "sentences": [
+        "Orangutan se houpal na liáně.",
+        "Přeskočil na další strom.",
+        "Utrhl si zralé ovoce.",
+        "Snědl ho vysoko v koruně."
+      ],
+      "question": {
+        "text": "Co si orangutan utrhl?",
+        "options": [
+          {
+            "emoji": "🍊",
+            "text": "ovoce"
+          },
+          {
+            "emoji": "🌰",
+            "text": "ořech"
+          },
+          {
+            "emoji": "🍄",
+            "text": "houbu"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-nosorozec",
+      "animalId": "nosorozec",
+      "title": "Nosorožec a ptáček",
+      "tier": 1,
+      "sentences": [
+        "Nosorožec se pásl v savaně.",
+        "Na zádech mu seděl ptáček.",
+        "Vybíral mu z kůže brouky.",
+        "Byli dobří kamarádi."
+      ],
+      "question": {
+        "text": "Kdo seděl nosorožci na zádech?",
+        "options": [
+          {
+            "emoji": "🐦",
+            "text": "ptáček"
+          },
+          {
+            "emoji": "🐒",
+            "text": "opice"
+          },
+          {
+            "emoji": "🐭",
+            "text": "myš"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-lama",
+      "animalId": "lama",
+      "title": "Lama v horách",
+      "tier": 1,
+      "sentences": [
+        "Lama stoupala do kopce.",
+        "Nesla malý náklad.",
+        "Nahoře se rozhlédla.",
+        "Hory byly moc krásné."
+      ],
+      "question": {
+        "text": "Kam lama stoupala?",
+        "options": [
+          {
+            "emoji": "⛰️",
+            "text": "do kopce"
+          },
+          {
+            "emoji": "🏖️",
+            "text": "k moři"
+          },
+          {
+            "emoji": "🌲",
+            "text": "do lesa"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-leopard",
+      "animalId": "leopard",
+      "title": "Leopard na stromě",
+      "tier": 1,
+      "sentences": [
+        "Leopard vylezl na strom.",
+        "Natáhl se na větev.",
+        "Pozoroval celou savanu.",
+        "Nahoře se cítil bezpečně."
+      ],
+      "question": {
+        "text": "Kde leopard odpočíval?",
+        "options": [
+          {
+            "emoji": "🌳",
+            "text": "na stromě"
+          },
+          {
+            "emoji": "🕳️",
+            "text": "v noře"
+          },
+          {
+            "emoji": "🏖️",
+            "text": "na písku"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-myval",
+      "animalId": "myval",
+      "title": "Mýval a večeře",
+      "tier": 1,
+      "sentences": [
+        "Mýval našel jablko.",
+        "Odnesl ho k potoku.",
+        "Pečlivě ho umyl.",
+        "Teprve pak si pochutnal."
+      ],
+      "question": {
+        "text": "Co mýval udělal s jablkem?",
+        "options": [
+          {
+            "emoji": "💦",
+            "text": "umyl ho"
+          },
+          {
+            "emoji": "🙈",
+            "text": "schoval ho"
+          },
+          {
+            "emoji": "🎨",
+            "text": "namaloval ho"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-jezevec",
+      "animalId": "jezevec",
+      "title": "Jezevec a nora",
+      "tier": 1,
+      "sentences": [
+        "Jezevec kopal novou noru.",
+        "Měla mnoho chodbiček.",
+        "Vystlal ji suchou trávou.",
+        "Spal v ní celou zimu."
+      ],
+      "question": {
+        "text": "Čím jezevec vystlal noru?",
+        "options": [
+          {
+            "emoji": "🌾",
+            "text": "trávou"
+          },
+          {
+            "emoji": "🪶",
+            "text": "peřím"
+          },
+          {
+            "emoji": "🍂",
+            "text": "listím"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-netopyr",
+      "animalId": "netopyr",
+      "title": "Netopýr v noci",
+      "tier": 1,
+      "sentences": [
+        "Večer se setmělo.",
+        "Netopýr vyletěl z jeskyně.",
+        "Létal tiše nad zahradou.",
+        "Ráno usnul hlavou dolů."
+      ],
+      "question": {
+        "text": "Jak netopýr spí?",
+        "options": [
+          {
+            "emoji": "🙃",
+            "text": "hlavou dolů"
+          },
+          {
+            "emoji": "🛏️",
+            "text": "v posteli"
+          },
+          {
+            "emoji": "🌿",
+            "text": "v trávě"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-kanec",
+      "animalId": "kanec",
+      "title": "Kanec a žaludy",
+      "tier": 1,
+      "sentences": [
+        "Kanec ryl pod dubem.",
+        "Hledal sladké žaludy.",
+        "Našel jich plnou jamku.",
+        "Spokojeně zamlaskal."
+      ],
+      "question": {
+        "text": "Co kanec hledal?",
+        "options": [
+          {
+            "emoji": "🌰",
+            "text": "žaludy"
+          },
+          {
+            "emoji": "🍎",
+            "text": "jablka"
+          },
+          {
+            "emoji": "🥕",
+            "text": "mrkev"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-osel",
+      "animalId": "osel",
+      "title": "Osel a odměna",
+      "tier": 1,
+      "sentences": [
+        "Osel nesl těžké pytle.",
+        "Cesta byla dlouhá.",
+        "Na trhu dostal mrkev.",
+        "Spokojeně zahýkal."
+      ],
+      "question": {
+        "text": "Co osel dostal na trhu?",
+        "options": [
+          {
+            "emoji": "🥕",
+            "text": "mrkev"
+          },
+          {
+            "emoji": "🍞",
+            "text": "chleba"
+          },
+          {
+            "emoji": "🍬",
+            "text": "bonbón"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-los",
+      "animalId": "los",
+      "title": "Los u jezera",
+      "tier": 1,
+      "sentences": [
+        "Los stál u jezera.",
+        "Pil studenou vodu.",
+        "Parohy měl jako lopaty.",
+        "Pak tiše zmizel v lese."
+      ],
+      "question": {
+        "text": "Jaké má los parohy?",
+        "options": [
+          {
+            "emoji": "🥄",
+            "text": "jako lopaty"
+          },
+          {
+            "emoji": "🌿",
+            "text": "jako větvičky"
+          },
+          {
+            "emoji": "📏",
+            "text": "úplně malé"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-krecek",
+      "animalId": "krecek",
+      "title": "Křeček a zásoby",
+      "tier": 1,
+      "sentences": [
+        "Křeček našel zrní.",
+        "Nacpal si plné tváře.",
+        "Odnesl zásoby do komůrky.",
+        "Tváře měl zase malé."
+      ],
+      "question": {
+        "text": "Kam si křeček dal zrní?",
+        "options": [
+          {
+            "emoji": "😊",
+            "text": "do tváří"
+          },
+          {
+            "emoji": "🎒",
+            "text": "do batohu"
+          },
+          {
+            "emoji": "🧺",
+            "text": "do košíku"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-bizon",
+      "animalId": "bizon",
+      "title": "Bizon na pláni",
+      "tier": 1,
+      "sentences": [
+        "Po pláni běželo stádo bizonů.",
+        "Země duněla jako buben.",
+        "Večer se stádo zastavilo.",
+        "Bizoni se klidně pásli."
+      ],
+      "question": {
+        "text": "Jak zněla země pod bizony?",
+        "options": [
+          {
+            "emoji": "🥁",
+            "text": "jako buben"
+          },
+          {
+            "emoji": "🎻",
+            "text": "jako housle"
+          },
+          {
+            "emoji": "🔔",
+            "text": "jako zvonek"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-krocan",
+      "animalId": "krocan",
+      "title": "Pyšný krocan",
+      "tier": 1,
+      "sentences": [
+        "Krocan chodil po dvoře.",
+        "Roztáhl ocas jako vějíř.",
+        "Hudroval na slepice.",
+        "Byl na sebe moc pyšný."
+      ],
+      "question": {
+        "text": "Jak krocan roztáhl ocas?",
+        "options": [
+          {
+            "emoji": "🦚",
+            "text": "jako vějíř"
+          },
+          {
+            "emoji": "☂️",
+            "text": "jako deštník"
+          },
+          {
+            "emoji": "🥞",
+            "text": "jako palačinku"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-holub",
+      "animalId": "holub",
+      "title": "Holub a vzkaz",
+      "tier": 1,
+      "sentences": [
+        "Holub nesl malý vzkaz.",
+        "Letěl přes celé město.",
+        "Našel správný dům.",
+        "Dostal za odměnu zrní."
+      ],
+      "question": {
+        "text": "Co holub nesl?",
+        "options": [
+          {
+            "emoji": "✉️",
+            "text": "vzkaz"
+          },
+          {
+            "emoji": "🥖",
+            "text": "rohlík"
+          },
+          {
+            "emoji": "🔑",
+            "text": "klíč"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-labut",
+      "animalId": "labut",
+      "title": "Labuť na hladině",
+      "tier": 1,
+      "sentences": [
+        "Labuť plula po rybníku.",
+        "Byla bílá jako sníh.",
+        "Ohnula dlouhý krk.",
+        "Vylovila si vodní trávu."
+      ],
+      "question": {
+        "text": "Jaká byla labuť?",
+        "options": [
+          {
+            "emoji": "❄️",
+            "text": "bílá jako sníh"
+          },
+          {
+            "emoji": "🌑",
+            "text": "černá jako noc"
+          },
+          {
+            "emoji": "🌈",
+            "text": "barevná jako duha"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-plamenak",
+      "animalId": "plamenak",
+      "title": "Plameňák stojí",
+      "tier": 1,
+      "sentences": [
+        "Plameňák stál ve vodě.",
+        "Stál jen na jedné noze.",
+        "Druhou nohu si schoval.",
+        "Vydržel tak celé odpoledne."
+      ],
+      "question": {
+        "text": "Na kolika nohách plameňák stál?",
+        "options": [
+          {
+            "emoji": "1️⃣",
+            "text": "na jedné"
+          },
+          {
+            "emoji": "2️⃣",
+            "text": "na dvou"
+          },
+          {
+            "emoji": "4️⃣",
+            "text": "na čtyřech"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-pav",
+      "animalId": "pav",
+      "title": "Páv se chlubí",
+      "tier": 1,
+      "sentences": [
+        "Páv chodil po zahradě.",
+        "Roztáhl krásný ocas.",
+        "Peří svítilo modře a zeleně.",
+        "Všichni se přišli podívat."
+      ],
+      "question": {
+        "text": "Co páv roztáhl?",
+        "options": [
+          {
+            "emoji": "🦚",
+            "text": "ocas"
+          },
+          {
+            "emoji": "🪽",
+            "text": "křídla"
+          },
+          {
+            "emoji": "⛺",
+            "text": "stan"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-zralok",
+      "animalId": "zralok",
+      "title": "Žralok a zoubky",
+      "tier": 1,
+      "sentences": [
+        "Žralok plaval hlubinou.",
+        "Usmál se na malou rybku.",
+        "Měl tři řady zubů.",
+        "Rybka mu zamávala ploutví."
+      ],
+      "question": {
+        "text": "Kolik řad zubů má žralok?",
+        "options": [
+          {
+            "emoji": "3️⃣",
+            "text": "tři"
+          },
+          {
+            "emoji": "1️⃣",
+            "text": "jednu"
+          },
+          {
+            "emoji": "5️⃣",
+            "text": "pět"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-chobotnice",
+      "animalId": "chobotnice",
+      "title": "Chobotnice kouzlí",
+      "tier": 1,
+      "sentences": [
+        "Chobotnice se schovala mezi korály.",
+        "Změnila barvu na červenou.",
+        "Pak zase na modrou.",
+        "Rybky jí tleskaly ploutvemi."
+      ],
+      "question": {
+        "text": "Co chobotnice měnila?",
+        "options": [
+          {
+            "emoji": "🎨",
+            "text": "barvu"
+          },
+          {
+            "emoji": "👗",
+            "text": "šaty"
+          },
+          {
+            "emoji": "🏠",
+            "text": "domeček"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-krab",
+      "animalId": "krab",
+      "title": "Krab na pláži",
+      "tier": 1,
+      "sentences": [
+        "Krab cupital po písku.",
+        "Chodil pěkně bokem.",
+        "Vlnka ho polechtala.",
+        "Zahrabal se do písku."
+      ],
+      "question": {
+        "text": "Jak krab chodí?",
+        "options": [
+          {
+            "emoji": "↔️",
+            "text": "bokem"
+          },
+          {
+            "emoji": "🔙",
+            "text": "pozpátku"
+          },
+          {
+            "emoji": "🦘",
+            "text": "skáče"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-jesterka",
+      "animalId": "jesterka",
+      "title": "Ještěrka a ocásek",
+      "tier": 1,
+      "sentences": [
+        "Ještěrka se slunila na zídce.",
+        "Kočka ji chtěla chytit.",
+        "Ještěrka odhodila ocásek.",
+        "Nový jí zase doroste."
+      ],
+      "question": {
+        "text": "Co ještěrka odhodila?",
+        "options": [
+          {
+            "emoji": "🦎",
+            "text": "ocásek"
+          },
+          {
+            "emoji": "👟",
+            "text": "botu"
+          },
+          {
+            "emoji": "🎒",
+            "text": "batoh"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-brouk",
+      "animalId": "brouk",
+      "title": "Brouk a krovky",
+      "tier": 1,
+      "sentences": [
+        "Brouk lezl po kůře.",
+        "Schoval křídla pod krovky.",
+        "Spadla na něj kapka deště.",
+        "Krovky ho ochránily."
+      ],
+      "question": {
+        "text": "Kam brouk schoval křídla?",
+        "options": [
+          {
+            "emoji": "🛡️",
+            "text": "pod krovky"
+          },
+          {
+            "emoji": "🍃",
+            "text": "pod list"
+          },
+          {
+            "emoji": "🪨",
+            "text": "pod kámen"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-housenka",
+      "animalId": "housenka",
+      "title": "Housenka a proměna",
+      "tier": 1,
+      "sentences": [
+        "Housenka snědla mnoho listů.",
+        "Zabalila se do kukly.",
+        "Dlouho v ní spala.",
+        "Probudila se jako motýl."
+      ],
+      "question": {
+        "text": "Kdo se probudil z kukly?",
+        "options": [
+          {
+            "emoji": "🦋",
+            "text": "motýl"
+          },
+          {
+            "emoji": "🐝",
+            "text": "včela"
+          },
+          {
+            "emoji": "🐞",
+            "text": "beruška"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-cvrcek",
+      "animalId": "cvrcek",
+      "title": "Cvrček muzikant",
+      "tier": 1,
+      "sentences": [
+        "Cvrček seděl v trávě.",
+        "Hrál na svoje housličky.",
+        "Světlušky mu svítily.",
+        "Koncert trval celou noc."
+      ],
+      "question": {
+        "text": "Kdo cvrčkovi svítil?",
+        "options": [
+          {
+            "emoji": "✨",
+            "text": "světlušky"
+          },
+          {
+            "emoji": "🌞",
+            "text": "slunce"
+          },
+          {
+            "emoji": "🔦",
+            "text": "baterka"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story-stir",
+      "animalId": "stir",
+      "title": "Štír pod kamenem",
+      "tier": 1,
+      "sentences": [
+        "Štír bydlel pod kamenem.",
+        "Ve dne spal.",
+        "V noci šel na procházku.",
+        "Ráno se vrátil domů."
+      ],
+      "question": {
+        "text": "Kde štír bydlel?",
+        "options": [
+          {
+            "emoji": "🪨",
+            "text": "pod kamenem"
+          },
+          {
+            "emoji": "🌳",
+            "text": "na stromě"
+          },
+          {
+            "emoji": "💧",
+            "text": "ve vodě"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-pes",
+      "animalId": "pes",
+      "title": "Pes a ztracený míček",
+      "tier": 2,
+      "sentences": [
+        "Kluk hodil psovi míček.",
+        "Míček se zakutálel do křoví.",
+        "Pes hledal a čichal.",
+        "V křoví seděl ježek.",
+        "Pes se lekl a štěkl.",
+        "Ježek se stočil do klubíčka.",
+        "Míček ležel hned vedle.",
+        "Pes ho hrdě přinesl zpátky."
+      ],
+      "question": {
+        "text": "Kdo seděl v křoví?",
+        "options": [
+          {
+            "emoji": "🦔",
+            "text": "ježek"
+          },
+          {
+            "emoji": "🐱",
+            "text": "kočka"
+          },
+          {
+            "emoji": "🐍",
+            "text": "had"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-kocka",
+      "animalId": "kocka",
+      "title": "Kočka na střeše",
+      "tier": 2,
+      "sentences": [
+        "Kočka vylezla na střechu.",
+        "Honila tam barevného motýla.",
+        "Motýl uletěl vysoko.",
+        "Kočka se podívala dolů.",
+        "Střecha byla moc vysoká.",
+        "Mňoukala na celou ulici.",
+        "Táta přinesl dlouhý žebřík.",
+        "Kočka mu vděčně předla."
+      ],
+      "question": {
+        "text": "Co táta přinesl?",
+        "options": [
+          {
+            "emoji": "🪜",
+            "text": "žebřík"
+          },
+          {
+            "emoji": "☂️",
+            "text": "deštník"
+          },
+          {
+            "emoji": "🧺",
+            "text": "košík"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-liska",
+      "animalId": "liska",
+      "title": "Liška a ztracené kuře",
+      "tier": 2,
+      "sentences": [
+        "Kuře se ztratilo v lese.",
+        "Bálo se a pípalo.",
+        "Našla ho chytrá liška.",
+        "Kuře se třáslo strachy.",
+        "Liška se jen usmála.",
+        "Ukázala mu cestu domů.",
+        "Slepice radostí kdákala.",
+        "Od té doby byli kamarádi."
+      ],
+      "question": {
+        "text": "Koho liška našla v lese?",
+        "options": [
+          {
+            "emoji": "🐥",
+            "text": "kuře"
+          },
+          {
+            "emoji": "🐭",
+            "text": "myš"
+          },
+          {
+            "emoji": "🐸",
+            "text": "žábu"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-jezek",
+      "animalId": "jezek",
+      "title": "Ježek a zima",
+      "tier": 2,
+      "sentences": [
+        "Listí padalo ze stromů.",
+        "Ježek cítil, že přijde zima.",
+        "Sbíral suché listí.",
+        "Postavil si teplé hnízdo.",
+        "Snědl poslední jablko.",
+        "Stočil se do klubíčka.",
+        "Spal celou dlouhou zimu.",
+        "Probudilo ho až jaro."
+      ],
+      "question": {
+        "text": "Kdy se ježek probudil?",
+        "options": [
+          {
+            "emoji": "🌸",
+            "text": "na jaře"
+          },
+          {
+            "emoji": "❄️",
+            "text": "v zimě"
+          },
+          {
+            "emoji": "🍂",
+            "text": "na podzim"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-sova",
+      "animalId": "sova",
+      "title": "Sova učitelka",
+      "tier": 2,
+      "sentences": [
+        "Zvířata chtěla umět počítat.",
+        "Sova otevřela lesní školu.",
+        "Učila je čísla do deseti.",
+        "Veverka počítala oříšky.",
+        "Medvěd počítal hrnce medu.",
+        "Zajíc počítal mrkve.",
+        "Všichni dostali jedničku.",
+        "Sova byla pyšná učitelka."
+      ],
+      "question": {
+        "text": "Co počítala veverka?",
+        "options": [
+          {
+            "emoji": "🌰",
+            "text": "oříšky"
+          },
+          {
+            "emoji": "🍯",
+            "text": "med"
+          },
+          {
+            "emoji": "🥕",
+            "text": "mrkve"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-zaba",
+      "animalId": "zaba",
+      "title": "Žába a velký závod",
+      "tier": 2,
+      "sentences": [
+        "Zvířata pořádala závod ve skákání.",
+        "Přišel zajíc i kobylka.",
+        "Žába se dlouho připravovala.",
+        "Pak skočila obrovský skok.",
+        "Přeskočila celou louži.",
+        "Zajíc jen valil oči.",
+        "Žába vyhrála zlatý leknín.",
+        "Večer slavili u rybníka."
+      ],
+      "question": {
+        "text": "Co žába vyhrála?",
+        "options": [
+          {
+            "emoji": "🌸",
+            "text": "leknín"
+          },
+          {
+            "emoji": "🏆",
+            "text": "pohár"
+          },
+          {
+            "emoji": "🍰",
+            "text": "dort"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-medved",
+      "animalId": "medved",
+      "title": "Medvěd a zimní spánek",
+      "tier": 2,
+      "sentences": [
+        "Medvěd celé léto jedl.",
+        "Maliny, borůvky i med.",
+        "Na podzim našel jeskyni.",
+        "Vystlal ji měkkým mechem.",
+        "Venku začal padat sníh.",
+        "Medvěd zívl a lehl si.",
+        "Spal až do jara.",
+        "Na jaře měl velký hlad."
+      ],
+      "question": {
+        "text": "Čím medvěd vystlal jeskyni?",
+        "options": [
+          {
+            "emoji": "🌿",
+            "text": "mechem"
+          },
+          {
+            "emoji": "🪶",
+            "text": "peřím"
+          },
+          {
+            "emoji": "🧣",
+            "text": "dekou"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-mys",
+      "animalId": "mys",
+      "title": "Myš a velký sýr",
+      "tier": 2,
+      "sentences": [
+        "Myška našla obrovský sýr.",
+        "Byl větší než ona.",
+        "Tlačila ho přes kuchyň.",
+        "Sýr se ani nehnul.",
+        "Zavolala pět kamarádek.",
+        "Tlačily všechny společně.",
+        "Sýr dojel až do díry.",
+        "Hostina trvala celý týden."
+      ],
+      "question": {
+        "text": "Kolik kamarádek myška zavolala?",
+        "options": [
+          {
+            "emoji": "5️⃣",
+            "text": "pět"
+          },
+          {
+            "emoji": "2️⃣",
+            "text": "dvě"
+          },
+          {
+            "emoji": "🔟",
+            "text": "deset"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-slon",
+      "animalId": "slon",
+      "title": "Slon a malá myška",
+      "tier": 2,
+      "sentences": [
+        "Slon si poranil nohu.",
+        "V tlapě měl ostrý trn.",
+        "Nikdo mu neuměl pomoct.",
+        "Přišla malá myška.",
+        "Vytáhla trn zoubky.",
+        "Slonovi se hned ulevilo.",
+        "Zatroubil myšce děkuji.",
+        "Od té doby byli přátelé."
+      ],
+      "question": {
+        "text": "Kdo slonovi pomohl?",
+        "options": [
+          {
+            "emoji": "🐭",
+            "text": "myška"
+          },
+          {
+            "emoji": "🐒",
+            "text": "opice"
+          },
+          {
+            "emoji": "🦒",
+            "text": "žirafa"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-zirafa",
+      "animalId": "zirafa",
+      "title": "Žirafa a papírový drak",
+      "tier": 2,
+      "sentences": [
+        "Dětem uletěl papírový drak.",
+        "Zamotal se do vysokého stromu.",
+        "Nikdo na něj nedosáhl.",
+        "Přišla hodná žirafa.",
+        "Natáhla svůj dlouhý krk.",
+        "Opatrně draka vymotala.",
+        "Děti tleskaly radostí.",
+        "Drak zase létal po obloze."
+      ],
+      "question": {
+        "text": "Co se zamotalo do stromu?",
+        "options": [
+          {
+            "emoji": "🪁",
+            "text": "drak"
+          },
+          {
+            "emoji": "🎈",
+            "text": "balónek"
+          },
+          {
+            "emoji": "⚽",
+            "text": "míč"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-opice",
+      "animalId": "opice",
+      "title": "Opice a banánová hostina",
+      "tier": 2,
+      "sentences": [
+        "Opice našla banánovník.",
+        "Visely na něm zralé banány.",
+        "Zavolala celou rodinu.",
+        "Trhali banány společně.",
+        "Nejmenší opička sklouzla po slupce.",
+        "Všichni se vesele smáli.",
+        "Slupky uklidili pod strom.",
+        "Byla to nejlepší hostina."
+      ],
+      "question": {
+        "text": "Po čem opička sklouzla?",
+        "options": [
+          {
+            "emoji": "🍌",
+            "text": "po slupce"
+          },
+          {
+            "emoji": "🧊",
+            "text": "po ledu"
+          },
+          {
+            "emoji": "🍃",
+            "text": "po listí"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-tucnak",
+      "animalId": "tucnak",
+      "title": "Tučňák hledá čepici",
+      "tier": 2,
+      "sentences": [
+        "Tučňákovi byla zima na hlavu.",
+        "Vítr mu odnesl čepici.",
+        "Hledal ji na ledu.",
+        "Hledal ji i ve vodě.",
+        "Čepici měl na hlavě tuleň.",
+        "Omluvil se a vrátil ji.",
+        "Tučňák si ji nasadil.",
+        "Kamarádi šli spolu klouzat."
+      ],
+      "question": {
+        "text": "Kdo měl tučňákovu čepici?",
+        "options": [
+          {
+            "emoji": "🦭",
+            "text": "tuleň"
+          },
+          {
+            "emoji": "🐋",
+            "text": "velryba"
+          },
+          {
+            "emoji": "🐧",
+            "text": "jiný tučňák"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-delfin",
+      "animalId": "delfin",
+      "title": "Delfín zachránce",
+      "tier": 2,
+      "sentences": [
+        "Malá rybka se ztratila.",
+        "Vlny byly moc velké.",
+        "Rybka volala o pomoc.",
+        "Připlaval rychlý delfín.",
+        "Ukázal jí cestu domů.",
+        "Plavali spolu mezi vlnami.",
+        "Hejno rybku radostně vítalo.",
+        "Delfín vesele vyskočil z vody."
+      ],
+      "question": {
+        "text": "Kdo rybce pomohl?",
+        "options": [
+          {
+            "emoji": "🐬",
+            "text": "delfín"
+          },
+          {
+            "emoji": "🦈",
+            "text": "žralok"
+          },
+          {
+            "emoji": "🐢",
+            "text": "želva"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-zelva",
+      "animalId": "zelva",
+      "title": "Želva a zajíc",
+      "tier": 2,
+      "sentences": [
+        "Zajíc se chlubil rychlostí.",
+        "Vyzval želvu na závod.",
+        "Želva šla pomalu a stále.",
+        "Zajíc si lehl a usnul.",
+        "Želva ho tiše minula.",
+        "Došla první do cíle.",
+        "Zajíc se probudil pozdě.",
+        "Pomalu a jistě vyhrává."
+      ],
+      "question": {
+        "text": "Kdo vyhrál závod?",
+        "options": [
+          {
+            "emoji": "🐢",
+            "text": "želva"
+          },
+          {
+            "emoji": "🐇",
+            "text": "zajíc"
+          },
+          {
+            "emoji": "🦊",
+            "text": "liška"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-krokodyl",
+      "animalId": "krokodyl",
+      "title": "Krokodýl u zubaře",
+      "tier": 2,
+      "sentences": [
+        "Krokodýla bolel zub.",
+        "Bál se ho ukázat.",
+        "Ptáček mu dodal odvahu.",
+        "Krokodýl otevřel velkou tlamu.",
+        "Ptáček zoubek vyčistil.",
+        "Bolest byla hned pryč.",
+        "Krokodýl slíbil čistit zuby.",
+        "Každé ráno i večer."
+      ],
+      "question": {
+        "text": "Co krokodýla bolelo?",
+        "options": [
+          {
+            "emoji": "🦷",
+            "text": "zub"
+          },
+          {
+            "emoji": "👂",
+            "text": "ucho"
+          },
+          {
+            "emoji": "🦵",
+            "text": "noha"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-panda",
+      "animalId": "panda",
+      "title": "Panda a sněhulák",
+      "tier": 2,
+      "sentences": [
+        "V horách napadl sníh.",
+        "Panda viděla sníh poprvé.",
+        "Válela se v závějích.",
+        "Postavila velkou kouli.",
+        "Pak druhou a třetí.",
+        "Vznikl krásný sněhulák.",
+        "Místo nosu měl bambus.",
+        "Panda ho hrdě ukázala mámě."
+      ],
+      "question": {
+        "text": "Co měl sněhulák místo nosu?",
+        "options": [
+          {
+            "emoji": "🎋",
+            "text": "bambus"
+          },
+          {
+            "emoji": "🥕",
+            "text": "mrkev"
+          },
+          {
+            "emoji": "🌰",
+            "text": "šišku"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-klokan",
+      "animalId": "klokan",
+      "title": "Klokan a kapsa",
+      "tier": 2,
+      "sentences": [
+        "Klokaní máma měla kapsu.",
+        "Malý klokan v ní bydlel.",
+        "Jednou vyskočil ven.",
+        "Zkusil první malý skok.",
+        "Pak skočil přes kámen.",
+        "Pak přes celý potok.",
+        "Večer se vrátil k mámě.",
+        "V kapse je přece nejlíp."
+      ],
+      "question": {
+        "text": "Kde malý klokan bydlel?",
+        "options": [
+          {
+            "emoji": "👝",
+            "text": "v kapse"
+          },
+          {
+            "emoji": "🛏️",
+            "text": "v postýlce"
+          },
+          {
+            "emoji": "🕳️",
+            "text": "v noře"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-koala",
+      "animalId": "koala",
+      "title": "Koala a nový strom",
+      "tier": 2,
+      "sentences": [
+        "Koala snědla všechno listí.",
+        "Strom byl úplně holý.",
+        "Musela najít nový.",
+        "Lezla pomalu dolů.",
+        "Přešla přes celou louku.",
+        "Našla krásný nový strom.",
+        "Vylezla do jeho koruny.",
+        "Usnula s plným bříškem."
+      ],
+      "question": {
+        "text": "Proč koala hledala nový strom?",
+        "options": [
+          {
+            "emoji": "🍃",
+            "text": "snědla všechno listí"
+          },
+          {
+            "emoji": "🌧️",
+            "text": "pršelo"
+          },
+          {
+            "emoji": "🔥",
+            "text": "bylo horko"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-beruska",
+      "animalId": "beruska",
+      "title": "Beruška a deštík",
+      "tier": 2,
+      "sentences": [
+        "Beruška letěla na louku.",
+        "Najednou začalo pršet.",
+        "Kapky byly veliké.",
+        "Schovala se pod hřib.",
+        "Pod hřibem seděl mravenec.",
+        "Déšť přečkali spolu.",
+        "Pak vysvitlo sluníčko.",
+        "Na obloze zářila duha."
+      ],
+      "question": {
+        "text": "Kam se beruška schovala?",
+        "options": [
+          {
+            "emoji": "🍄",
+            "text": "pod hřib"
+          },
+          {
+            "emoji": "🍃",
+            "text": "pod list"
+          },
+          {
+            "emoji": "🪨",
+            "text": "pod kámen"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-snek",
+      "animalId": "snek",
+      "title": "Šnek a jahoda",
+      "tier": 2,
+      "sentences": [
+        "Šnek se probudil po dešti.",
+        "Celá zahrada voněla.",
+        "Vydal se za vůní jahod.",
+        "Cesta trvala celý den.",
+        "Večer k jahodě dolezl.",
+        "Byla sladká a šťavnatá.",
+        "Kousek nechal berušce.",
+        "Spokojeně usnul v trávě."
+      ],
+      "question": {
+        "text": "Komu šnek nechal kousek jahody?",
+        "options": [
+          {
+            "emoji": "🐞",
+            "text": "berušce"
+          },
+          {
+            "emoji": "🐜",
+            "text": "mravenci"
+          },
+          {
+            "emoji": "🐛",
+            "text": "housence"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-kun",
+      "animalId": "kun",
+      "title": "Kůň a malý jezdec",
+      "tier": 2,
+      "sentences": [
+        "Tomík se učil jezdit.",
+        "Kůň stál klidně.",
+        "Tomík se vyhoupl do sedla.",
+        "Kůň šel pomalým krokem.",
+        "Pak zkusili rychlý klus.",
+        "Tomík se držel pevně.",
+        "Objeli celou louku.",
+        "Kůň dostal sladkou mrkev."
+      ],
+      "question": {
+        "text": "Co kůň dostal za odměnu?",
+        "options": [
+          {
+            "emoji": "🥕",
+            "text": "mrkev"
+          },
+          {
+            "emoji": "🍬",
+            "text": "bonbón"
+          },
+          {
+            "emoji": "🥖",
+            "text": "rohlík"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-kure",
+      "animalId": "kure",
+      "title": "Kuře se učí zobat",
+      "tier": 2,
+      "sentences": [
+        "Kuře se učilo zobat.",
+        "Máma ukázala zrníčko.",
+        "Kuře kloflo vedle.",
+        "Zkusilo to znovu.",
+        "A zase klovlo vedle.",
+        "Potřetí zrnko trefilo.",
+        "Pípalo samou radostí.",
+        "Máma ho pochválila."
+      ],
+      "question": {
+        "text": "Co se kuře učilo?",
+        "options": [
+          {
+            "emoji": "🌾",
+            "text": "zobat"
+          },
+          {
+            "emoji": "🏊",
+            "text": "plavat"
+          },
+          {
+            "emoji": "🎶",
+            "text": "zpívat"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-vlk",
+      "animalId": "vlk",
+      "title": "Vlček se učí výt",
+      "tier": 2,
+      "sentences": [
+        "Malý vlček se učil výt.",
+        "Vyšel na vysoký kopec.",
+        "Zkusil první zavytí.",
+        "Znělo jako pískání.",
+        "Táta vlk mu ukázal jak.",
+        "Vlček to zkusil znovu.",
+        "Tentokrát zavyl krásně.",
+        "Celá smečka mu odpověděla."
+      ],
+      "question": {
+        "text": "Co se vlček učil?",
+        "options": [
+          {
+            "emoji": "🌕",
+            "text": "výt"
+          },
+          {
+            "emoji": "🏃",
+            "text": "běhat"
+          },
+          {
+            "emoji": "🕳️",
+            "text": "kopat noru"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-kralik",
+      "animalId": "kralik",
+      "title": "Králík a nová nora",
+      "tier": 2,
+      "sentences": [
+        "Králíků bylo v noře moc.",
+        "Malý králík kopal novou.",
+        "Hlína létala na všechny strany.",
+        "Vykopal chodbu i pokojíček.",
+        "Vystlal ho suchou trávou.",
+        "Pozval sourozence na návštěvu.",
+        "Všem se nora líbila.",
+        "Usnuli v ní jako dudci."
+      ],
+      "question": {
+        "text": "Co králík vykopal?",
+        "options": [
+          {
+            "emoji": "🕳️",
+            "text": "novou noru"
+          },
+          {
+            "emoji": "🏰",
+            "text": "hrad"
+          },
+          {
+            "emoji": "🏊",
+            "text": "bazén"
+          }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "id": "story2-lev",
+      "animalId": "lev",
+      "title": "Lvíče a ozvěna",
+      "tier": 2,
+      "sentences": [
+        "Lvíče zařvalo do údolí.",
+        "Něco zařvalo zpátky.",
+        "Lvíče se polekalo.",
+        "Uteklo rychle za mámou.",
+        "Máma se jen usmála.",
+        "To byla přece ozvěna.",
+        "Lvíče zkusilo řvát znovu.",
+        "S ozvěnou si povídalo do večera."
+      ],
+      "question": {
+        "text": "Kdo odpovídal lvíčeti?",
+        "options": [
+          {
+            "emoji": "🗣️",
+            "text": "ozvěna"
+          },
+          {
+            "emoji": "🐯",
+            "text": "tygr"
+          },
+          {
+            "emoji": "🦜",
+            "text": "papoušek"
+          }
+        ],
+        "correct": 0
+      }
+    }
+  ]
+}

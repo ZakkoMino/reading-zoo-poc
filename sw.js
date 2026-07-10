@@ -11,7 +11,7 @@
  *
  * Bump VERSION on releases that should force a clean re-cache.
  */
-const VERSION = 'reading-zoo-v2';
+const VERSION = 'reading-zoo-v3';
 
 const CORE = [
   './',
@@ -27,7 +27,7 @@ const CORE = [
   './js/app.js',
   './data/content/curriculum_v2.json',
   './data/content/animals_50_seed.json',
-  './data/content/stories_25.json',
+  './data/content/stories.json',
   './assets/icons/icon-192.png',
   './assets/icons/icon-512.png'
 ];
