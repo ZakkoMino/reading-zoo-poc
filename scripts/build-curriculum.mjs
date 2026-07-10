@@ -8,7 +8,7 @@
 //
 // Outputs:
 //   data/content/curriculum_v2.json  — 8 levels with items
-//   data/content/stories_25.json     — mini stories (level 8)
+//   data/content/stories.json        — stories with questions (level 8)
 //
 // Reads: data/content/animals_50_seed.json   (V1 sentences, animal ids)
 //        data/content/vocabulary_200_seed.json (thematic sentences w/ categories)
@@ -18,6 +18,7 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { STORIES, STORIES_LONG } from './content-stories.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (p) => JSON.parse(readFileSync(join(ROOT, p), 'utf8'));
@@ -291,34 +292,7 @@ const THEMED_EXTRA = {
   ]
 };
 
-/* ---------- batch D: mini stories ---------- */
-const STORIES = [
-  ['pes', 'Pes hlídá', ['Pes hlídá celý dům.', 'V noci slyší šramot.', 'Hlasitě zaštěká.', 'A zloděj rychle uteče.']],
-  ['kocka', 'Kočka a klubíčko', ['Kočka našla klubíčko vlny.', 'Hrála si s ním celé ráno.', 'Vlna se celá zamotala.', 'Kočka usnula v klubíčku.']],
-  ['liska', 'Liška a kos', ['Liška měla velký hlad.', 'Šla tiše tmavým lesem.', 'Kos ji uviděl a zapískal.', 'Všechna zvířata se schovala.']],
-  ['jezek', 'Ježek a jablko', ['Ježek našel velké jablko.', 'Chtěl ho donést domů.', 'Jablko mu spadlo na bodliny.', 'A tak ho odnesl celé.']],
-  ['sova', 'Moudrá sova', ['Zvířata se v noci bála.', 'Sova houkala ze stromu.', 'Já všechno vidím, řekla.', 'A zvířata klidně spala.']],
-  ['zaba', 'Žába a moucha', ['Žába seděla u rybníka.', 'Kolem letěla velká moucha.', 'Žába vymrštila dlouhý jazyk.', 'A moucha byla pryč.']],
-  ['medved', 'Medvěd a med', ['Medvěd hledal sladký med.', 'Vylezl na vysoký strom.', 'Včely se moc zlobily.', 'Medvěd utekl až k řece.']],
-  ['mys', 'Myš a sýr', ['Myš ucítila voňavý sýr.', 'Tiše běžela přes kuchyň.', 'Kousek sýra si odnesla.', 'Doma se rozdělila s mláďaty.']],
-  ['slon', 'Slon se koupe', ['Slonovi bylo velké horko.', 'Šel k široké řece.', 'Chobotem se celý postříkal.', 'A pak vesele troubil.']],
-  ['zirafa', 'Žirafa pomáhá', ['Opice nedosáhla na banán.', 'Žirafa natáhla dlouhý krk.', 'Banán utrhla a podala.', 'Opice se radostí roztančila.']],
-  ['opice', 'Opice a zrcadlo', ['Opice našla malé zrcadlo.', 'Uviděla v něm jinou opici.', 'Dělala na ni grimasy.', 'Pak se tomu sama smála.']],
-  ['tucnak', 'Tučňák a led', ['Tučňák stál na ledu.', 'Led mu klouzal pod nohama.', 'Spadl na bříško a jel.', 'Klouzání ho moc bavilo.']],
-  ['delfin', 'Delfín a loď', ['Delfín plaval u lodi.', 'Děti na něj mávaly.', 'Vyskočil vysoko nad vlny.', 'Děti křičely radostí.']],
-  ['zelva', 'Pomalá želva', ['Želva šla na louku.', 'Cesta trvala celý den.', 'Nikam nespěchám, řekla si.', 'Domeček nese pořád s sebou.']],
-  ['krokodyl', 'Krokodýl a zuby', ['Krokodýl má mnoho zubů.', 'Ráno si je čistí.', 'Pomáhá mu malý ptáček.', 'Krokodýl mu nikdy neublíží.']],
-  ['panda', 'Panda a bambus', ['Panda snědla celý bambus.', 'Bříško měla úplně kulaté.', 'Lehla si do trávy.', 'A spokojeně usnula.']],
-  ['klokan', 'Klokan závodí', ['Klokan skákal přes louku.', 'Závodil se svým stínem.', 'Skočil daleko přes potok.', 'Vyhrál a zamával ocasem.']],
-  ['koala', 'Ospalá koala', ['Koala spala na stromě.', 'Probudila ji malá moucha.', 'Snědla pár lístků.', 'A zase klidně usnula.']],
-  ['beruska', 'Beruška a tečky', ['Beruška počítala své tečky.', 'Jedna, dvě, tři, čtyři.', 'Sedm teček, radovala se.', 'Pak odletěla na květinu.']],
-  ['snek', 'Šnek na výletě', ['Šnek se vydal na výlet.', 'Lezl pomalu po listu.', 'Večer dolezl na konec.', 'Domeček měl pořád s sebou.']],
-  ['kun', 'Kůň a ohrada', ['Kůň cválal po louce.', 'Před ním stála ohrada.', 'Rozběhl se a skočil.', 'Letěl vzduchem jako pták.']],
-  ['kure', 'Ztracené kuře', ['Kuře se ztratilo mámě.', 'Pípalo na celý dvůr.', 'Slepice ho rychle našla.', 'Schovala ho pod křídlo.']],
-  ['vlk', 'Vlk a měsíc', ['Vlk seděl na kopci.', 'Na nebi svítil měsíc.', 'Vlk dlouze zavyl.', 'Z lesa mu odpověděla smečka.']],
-  ['kralik', 'Králík a mrkev', ['Králík našel velkou mrkev.', 'Byla větší než on.', 'Tahal ji celé odpoledne.', 'Večer ji snědli všichni společně.']],
-  ['lev', 'Lev má svátek', ['Lev měl velký svátek.', 'Přišla zvířata z celé savany.', 'Zpívala mu a tančila.', 'Lev spokojeně předl jako kočka.']]
-];
+/* ---------- batches D + F: stories (see scripts/content-stories.mjs) ---------- */
 
 /* ---------- build ---------- */
 function main() {
@@ -332,8 +306,21 @@ function main() {
   for (const id of Object.keys(SENTENCES)) {
     if (!byId.has(id)) throw new Error(`SENTENCES: neznámé zvíře "${id}"`);
   }
-  for (const [id] of STORIES) {
+  for (const [id] of [...STORIES, ...STORIES_LONG]) {
     if (!byId.has(id)) throw new Error(`STORIES: neznámé zvíře "${id}"`);
+  }
+  // every animal must have exactly one tier-1 story
+  const tier1Ids = STORIES.map(([id]) => id);
+  if (new Set(tier1Ids).size !== tier1Ids.length) throw new Error('STORIES: duplicitní zvíře');
+  const noStory = animalsDoc.animals.filter((a) => !tier1Ids.includes(a.id));
+  if (noStory.length) throw new Error('Chybí příběh pro: ' + noStory.map((a) => a.id).join(', '));
+  for (const [id, , sentences, q] of STORIES) {
+    if (sentences.length < 4 || sentences.length > 6) throw new Error(`STORIES ${id}: ${sentences.length} vět (má být 4–6)`);
+    if (!q || q.length !== 4) throw new Error(`STORIES ${id}: otázka musí mít text + 3 možnosti`);
+  }
+  for (const [id, , sentences, q] of STORIES_LONG) {
+    if (sentences.length < 7 || sentences.length > 9) throw new Error(`STORIES_LONG ${id}: ${sentences.length} vět (má být 7–9)`);
+    if (!q || q.length !== 4) throw new Error(`STORIES_LONG ${id}: otázka musí mít text + 3 možnosti`);
   }
   const missing = animalsDoc.animals.filter((a) => !SENTENCES[a.id]);
   if (missing.length) throw new Error('Chybí věty pro: ' + missing.map((a) => a.id).join(', '));
@@ -434,18 +421,29 @@ function main() {
     ]
   };
 
+  // Option strings are "<emoji> <label>"; correct answer is index 0 in the
+  // data, the app shuffles the display order.
+  const parseOption = (o) => {
+    const i = o.indexOf(' ');
+    return { emoji: o.slice(0, i), text: o.slice(i + 1) };
+  };
+  const storyObj = (idPrefix, tier) => ([animalId, title, sentences, q]) => ({
+    id: `${idPrefix}-${animalId}`, animalId, title, tier, sentences,
+    question: { text: q[0], options: q.slice(1).map(parseOption), correct: 0 }
+  });
   const stories = {
-    schema: 'reading-zoo.stories.v1',
-    version: '1.0.0',
+    schema: 'reading-zoo.stories.v2',
+    version: '2.0.0',
     language: 'cs-CZ',
-    count: STORIES.length,
-    stories: STORIES.map(([animalId, title, sentences]) => ({
-      id: `story-${animalId}`, animalId, title, sentences
-    }))
+    count: STORIES.length + STORIES_LONG.length,
+    stories: [
+      ...STORIES.map(storyObj('story', 1)),
+      ...STORIES_LONG.map(storyObj('story2', 2))
+    ]
   };
 
   writeFileSync(join(ROOT, 'data/content/curriculum_v2.json'), JSON.stringify(curriculum, null, 2) + '\n');
-  writeFileSync(join(ROOT, 'data/content/stories_25.json'), JSON.stringify(stories, null, 2) + '\n');
+  writeFileSync(join(ROOT, 'data/content/stories.json'), JSON.stringify(stories, null, 2) + '\n');
 
   const counts = curriculum.levels.map((l) => `${l.id}:${l.items.length}`).join('  ');
   const total = curriculum.levels.reduce((n, l) => n + l.items.length, 0);

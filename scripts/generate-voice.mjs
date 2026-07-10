@@ -108,6 +108,7 @@ function collectTexts() {
   texts.add('Tahle úroveň se teprve odemkne. Splň Velkou výzvu!');
   texts.add('Výborně! Přečetl jsi celý příběh.');
   texts.add('Toto zvíře ještě nemáš.');
+  texts.add('Tenhle příběh se odemkne za tři hvězdy.');
 
   return [...texts];
 }

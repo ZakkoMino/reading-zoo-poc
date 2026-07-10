@@ -73,13 +73,14 @@ Pak v prohlížeči otevři <http://localhost:8000>.
 | Funkce | Stav |
 |---|---|
 | Onboarding s výběrem úrovně (a tématu u vět) | ✅ |
-| 8 úrovní (písmena → slabiky → slova → věty → příběhy), 858 položek | ✅ |
+| 8 úrovní (písmena → slabiky → slova → věty → příběhy), 858 položek + 107 příběhů | ✅ |
 | Témata vět (Mazlíčci, Jídlo, Pohádky…) s ≥15 větami na obou větných úrovních | ✅ |
 | Zamčené úrovně + zasloužený postup přes Velkou výzvu (8 z 8) + odznaky | ✅ |
 | Pevná délka lekce 8 úkolů (bez výběru — stejně jako Velká výzva) | ✅ |
 | 6 typů úkolů (čtení, spoj s obrázkem, slož slovo/větu, doplň písmeno, obtahování, najdi zvíře od písmene) | ✅ |
 | Věty „zvíře na konci“ pro úkol spoj s obrázkem (nutí číst celou větu) | ✅ |
-| 25 mini příběhů odemykaných vlastnictvím zvířete | ✅ |
+| 107 příběhů: krátký pro každé z 82 zvířat + 25 delších za 3 ★ | ✅ |
+| Otázka na porozumění po každém příběhu — správná odpověď přidá hvězdu | ✅ |
 | Pestré střídání úkolů, žádný stejný dvakrát po sobě | ✅ |
 | Bez opakování slov/vět v rámci sezení (dokud úroveň nabízí nová) | ✅ |
 | 82 zvířat s ilustracemi Microsoft Fluent Emoji 3D (assets/animals-3d/, MIT) | ✅ |
@@ -110,7 +111,8 @@ reading-zoo-prototype/
 │   ├── animals-illustrated/*.svg  # 50 generovaných SVG (archiv, nahrazeno)
 │   └── animals-3d/*.png    # 50 ilustrací Microsoft Fluent Emoji 3D (MIT)
 ├── data/content/
-│   ├── animals_50_seed.json   # manifest 50 zvířat
+│   ├── animals_50_seed.json   # manifest 82 zvířat
+│   ├── stories.json           # 107 příběhů s otázkami
 │   ├── animals_50_seed.csv    # CSV export
 │   └── animals_50.schema.json # JSON Schema
 ├── scripts/

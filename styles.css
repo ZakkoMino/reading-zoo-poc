@@ -770,6 +770,47 @@ h2 { font-size: 22px; margin-top: 14px; }
 .story-tile-locked img { filter: grayscale(1) opacity(.35); }
 .story-title { display: block; font-weight: 800; font-size: 17px; }
 .story-state { display: block; margin-top: 4px; color: var(--text-light); font-size: 14px; }
+.story-section-title {
+  margin: 26px 0 4px;
+  font-size: 20px;
+}
+
+/* Comprehension question at the end of a story */
+.story-question-text { font-size: 30px; }
+.story-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+.story-option {
+  background: var(--surface);
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 8px;
+  cursor: pointer;
+  font: inherit;
+  text-align: center;
+  transition: transform .1s, border-color .15s, background .15s;
+}
+.story-option:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--secondary);
+}
+.story-option:disabled { cursor: not-allowed; }
+.story-option-emoji { display: block; font-size: 44px; line-height: 1.2; }
+.story-option-label { display: block; margin-top: 6px; font-weight: 700; }
+.story-option.option-correct {
+  border-color: var(--success);
+  background: #E8F8E9;
+  animation: pop .35s ease;
+}
+.story-option.option-wrong {
+  border-color: var(--danger);
+  background: #FDE8E8;
+  opacity: .65;
+}
+
 .story-card {
   background: var(--surface);
   border: 2px solid var(--border);

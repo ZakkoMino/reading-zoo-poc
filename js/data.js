@@ -194,7 +194,7 @@
       const [curriculum, animalsDoc, storiesDoc] = await Promise.all([
         fetchJSON('data/content/curriculum_v2.json'),
         fetchJSON('data/content/animals_50_seed.json'),
-        fetchJSON('data/content/stories_25.json')
+        fetchJSON('data/content/stories.json')
       ]);
       const animals = (animalsDoc.animals || []).map((a) => ({
         id: a.id, name: a.name, fact: a.fact, imagePath: a.imagePath
