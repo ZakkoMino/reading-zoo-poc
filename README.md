@@ -177,6 +177,25 @@ Každá lekce, která obsahuje vhodná slova/věty, nově garantuje alespoň
 jeden úkol **„Slož celé slovo z písmen“** nebo u vět **„Slož větu ze slov“**,
 aby se nepletlo se samotným doplňováním jednoho písmene.
 
+### Mírnější mix úkolů u vět
+
+Skládání celé věty z písmen je nejnáročnější úkol v aplikaci a doplnění
+chybějícího písmene ve větě není daleko za ním. U úrovní **Krátké věty**
+a **Dlouhé věty** proto plánovač lekci drží převážně u čtení:
+
+* **max 1 skládání věty** na lekci (2 jen v lekci dvojnásobné délky),
+* **max třetina úkolů** je náročná (skládání nebo doplňování), zároveň
+  ale **aspoň jeden** takový úkol v lekci je,
+* **nikdy dva náročné úkoly za sebou**,
+* samotné **čtení se smí opakovat po sobě** — je to záměrná výplň mezi
+  náročnými úkoly.
+
+Typická lekce pak vypadá `čtení → doplň písmeno → čtení → slož větu →
+čtení → čtení → doplň písmeno → čtení`, tedy asi 5 z 8 úkolů je čisté
+čtení. U dlouhých vět (4–6 slov) se skládání nenabízí vůbec, protože
+skládací obrazovka zvládá nejvýš 3 slova. Úrovně s písmeny, slabikami
+a slovy mají mix beze změny — tam jsou úkoly krátké.
+
 Úkol skládání nyní nejdřív cílové slovo/větu přečte nahlas přes Web Speech API
 a až potom dítě skládá. Samostatný úkol **„Přečti“** naopak zůstává bez
 předčítání, aby dítě skutečně četlo samo.

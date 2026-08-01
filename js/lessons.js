@@ -3,7 +3,7 @@
  * Inputs : a level id + how many tasks to run.
  * Output : an ordered list of { item, type } steps for views.js to execute.
  *
- * Three small rules drive the planner:
+ * Four small rules drive the planner:
  *   1. Pick items weighted toward those with a low knowledge score. The
  *      mapping is `weight = 1 + (SCORE_MAX - score)`, so a never-seen item
  *      with score 0 is six times more likely than a mastered item with score
@@ -14,6 +14,8 @@
  *   3. Never use the same task type twice in a row, so the lesson feels
  *      varied. If the only allowed type for an item matches the previous
  *      one we let it through rather than skipping the item.
+ *   4. Sentence levels get a gentler task mix: mostly plain reading with a
+ *      few effortful steps sprinkled in (see pickSentenceType).
  *
  * A small `pickReward(plan)` helper picks the animal handed out at the end
  * of the lesson — preferring something that appeared in the lesson and
@@ -21,7 +23,7 @@
  */
 (function () {
   const App = window.App || (window.App = {});
-  const { getLevel, getAnimal, ANIMALS, getTheme, levelHasThemes } = App.data;
+  const { getLevel, getAnimal, ANIMALS, getTheme, levelHasThemes, LESSON_LENGTH } = App.data;
   const { SCORE_MAX, scoreOf, get, starsOf, STAR_MAX } = App.state;
 
   function weightedPick(items) {
@@ -120,6 +122,67 @@
     return types;
   }
 
+  /* ---------- task type mix ----------
+   *
+   * Sentence levels only (feedback 2026-08): building a whole sentence out
+   * of letter tiles is the hardest thing the app asks for, and filling in a
+   * missing letter is not far behind. Stacking them turns a lesson into
+   * homework — on long sentences the old rules were the worst case, because
+   * with only `read`/`fill` available the "no same type twice in a row" rule
+   * forced a strict read/fill alternation (4 fills out of 8 steps).
+   *
+   * So on sentence levels four extra rules apply:
+   *   a) at most ONE compose step per lesson (two only in a lesson twice the
+   *      normal length),
+   *   b) at most a third of the steps are effortful (compose or fill),
+   *   c) never two effortful steps back to back,
+   *   d) plain reading MAY repeat back to back — it is the intended filler
+   *      between the effortful steps, so a typical lesson reads
+   *      read → fill → read → compose → read → read → fill → read.
+   * Word, syllable and letter levels keep the original uniform mix; the
+   * tasks there are short enough that nobody complained.
+   */
+  const EFFORTFUL = new Set(['compose', 'fill']);
+  const SENTENCE_WEIGHT = { read: 3, match: 2, fill: 1, compose: 1 };
+
+  function sentenceLimits(count) {
+    return {
+      compose: count >= 2 * LESSON_LENGTH ? 2 : 1,
+      effortful: Math.max(1, Math.round(count / 3))
+    };
+  }
+
+  function weightedChoice(pool, weights) {
+    const w = pool.map((t) => weights[t] || 1);
+    const total = w.reduce((a, b) => a + b, 0);
+    let r = Math.random() * total;
+    for (let i = 0; i < pool.length; i++) {
+      r -= w[i];
+      if (r <= 0) return pool[i];
+    }
+    return pool[pool.length - 1];
+  }
+
+  function pickVariedType(allowed, prev) {
+    const filtered = prev ? allowed.filter((t) => t !== prev) : allowed;
+    const pool = filtered.length ? filtered : allowed;
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+
+  function pickSentenceType(allowed, prev, used, limits) {
+    // rule (d): reading may repeat, every other type keeps rule 3
+    let pool = allowed.filter((t) => t === 'read' || t !== prev);
+    // rule (a)
+    if (used.compose >= limits.compose) pool = pool.filter((t) => t !== 'compose');
+    // rules (b) + (c) — drop the effortful types, but never empty the pool
+    if (used.effortful >= limits.effortful || EFFORTFUL.has(prev)) {
+      const easy = pool.filter((t) => !EFFORTFUL.has(t));
+      if (easy.length) pool = easy;
+    }
+    if (!pool.length) pool = allowed.includes('read') ? ['read'] : allowed;
+    return weightedChoice(pool, SENTENCE_WEIGHT);
+  }
+
   /* If the level supports themes and the user picked a non-mix theme,
    * narrow the item pool to that theme's categories. Empty result falls
    * back to the full pool so the lesson never crashes on a stale theme. */
@@ -136,14 +199,21 @@
 
   function buildPlanFromLevel(level, count) {
     const kind = level.kind || 'word';
+    const isSentenceLevel = kind === 'sentence';
+    const limits = sentenceLimits(count);
+    const used = { compose: 0, effortful: 0 };
     const items = pickItems(level, count);
     const plan = [];
     let prev = null;
     for (const item of items) {
-      let allowed = allowedTasksFor(item, kind);
-      const filtered = prev ? allowed.filter((t) => t !== prev) : allowed;
-      const choices = filtered.length ? filtered : allowed;
-      const type = choices[Math.floor(Math.random() * choices.length)];
+      const allowed = allowedTasksFor(item, kind);
+      const type = isSentenceLevel
+        ? pickSentenceType(allowed, prev, used, limits)
+        : pickVariedType(allowed, prev);
+      if (EFFORTFUL.has(type)) {
+        used.effortful++;
+        if (type === 'compose') used.compose++;
+      }
       // Copy with the level kind so task renderers can adapt (e.g. syllables
       // are spoken letter-by-letter first, then blended).
       plan.push({ item: Object.assign({ kind }, item), type });
@@ -152,15 +222,39 @@
 
     // UX rule from prototype feedback: if the selected level contains words
     // that can be composed, every lesson should visibly include at least one
-    // full word-building task — not only "fill one missing letter".
+    // full word-building task — not only "fill one missing letter". Combined
+    // with the compose cap above this means sentence lessons get exactly one
+    // (long-sentence levels none — nothing there is composable).
     if (kind !== 'letter' && !plan.some((step) => step.type === 'compose')) {
-      const idx = plan.findIndex((step, i) => {
-        if (!allowedTasksFor(step.item, kind).includes('compose')) return false;
+      const fits = (i) => {
+        if (!allowedTasksFor(plan[i].item, kind).includes('compose')) return false;
         const before = i > 0 ? plan[i - 1].type : null;
         const after = i < plan.length - 1 ? plan[i + 1].type : null;
-        return before !== 'compose' && after !== 'compose';
-      });
+        // On sentence levels rule (c) applies to the injected step too.
+        const clashes = isSentenceLevel
+          ? (t) => t !== null && EFFORTFUL.has(t)
+          : (t) => t === 'compose';
+        return !clashes(before) && !clashes(after);
+      };
+      // Prefer turning a fill into the compose on sentence levels: the lesson
+      // then keeps the same number of effortful steps instead of gaining one.
+      let idx = isSentenceLevel
+        ? plan.findIndex((step, i) => step.type === 'fill' && fits(i))
+        : -1;
+      if (idx === -1) idx = plan.findIndex((step, i) => fits(i));
       if (idx !== -1) plan[idx].type = 'compose';
+    }
+
+    // The flip side of the caps above: a sentence lesson that came out as
+    // pure reading has no practice in it. Long-sentence levels hit this the
+    // most — nothing there is composable, so the block above cannot help.
+    // Turn one step into a single-letter fill, never the opening one, so the
+    // lesson still starts with plain reading.
+    if (isSentenceLevel && !plan.some((step) => EFFORTFUL.has(step.type))) {
+      const idx = plan.findIndex(
+        (step, i) => i > 0 && allowedTasksFor(step.item, kind).includes('fill')
+      );
+      if (idx !== -1) plan[idx].type = 'fill';
     }
 
     // Remember what this lesson used so the next one avoids it (see
