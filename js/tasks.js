@@ -15,7 +15,7 @@
  */
 (function () {
   const App = window.App || (window.App = {});
-  const { ANIMALS, animalImg, getAnimal } = App.data;
+  const { ANIMALS, animalImg, getAnimal, COMPOSE_MAX_WORDS } = App.data;
   const { speak, speakAndWait } = App.speech;
 
   /* ---------- tiny DOM helpers ---------- */
@@ -328,8 +328,10 @@
         letters: raw.replace(/[^a-záčďéěíňóřšťúůýžA-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]/g, '').toLowerCase()
       })).filter((w) => w.letters.length > 0);
 
-      // Only handle 2–3 word sentences; longer ones shown read-only
-      if (wordData.length < 2 || wordData.length > 3) {
+      // Only handle 2..COMPOSE_MAX_WORDS word sentences; longer ones are
+      // shown read-only. The planner uses the same constant, so this branch
+      // is a safety net, not a normal path.
+      if (wordData.length < 2 || wordData.length > COMPOSE_MAX_WORDS) {
         const card = el('div', { class: 'task task-compose' }, [
           el('p', { class: 'task-prompt', text: 'Přečti větu:' }),
           el('div', { class: 'big-word', text: target, lang: 'cs' }),

@@ -24,7 +24,7 @@
  */
 (function () {
   const App = window.App || (window.App = {});
-  const { getLevel, getAnimal, ANIMALS, getTheme, levelHasThemes } = App.data;
+  const { getLevel, getAnimal, ANIMALS, getTheme, levelHasThemes, COMPOSE_MAX_WORDS } = App.data;
   const { SCORE_MAX, scoreOf, get, starsOf, STAR_MAX } = App.state;
 
   function weightedPick(items) {
@@ -109,11 +109,13 @@
 
     const isSentence = kind === 'sentence' || / |\./.test(text);
     if (isSentence) {
-      // The compose UI handles at most 3 words; longer sentences would fall
-      // into a tap-through screen that isn't a real task, so they only get
-      // genuine task types.
+      // The compose UI handles at most COMPOSE_MAX_WORDS words; longer
+      // sentences would fall into a tap-through screen that isn't a real
+      // task, so they only get genuine task types.
       const wordCount = text.trim().split(/\s+/).length;
-      const types = wordCount <= 3 ? ['read', 'compose', 'fill'] : ['read', 'fill'];
+      const types = wordCount <= COMPOSE_MAX_WORDS
+        ? ['read', 'compose', 'fill']
+        : ['read', 'fill'];
       if (item.animalId) types.push('match');
       return types;
     }
@@ -125,8 +127,8 @@
 
   /* Skládání celé věty z písmen (compose nad větou) je nejdelší a
    * nejnáročnější úkol v aplikaci — dítě hláskuje každé slovo věty zvlášť.
-   * Dlouhé věty (4+ slov) ho nedostanou vůbec: compose UI zvládne jen 2–3
-   * slova, takže je allowedTasksFor u delších vět nenabízí. U krátkých vět
+   * Dlouhé věty ho nedostanou vůbec: skládačka zvládne jen COMPOSE_MAX_WORDS
+   * slov, takže je allowedTasksFor u delších vět nenabízí. U krátkých vět
    * ho nabízí, ale dvě tři taková skládání v jedné lekci působila jako
    * dřina — proto stejný strop: nejvýš jedno na lekci. */
   const MAX_SENTENCE_COMPOSE = 1;

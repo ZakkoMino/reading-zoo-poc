@@ -97,6 +97,14 @@
    * Velká výzva, so the challenge feels like a normal lesson. */
   const LESSON_LENGTH = 8;
 
+  /* Kolik slov zvládne skládačka věty z písmen (composeSentence v tasks.js).
+   * Delší věty by se do řady slotů na dětský tablet nevešly. Sdílená
+   * konstanta schválně: plánovač (allowedTasksFor v lessons.js) podle ní
+   * skládačku u delších vět vůbec nenabízí a renderer podle ní pozná, že
+   * má větu jen přečíst — kdyby se čísla rozešla, spadla by lekce na
+   * proklikávací obrazovku, která není skutečný úkol. */
+  const COMPOSE_MAX_WORDS = 3;
+
   /* Themes apply only to sentence levels — they filter the lesson pool by
    * the item's `category` field (preserved from the thematic seed
    * sentences). Mix means no filter. */
@@ -222,6 +230,7 @@
     STORIES,
     LEVEL_ORDER,
     LESSON_LENGTH,
+    COMPOSE_MAX_WORDS,
     SENTENCE_THEMES,
     animalImg,
     getLevel,
