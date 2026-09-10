@@ -14,6 +14,9 @@
  *   3. Never use the same task type twice in a row, so the lesson feels
  *      varied. If the only allowed type for an item matches the previous
  *      one we let it through rather than skipping the item.
+ *   4. At most one whole-sentence letter-composition per lesson — see
+ *      MAX_SENTENCE_COMPOSE. It is the longest task in the app, and long
+ *      sentences already never get it (the compose UI stops at 3 words).
  *
  * A small `pickReward(plan)` helper picks the animal handed out at the end
  * of the lesson — preferring something that appeared in the lesson and
@@ -120,6 +123,21 @@
     return types;
   }
 
+  /* Skládání celé věty z písmen (compose nad větou) je nejdelší a
+   * nejnáročnější úkol v aplikaci — dítě hláskuje každé slovo věty zvlášť.
+   * Dlouhé věty (4+ slov) ho nedostanou vůbec: compose UI zvládne jen 2–3
+   * slova, takže je allowedTasksFor u delších vět nenabízí. U krátkých vět
+   * ho nabízí, ale dvě tři taková skládání v jedné lekci působila jako
+   * dřina — proto stejný strop: nejvýš jedno na lekci. */
+  const MAX_SENTENCE_COMPOSE = 1;
+
+  /* Věta pro účely compose = text s mezerou, tedy víc slov. Stejná podmínka
+   * jako dispatch v tasks.js: compose() posílá takový text do
+   * composeSentence(), jednoslovné texty do composeWord(). */
+  function isSentenceCompose(item) {
+    return /\s/.test(String(item.text).trim());
+  }
+
   /* If the level supports themes and the user picked a non-mix theme,
    * narrow the item pool to that theme's categories. Empty result falls
    * back to the full pool so the lesson never crashes on a stale theme. */
@@ -139,14 +157,23 @@
     const items = pickItems(level, count);
     const plan = [];
     let prev = null;
+    let sentenceComposes = 0;
     for (const item of items) {
       let allowed = allowedTasksFor(item, kind);
+      // Strop na skládání celých vět (viz MAX_SENTENCE_COMPOSE). Pokud by
+      // po odebrání compose nezbyl žádný typ, necháme ho projít — lekce se
+      // nikdy nesmí zaseknout bez úkolu.
+      if (sentenceComposes >= MAX_SENTENCE_COMPOSE && isSentenceCompose(item)) {
+        const withoutCompose = allowed.filter((t) => t !== 'compose');
+        if (withoutCompose.length) allowed = withoutCompose;
+      }
       const filtered = prev ? allowed.filter((t) => t !== prev) : allowed;
       const choices = filtered.length ? filtered : allowed;
       const type = choices[Math.floor(Math.random() * choices.length)];
       // Copy with the level kind so task renderers can adapt (e.g. syllables
       // are spoken letter-by-letter first, then blended).
       plan.push({ item: Object.assign({ kind }, item), type });
+      if (type === 'compose' && isSentenceCompose(item)) sentenceComposes++;
       prev = type;
     }
 
