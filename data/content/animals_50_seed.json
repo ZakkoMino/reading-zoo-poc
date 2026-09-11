@@ -61,7 +61,7 @@
       "readingLevel": 1,
       "wordDifficulty": 2,
       "sentence": "Sova houkne.",
-      "fact": "Sova vidí dokonale i ve tmě.",
+      "fact": "Sova má velké oči.",
       "tags": [
         "nocni",
         "velke-oci",
@@ -189,7 +189,7 @@
       "readingLevel": 2,
       "wordDifficulty": 4,
       "sentence": "Medvěd spí.",
-      "fact": "Medvěd v zimě hibernuje v brlohů.",
+      "fact": "Medvěd odpočívá v brlohu.",
       "tags": [
         "velky",
         "hnedy",
@@ -589,7 +589,7 @@
       "readingLevel": 3,
       "wordDifficulty": 5,
       "sentence": "Velryba plave.",
-      "fact": "Velryba je největší zvíře na Zemi.",
+      "fact": "Velryba žije v moři.",
       "tags": [
         "velka",
         "more",

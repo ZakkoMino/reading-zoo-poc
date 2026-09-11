@@ -26,6 +26,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/*.test.cjs
+      - run: node scripts/validate-animals-50.mjs
       - uses: actions/configure-pages@v5
         with:
           enablement: true

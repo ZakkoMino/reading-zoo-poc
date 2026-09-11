@@ -25,6 +25,7 @@
   </header>
 
   <main id="screen" class="app-main" aria-live="polite"></main>
+  <p id="storage-status" role="alert" class="storage-warning" hidden></p>
 
   <footer class="app-footer">
     Prototyp · ilustrace: <a href="https://github.com/microsoft/fluentui-emoji" rel="noopener">Microsoft Fluent Emoji</a> (MIT) · pokrok se ukládá pouze v prohlížeči
@@ -33,6 +34,7 @@
 
   <!-- Order matters: data → state → speech → lessons → tasks → views → app -->
   <script src="js/data.js"></script>
+  <script src="js/lifecycle.js"></script>
   <script src="js/state.js"></script>
   <script src="js/speech.js"></script>
   <script src="js/lessons.js"></script>
@@ -42,7 +44,7 @@
   <script>
     // PWA: service worker needs a secure origin; file:// double-click mode
     // simply skips it and the app keeps working as before.
-    if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+    if ('serviceWorker' in navigator && (location.protocol === 'https:' || ['localhost', '127.0.0.1'].includes(location.hostname))) {
       navigator.serviceWorker.register('./sw.js').catch(function (err) {
         console.warn('Service worker se nepodařilo zaregistrovat.', err);
       });
