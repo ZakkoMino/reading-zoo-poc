@@ -8,7 +8,7 @@
  * either succeeded, or run out of retries (we don't gate progress on a
  * correct answer — better to keep momentum). Tasks track `tries` internally:
  * a first-attempt success counts as correct, anything beyond that counts as
- * incorrect (which feeds the knowledge score), but the child still moves on.
+ * incorrect (local task feedback only, not a reading grade), but the child still moves on.
  *
  * Tone: never say "wrong" or "špatně". Use gentle hints ("Zkus jinou.") and
  * dim the wrong option instead of removing the child's choice.
@@ -17,6 +17,7 @@
   const App = window.App || (window.App = {});
   const { ANIMALS, animalImg, getAnimal } = App.data;
   const { speak, speakAndWait } = App.speech;
+  const setTimeout = App.lifecycle.later;
 
   /* ---------- tiny DOM helpers ---------- */
   function el(tag, attrs, kids) {
@@ -27,7 +28,7 @@
         else if (k === 'text') n.textContent = attrs[k];
         else if (k === 'html') n.innerHTML = attrs[k];
         else if (k === 'on') {
-          for (const ev in attrs.on) n.addEventListener(ev, attrs.on[ev]);
+          for (const ev in attrs.on) n.addEventListener(ev, App.lifecycle.guard(attrs.on[ev]));
         } else if (k in n) n[k] = attrs[k];
         else n.setAttribute(k, attrs[k]);
       }
@@ -105,17 +106,32 @@
             button.disabled = true;
             button.classList.add('btn-busy');
             btnLabel.textContent = isSentence ? 'Přehrávám větu…' : 'Přehrávám…';
-            speakAndWait(speechTextFor(item)).then(() => resolve({ correct: true }));
+            speakAndWait(speechTextFor(item)).then(App.lifecycle.guard((result) => {
+              if (result.status === 'played') resolve({ correct: true });
+              else {
+                confirmed = false;
+                button.disabled = false;
+                button.classList.remove('btn-busy');
+                btnLabel.textContent = 'Zkusit poslech znovu 🔊';
+                audioHint.textContent = 'Zvuk se nepodařilo přehrát. Zkus to znovu, nebo popros rodiče o přečtení vzoru.';
+                parentButton.hidden = false;
+              }
+            }));
           }
         }
       }, [btnLabel]);
+      const audioHint = el('p', { class: 'task-hint', role: 'status' });
+      const parentButton = el('button', { class: 'btn btn-ghost', hidden: true,
+        on: { click: () => { parentButton.disabled = true; resolve({ correct: true }); } }
+      }, [el('span', { text: 'Vzor přečetl rodič — pokračovat' })]);
 
       const card = el('div', { class: 'task task-read' }, [
         el('p', { class: 'task-prompt', text: 'Přečti ' + unit }),
         el('div', { class: 'big-word', text: item.text, lang: 'cs' }),
         hasAnimal ? el('img', { class: 'task-image', src: animalImg(animal.id), alt: animal.name }) : null,
         el('p', { class: 'task-hint task-hint-soft', text: 'Tady nepředčítám — teď čteš ty.' }),
-        el('div', { class: 'task-actions' }, [button])
+        audioHint,
+        el('div', { class: 'task-actions' }, [button, parentButton])
       ]);
 
       mount.appendChild(card);
@@ -152,6 +168,7 @@
             click: () => {
               if (card.disabled) return;
               if (animal.id === correct.id) {
+                Array.from(grid.children).forEach((c) => { c.disabled = true; });
                 card.classList.add('option-correct');
                 revealLabels();
                 speak(animal.name);
@@ -163,6 +180,7 @@
                 hint.classList.remove('hidden');
                 hint.textContent = 'Zkus jinou.';
                 if (tries >= 2) {
+                  Array.from(grid.children).forEach((c) => { c.disabled = true; });
                   // Highlight the correct one so child sees the answer.
                   Array.from(grid.children).forEach((c) => {
                     if (c.dataset.id === correct.id) c.classList.add('option-correct');
@@ -210,6 +228,7 @@
       const slots = pieces.map(() => null);
       const tileUsed = scrambled.map(() => false);
       let tries = 0;
+      let busy = false;
 
       const slotsRow = el('div', { class: 'slots-row' });
       const tilesRow = el('div', { class: 'tiles-row' });
@@ -237,6 +256,7 @@
             'aria-label': piece ? `Vybráno ${piece}` : 'Prázdné místo',
             on: {
               click: () => {
+                if (busy) return;
                 if (slots[i] != null) {
                   const tileIdx = slots[i + '_tileIdx'];
                   if (tileIdx != null) tileUsed[tileIdx] = false;
@@ -259,7 +279,7 @@
             disabled: tileUsed[i],
             on: {
               click: () => {
-                if (tileUsed[i]) return;
+                if (tileUsed[i] || busy) return;
                 const firstEmpty = slots.findIndex((s) => s == null);
                 if (firstEmpty === -1) return;
                 slots[firstEmpty] = piece;
@@ -275,7 +295,8 @@
       }
 
       function maybeCheck() {
-        if (slots.some((s) => s == null)) return;
+        if (busy || slots.some((s) => s == null)) return;
+        busy = true;
         const assembled = assembledText();
         if (assembled === target) {
           Array.from(slotsRow.children).forEach((c) => c.classList.add('slot-correct'));
@@ -289,6 +310,7 @@
             ? `Správně se píše: ${target}.`
             : 'Zkus to ještě jednou.';
           setTimeout(() => {
+            busy = tries >= 2;
             clearSlots();
             render();
             if (tries >= 2) resolve({ correct: false });
@@ -298,6 +320,10 @@
 
       const card = el('div', { class: 'task task-compose' }, [
         el('p', { class: 'task-prompt', text: 'Nejdřív si poslechni slovo. Potom ho slož z písmen:' }),
+        el('details', { class: 'task-hint' }, [
+          el('summary', { text: 'Není slyšet zvuk? Zobrazit vzor pro rodiče' }),
+          el('p', { text: target, lang: 'cs' })
+        ]),
         el('div', { class: 'task-actions task-actions-compact' }, [
           el('button', {
             class: 'btn btn-secondary btn-icon',
@@ -318,6 +344,7 @@
 
   /* ---------- internal: compose sentence word-by-word, each word letter-by-letter ---------- */
   function composeSentence(item, mount) {
+    const owner = App.lifecycle.token();
     return new Promise((resolve) => {
       clear(mount);
       const target = item.text;
@@ -362,6 +389,7 @@
 
       let currentWordIdx = 0;
       let tries = 0;
+      let busy = false;
 
       const wordsRow = el('div', {
         class: 'sentence-words-row',
@@ -417,6 +445,7 @@
           });
           if (isActive && filled) {
             slotEl.addEventListener('click', () => {
+              if (busy || !App.lifecycle.active(owner)) return;
               ws.tiles[ws.slots[slotIdx]].used = false;
               ws.slots[slotIdx] = null;
               renderGroup(wIdx);
@@ -441,7 +470,7 @@
             disabled: tile.used,
             on: {
               click: () => {
-                if (tile.used) return;
+                if (tile.used || busy) return;
                 const ws2 = wordStates[currentWordIdx];
                 const firstEmpty = ws2.slots.indexOf(null);
                 if (firstEmpty === -1) return;
@@ -461,6 +490,7 @@
         hint.classList.add('hidden');
         if (currentWordIdx < wordStates.length - 1) {
           currentWordIdx += 1;
+          busy = false;
           renderGroup(currentWordIdx);
           renderBank();
         } else {
@@ -475,7 +505,8 @@
 
       function maybeCheckWord() {
         const ws = wordStates[currentWordIdx];
-        if (ws.slots.some((s) => s === null)) return;
+        if (busy || ws.slots.some((s) => s === null)) return;
+        busy = true;
         const assembled = ws.slots.map((ti) => ws.tiles[ti].letter).join('');
         if (assembled === ws.letters) {
           ws.solved = true;
@@ -497,6 +528,7 @@
               renderGroup(currentWordIdx);
               setTimeout(() => advanceOrFinish(false), 600);
             } else {
+              busy = false;
               renderGroup(currentWordIdx);
               renderBank();
             }
@@ -506,6 +538,10 @@
 
       const card = el('div', { class: 'task task-compose task-compose-sentence' }, [
         el('p', { class: 'task-prompt', text: 'Nejdřív si poslechni větu. Potom ji slož z písmen:' }),
+        el('details', { class: 'task-hint' }, [
+          el('summary', { text: 'Není slyšet zvuk? Zobrazit vzor pro rodiče' }),
+          el('p', { text: target, lang: 'cs' })
+        ]),
         el('div', { class: 'task-actions task-actions-compact' }, [
           el('button', {
             class: 'btn btn-secondary btn-icon',
@@ -543,9 +579,10 @@
       for (let i = 0; i < word.length; i++) {
         const ch = word[i].toLowerCase();
         if ('aáeéěiíoóuúůyý'.indexOf(ch) !== -1) vowelIndices.push(i);
-        allIndices.push(i);
+        if (CZ_LETTERS.includes(ch)) allIndices.push(i);
       }
       const pickFrom = vowelIndices.length ? vowelIndices : allIndices;
+      if (!pickFrom.length) { resolve({ correct: true }); return; }
       const missingIdx = pickFrom[Math.floor(Math.random() * pickFrom.length)];
       const correct = word[missingIdx];
       const correctLower = correct.toLowerCase();
@@ -593,6 +630,8 @@
                 hint.classList.remove('hidden');
                 hint.textContent = tries >= 2 ? `Správné písmeno je „${correctLower}".` : 'Zkus jiné písmeno.';
                 if (tries >= 2) {
+                  solved = true;
+                  Array.from(choices.children).forEach((c) => { c.disabled = true; });
                   // Reveal correct, then move on.
                   Array.from(choices.children).forEach((c) => {
                     if (c.textContent === correctLower) c.classList.add('btn-correct');
@@ -609,7 +648,8 @@
       });
 
       const card = el('div', { class: 'task task-fill' }, [
-        el('p', { class: 'task-prompt', text: 'Doplň chybějící písmeno:' }),
+        el('p', { class: 'task-prompt', text: 'Doplň písmeno podle vzoru. Vzor může přečíst rodič:' }),
+        el('p', { class: 'fill-model', text: word, lang: 'cs' }),
         wordRow,
         choices,
         hint
@@ -645,6 +685,7 @@
             click: () => {
               if (card.disabled) return;
               if (animal.id === correct.id) {
+                Array.from(grid.children).forEach((c) => { c.disabled = true; });
                 card.classList.add('option-correct');
                 speak(animal.name);
                 setTimeout(() => resolve({ correct: tries === 0 }), 650);
@@ -656,6 +697,7 @@
                 hint.textContent = 'Zkus jiné zvíře.';
                 if (tries >= 2) {
                   Array.from(grid.children).forEach((c) => {
+                    c.disabled = true;
                     if (c.dataset.id === correct.id) c.classList.add('option-correct');
                   });
                   // Say the revealed answer so the child links letter ↔ name.
@@ -746,6 +788,9 @@
         disabled: true,
         on: {
           click: () => {
+            if (doneBtn.disabled) return;
+            doneBtn.disabled = true;
+            clearBtn.disabled = true;
             speak(speechTextFor(item));
             setTimeout(() => resolve({ correct: true }), 500);
           }
@@ -774,5 +819,6 @@
     });
   }
 
-  App.tasks = { read, match, matchLetter, compose, fill, trace };
+  App.tasks = Object.fromEntries(Object.entries({ read, match, matchLetter, compose, fill, trace })
+    .map(([name, render]) => [name, (...args) => App.lifecycle.race(render(...args))]));
 })();

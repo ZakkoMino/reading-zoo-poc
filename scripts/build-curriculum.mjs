@@ -133,7 +133,7 @@ const SENTENCES = {
   tucnak:     ['Na ledu stojí tučňák.',          'Tučňák plave rychle jako ryba.'],
   tulen:      ['Na skále leží tuleň.',           'Tuleň loví ryby ve studeném moři.'],
   delfin:     ['Nad vlnami skáče delfín.',       'Delfín si rád hraje s lidmi.'],
-  velryba:    ['V oceánu zpívá velryba.',        'Velryba je největší zvíře světa.'],
+  velryba:    ['V oceánu zpívá velryba.',        'Velryba žije v moři.'],
   zelva:      ['Po písku leze želva.',           'Želva nosí domeček na zádech.'],
   ryba:       ['V potoce plave ryba.',           'Ryba dýchá pod vodou žábrami.'],
   kapr:       ['V rybníku žije kapr.',           'Kapr má velké lesklé šupiny.'],

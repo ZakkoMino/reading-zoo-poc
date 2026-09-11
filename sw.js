@@ -11,7 +11,7 @@
  *
  * Bump VERSION on releases that should force a clean re-cache.
  */
-const VERSION = 'reading-zoo-v3';
+const VERSION = 'reading-zoo-v5';
 
 const CORE = [
   './',
@@ -19,6 +19,7 @@ const CORE = [
   './styles.css',
   './manifest.webmanifest',
   './js/data.js',
+  './js/lifecycle.js',
   './js/state.js',
   './js/speech.js',
   './js/lessons.js',
@@ -59,14 +60,14 @@ self.addEventListener('install', (event) => {
     } catch (err) {
       console.warn('[SW] voice precache skipped', err);
     }
-    self.skipWaiting();
+    // Activate on a fresh session; never replace an active lesson.
   })());
 });
 
 self.addEventListener('activate', (event) => {
   event.waitUntil((async () => {
     const names = await caches.keys();
-    await Promise.all(names.filter((n) => n !== VERSION).map((n) => caches.delete(n)));
+    await Promise.all(names.filter((n) => n.startsWith('reading-zoo-v') && n !== VERSION).map((n) => caches.delete(n)));
     await self.clients.claim();
   })());
 });
@@ -76,6 +77,7 @@ self.addEventListener('fetch', (event) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
+  if (!url.pathname.startsWith(new URL('./', self.location.href).pathname)) return;
 
   // Images and voice clips never change for a given filename → cache-first.
   const isStaticAsset = /\.(png|svg|jpg|webp|ico|mp3|wav|ogg)$/.test(url.pathname);
@@ -83,19 +85,33 @@ self.addEventListener('fetch', (event) => {
   event.respondWith((async () => {
     const cache = await caches.open(VERSION);
 
+    // Code and curriculum form one release snapshot. Bump VERSION to update.
+    const coreHit = await cache.match(req);
+    const isCore = CORE.some((path) => new URL(path, self.location.href).pathname === url.pathname);
+    if (coreHit && isCore) return coreHit;
+    if (req.mode === 'navigate') {
+      const shell = await cache.match('./index.html');
+      if (shell) return shell;
+    }
+
     if (isStaticAsset) {
       // cache-first
       const hit = await cache.match(req);
       if (hit) return hit;
       const res = await fetch(req);
-      if (res.ok) cache.put(req, res.clone());
+      if (res.ok) await cache.put(req, res.clone());
       return res;
     }
 
     // network-first with cache fallback (keeps code/content fresh online)
     try {
-      const res = await fetch(req);
-      if (res.ok) cache.put(req, res.clone());
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 8000);
+      let res;
+      try { res = await fetch(req, { signal: controller.signal }); }
+      finally { clearTimeout(timeout); }
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      if (res.ok) await cache.put(req, res.clone());
       return res;
     } catch (err) {
       const hit = await cache.match(req)

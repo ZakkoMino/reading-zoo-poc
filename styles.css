@@ -141,8 +141,16 @@ h2 { font-size: 22px; margin-top: 14px; }
 .btn:disabled { opacity: .55; cursor: not-allowed; transform: none; box-shadow: none; }
 .btn-large { font-size: 19px; padding: 14px 24px; min-height: 54px; }
 .btn-huge  { font-size: 22px; padding: 18px 28px; min-height: 60px; }
-.btn-primary   { background: var(--primary);   color: #fff; }
-.btn-secondary { background: var(--secondary); color: #fff; }
+.btn-primary   { background: var(--primary);   color: #292524; }
+.btn-secondary { background: var(--secondary); color: #292524; }
+
+[hidden] { display: none !important; }
+.storage-warning { padding: 1rem; margin: 1rem; background: #fff0cc; color: #542600; border: 2px solid #875000; }
+.fill-model { font-size: 1.4rem; color: #292524; }
+button:focus-visible, a:focus-visible { outline: 3px solid #174e83; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
 .btn-ghost {
   background: transparent;
   color: var(--primary-dk);

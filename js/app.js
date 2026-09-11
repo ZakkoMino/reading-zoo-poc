@@ -17,6 +17,7 @@
   }
 
   function nav(screen, ctx) {
+    App.lifecycle.cancel();
     const mount = $('#screen');
     clear(mount);
     setActiveNav(screen);
@@ -56,7 +57,11 @@
     if (App.data && App.data.ready && typeof App.data.ready.then === 'function') {
       try { await App.data.ready; } catch (_) { /* fallback already applied */ }
     }
+    // The manifest request has its own bounded timeout. Avoid advertising a
+    // missing OS voice while bundled recordings are still being loaded.
+    if (App.speech.ready) await App.speech.ready;
     paintDiagnostics();
+    App.state.notifyStorage();
     nav('onboarding');
   }
 

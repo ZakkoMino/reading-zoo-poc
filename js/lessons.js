@@ -4,10 +4,7 @@
  * Output : an ordered list of { item, type } steps for views.js to execute.
  *
  * Three small rules drive the planner:
- *   1. Pick items weighted toward those with a low knowledge score. The
- *      mapping is `weight = 1 + (SCORE_MAX - score)`, so a never-seen item
- *      with score 0 is six times more likely than a mastered item with score
- *      5. No ML, intentionally inspectable.
+ *   1. Prefer less-practiced items; this is exposure, not a reading grade.
  *   2. Never repeat a word/sentence within a session: texts used by earlier
  *      lessons since the page loaded are excluded until the level's fresh
  *      items run out (see pickItems for the exact fallback order).
@@ -22,10 +19,11 @@
 (function () {
   const App = window.App || (window.App = {});
   const { getLevel, getAnimal, ANIMALS, getTheme, levelHasThemes } = App.data;
-  const { SCORE_MAX, scoreOf, get, starsOf, STAR_MAX } = App.state;
+  const { get, starsOf, STAR_MAX } = App.state;
 
-  function weightedPick(items) {
-    const weights = items.map((it) => 1 + (SCORE_MAX - scoreOf(it.text)));
+  function weightedPick(items, levelId) {
+    // Exposure, not correctness: rare practice receives a little more space.
+    const weights = items.map((it) => 1 + 5 / (1 + App.state.practiceOf(levelId, it.text)));
     const total = weights.reduce((a, b) => a + b, 0);
     let r = Math.random() * total;
     for (let i = 0; i < weights.length; i++) {
@@ -38,7 +36,7 @@
   /* Session no-repeat memory: texts already planned since the page loaded,
    * mapped to the sequence number of their last use. Deliberately NOT
    * persisted — closing/reloading the app starts a fresh session, and the
-   * long-term adaptivity still lives in the knowledge scores. */
+   * long-term adaptivity still lives in the practice counts. */
   const sessionHistory = new Map();
   let sessionSeq = 0;
 
@@ -54,7 +52,7 @@
    *   2. Across lessons in the same session, texts the child already saw
    *      are excluded until the level's fresh items run out; only then do
    *      the least-recently-used ones return (oldest first).
-   *   3. The knowledge-score weighting still applies inside each of those
+   *   3. The practice-count weighting still applies inside each of those
    *      candidate groups.
    */
   function pickItems(level, count) {
@@ -68,7 +66,7 @@
     // 1) weighted draw from items not seen this session
     const fresh = all.filter((it) => !sessionHistory.has(it.text));
     while (out.length < count && fresh.length) {
-      const idx = weightedPick(fresh);
+      const idx = weightedPick(fresh, level.id);
       out.push(fresh.splice(idx, 1)[0]);
     }
 
@@ -80,7 +78,7 @@
         .sort((a, b) => sessionHistory.get(a.text) - sessionHistory.get(b.text));
       while (out.length < count && usedByAge.length) {
         const windowSize = Math.min(usedByAge.length, Math.max(4, count - out.length));
-        const idx = weightedPick(usedByAge.slice(0, windowSize));
+        const idx = weightedPick(usedByAge.slice(0, windowSize), level.id);
         out.push(usedByAge.splice(idx, 1)[0]);
       }
     }
@@ -177,61 +175,6 @@
     return buildPlanFromLevel(level, count);
   }
 
-  /* Velká výzva: a plan drawn from the NEXT level, no theme filter. */
-  function buildChallengePlan(nextLevelId, count) {
-    return buildPlanFromLevel(getLevel(nextLevelId), count || 8);
-  }
-
-  /* Mastery check that drives the level-up offer: at least MIN_LESSONS
-   * lessons on this level, a reasonable share of its items practiced, and
-   * 80 % of the practiced items at score >= 4. Story level never masters
-   * (nothing above it). */
-  const MASTERY = { MIN_LESSONS: 5, MIN_PRACTICED: 10, RATIO: 0.8, SCORE: 4 };
-
-  function masteryOf(levelId) {
-    const level = getLevel(levelId);
-    const lessons = (get().stats.lessonsByLevel || {})[levelId] || 0;
-    const items = level.items || [];
-    const practiced = items.filter((it) => scoreOf(it.text) > 0);
-    const strong = practiced.filter((it) => scoreOf(it.text) >= MASTERY.SCORE);
-    const needPracticed = Math.min(MASTERY.MIN_PRACTICED, items.length);
-    const mastered =
-      level.kind !== 'story' &&
-      lessons >= MASTERY.MIN_LESSONS &&
-      practiced.length >= needPracticed &&
-      practiced.length > 0 &&
-      strong.length / practiced.length >= MASTERY.RATIO;
-    return {
-      mastered,
-      lessons,
-      practiced: practiced.length,
-      strong: strong.length,
-      total: items.length
-    };
-  }
-
-  /* Progress toward the Velká výzva offer, expressed for the UI as a single
-   * 0..100 % bar plus the three sub-goals behind it. The bar hits 100 %
-   * exactly when masteryOf().mastered flips true, so the same rule drives
-   * both — no thresholds are duplicated in the views. */
-  function challengeProgress(levelId) {
-    const m = masteryOf(levelId);
-    const needPracticed = Math.min(MASTERY.MIN_PRACTICED, m.total);
-    const strongRatio = m.practiced ? m.strong / m.practiced : 0;
-    const goals = [
-      { key: 'lessons', label: 'Dokončené lekce', have: m.lessons, need: MASTERY.MIN_LESSONS, suffix: '',
-        ratio: Math.min(1, m.lessons / MASTERY.MIN_LESSONS) },
-      { key: 'practiced', label: 'Procvičená slova', have: m.practiced, need: needPracticed, suffix: '',
-        ratio: needPracticed ? Math.min(1, m.practiced / needPracticed) : 1 },
-      { key: 'strong', label: 'Silná slova', have: Math.round(strongRatio * 100),
-        need: Math.round(MASTERY.RATIO * 100), suffix: ' %',
-        ratio: Math.min(1, strongRatio / MASTERY.RATIO) }
-    ];
-    goals.forEach((g) => { g.done = g.have >= g.need; });
-    const overall = goals.reduce((sum, g) => sum + g.ratio, 0) / goals.length;
-    return { mastered: m.mastered, percent: Math.round(overall * 100), goals };
-  }
-
   /* Reward = a choice of (up to) two animals the child picks from.
    *
    * Choice kinds:
@@ -286,5 +229,5 @@
     return choices;
   }
 
-  App.lessons = { buildLessonPlan, buildChallengePlan, masteryOf, challengeProgress, pickRewardChoices };
+  App.lessons = { buildLessonPlan, allowedTasksFor, pickRewardChoices };
 })();

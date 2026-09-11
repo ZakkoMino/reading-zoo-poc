@@ -35,10 +35,10 @@
 //   --stub               generate short beep placeholders instead of speech
 //                        (pipeline test without a voice model — do NOT ship)
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, existsSync, rmSync } from 'fs';
 import { execFileSync, spawnSync } from 'child_process';
 import { createHash } from 'crypto';
-import { join, dirname } from 'path';
+import { join, dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { tmpdir } from 'os';
 
@@ -78,7 +78,11 @@ function syllableSpeech(text) {
 function collectTexts() {
   const curriculum = read('data/content/curriculum_v2.json');
   const animalsDoc = read('data/content/animals_50_seed.json');
+  const storiesDoc = read('data/content/stories.json');
   const texts = new Set();
+  for (const story of storiesDoc.stories || []) {
+    for (const sentence of story.sentences || []) texts.add(sentence);
+  }
 
   for (const level of curriculum.levels) {
     for (const item of level.items || []) {
@@ -182,6 +186,10 @@ function toMp3(wavPath, mp3Path) {
 
 /* ---------- main ---------- */
 function main() {
+  if (!['mp3', 'wav'].includes(FORMAT)) throw new Error('Use --format mp3 or wav');
+  if (!DRY && (STUB || LIMIT) && (!args.includes('--out') || resolve(OUT_DIR) === resolve(ROOT, 'assets/voice'))) {
+    throw new Error('Smoke/stub generation requires --out to a separate test directory; never overwrite the production voice manifest.');
+  }
   let texts = collectTexts();
   if (LIMIT) texts = texts.slice(0, LIMIT);
 
@@ -197,8 +205,7 @@ function main() {
   mkdirSync(OUT_DIR, { recursive: true });
 
   if (todo.length) {
-    const tmp = join(tmpdir(), 'reading-zoo-voice');
-    mkdirSync(tmp, { recursive: true });
+    const tmp = mkdtempSync(join(tmpdir(), 'reading-zoo-voice-'));
     const useMp3 = FORMAT === 'mp3';
     const jobs = todo.map((text, i) => ({
       text,
